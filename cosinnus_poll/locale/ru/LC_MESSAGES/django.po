@@ -1,0 +1,922 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wechange RU\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-01 16:09+0200\n"
+"PO-Revision-Date: 2015-11-14 17:15+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: ru\n"
+"X-Generator: Poedit 1.8.5\n"
+
+#: .\cosinnus_app.py:13 .\models.py:110 .\templates\cosinnus_event\base.html:6
+#: .\templates\cosinnus_event\doodle_list.html:5
+#: .\templates\cosinnus_event\event_list.html:5
+#: .\templates\cosinnus_event\event_list_detailed.html:5
+#: .\templates\cosinnus_event\event_list_detailed.html:10
+#: .\templates\cosinnus_event\event_list_detailed_past.html:5
+#: .\templates\cosinnus_event\event_list_detailed_past.html:10
+#: .\templates\cosinnus_event\widgets\event_widget_form.html:5 .\views.py:470
+msgid "Events"
+msgstr "Cобытия"
+
+#: .\cosinnus_app.py:20
+#: .\templates\cosinnus_event\event_list_standalone.html:11
+msgctxt "the_app"
+msgid "event"
+msgstr "События"
+
+#: .\cosinnus_notifications.py:43
+msgid "A user created a new event"
+msgstr "Пользователь создал новое событие"
+
+#: .\cosinnus_notifications.py:50
+msgid "A user created a new event poll"
+msgstr "Пользователь создал новый опрос по датам"
+
+#: .\cosinnus_notifications.py:57
+msgid "A user commented on one of your events"
+msgstr "Пользователь прокомментировал одно из ваших событий"
+
+#: .\cosinnus_notifications.py:64
+msgid "A user commented on a event you were tagged in"
+msgstr "Пользователь прокомментировал событие, в котором вы отмечены"
+
+#: .\cosinnus_notifications.py:71
+msgid "A user commented on an event you voted in"
+msgstr ""
+"Пользователь прокомментировал событие, в голосовании по которому вы "
+"участвовали"
+
+#: .\dashboard.py:28
+msgid "Upcoming Events"
+msgstr "Предстоящие события"
+
+#: .\dashboard.py:48
+msgid "No upcoming events"
+msgstr "Нет предстоящих событий"
+
+#: .\filters.py:14
+msgid "Created By"
+msgstr "Создатель"
+
+#: .\filters.py:20
+msgid "Soonest Upcoming"
+msgstr "Ближайшее событие"
+
+#: .\filters.py:21
+msgid "Newest Created"
+msgstr "Последнее из созданных событий"
+
+#: .\filters.py:22
+msgid "Title"
+msgstr "Название"
+
+# ???
+#: .\models.py:56
+msgid "Scheduled"
+msgstr "Запланировано"
+
+#: .\models.py:57
+msgid "Voting open"
+msgstr "Голосование открыто"
+
+#: .\models.py:58
+msgid "Canceled"
+msgstr "Отменено"
+
+#: .\models.py:62 .\models.py:208
+msgid "Start"
+msgstr "Начало"
+
+#: .\models.py:65 .\models.py:211
+msgid "End"
+msgstr "Конец"
+
+#: .\models.py:68
+msgid "State"
+msgstr "Статус"
+
+# ???
+#: .\models.py:74
+msgid "Note"
+msgstr "Описание"
+
+#: .\models.py:78
+msgid "Event date"
+msgstr "Дата события"
+
+#: .\models.py:85
+msgid "Location"
+msgstr "Место"
+
+#: .\models.py:86
+msgid "Latitude"
+msgstr "Широта"
+
+#: .\models.py:87
+msgid "Longitude"
+msgstr "Долгота"
+
+#: .\models.py:89
+msgid "Street"
+msgstr "Улица"
+
+#: .\models.py:91
+msgid "ZIP code"
+msgstr "Почтовый индекс"
+
+#: .\models.py:93
+msgid "City"
+msgstr "Город"
+
+#: .\models.py:95
+msgid "Is public (on website)"
+msgstr "В открытом доступе (на сайте)"
+
+#: .\models.py:98
+msgid "Image"
+msgstr "Изображение"
+
+#: .\models.py:103
+msgid "URL"
+msgstr "URL"
+
+#: .\models.py:109 .\models.py:215
+#: .\templates\cosinnus_event\event_detail.html:5
+#: .\templates\cosinnus_event\event_detail.html:10
+msgid "Event"
+msgstr "Cобытие"
+
+#: .\models.py:119
+#, python-format
+msgid "%(event)s (%(date)s - %(end)s)"
+msgstr "%(event)s (%(date)s - %(end)s)"
+
+#: .\models.py:125
+#, python-format
+msgid "%(event)s (%(from)s - %(to)s)"
+msgstr "%(event)s (%(from)s - %(to)s)"
+
+#: .\models.py:131
+#, python-format
+msgid "%(event)s (pending)"
+msgstr "%(event)s (дата в процессе обработки)"
+
+#: .\models.py:221 .\models.py:293
+msgctxt "the subject"
+msgid "Votes"
+msgstr "Голоса"
+
+#: .\models.py:226 .\models.py:274
+msgid "Suggestion"
+msgstr "Предложение даты"
+
+#: .\models.py:227
+msgid "Suggestions"
+msgstr "Предложения даты"
+
+#: .\models.py:267 .\templates\cosinnus_event\doodle_vote.html:71
+#: .\templates\cosinnus_event\doodle_vote.html:89
+#: .\templates\cosinnus_event\doodle_vote.html:162
+msgid "Yes"
+msgstr "Да"
+
+#: .\models.py:268 .\templates\cosinnus_event\doodle_vote.html:75
+#: .\templates\cosinnus_event\doodle_vote.html:90
+#: .\templates\cosinnus_event\doodle_vote.html:163
+msgid "Maybe"
+msgstr "Может быть"
+
+#: .\models.py:269 .\templates\cosinnus_event\doodle_vote.html:79
+#: .\templates\cosinnus_event\doodle_vote.html:91
+#: .\templates\cosinnus_event\doodle_vote.html:164
+msgid "No"
+msgstr "Нет"
+
+#: .\models.py:281
+msgid "Voter"
+msgstr "Кто голосует"
+
+#: .\models.py:286 .\templates\cosinnus_event\doodle_vote.html:192
+msgid "Vote"
+msgstr "Голосовать"
+
+#: .\models.py:292
+msgctxt "the subject"
+msgid "Vote"
+msgstr "Голосование"
+
+#: .\models.py:309
+msgid "Creator"
+msgstr "Создатель"
+
+#: .\models.py:310
+msgid "Created"
+msgstr "Создано"
+
+#: .\models.py:311
+msgid "Last modified"
+msgstr "Последние изменения внесены"
+
+#: .\models.py:313
+msgid "Text"
+msgstr "Текст"
+
+#: .\models.py:317
+msgid "Comment"
+msgstr "Комментарий"
+
+#: .\models.py:318 .\templates\cosinnus_event\event_comments.html:34
+msgid "Comments"
+msgstr "Комментарии"
+
+#: .\templates\cosinnus_event\common\humanized_event_time.html:8
+#: .\templates\cosinnus_event\common\humanized_event_time.html:32
+msgctxt "time"
+msgid "all day"
+msgstr "весь день"
+
+#: .\templates\cosinnus_event\common\humanized_event_time.html:10
+msgctxt "time"
+msgid "at"
+msgstr "в"
+
+# ???
+#: .\templates\cosinnus_event\common\humanized_event_time.html:12
+#: .\templates\cosinnus_event\common\humanized_event_time.html:19
+#: .\templates\cosinnus_event\common\humanized_event_time.html:26
+#: .\templates\cosinnus_event\common\humanized_event_time.html:35
+msgctxt "time"
+msgid "o'clock"
+msgstr "час/-а/-ов"
+
+#: .\templates\cosinnus_event\common\humanized_event_time.html:15
+msgctxt "time"
+msgid "from"
+msgstr "с"
+
+#: .\templates\cosinnus_event\common\humanized_event_time.html:17
+#: .\templates\cosinnus_event\common\humanized_event_time.html:29
+msgctxt "time"
+msgid "until"
+msgstr "по"
+
+#: .\templates\cosinnus_event\doodle_form.html:6
+#: .\templates\cosinnus_event\doodle_form.html:17
+msgid "Add unscheduled event"
+msgstr "Добавить предложение по дате"
+
+#: .\templates\cosinnus_event\doodle_form.html:8
+#: .\templates\cosinnus_event\doodle_form.html:19
+#: .\templates\cosinnus_event\doodle_vote.html:229
+#: .\templates\cosinnus_event\event_form.html:8
+#: .\templates\cosinnus_event\event_form.html:19
+#: .\templates\cosinnus_event\list_object.html:125
+#: .\templates\cosinnus_event\single_event_detailed.html:62
+msgid "Edit"
+msgstr "Редактировать"
+
+#: .\templates\cosinnus_event\doodle_form.html:46
+#: .\templates\cosinnus_event\doodle_list.html:37
+msgid "Enter a title for the new event to be scheduled."
+msgstr "Введите название нового запланированного события"
+
+#: .\templates\cosinnus_event\doodle_form.html:65
+#: .\templates\cosinnus_event\event_form.html:72
+#: .\templates\cosinnus_event\event_form.html:95
+msgid "Time"
+msgstr "Время"
+
+#: .\templates\cosinnus_event\doodle_form.html:78
+msgid "Please select the available days in the calendar."
+msgstr "Пожалуйста, предложите подходящие дни с помощью календаря"
+
+#: .\templates\cosinnus_event\doodle_form.html:79
+msgid "You can select the same day more than once."
+msgstr "Вы можете выбрать один и тот же день несколько раз"
+
+#: .\templates\cosinnus_event\doodle_form.html:80
+msgid "Time: e.g. 10 or 10:30."
+msgstr "Время, например, 10 или 10:30"
+
+#: .\templates\cosinnus_event\doodle_form.html:90
+msgid ""
+"Note: You cannot edit the dates for this event poll because someone has "
+"already cast their vote!"
+msgstr ""
+
+#: .\templates\cosinnus_event\doodle_form.html:100
+#: .\templates\cosinnus_event\event_form.html:109
+msgid "Enter a description for the event (optional)."
+msgstr "Введите описание события (необязательно)"
+
+#: .\templates\cosinnus_event\doodle_form.html:108
+#: .\templates\cosinnus_event\event_form.html:117
+msgid "External Link for the event (optional)."
+msgstr "Внешняя ссылка на cобытие (необязательно)"
+
+#: .\templates\cosinnus_event\doodle_form.html:115
+#: .\templates\cosinnus_event\event_form.html:124
+msgid "Location (optional)."
+msgstr "Место (необязательно)"
+
+#: .\templates\cosinnus_event\doodle_form.html:131
+#: .\templates\cosinnus_event\doodle_list.html:52
+#: .\templates\cosinnus_event\event_form.html:140
+#: .\templates\cosinnus_event\event_list.html:91
+msgid "Create"
+msgstr "Создать"
+
+#: .\templates\cosinnus_event\doodle_form.html:133
+#: .\templates\cosinnus_event\event_form.html:142
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\templates\cosinnus_event\doodle_list.html:10
+msgid "Schedule an event"
+msgstr "Запланировать событие"
+
+#: .\templates\cosinnus_event\doodle_list.html:63
+msgid "There are no open event polls."
+msgstr "Открытых предложений по событиям нет"
+
+#: .\templates\cosinnus_event\doodle_vote.html:5
+msgctxt "the_verb"
+msgid "Vote"
+msgstr "Голосовать"
+
+#: .\templates\cosinnus_event\doodle_vote.html:12
+#, python-format
+msgid "Vote for %(title)s"
+msgstr "Голосовать за %(title)s"
+
+#: .\templates\cosinnus_event\doodle_vote.html:30
+msgid "This event has already been scheduled. Voting is closed."
+msgstr "Это событие уже запланировано. Голосование закрыто"
+
+#: .\templates\cosinnus_event\doodle_vote.html:33
+msgid "This event has been canceled. Voting is closed."
+msgstr "Это событие отменено. Голосование закрыто"
+
+#: .\templates\cosinnus_event\doodle_vote.html:39
+msgid "Nobody has voted for this event poll yet."
+msgstr "По этим датам еще никто не проголосовал"
+
+#: .\templates\cosinnus_event\doodle_vote.html:105
+msgid "Create an event from one of the suggestions"
+msgstr "Создать событие из предложенных"
+
+# ???
+#: .\templates\cosinnus_event\doodle_vote.html:114
+#, python-format
+msgid "Set the date to %(suggestion)s."
+msgstr "Установить дату на %(suggestion)s"
+
+#: .\templates\cosinnus_event\doodle_vote.html:125
+msgid "When do you have time?"
+msgstr "Когда у вас есть время?"
+
+#: .\templates\cosinnus_event\doodle_vote.html:177
+msgid "There are no date suggestions for this event poll yet!"
+msgstr "Для этого опроса еще не внесены предложения по датам"
+
+#: .\templates\cosinnus_event\doodle_vote.html:209
+#: .\templates\cosinnus_event\event_comments.html:71
+#: .\templates\cosinnus_event\list_object.html:108
+#: .\templates\cosinnus_event\single_event_detailed.html:50
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\templates\cosinnus_event\doodle_vote.html:215
+#: .\templates\cosinnus_event\list_object.html:138
+#, python-format
+msgid "Do you really want to delete unscheduled event „%(title)s“?"
+msgstr "Вы действительно хотите удалить опрос дат „%(title)s“?"
+
+#: .\templates\cosinnus_event\doodle_vote.html:216
+#: .\templates\cosinnus_event\list_object.html:139
+msgid "Delete unscheduled event"
+msgstr "Удалить опрос дат"
+
+#: .\templates\cosinnus_event\event_comments.html:95
+msgid "Write comment..."
+msgstr "Оставить комментарий…"
+
+#: .\templates\cosinnus_event\event_comments.html:108
+msgid "Post"
+msgstr "Написать…"
+
+#: .\templates\cosinnus_event\event_form.html:6
+#: .\templates\cosinnus_event\event_form.html:17
+msgid "Add event"
+msgstr "Добавить событие"
+
+#: .\templates\cosinnus_event\event_form.html:44
+msgid "Enter a title for the new event."
+msgstr "Введите название нового события"
+
+#: .\templates\cosinnus_event\event_form.html:55
+msgid "From"
+msgstr "С"
+
+#: .\templates\cosinnus_event\event_form.html:57
+#: .\templates\cosinnus_event\event_form.html:80
+msgid "Date"
+msgstr "Дата"
+
+#: .\templates\cosinnus_event\event_form.html:60
+msgid "Start date."
+msgstr "Дата начала"
+
+#: .\templates\cosinnus_event\event_form.html:78
+msgid "Until"
+msgstr "До"
+
+#: .\templates\cosinnus_event\event_form.html:83
+msgid "End date."
+msgstr "Дата завершения"
+
+#: .\templates\cosinnus_event\event_list.html:10
+msgid "Kalender"
+msgstr "Календарь"
+
+#: .\templates\cosinnus_event\event_list.html:31
+msgid ""
+"Copy this iCal-link into your calendar application to import current events:"
+msgstr ""
+"Скопируйте эту ссылку iCal в ваш календарь, чтобы импортировать текущие "
+"события:"
+
+#: .\templates\cosinnus_event\event_list.html:41
+msgid "iCal Feed"
+msgstr "Лента новостей iCal"
+
+#: .\templates\cosinnus_event\event_list.html:75
+msgid "Enter the title for a new event or select a day in the Calendar."
+msgstr "Введите название нового события или выберите день в календаре"
+
+#: .\templates\cosinnus_event\event_list.html:105
+msgid "Export event feed"
+msgstr "Экспортировать ленту новостей события"
+
+#: .\templates\cosinnus_event\event_list.html:126
+msgid "Create Event"
+msgstr "Создать событие"
+
+#: .\templates\cosinnus_event\event_list.html:130
+#: .\templates\cosinnus_event\event_list.html:131
+msgid "Would you like to create an event"
+msgstr "Вы хотите создать событие"
+
+#: .\templates\cosinnus_event\event_list.html:130
+msgid "on"
+msgstr "в"
+
+#: .\templates\cosinnus_event\event_list.html:131
+msgid "from"
+msgstr "с"
+
+#: .\templates\cosinnus_event\event_list.html:131
+msgid "until"
+msgstr "по"
+
+#: .\templates\cosinnus_event\event_list.html:142
+msgid "Cancel"
+msgstr "Отменить"
+
+#: .\templates\cosinnus_event\event_list.html:158
+msgid "OK"
+msgstr "ОК"
+
+#: .\templates\cosinnus_event\event_list_detailed.html:10
+#: .\templates\cosinnus_event\event_list_detailed_past.html:10
+msgid "Planned Events"
+msgstr "Запланированные события"
+
+#: .\templates\cosinnus_event\event_list_detailed.html:10
+#: .\templates\cosinnus_event\event_list_detailed_past.html:10
+#: .\templates\cosinnus_event\leftnav.html:99
+msgid "Past Events"
+msgstr "Прошлые события"
+
+#: .\templates\cosinnus_event\event_list_detailed.html:30
+msgid "There are no current or future events."
+msgstr "Текущих или будущих событий нет"
+
+#: .\templates\cosinnus_event\event_list_detailed_past.html:30
+msgid "There are no past events."
+msgstr "Прошедших событий нет"
+
+#: .\templates\cosinnus_event\event_list_standalone.html:23
+#: .\templates\cosinnus_event\widgets\upcoming.html:37
+msgid "There are no upcoming events"
+msgstr "Предстоящих событий нет"
+
+#: .\templates\cosinnus_event\leftnav.html:19
+msgid "Back to Events"
+msgstr "Назад к событиям"
+
+#: .\templates\cosinnus_event\leftnav.html:35
+msgid "Return to Event Polls"
+msgstr "Вернуться к опросу дат"
+
+#: .\templates\cosinnus_event\leftnav.html:59
+msgid "Calendar"
+msgstr "Календарь"
+
+#: .\templates\cosinnus_event\leftnav.html:81
+msgid "List"
+msgstr "Список"
+
+#: .\templates\cosinnus_event\leftnav.html:121
+msgid "Event Polls"
+msgstr "Опрос дат"
+
+#: .\templates\cosinnus_event\list_object.html:27
+#: .\templates\cosinnus_event\single_event_detailed.html:29
+msgid "by"
+msgstr "Создатель"
+
+#: .\templates\cosinnus_event\list_object.html:142
+#: .\templates\cosinnus_event\single_event_detailed.html:74
+#, python-format
+msgid "Do you really want to delete event „%(title)s“?"
+msgstr "Вы действительно хотите удалить cобытие „%(title)s“?"
+
+#: .\templates\cosinnus_event\list_object.html:143
+msgid "Delete event"
+msgstr "Удалить cобытие"
+
+#: .\templates\cosinnus_event\notifications\doodle_created.txt:1
+#, python-format
+msgid ""
+"Hi %(receiver_name)s,\n"
+"\n"
+"a new event \"%(object_name)s\" in %(team_name)s was created by %"
+"(sender_name)s. \n"
+"\n"
+"You can find it by following this link: %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(Follow this link to edit your notification preferences: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Your %(site_name)s Team."
+msgstr ""
+"Здравствуйте, %(receiver_name)s,\n"
+"\n"
+"пользователь %(sender_name)s создал новое событие \"%(object_name)s\" в %"
+"(team_name)s. \n"
+"\n"
+"Вы можете найти его по этой ссылке: %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(перейдите по этой ссылке, чтобы изменить настройки уведомлений: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Ваша команда %(site_name)s"
+
+#: .\templates\cosinnus_event\notifications\doodle_created_subject.txt:1
+#, python-format
+msgid "A new event poll: \"%(object_name)s\" was created in %(team_name)s."
+msgstr "Новый опрос дат: \"%(object_name)s\" создан в %(team_name)s"
+
+# checken, wie es auf RU aussieht
+#: .\templates\cosinnus_event\notifications\event_comment_posted.html:1
+#, python-format
+msgid ""
+"Hi, %(receiver_name)s!\n"
+"\n"
+"%(sender_name)s has posted a comment on an event you created in %(team_name)"
+"s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"on your event:\n"
+"\n"
+"\"%(event_title)s\"\n"
+"\n"
+"\n"
+"Follow this link to see the comment: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Follow this link to edit your notification preferences: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Your %(site_name)s team.\n"
+"\n"
+msgstr ""
+"Здравствуйте, %(receiver_name)s!\n"
+"\n"
+"пользователь %(sender_name)s прокомментировал созданное вами событие в "
+"группе %(team_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"к вашему событию:\n"
+"\n"
+"\"%(event_title)s\"\n"
+"\n"
+"\n"
+"Проследуйте по этой ссылке, чтобы ознакомиться с комментарием: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Перейдите по этой ссылке, чтобы изменить настройки уведомлений : %"
+"(notification_settings_url)s )\n"
+"\n"
+"Ваша команда %(site_name)s.\n"
+"\n"
+
+#: .\templates\cosinnus_event\notifications\event_comment_posted_subject.txt:1
+#, python-format
+msgid "%(sender_name)s commented on one of your events in %(team_name)s."
+msgstr ""
+"Пользователь %(sender_name)s прокомментировал одно из ваших событий в %"
+"(team_name)s."
+
+#: .\templates\cosinnus_event\notifications\event_created.txt:1
+#, python-format
+msgid ""
+"Hi %(receiver_name)s,\n"
+"\n"
+"a new event \"%(object_name)s\", on %(event_date)s, was announced in %"
+"(team_name)s by %(sender_name)s. \n"
+"\n"
+"You can find it by following this link: %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(Follow this link to edit your notification preferences: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Your %(site_name)s Team."
+msgstr ""
+"Здравствуйте, %(receiver_name)s,\n"
+"\n"
+"\n"
+"новое событие \"%(object_name)s\", которое состоится %(event_date)s, было "
+"размещено в %(team_name)s пользователем %(sender_name)s. \n"
+"\n"
+"Вы можете найти его по этой ссылке: %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(Перейдите по этой ссылке, чтобы изменить настройки уведомлений: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Ваша команда %(site_name)s"
+
+#: .\templates\cosinnus_event\notifications\event_created_subject.txt:1
+#, python-format
+msgid "A new event: \"%(object_name)s\" was announced in %(team_name)s."
+msgstr "Новое событие: \"%(object_name)s\" было опубликовано в %(team_name)s"
+
+# checken, wie es auf RU aussieht
+#: .\templates\cosinnus_event\notifications\tagged_event_comment_posted.html:1
+#, python-format
+msgid ""
+"Hi, %(receiver_name)s!\n"
+"\n"
+"%(sender_name)s has posted a comment on an event you were tagged in, in %"
+"(team_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"on the event:\n"
+"\n"
+"\"%(event_title)s\"\n"
+"\n"
+"\n"
+"Follow this link to see the comment: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Follow this link to edit your notification preferences: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Your %(site_name)s team.\n"
+"\n"
+msgstr ""
+"Здравствуйте, %(receiver_name)s!\n"
+"\n"
+"Пользователь %(sender_name)s прокомментировал событие, в котором вы были "
+"отмечены, в группе %(team_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"к событию:\n"
+"\n"
+"\"%(event_title)s\"\n"
+"\n"
+"\n"
+"Вы можете найти его по этой ссылке: %(object_url)s\n"
+"\n"
+"\n"
+"(Перейдите по этой ссылке, чтобы изменить настройки уведомлений: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Ваша команда %(site_name)s\n"
+"\n"
+
+#: .\templates\cosinnus_event\notifications\tagged_event_comment_posted_subject.txt:1
+#, python-format
+msgid "%(sender_name)s commented on a event you were tagged in %(team_name)s."
+msgstr ""
+"Пользователь %(sender_name)s прокомментировал событие, в котором вы были "
+"отмечены, в %(team_name)s."
+
+# checken, wie es auf RU aussieht
+#: .\templates\cosinnus_event\notifications\voted_event_comment_posted.html:1
+#, python-format
+msgid ""
+"Hi, %(receiver_name)s!\n"
+"\n"
+"%(sender_name)s has posted a comment on an event poll you voted in in %"
+"(team_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"on the event poll:\n"
+"\n"
+"\"%(event_title)s\"\n"
+"\n"
+"\n"
+"Follow this link to see the comment: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Follow this link to edit your notification preferences: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Your %(site_name)s team.\n"
+"\n"
+msgstr ""
+"Здравствуйте, %(receiver_name)s!\n"
+"\n"
+"Пользователь %(sender_name)s прокомментировал опрос, по которому вы "
+"проголосовали в группе %(team_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"к опросу:\n"
+"\n"
+"\"%(event_title)s\"\n"
+"\n"
+"\n"
+"Вы можете найти его по этой ссылке: %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(Перейдите по этой ссылке, чтобы изменить настройки уведомлений: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Ваша команда %(site_name)s\n"
+
+#: .\templates\cosinnus_event\notifications\voted_event_comment_posted_subject.txt:1
+#, python-format
+msgid ""
+"%(sender_name)s commented on an event poll you voted in in %(team_name)s."
+msgstr ""
+"Пользователь %(sender_name)s прокомментировал опрос, по которому вы "
+"проголосовали в %(team_name)s"
+
+#: .\templates\cosinnus_event\single_event_detailed.html:75
+msgid "Delete Event"
+msgstr "Удалить событие"
+
+#: .\templates\cosinnus_event\single_event_detailed.html:89
+msgid "(Canceled!)"
+msgstr "(Отменено!)"
+
+#: .\templates\cosinnus_event\single_event_detailed.html:124
+msgid "(No description set)"
+msgstr "(Описание отсутствует)"
+
+#: .\templates\cosinnus_event\widgets\event_widget.html:31
+msgid "More"
+msgstr "Больше"
+
+#: .\templates\cosinnus_event\widgets\event_widget_form.html:14
+msgid "Upcoming events"
+msgstr "Предстоящие события"
+
+#: .\views.py:130
+#, python-format
+msgid "Event \"%(title)s\" was edited successfully."
+msgstr "Cобытие \"%(title)s\" отредактировано"
+
+#: .\views.py:131
+#, python-format
+msgid "Event \"%(title)s\" could not be edited."
+msgstr "Невозможно отредактировать событие \"%(title)s\""
+
+#: .\views.py:173
+#, python-format
+msgid "Unscheduled event \"%(title)s\" was edited successfully."
+msgstr "Предложение даты \"%(title)s\" отредактировано"
+
+#: .\views.py:174
+#, python-format
+msgid "Unscheduled event \"%(title)s\" could not be edited."
+msgstr "Невозможно отредактировать предложение даты \"%(title)s\""
+
+#: .\views.py:189
+#, python-format
+msgid "Event \"%(title)s\" was added successfully."
+msgstr "Cобытие \"%(title)s\" добавлено"
+
+#: .\views.py:190
+#, python-format
+msgid "Event \"%(title)s\" could not be added."
+msgstr "Невозможно добавить событие \"%(title)s\" "
+
+#: .\views.py:204
+#, python-format
+msgid "Unscheduled event \"%(title)s\" was added successfully."
+msgstr "Предложение по дате \"%(title)s\" добавлено"
+
+#: .\views.py:205
+#, python-format
+msgid "Unscheduled event \"%(title)s\" could not be added."
+msgstr "Невозможно добавить предложение по дате \"%(title)s\""
+
+#: .\views.py:217 .\views.py:250
+msgid "You should define at least one date suggestion."
+msgstr "Вы должны предложить как минимум одну дату"
+
+#: .\views.py:263
+#, python-format
+msgid "Event \"%(title)s\" was deleted successfully."
+msgstr "Cобытие \"%(title)s\" удалено."
+
+#: .\views.py:264
+#, python-format
+msgid "Event \"%(title)s\" could not be deleted."
+msgstr "Невозможно удалить событие \"%(title)s\""
+
+#: .\views.py:273
+#, python-format
+msgid "Unscheduled event \"%(title)s\" was deleted successfully."
+msgstr "Предложение по дате \"%(title)s\" удалено"
+
+#: .\views.py:274
+#, python-format
+msgid "Unscheduled event \"%(title)s\" could not be deleted."
+msgstr "Невозможно удалить предложение по дате \"%(title)s\""
+
+#: .\views.py:301
+msgid "Your votes were saved successfully."
+msgstr "Ваше голосование сохранено"
+
+#: .\views.py:302
+msgid "Your votes could not be saved."
+msgstr "Невозможно сохранить результаты вашего голосования"
+
+#: .\views.py:311 .\views.py:442
+msgid "This is event is already scheduled. You cannot vote for it any more."
+msgstr "Дата этого события уже назначена. Вы больше не можете голосовать"
+
+#: .\views.py:434
+msgid "The complete request can only be sent via POST!"
+msgstr "Полный запрос может быть отправлен только по почте!"
+
+#: .\views.py:445
+msgid "Event cannot be completed: No date was supplied."
+msgstr "Невозможно внести событие. Отсутствует дата"
+
+#: .\views.py:455
+msgid "The event was created successfully at the specified date."
+msgstr "Событие создано и привязано к указанной дате"
+
+#: .\views.py:471
+msgid "Upcoming events in"
+msgstr "Ближайшие события в"
+
+#: .\views.py:553
+msgid "Your comment was added successfully."
+msgstr "Ваш комментарий добавлен"
+
+#: .\views.py:593
+msgid "Your comment was deleted successfully."
+msgstr "Ваш комментарий удален"

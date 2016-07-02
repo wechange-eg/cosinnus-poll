@@ -1,0 +1,7 @@
+include AUTHORS
+include LICENSE
+include README
+recursive-include cosinnus_event/locale *
+recursive-include cosinnus_event/migrations *
+recursive-include cosinnus_event/static *
+recursive-include cosinnus_event/templates *
