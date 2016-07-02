@@ -1,4 +1,4 @@
-{% extends "cosinnus_event/base.html" %}
+{% extends "cosinnus_poll/base.html" %}
 {% load i18n static cosinnus_tags widget_tweaks %}
 
 {% block page_title %}
@@ -9,12 +9,12 @@
 {% block breadcrumb %}
   {{ block.super }}
   <li class="active">
-    {% blocktrans with title=event.title %}Vote for {{ title }}{% endblocktrans %}
+    {% blocktrans with title=poll.title %}Vote for {{ title }}{% endblocktrans %}
   </li>
 {% endblock %}
 
 {% block leftnav %}
-    {% include "cosinnus_event/leftnav.html" with return_to="doodle" %}
+    {% include "cosinnus_poll/leftnav.html" with return_to="doodle" %}
 {% endblock leftnav %}
 
 {% block content %}
@@ -23,39 +23,39 @@
 	    <!-- a box with semi transparent background -->
 		<div class="content-box">
 	       
-	        {% include "cosinnus_event/single_event_detailed.html" with event=event hide_control_buttons="True" %}
+	        {% include "cosinnus_poll/single_poll_detailed.html" with poll=poll hide_control_buttons="True" %}
 	
 	        <div class="doodle-vote-table">
-	            {% if event.state == 1 %}
-	                <!--{% trans "This event has already been scheduled. Voting is closed." %}-->
-	                {% include 'cosinnus/common/empty_button.html' with message="This event has already been scheduled. Voting is closed." %}
-	            {% elif event.state == 3 %}
-	                <!--{% trans "This event has been canceled. Voting is closed." %}-->
-	                {% include 'cosinnus/common/empty_button.html' with message="This event has been canceled. Voting is closed." %}
-	            {% elif suggestions_grouped %}
+	            {% if poll.state == 1 %}
+	                <!--{% trans "This poll has already been scheduled. Voting is closed." %}-->
+	                {% include 'cosinnus/common/empty_button.html' with message="This poll has already been scheduled. Voting is closed." %}
+	            {% elif poll.state == 3 %}
+	                <!--{% trans "This poll has been canceled. Voting is closed." %}-->
+	                {% include 'cosinnus/common/empty_button.html' with message="This poll has been canceled. Voting is closed." %}
+	            {% elif options_grouped %}
 		            <!-- width = n*54-4 -->
 		            {% if not votes_user_grouped %}
 	                    <div>
-	                        <!--{% trans "Nobody has voted for this event poll yet." %}-->
+	                        <!--{% trans "Nobody has voted for this poll poll yet." %}-->
 	                        {% include 'cosinnus/common/empty_button.html' with message="Nobody has voted for this doodle yet." %}
 	                    </div>
 		            {% endif %}
 		            
 		            <div>
 		                <div></div>
-		                {% for suggestions in suggestions_grouped %}
-				            <div class="doodle-vote-date" style="min-width: {{suggestions|length|multiply:54|subtract:4}}px;" title="{{ suggestions.0.from_date|date:COSINNUS_DJANGO_DATETIME_FORMAT }}">
-			                    &nbsp;{{ suggestions.0.from_date|date:"D" }}<br/>&nbsp;{{ suggestions.0.from_date|date:COSINNUS_DJANGO_DATE_SHORT_CLEAR_FORMAT }}
+		                {% for options in options_grouped %}
+				            <div class="doodle-vote-date" style="min-width: {{options|length|multiply:54|subtract:4}}px;" title="{{ options.0.from_date|date:COSINNUS_DJANGO_DATETIME_FORMAT }}">
+			                    &nbsp;{{ options.0.from_date|date:"D" }}<br/>&nbsp;{{ options.0.from_date|date:COSINNUS_DJANGO_DATE_SHORT_CLEAR_FORMAT }}
 			                </div>
 				        {% endfor %}
 		            </div>
 		
 		            <div>
 		                <div></div>
-		                {% for suggestions in suggestions_grouped %}
-		                    {% for suggestion in suggestions %} 
+		                {% for options in options_grouped %}
+		                    {% for option in options %} 
 			                    <div class="doodle-vote-time">
-				                    &nbsp;{{ suggestion.from_date|date:COSINNUS_DJANGO_TIME_FORMAT }}
+				                    &nbsp;{{ option.from_date|date:COSINNUS_DJANGO_TIME_FORMAT }}
 				                </div>
 			                {% endfor %}
 		                {% endfor %}
@@ -101,17 +101,17 @@
 				        {% endfor %}
 		            </div>
 		            
-		            {% if user|has_write_access:event %}
-			            <h2>{% trans "Create an event from one of the suggestions" %}</h2>
+		            {% if user|has_write_access:poll %}
+			            <h2>{% trans "Create an poll from one of the options" %}</h2>
 				            <div>
 				                <div></div>
-				                {% for suggestions in suggestions_grouped %}
-			                        {% for suggestion in suggestions %} 
+				                {% for options in options_grouped %}
+			                        {% for option in options %} 
 				                        <div>
-								            <form action="{% group_url 'cosinnus:event:doodle-complete' group=group slug=event.slug suggestion_id=suggestion.pk %}" method="post" class="form-horizontal">
+								            <form action="{% group_url 'cosinnus:poll:doodle-complete' group=group slug=poll.slug option_id=option.pk %}" method="post" class="form-horizontal">
 					                        {% csrf_token %}
 					                        {{ formset.management_form }}
-							                    <button type="submit" class="doodle-vote-eventbutton" title="{% blocktrans %}Set the date to {{ suggestion }}.{% endblocktrans %}">
+							                    <button type="submit" class="doodle-vote-pollbutton" title="{% blocktrans %}Set the date to {{ option }}.{% endblocktrans %}">
 		                                            <i class="fa fa-calendar"></i>
 		                                        </button>
 				                            </form>
@@ -127,19 +127,19 @@
 			            <!-- width = n*54-4 -->
 			            <div>
 			                <div></div>
-			                {% for suggestions in suggestions_grouped %}
-			                    <div class="doodle-vote-date" style="min-width: {{suggestions|length|multiply:54|subtract:4}}px;" title="{{ suggestions.0.from_date|date:COSINNUS_DJANGO_DATETIME_FORMAT }}">
-			                        &nbsp;{{ suggestions.0.from_date|date:"D" }}<br/>&nbsp;{{ suggestions.0.from_date|date:COSINNUS_DJANGO_DATE_SHORT_CLEAR_FORMAT }}
+			                {% for options in options_grouped %}
+			                    <div class="doodle-vote-date" style="min-width: {{options|length|multiply:54|subtract:4}}px;" title="{{ options.0.from_date|date:COSINNUS_DJANGO_DATETIME_FORMAT }}">
+			                        &nbsp;{{ options.0.from_date|date:"D" }}<br/>&nbsp;{{ options.0.from_date|date:COSINNUS_DJANGO_DATE_SHORT_CLEAR_FORMAT }}
 			                    </div>
 			                {% endfor %}
 			            </div>
 			
 			            <div>
 			                <div></div>
-			                {% for suggestions in suggestions_grouped %}
-			                    {% for suggestion in suggestions %} 
+			                {% for options in options_grouped %}
+			                    {% for option in options %} 
 			                        <div class="doodle-vote-time">
-			                            &nbsp;{{ suggestion.from_date|date:COSINNUS_DJANGO_TIME_FORMAT }}
+			                            &nbsp;{{ option.from_date|date:COSINNUS_DJANGO_TIME_FORMAT }}
 			                        </div>
 			                    {% endfor %}
 			                {% endfor %}
@@ -157,7 +157,7 @@
 				                {% for forms in formset_forms_grouped %}
 				                    {% for form in forms %}
 				                        {% captureas choice_word %}{% if form.choice.value == 2 %}yes{% elif form.choice.value == 1 %}maybe{% else %}no{% endif %}{% endcaptureas %}
-				                        {{ form.suggestion.as_widget }}
+				                        {{ form.option.as_widget }}
 				                        <div class="doodle-vote-{{choice_word}}">
 							                <a href="#" data-doodle-option="yes">{% if form.choice.value == 2 %}<strong>{% endif %}{% trans "Yes" %}{% if form.choice.value == 2 %}</strong>{% endif %}</a>
 							                <a href="#" data-doodle-option="maybe">{% if form.choice.value == 1 %}<strong>{% endif %}{% trans "Maybe" %}{% if form.choice.value == 1 %}</strong>{% endif %}</a>
@@ -172,15 +172,15 @@
 	                {% endif %}
 		            
 	            {% else %}
-	                {% comment %} No suggestions were added {% endcomment %}
-	                <!-- {% trans "There are no date suggestions for this event poll yet!" %} -->
-	                {% include 'cosinnus/common/empty_button.html' with message="There are no date suggestions for this doodle yet!" %}
+	                {% comment %} No options were added {% endcomment %}
+	                <!-- {% trans "There are no date options for this poll poll yet!" %} -->
+	                {% include 'cosinnus/common/empty_button.html' with message="There are no date options for this doodle yet!" %}
 	            {% endif %}
 	        </div><!-- table -->
 	
 	    </div><!-- content-box -->
 	
-	    {% if user.is_authenticated and user|has_read_access:event and suggestions_grouped and event.state == 2 %}
+	    {% if user.is_authenticated and user|has_read_access:poll and options_grouped and poll.state == 2 %}
 	      <button type="submit" class="btn btn-emphasized" onclick="$('#cosinnus_vote_form').submit(); return false;">
 	        <ul class="media-list">
 	          <li class="media">
@@ -196,8 +196,8 @@
 	    {% endif %}
 	    
 			
-		{% if user|has_write_access:event %}
-		  {% captureas modal_id %}deleteModal_{{event.slug}}{% endcaptureas %}
+		{% if user|has_write_access:poll %}
+		  {% captureas modal_id %}deleteModal_{{poll.slug}}{% endcaptureas %}
 		  <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{modal_id}}">
 		    <ul class="media-list">
 		      <li class="media">
@@ -211,14 +211,14 @@
 		    </ul>
 		  </button>
 		  
-		  {% captureas label %}{% blocktrans with title=event.title %}Do you really want to delete unscheduled event „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
-		  {% captureas title %}{% trans "Delete unscheduled event" %}{% endcaptureas %}
-		  {% captureas action %}{% group_url 'cosinnus:event:doodle-delete' group=group slug=event.slug%}{% endcaptureas %}
+		  {% captureas label %}{% blocktrans with title=poll.title %}Do you really want to delete unscheduled poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
+		  {% captureas title %}{% trans "Delete unscheduled poll" %}{% endcaptureas %}
+		  {% captureas action %}{% group_url 'cosinnus:poll:doodle-delete' group=group slug=poll.slug%}{% endcaptureas %}
 		
 		  {% include "cosinnus/modal_box.html" with id=modal_id label=label title=title form_action=action %}
 		  
 		  
-		  <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:event:doodle-edit" group=group slug=event.slug %}">
+		  <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:poll:doodle-edit" group=group slug=poll.slug %}">
 		    <ul class="media-list">
 		      <li class="media">
 		        <a class="pull-left" href="#">
@@ -234,7 +234,7 @@
 		
 	</div> <!-- buttons and content box -->
 	
-	{% include 'cosinnus_event/event_comments.html' with event=event full_view="True" no_indent="True" comments_expanded="True" %}
+	{% include 'cosinnus_poll/poll_comments.html' with poll=poll full_view="True" no_indent="True" comments_expanded="True" %}
 	
 		
 {% endblock content %}

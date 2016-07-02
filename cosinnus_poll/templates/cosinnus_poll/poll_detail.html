@@ -1,20 +1,20 @@
-{% extends "cosinnus_event/base.html" %}
+{% extends "cosinnus_poll/base.html" %}
 {% load i18n static cosinnus_tags widget_tweaks %}
 
 {% block page_title %}
-{% trans "Event" %} {{ object.title }}{{ block.super }}
+{% trans "Poll" %} {{ object.title }}{{ block.super }}
 {% endblock page_title %}
 
 {% block breadcrumb %}
         {{ block.super }}
-            <li class="active">{% trans "Event" %} {{ object.title }}</li>
+            <li class="active">{% trans "Poll" %} {{ object.title }}</li>
 {% endblock %}
 
 {% block leftnav %}
     {% if object.state == 2 %}
-        {% include "cosinnus_event/leftnav.html" with return_to="doodle" %}
+        {% include "cosinnus_poll/leftnav.html" with return_to="doodle" %}
     {% else %}
-        {% include "cosinnus_event/leftnav.html" with return_to="events" %}
+        {% include "cosinnus_poll/leftnav.html" with return_to="polls" %}
     {% endif %}
 {% endblock leftnav %}
 
@@ -23,9 +23,9 @@
 	<!-- a box with semi transparent background -->
 	<div class="content-box large-space">
 	   
-	   {% include "cosinnus_event/single_event_detailed.html" with event=object %}
+	   {% include "cosinnus_poll/single_poll_detailed.html" with poll=object %}
 	   
-	   {% include 'cosinnus_event/event_comments.html' with event=event full_view="True" no_indent="True" comments_expanded="True" %}
+	   {% include 'cosinnus_poll/poll_comments.html' with poll=poll full_view="True" no_indent="True" comments_expanded="True" %}
 	
 	</div><!-- content-box -->
 	    

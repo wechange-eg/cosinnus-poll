@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
-from django.utils.timezone import now
 
 from taggit.models import TaggedItem
 
@@ -13,9 +12,6 @@ class PollManager(models.Manager):
         # Django 1.5: get_query_set, 1.7: get_queryset
         qs = getattr(self, 'get_queryset', self.get_query_set)()
         return qs.filter(public=True, state=self.model.STATE_SCHEDULED)
-
-    def upcoming(self, count):
-        return self.public().filter(to_date__gte=now()).order_by("from_date").all()[:count]
 
     def tags(self):
         poll_type = ContentType.objects.get(app_label="cosinnus_poll", model="poll")

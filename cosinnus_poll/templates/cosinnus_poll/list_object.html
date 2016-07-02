@@ -4,30 +4,30 @@
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left square-date-icon" href="#">
-                  {% if event.state == 2 %}
+                  {% if poll.state == 2 %}
                     <i class="fa  fa-calendar"></i>
                   {% else %}
-                    <div>{{ event.from_date|date:"d" }}</div>
-                    <div>{{ event.from_date|date:"M" }}</div>
+                    <div>{{ poll.from_date|date:"d" }}</div>
+                    <div>{{ poll.from_date|date:"M" }}</div>
                   {% endif %}
                 </a>
                 <a class="pull-right fadedown-clickarea" href="#">
                     <i class="fa fa-chevron-down"></i>
                 </a>
-                {% if event.state == 2 %}
-                  {% captureas detail_url %}{% group_url 'cosinnus:event:doodle-vote' group=group slug=event.slug%}{% endcaptureas %}
+                {% if poll.state == 2 %}
+                  {% captureas detail_url %}{% group_url 'cosinnus:poll:doodle-vote' group=group slug=poll.slug%}{% endcaptureas %}
                 {% else %}
-                  {% captureas detail_url %}{{ event.get_absolute_url }}{% endcaptureas %}
+                  {% captureas detail_url %}{{ poll.get_absolute_url }}{% endcaptureas %}
                 {% endif %}
                 <a class="pull-right" href="{{ detail_url }}">
                     <i class="fa fa-chain"></i>
                 </a>
                 <div class="media-body">
-                    {% with creator=event.creator %}
+                    {% with creator=poll.creator %}
                         <span class="annotation">{% trans "by" %} <a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a></span>
                     {% endwith %}
                     <a href="{{ detail_url }}">
-                        {{ event.title }}
+                        {{ poll.title }}
                     </a>
                 </div>
             </li>
@@ -41,14 +41,14 @@
                     <i class="fa fa-clock-o"></i>
                 </a>
                 <div class="media-body">
-                    <span class="moment-data-date" data-date="{{ event.from_date|date:"c" }}" title="{{ event.from_date }}"></span>
+                    <span class="moment-data-date" data-date="{{ poll.from_date|date:"c" }}" title="{{ poll.from_date }}"></span>
                     –
-                    <span class="moment-data-date" data-date="{{ event.to_date|date:"c" }}" title="{{ event.to_date }}"></span>
+                    <span class="moment-data-date" data-date="{{ poll.to_date|date:"c" }}" title="{{ poll.to_date }}"></span>
                 </div>
             </li>
         </ul>
     </div>
-    {% if event.media_tag_object.location %}
+    {% if poll.media_tag_object.location %}
     <div class="btn btn-white w100">
         <ul class="media-list">
             <li class="media">
@@ -56,14 +56,14 @@
                     <i class="fa fa-map-marker"></i>
                 </a>
                 <div class="media-body">
-    			      <a href="{{ event.media_tag_object.location_url }}" target="_blank">{{ event.media_tag_object.location }}</a>
+    			      <a href="{{ poll.media_tag_object.location_url }}" target="_blank">{{ poll.media_tag_object.location }}</a>
                 </div>
             </li>
         </ul>
     </div>
     {% endif %}
-    {% if event.note and event.note|length > 0 %}
-    <div class="btn btn-white w100 {% if not event.url %}large-space{% endif %}">
+    {% if poll.description and poll.description|length > 0 %}
+    <div class="btn btn-white w100 {% if not poll.url %}large-space{% endif %}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left" href="#">
@@ -71,14 +71,14 @@
                 </a>
                 <div class="media-body">
                     <p>
-                        {{ event.note|urlizetrunc:25|url_target_blank|linebreaksbr }}
+                        {{ poll.description|urlizetrunc:25|url_target_blank|linebreaksbr }}
                     </p>
                 </div>
             </li>
         </ul>
     </div>
     {% endif %}
-    {% if event.url %}
+    {% if poll.url %}
     <div class="btn btn-white w100 large-space">
         <ul class="media-list">
             <li class="media">
@@ -86,7 +86,7 @@
                     <i class="fa fa-chain"></i>
                 </a>
                 <div class="media-body">
-                    <a href="{{ event.url }}">{{ event.url }}</a>
+                    <a href="{{ poll.url }}">{{ poll.url }}</a>
                 </div>
             </li>
         </ul>
@@ -94,10 +94,10 @@
     {% endif %}
 
 
-    {% include 'cosinnus/media_tags_readonly.html' with object=event %}
+    {% include 'cosinnus/media_tags_readonly.html' with object=poll %}
     
-    {% if user|has_write_access:event %}
-        {% captureas modal_id %}deleteModal_{{event.slug}}{% endcaptureas %}
+    {% if user|has_write_access:poll %}
+        {% captureas modal_id %}deleteModal_{{poll.slug}}{% endcaptureas %}
         <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{modal_id}}">
             <ul class="media-list">
                 <li class="media">
@@ -110,10 +110,10 @@
                 </li>
             </ul>
         </button>
-      {% if event.state == 2 %}
-        {% captureas edit_url %}{% group_url "cosinnus:event:doodle-edit" group=group slug=event.slug %}{% endcaptureas %}
+      {% if poll.state == 2 %}
+        {% captureas edit_url %}{% group_url "cosinnus:poll:doodle-edit" group=group slug=poll.slug %}{% endcaptureas %}
       {% else %}
-        {% captureas edit_url %}{% group_url "cosinnus:event:event-edit" group=group slug=event.slug %}{% endcaptureas %}
+        {% captureas edit_url %}{% group_url "cosinnus:poll:poll-edit" group=group slug=poll.slug %}{% endcaptureas %}
       {% endif %}
         <button type="button" class="btn btn-emphasized" href="{{ edit_url }}">
             <ul class="media-list">
@@ -129,19 +129,19 @@
         </button> 
     {% endif %}
     
-    {% include 'cosinnus/feedback/report_button_btn.html' with object=event %}
+    {% include 'cosinnus/feedback/report_button_btn.html' with object=poll %}
     
 </div><!-- fadedown -->
 
-{% if user|has_write_access:event %}    
-      {% if event.state == 2 %}
-        {% captureas label %}{% blocktrans with title=event.title %}Do you really want to delete unscheduled event „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
-        {% captureas title %}{% trans "Delete unscheduled event" %}{% endcaptureas %}
-        {% captureas action %}{% group_url 'cosinnus:event:doodle-delete' group=group slug=event.slug%}{% endcaptureas %}
+{% if user|has_write_access:poll %}    
+      {% if poll.state == 2 %}
+        {% captureas label %}{% blocktrans with title=poll.title %}Do you really want to delete unscheduled poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
+        {% captureas title %}{% trans "Delete unscheduled poll" %}{% endcaptureas %}
+        {% captureas action %}{% group_url 'cosinnus:poll:doodle-delete' group=group slug=poll.slug%}{% endcaptureas %}
       {% else %}
-        {% captureas label %}{% blocktrans with title=event.title %}Do you really want to delete event „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
-        {% captureas title %}{% trans "Delete event" %}{% endcaptureas %}
-        {% captureas action %}{% group_url 'cosinnus:event:event-delete' group=group slug=event.slug%}{% endcaptureas %}
+        {% captureas label %}{% blocktrans with title=poll.title %}Do you really want to delete poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
+        {% captureas title %}{% trans "Delete poll" %}{% endcaptureas %}
+        {% captureas action %}{% group_url 'cosinnus:poll:poll-delete' group=group slug=poll.slug%}{% endcaptureas %}
       {% endif %}
 
     {% include "cosinnus/modal_box.html" with id=modal_id label=label title=title form_action=action %}

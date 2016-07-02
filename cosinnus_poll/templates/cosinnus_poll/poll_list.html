@@ -1,8 +1,8 @@
-{% extends "cosinnus_event/base.html" %}
+{% extends "cosinnus_poll/base.html" %}
 {% load i18n static cosinnus_tags widget_tweaks %}
 
 {% block page_title %}
-{% trans "Events" %} {{ block.super }}
+{% trans "Polls" %} {{ block.super }}
 {% endblock page_title %}
 
 {% block breadcrumb %}
@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block leftnav %}
-    {% include "cosinnus_event/leftnav.html" %}
+    {% include "cosinnus_poll/leftnav.html" %}
 {% endblock leftnav %}
 
 {% block content %}
@@ -28,10 +28,10 @@
 		            <ul class="media-list">
 		                <li class="media">
 		                    <div class="media-body">
-					            <span>{% trans "Copy this iCal-link into your calendar application to import current events:" %}</span>
+					            <span>{% trans "Copy this iCal-link into your calendar application to import current polls:" %}</span>
 					        </div>
 		                    <div class="media-body media-body-form-control">
-		                        <input class="form-control" onclick="this.focus();this.select()" readonly="readonly" value="{{ COSINNUS_BASE_URL|slice:":-1" }}{% group_url 'cosinnus:event:feed' group=group %}?{% cosinnus_user_token SETTINGS.COSINNUS_EVENT_TOKEN_EVENT_FEED %}">
+		                        <input class="form-control" onclick="this.focus();this.select()" readonly="readonly" value="{{ COSINNUS_BASE_URL|slice:":-1" }}{% group_url 'cosinnus:poll:feed' group=group %}?{% cosinnus_user_token SETTINGS.COSINNUS_EVENT_TOKEN_EVENT_FEED %}">
 		                    </div>
 		                </li>
 		            </ul>
@@ -45,16 +45,16 @@
         <div class="big-calendar large-space"></div>
         
         <script type="application/javascript">
-	        var cosinnus_calendarEvents = [
-		        {% for event in object_list %}
-		            {% if event.from_date %}
+	        var cosinnus_calendarPolls = [
+		        {% for poll in object_list %}
+		            {% if poll.from_date %}
 	                {
-	                    title: $.cosinnus.decodeEntities('{{ event.title }}'),
-	                    start: moment("{{ event.from_date|date:"c"}}"),
-	                    {% if event.to_date %}
-	                    end: moment("{{ event.to_date|date:"c"}}"),
+	                    title: $.cosinnus.decodeEntities('{{ poll.title }}'),
+	                    start: moment("{{ poll.from_date|date:"c"}}"),
+	                    {% if poll.to_date %}
+	                    end: moment("{{ poll.to_date|date:"c"}}"),
 	                    {% endif %}
-	                    url: '{% group_url "cosinnus:event:event-detail" group=group slug=event.slug %}'
+	                    url: '{% group_url "cosinnus:poll:poll-detail" group=group slug=poll.slug %}'
 	                },
 	                {% endif %}
 	            
@@ -64,7 +64,7 @@
         </script>
         
         {% if request.user and request.user.is_authenticated %} 
-        <form method="GET" action="{% group_url 'cosinnus:event:event-add' group=group %}">
+        <form method="GET" action="{% group_url 'cosinnus:poll:poll-add' group=group %}">
 	        <div type="button" class="btn btn-default w100 large-space">
 	            <ul class="media-list">
 	                <li class="media">
@@ -72,7 +72,7 @@
 	                        <i class="fa fa-plus"></i>
 	                    </a>
 	                    <div class="media-body media-body-form-control">
-	                        {% captureas placeholder %}{% trans "Enter the title for a new event or select a day in the Calendar." %}{% endcaptureas %}
+	                        {% captureas placeholder %}{% trans "Enter the title for a new poll or select a day in the Calendar." %}{% endcaptureas %}
 	                        <input class="form-control next-button-is-for-sending"
 	                            placeholder="{{ placeholder }}" autocomplete="off"
 	                            name="title"
@@ -102,7 +102,7 @@
                         <i class="fa fa-calendar"></i>
                     </a>
                     <div class="media-body">
-                        {% trans "Export event feed" %}
+                        {% trans "Export poll feed" %}
                     </div>
                 </li>
             </ul>
@@ -113,22 +113,22 @@
 	</div><!-- content-box -->
 	
 	{% if request.user and request.user.is_authenticated %} 
-	    <!-- Modal: Really sure you want to add the event? -->
-	    <div class="modal fade" id="confirmEventModal" tabindex="1" role="dialog" aria-labelledby="confirmEventModalLabel" aria-hidden="true">
+	    <!-- Modal: Really sure you want to add the poll? -->
+	    <div class="modal fade" id="confirmPollModal" tabindex="1" role="dialog" aria-labelledby="confirmPollModalLabel" aria-hidden="true">
 	        <div class="modal-dialog">
 	            <div class="modal-content">
 	                <div class="modal-header">
 	                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 	                        <i class="fa fa-times"></i>
 	                    </button>
-	                    <h4 class="modal-title" id="confirmEventModalLabel">
+	                    <h4 class="modal-title" id="confirmPollModalLabel">
 	                        <i class="fa fa-calendar"></i>
-	                        {% trans "Create Event" %}
+	                        {% trans "Create Poll" %}
 	                    </h4>
 	                </div>
 	                <div class="modal-body">
-	                    <span id="calendarConfirmEventOneday">{% trans "Would you like to create an event" %} {% trans "on" %}: <strong id="calendarConfirmEventDate" /></strong>?</span>
-	                    <span id="calendarConfirmEventMultiday">{% trans "Would you like to create an event" %} {% trans "from" %} <strong id="calendarConfirmEventStart" /></strong> {% trans "until" %} <strong id="calendarConfirmEventEnd" /></strong>?</span>
+	                    <span id="calendarConfirmPollOneday">{% trans "Would you like to create an poll" %} {% trans "on" %}: <strong id="calendarConfirmPollDate" /></strong>?</span>
+	                    <span id="calendarConfirmPollMultiday">{% trans "Would you like to create an poll" %} {% trans "from" %} <strong id="calendarConfirmPollStart" /></strong> {% trans "until" %} <strong id="calendarConfirmPollEnd" /></strong>?</span>
 	                    
 	                </div>
 	                <div class="modal-footer">
@@ -145,10 +145,10 @@
 	                        </ul>
 	                    </button>
 	                    
-	                    <form method="GET" action="{% group_url 'cosinnus:event:event-add' group=group %}">
+	                    <form method="GET" action="{% group_url 'cosinnus:poll:poll-add' group=group %}">
 	                    <input type="hidden" name="start" id="calendarConfirmStartDate" />
 	                    <input type="hidden" name="end" id="calendarConfirmEndDate" />
-	                    <button type="submit" class="btn btn-emphasized" id="calendarConfirmEventButton">
+	                    <button type="submit" class="btn btn-emphasized" id="calendarConfirmPollButton">
 	                        <ul class="media-list">
 	                            <li class="media">
 	                                <a class="pull-left" href="#">

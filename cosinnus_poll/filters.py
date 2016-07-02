@@ -17,7 +17,6 @@ class PollFilter(CosinnusFilterSet):
         model = Poll
         fields = ['creator']
         order_by = (
-            ('from_date', _('Soonest Upcoming')),
             ('-created', _('Newest Created')),
             ('title', _('Title')),
         )

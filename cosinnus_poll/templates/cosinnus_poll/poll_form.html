@@ -1,11 +1,11 @@
-{% extends "cosinnus_event/base.html" %}
+{% extends "cosinnus_poll/base.html" %}
 {% load i18n static cosinnus_tags widget_tweaks %}
 
 {% block page_title %}
 	{% if form_view == "add" %}
-	  {% trans "Add event" %}
+	  {% trans "Add poll" %}
 	{% elif form_view == "edit" %}
-	  {% trans "Edit" %} {{ event.title }}
+	  {% trans "Edit" %} {{ poll.title }}
 	{% endif %}
 {{ block.super }}
 {% endblock page_title %}
@@ -14,15 +14,15 @@
         {{ block.super }}
         <li class="active">
 	        {% if form_view == "add" %}
-			  {% trans "Add event" %}
+			  {% trans "Add poll" %}
 			{% elif form_view == "edit" %}
-			  {% trans "Edit" %} {{ event.title }}
+			  {% trans "Edit" %} {{ poll.title }}
 			{% endif %}
         </li>
 {% endblock %}
 
 {% block leftnav %}
-    {% include "cosinnus_event/leftnav.html" with return_to="events"%}
+    {% include "cosinnus_poll/leftnav.html" with return_to="polls"%}
 {% endblock leftnav %}
 
 {% block content %}
@@ -41,7 +41,7 @@
                             {{ form.forms.media_tag.non_field_errors }}
 		                    
 		                    {{ form.forms.obj.title.errors }}
-	                        {% captureas placeholder %}{% trans "Enter a title for the new event." %}{% endcaptureas %}
+	                        {% captureas placeholder %}{% trans "Enter a title for the new poll." %}{% endcaptureas %}
                             {% if request.GET.title %}
                                 {% render_field form.forms.obj.title class+="form-control" placeholder=placeholder value=request.GET.title %}
                             {% else %}
@@ -105,16 +105,16 @@
 	                        
 	                        <ol class="input-area">
                                 <li class="w100">
-                                    {{ form.forms.obj.note.errors }}
-		                            {% captureas placeholder %}{% trans "Enter a description for the event (optional)." %}{% endcaptureas %}
-		                            {% render_field form.forms.obj.note class+="form-control" placeholder=placeholder %}
+                                    {{ form.forms.obj.description.errors }}
+		                            {% captureas placeholder %}{% trans "Enter a description for the poll (optional)." %}{% endcaptureas %}
+		                            {% render_field form.forms.obj.description class+="form-control" placeholder=placeholder %}
                                 </li>
                             </ol>
 	                        
 	                        <ol class="input-area">
                                 <li class="w100">
                                     {{ form.forms.obj.url.errors }}
-		                            {% captureas placeholder %}{% trans "External Link for the event (optional)." %}{% endcaptureas %}
+		                            {% captureas placeholder %}{% trans "External Link for the poll (optional)." %}{% endcaptureas %}
 		                            {% render_field form.forms.obj.url class+="form-control" placeholder=placeholder %}
                                 </li>
                             </ol>

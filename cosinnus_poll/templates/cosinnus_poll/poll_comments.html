@@ -3,7 +3,7 @@
 {% captureas button_classes %}{% if full_view %}btn btn-default w100 {% if not no_indent %}indented{% endif %}{% else %}btn btn-default dashboard-appwidget-contentline-extra-indented{% endif %}{% endcaptureas %}
 
 <div class="{% if not comments_expanded == "True" %}fadedown {% endif %}large-space"  >
-    {% with comments=event.comments.all %}
+    {% with comments=poll.comments.all %}
             <div type="button" class="{{ button_classes }}">
                 <ul class="media-list fine-space">
                     <li class="media">
@@ -28,7 +28,7 @@
                                         {% comment %} Like button
                                         <a href="#">Empfehlen</a>
                                         {% endcomment %}
-                                        {% if comments or user|can_create_objects_in:event.group %}
+                                        {% if comments or user|can_create_objects_in:poll.group %}
                                             <a href="#">{% trans "Comments" %}</a>
                                         {% endif %}
 
@@ -63,7 +63,7 @@
                                 <a href="{{ comment.get_absolute_url }}"><span class="annotation moment-data-date" data-date="{{ comment.created_on|date:'c' }}" ></span></a>
                                 <div class="font11px regular-space">
                                     {% if user|has_write_access:comment %}
-                                        <form id="delete_comment_form_{{ comment.pk }}" action="{% group_url 'cosinnus:event:comment-delete' group=comment.event.group pk=comment.pk %}" method="post" class="form-horizontal">
+                                        <form id="delete_comment_form_{{ comment.pk }}" action="{% group_url 'cosinnus:poll:comment-delete' group=comment.poll.group pk=comment.pk %}" method="post" class="form-horizontal">
                                             {% csrf_token %}
                                             <a class="pull-right" href="#" onclick="$('#delete_comment_form_{{ comment.pk }}').submit(); return false;" title="{% trans "Delete" %}"><i class="fa fa-times"></i></a>
                                         </form>
@@ -77,8 +77,8 @@
             
             {% endfor %}
             
-            {% if user|can_create_objects_in:event.group %}
-                <form action="{% group_url 'cosinnus:event:comment' group=event.group event_slug=event.slug %}" method="post" class="form-horizontal">
+            {% if user|can_create_objects_in:poll.group %}
+                <form action="{% group_url 'cosinnus:poll:comment' group=poll.group poll_slug=poll.slug %}" method="post" class="form-horizontal">
                     {% csrf_token %}
             
                     <div type="button" class="{{ button_classes }}">

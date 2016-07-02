@@ -9,7 +9,7 @@ from cosinnus_poll.models import Poll
 
 
 class PollIndex(BaseTaggableObjectIndex, indexes.Indexable):
-    note = indexes.CharField(model_attr='note', null=True)
+    description = indexes.CharField(model_attr='description', null=True)
     location = indexes.CharField(model_attr='location', null=True)
     street = indexes.CharField(model_attr='street', null=True)
     zipcode = indexes.CharField(model_attr='zipcode', null=True)

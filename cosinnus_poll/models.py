@@ -16,7 +16,6 @@ from django.utils.functional import cached_property
 from django.utils.timezone import localtime, now
 from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 
-from osm_field.fields import OSMField, LatitudeField, LongitudeField
 
 from cosinnus_poll.conf import settings
 from cosinnus_poll.managers import PollManager
@@ -28,84 +27,58 @@ from django.contrib.auth import get_user_model
 from cosinnus.utils.files import _get_avatar_filename
 
 
-def localize(value, format):
-    if (not format) or ("FORMAT" in format):
-        return date_format(localtime(value), format)
-    else:
-        return dateformat.format(localtime(value), format)
-
 def get_poll_image_filename(instance, filename):
     return _get_avatar_filename(instance, filename, 'images', 'polls')
+
 
 @python_2_unicode_compatible
 class Poll(BaseTaggableObjectModel):
 
     SORT_FIELDS_ALIASES = [
         ('title', 'title'),
-        ('from_date', 'from_date'),
-        ('to_date', 'to_date'),
-        ('city', 'city'),
-        ('state', 'state'),
     ]
 
-    STATE_SCHEDULED = 1
-    STATE_VOTING_OPEN = 2
-    STATE_CANCELED = 3
+    STATE_VOTING_OPEN = 1
+    STATE_CLOSED = 2
+    STATE_ARCHIVED = 3
 
     STATE_CHOICES = (
-        (STATE_SCHEDULED, _('Scheduled')),
         (STATE_VOTING_OPEN, _('Voting open')),
-        (STATE_CANCELED, _('Canceled')),
+        (STATE_CLOSED, _('Voting closed')),
+        (STATE_ARCHIVED, _('Poll archived')),
     )
-
-    from_date = models.DateTimeField(
-        _('Start'), default=None, blank=True, null=True, editable=True)
-
-    to_date = models.DateTimeField(
-        _('End'), default=None, blank=True, null=True, editable=True)
 
     state = models.PositiveIntegerField(
         _('State'),
         choices=STATE_CHOICES,
         default=STATE_VOTING_OPEN,
     )
-    __state = None # pre-save purpose
-
-    note = models.TextField(_('Note'), blank=True, null=True)
-
-    suggestion = models.ForeignKey(
-        'Suggestion',
-        verbose_name=_('Poll date'),
+    description = models.TextField(_('Description'), blank=True, null=True)
+    
+    multiple_votes = models.BooleanField(_('Multiple options votable'), default=True,
+         help_text=_('Does this poll allow users to vote on multiple options or just decide for one?'))
+    can_vote_maybe = models.BooleanField(_('"Maybe" option enabled'), default=True,
+         help_text=_('Is the maybe option enabled? Ignored and defaulting to False if ``multiple_votes==False``'))
+    anyone_can_vote = models.BooleanField(_('Anyone can vote'), default=False,
+         help_text=_('If true, anyone who can see this poll can vote on it. If false, only group members can.'))
+    
+    closed_date = models.DateTimeField(
+        _('Start'), default=None, blank=True, null=True, editable=True)
+    winning_option = models.ForeignKey(
+        'Option',
+        verbose_name=_('Winning Option'),
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
         related_name='selected_name',
     )
 
-    location = OSMField(_('Location'), blank=True, null=True)
-    location_lat = LatitudeField(_('Latitude'), blank=True, null=True)
-    location_lon = LongitudeField(_('Longitude'), blank=True, null=True)
-
-    street = models.CharField(_('Street'), blank=True, max_length=50, null=True)
-
-    zipcode = models.PositiveIntegerField(_('ZIP code'), blank=True, null=True)
-
-    city = models.CharField(_('City'), blank=True, max_length=50, null=True)
-
-    public = models.BooleanField(_('Is public (on website)'), default=False)
-
-    image = models.ImageField(
-        _('Image'),
-        upload_to=get_poll_image_filename,
-        blank=True,
-        null=True)
-
-    url = models.URLField(_('URL'), blank=True, null=True)
-
     objects = PollManager()
+    
+    __state = None # pre-save purpose
 
     class Meta(BaseTaggableObjectModel.Meta):
-        ordering = ['from_date', 'to_date']
+        ordering = ['-created', '-closed_date']
         verbose_name = _('Poll')
         verbose_name_plural = _('Polls')
         
@@ -114,21 +87,11 @@ class Poll(BaseTaggableObjectModel):
         self.__state = self.state
 
     def __str__(self):
-        if self.state == Poll.STATE_SCHEDULED:
-            if self.single_day:
-                readable = _('%(poll)s (%(date)s - %(end)s)') % {
-                    'poll': self.title,
-                    'date': localize(self.from_date, 'd. F Y h:i'),
-                    'end': localize(self.to_date, 'h:i'),
-                }
-            else:
-                readable = _('%(poll)s (%(from)s - %(to)s)') % {
-                    'poll': self.title,
-                    'from': localize(self.from_date, 'd. F Y h:i'),
-                    'to': localize(self.to_date, 'd. F Y h:i'),
-                }
+        if self.state == self.STATE_VOTING_OPEN:
+            state_verbose = 'open'
         else:
-            readable = _('%(poll)s (pending)') % {'poll': self.title}
+            state_verbose = 'closed'
+        readable = _('Poll: %(poll)s (%(state)s)') % {'poll': self.title, 'state': state_verbose}
         return readable
     
     def save(self, *args, **kwargs):
@@ -136,110 +99,70 @@ class Poll(BaseTaggableObjectModel):
         super(Poll, self).save(*args, **kwargs)
 
         if created:
-            # poll/doodle was created
-            if self.state == Poll.STATE_SCHEDULED:
-                cosinnus_notifications.poll_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
-            else:
-                cosinnus_notifications.doodle_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
-        if not created and self.__state == Poll.STATE_VOTING_OPEN and self.state == Poll.STATE_SCHEDULED:
-            # poll went from being a doodle to being a real poll, so fire poll created
             cosinnus_notifications.poll_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
-        
+        if not created and self.__state == Poll.STATE_VOTING_OPEN and self.state == Poll.STATE_CLOSED:
+            # poll went from open to closed, so maybe send a notification for poll closed?
+            # TODO: create notification for poll being closed?
+            #cosinnus_notifications.poll_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
+            pass
         self.__state = self.state
 
     def get_absolute_url(self):
         kwargs = {'group': self.group, 'slug': self.slug}
-        if self.state == Poll.STATE_VOTING_OPEN:
-            return group_aware_reverse('cosinnus:poll:doodle-vote', kwargs=kwargs)
         return group_aware_reverse('cosinnus:poll:poll-detail', kwargs=kwargs)
 
-    def set_suggestion(self, sugg=None, update_fields=['from_date', 'to_date', 'state', 'suggestion']):
-        if sugg is None:
-            # No suggestion selected or remove selection
-            self.from_date = None
-            self.to_date = None
-            self.state = Poll.STATE_VOTING_OPEN
-            self.suggestion = None
-        elif sugg.poll.pk == self.pk:
-            # Make sure to not assign a suggestion belonging to another poll.
-            self.from_date = sugg.from_date
-            self.to_date = sugg.to_date
-            self.state = Poll.STATE_SCHEDULED
-            self.suggestion = sugg
+    def set_winning_option(self, winning_option=None):
+        if winning_option is None:
+            # No option selected or remove selection
+            self.winning_option = None
+        elif winning_option.poll.pk == self.pk:
+            # Make sure to not assign a option belonging to another poll.
+            self.option = winning_option
         else:
             return
-        self.save(update_fields=update_fields)
+        self.save(update_fields=['winning_option'])
 
-    @property
-    def single_day(self):
-        return localtime(self.from_date).date() == localtime(self.to_date).date()
-
-    def get_period(self):
-        if self.single_day:
-            return localize(self.from_date, "d.m.Y")
-        else:
-            return "%s - %s" % (localize(self.from_date, "d.m."), localize(self.to_date, "d.m.Y"))
-    
     @classmethod
     def get_current(self, group, user):
-        """ Returns a queryset of the current upcoming polls """
+        """ Returns a queryset of the current polls """
         qs = Poll.objects.filter(group=group)
         if user:
             qs = filter_tagged_object_queryset_for_user(qs, user)
-        return upcoming_poll_filter(qs)
-    
-    @property
-    def is_same_day(self):
-        return localtime(self.from_date).date() == localtime(self.to_date).date()
-    
-    @property
-    def is_same_time(self):
-        return self.from_date.time() == self.to_date.time()
+        return current_poll_filter(qs)
     
     def get_voters_pks(self):
         """ Gets the pks of all Users that have voted for this poll.
             Returns an empty list if nobody has voted or the poll isn't a doodle. """
-        return self.suggestions.all().values_list('votes__voter__id', flat=True).distinct()
+        return self.options.all().values_list('votes__voter__id', flat=True).distinct()
 
 
 @python_2_unicode_compatible
-class Suggestion(models.Model):
-    from_date = models.DateTimeField(
-        _('Start'), default=None, blank=False, null=False)
-
-    to_date = models.DateTimeField(
-        _('End'), default=None, blank=False, null=False)
-
+class Option(models.Model):
+    
     poll = models.ForeignKey(
         Poll,
         verbose_name=_('Poll'),
         on_delete=models.CASCADE,
-        related_name='suggestions',
+        related_name='options',
     )
+    
+    description = models.TextField(_('Description'), blank=True, null=True)
+    image = models.ImageField(
+        _('Image'),
+        upload_to=get_poll_image_filename,
+        blank=True,
+        null=True)
 
     count = models.PositiveIntegerField(
         pgettext_lazy('the subject', 'Votes'), default=0, editable=False)
 
     class Meta:
         ordering = ['poll', '-count']
-        unique_together = ('poll', 'from_date', 'to_date')
-        verbose_name = _('Suggestion')
-        verbose_name_plural = _('Suggestions')
+        verbose_name = _('Poll Option')
+        verbose_name_plural = _('Poll Options')
 
     def __str__(self):
-        if self.single_day:
-            if self.from_date == self.to_date:
-                return '%(date)s' % {
-                    'date': localize(self.from_date, 'd. F Y H:i'),
-                }
-            return '%(date)s - %(end)s' % {
-                'date': localize(self.from_date, 'd. F Y H:i'),
-                'end': localize(self.to_date, 'H:i'),
-            }
-        return '%(from)s - %(to)s' % {
-            'from': localize(self.from_date, 'd. F Y H:i'),
-            'to': localize(self.to_date, 'd. F Y H:i'),
-        }
+        return 'Poll Option for Poll id: %s' % str(getattr(self, 'poll_id', None))
 
     def get_absolute_url(self):
         return self.poll.get_absolute_url()
@@ -248,10 +171,6 @@ class Suggestion(models.Model):
         self.count = self.votes.count()
         self.save(update_fields=['count'])
 
-    @property
-    def single_day(self):
-        return localtime(self.from_date).date() == localtime(self.to_date).date()
-    
     @cached_property
     def sorted_votes(self):
         return self.votes.order_by('voter__first_name', 'voter__last_name')
@@ -269,39 +188,36 @@ class Vote(models.Model):
         (VOTE_NO, _('No')),     
     )
     
-    suggestion = models.ForeignKey(
-        Suggestion,
-        verbose_name=_('Suggestion'),
+    option = models.ForeignKey(
+        Option,
+        verbose_name=_('Option'),
         on_delete=models.CASCADE,
-        related_name='votes',
+        related_name='options',
     )
 
     voter = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         verbose_name=_('Voter'),
         on_delete=models.CASCADE,
-        related_name='votes',
+        related_name='poll_votes',
     )
     
     choice = models.PositiveSmallIntegerField(_('Vote'), blank=False, null=False,
         default=VOTE_NO, choices=VOTE_CHOICES)
     
-
     class Meta:
-        unique_together = ('suggestion', 'voter')
+        unique_together = ('option', 'voter')
         verbose_name = pgettext_lazy('the subject', 'Vote')
         verbose_name_plural = pgettext_lazy('the subject', 'Votes')
 
     def __str__(self):
-        return 'Vote for %(poll)s: %(from)s - %(to)s' % {
-            'poll': self.suggestion.poll.title,
-            'from': localize(self.suggestion.from_date, 'd. F Y h:i'),
-            'to': localize(self.suggestion.to_date, 'd. F Y h:i'),
+        return 'Vote for poll: "%(poll)s" with choice: %(choice)s' % {
+            'poll': self.option.poll.title,
+            'choice': self.choice,
         }
 
     def get_absolute_url(self):
-        return self.suggestion.poll.get_absolute_url()
-
+        return self.option.poll.get_absolute_url()
 
 
 @python_2_unicode_compatible
@@ -351,33 +267,27 @@ class Comment(models.Model):
         return self.poll.group
 
 
-
 @receiver(post_delete, sender=Vote)
 def post_vote_delete(sender, **kwargs):
     try:
-        kwargs['instance'].suggestion.update_vote_count()
-    except Suggestion.DoesNotExist:
+        kwargs['instance'].option.update_vote_count()
+    except Option.DoesNotExist:
         pass
 
 
 @receiver(post_save, sender=Vote)
 def post_vote_save(sender, **kwargs):
-    kwargs['instance'].suggestion.update_vote_count()
+    kwargs['instance'].option.update_vote_count()
 
    
-def upcoming_poll_filter(queryset):
-    """ Filters a queryset of polls for polls that begin in the future, 
-    or have an end date in the future. Will always show all polls that ended today as well. """
-    _now = now()
-    poll_horizon = datetime.datetime(_now.year, _now.month, _now.day)
-    return queryset.exclude(to_date__lt=poll_horizon).exclude(Q(to_date__isnull=True) & Q(from_date__lt=poll_horizon))
+def current_poll_filter(queryset):
+    """ Filters a queryset of polls for polls are open or closed (but not archived). """
+    return queryset.exclude(state=Poll.STATE_ARCHIVED).order_by('state', '-closed_date')
 
 def past_poll_filter(queryset):
     """ Filters a queryset of polls for polls that began before today, 
     or have an end date before today. """
-    _now = now()
-    poll_horizon = datetime.datetime(_now.year, _now.month, _now.day)
-    return queryset.exclude(to_date__gte=poll_horizon).exclude(Q(to_date__isnull=True) & Q(from_date__gte=poll_horizon))
+    return queryset.filter(state=Poll.STATE_ARCHIVED).order_by('-closed_date')
 
 
 import django

@@ -1,11 +1,11 @@
-{% extends "cosinnus_event/base.html" %}
+{% extends "cosinnus_poll/base.html" %}
 {% load i18n static cosinnus_tags widget_tweaks %}
 
 {% block page_title %}
 	{% if form_view == "add" %}
-	  {% trans "Add unscheduled event" %}
+	  {% trans "Add unscheduled poll" %}
 	{% elif form_view == "edit" %}
-	  {% trans "Edit" %} {{ event.title }}
+	  {% trans "Edit" %} {{ poll.title }}
 	{% endif %}
 {{ block.super }}
 {% endblock page_title %}
@@ -14,22 +14,22 @@
         {{ block.super }}
         <li class="active">
 	        {% if form_view == "add" %}
-			  {% trans "Add unscheduled event" %}
+			  {% trans "Add unscheduled poll" %}
 			{% elif form_view == "edit" %}
-			  {% trans "Edit" %} {{ event.title }}
+			  {% trans "Edit" %} {{ poll.title }}
 			{% endif %}
         </li>
 {% endblock %}
 
 {% block leftnav %}
-    {% include "cosinnus_event/leftnav.html" with return_to="doodle" %}
+    {% include "cosinnus_poll/leftnav.html" with return_to="doodle" %}
 {% endblock leftnav %}
 
 {% block content %}
 
     <!-- a box with semi transparent background -->
 	<div class="content-box">
-	   <form method="POST" action="" id="form-event">{% csrf_token %}
+	   <form method="POST" action="" id="form-poll">{% csrf_token %}
       {% for formset in inlines %}
         {{ formset.management_form }}
       {% endfor %}
@@ -43,7 +43,7 @@
 		                <div class="media-body media-body-form-control">
 		                    
 		                    {{ form.forms.obj.title.errors }}
-	                        {% captureas placeholder %}{% trans "Enter a title for the new event to be scheduled." %}{% endcaptureas %}
+	                        {% captureas placeholder %}{% trans "Enter a title for the new poll to be scheduled." %}{% endcaptureas %}
                             {% if request.GET.title %}
                                 {% render_field form.forms.obj.title class+="form-control" placeholder=placeholder value=request.GET.title %}
                             {% else %}
@@ -87,7 +87,7 @@
                                 <ol class="input-area">
                                     <li class="w100">
                                         
-                                        <p><i class="fa fa-warning"></i> {% trans "Note: You cannot edit the dates for this event poll because someone has already cast their vote!" %}</p>
+                                        <p><i class="fa fa-warning"></i> {% trans "Note: You cannot edit the dates for this poll poll because someone has already cast their vote!" %}</p>
                                     </li>
                                 </ol>
                             {% endif %}
@@ -96,16 +96,16 @@
 	                        
 	                        <ol class="input-area">
                                 <li class="w100">
-                                    {{ form.forms.obj.note.errors }}
-		                            {% captureas placeholder %}{% trans "Enter a description for the event (optional)." %}{% endcaptureas %}
-		                            {% render_field form.forms.obj.note class+="form-control" placeholder=placeholder %}
+                                    {{ form.forms.obj.description.errors }}
+		                            {% captureas placeholder %}{% trans "Enter a description for the poll (optional)." %}{% endcaptureas %}
+		                            {% render_field form.forms.obj.description class+="form-control" placeholder=placeholder %}
                                 </li>
                             </ol>
 	                        
 	                        <ol class="input-area">
                                 <li class="w100">
                                     {{ form.forms.obj.url.errors }}
-		                            {% captureas placeholder %}{% trans "External Link for the event (optional)." %}{% endcaptureas %}
+		                            {% captureas placeholder %}{% trans "External Link for the poll (optional)." %}{% endcaptureas %}
 		                            {% render_field form.forms.obj.url class+="form-control" placeholder=placeholder %}
                                 </li>
                             </ol>
@@ -146,11 +146,11 @@
 {% block extrafooter %}
 {{ block.super }}
 
-<script src="{% static 'js/cosinnus_event/cosinnus_event.js' %}"></script>
+<script src="{% static 'js/cosinnus_poll/cosinnus_poll.js' %}"></script>
 
 <script type="text/javascript">
 $(function() {
-  var formEvent = $('#form-event');
+  var formPoll = $('#form-poll');
   var hasDates = false;
   var dateDataAttr = '';
   var name = '';
@@ -193,13 +193,13 @@ $(function() {
     //.val(time2);
     
     {% if form.id and form.id.value %}
-      name = 'suggestions-' + formIdx + '-id';
+      name = 'options-' + formIdx + '-id';
       $('<input />')
         .attr('type', 'hidden')
         .attr('id', 'id_' + name)
         .attr('name', name)
         .attr('value', {{ form.id.value }})
-        .appendTo(formEvent);
+        .appendTo(formPoll);
     {% endif %}
   {% endif %}
   {% endfor %}

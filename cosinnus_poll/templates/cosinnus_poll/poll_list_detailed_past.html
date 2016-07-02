@@ -1,17 +1,17 @@
-{% extends "cosinnus_event/base.html" %}
+{% extends "cosinnus_poll/base.html" %}
 {% load i18n static cosinnus_tags widget_tweaks %}
 
 {% block page_title %}
-{% trans "Events" %} {{ block.super }}
+{% trans "Polls" %} {{ block.super }}
 {% endblock page_title %}
 
 {% block breadcrumb %}
         {{ block.super }}
-            <li class="active">{% if event_view == "upcoming" %}{% trans "Planned Events" %}{% elif event_view == "past" %}{% trans "Past Events" %}{% else %}{% trans "Events" %}{% endif %}</li>
+            <li class="active">{% if poll_view == "upcoming" %}{% trans "Planned Polls" %}{% elif poll_view == "past" %}{% trans "Past Polls" %}{% else %}{% trans "Polls" %}{% endif %}</li>
 {% endblock %}
 
 {% block leftnav %}
-    {% include "cosinnus_event/leftnav.html" %}
+    {% include "cosinnus_poll/leftnav.html" %}
 {% endblock leftnav %}
 
 {% block content %}
@@ -24,11 +24,11 @@
 	    
         {% include 'cosinnus/common/filter_controls.html' %}        
 	    
-	    {% for event in past_events %}
-        	{% include 'cosinnus_event/list_object.html' %}
+	    {% for poll in past_polls %}
+        	{% include 'cosinnus_poll/list_object.html' %}
 	    {% empty %}
-	        <!-- {% trans "There are no past events." %} -->
-	        {% include 'cosinnus/common/empty_button.html' with message="There are no past events." %}
+	        <!-- {% trans "There are no past polls." %} -->
+	        {% include 'cosinnus/common/empty_button.html' with message="There are no past polls." %}
 	    {% endfor %}
 	   
 	</div><!-- content-box -->

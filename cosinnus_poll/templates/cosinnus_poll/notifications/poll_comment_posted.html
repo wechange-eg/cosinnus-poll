@@ -1,13 +1,13 @@
-{% load i18n cosinnus_tags %}{% autoescape off %}{% blocktrans with comment_text=object.text|safe event_title=object.event.title|safe %}Hi, {{ receiver_name }}!
+{% load i18n cosinnus_tags %}{% autoescape off %}{% blocktrans with comment_text=object.text|safe poll_title=object.poll.title|safe %}Hi, {{ receiver_name }}!
 
-{{ sender_name }} has posted a comment on an event you created in {{ team_name }}:
+{{ sender_name }} has posted a comment on an poll you created in {{ team_name }}:
 
 "{{ comment_text }}"
 
 
-on your event:
+on your poll:
 
-"{{ event_title }}"
+"{{ poll_title }}"
 
 
 Follow this link to see the comment: 
