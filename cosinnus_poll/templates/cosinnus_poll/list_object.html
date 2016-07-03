@@ -4,29 +4,25 @@
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left square-date-icon" href="#">
-                  {% if poll.state == 2 %}
-                    <i class="fa  fa-calendar"></i>
-                  {% else %}
-                    <div>{{ poll.from_date|date:"d" }}</div>
-                    <div>{{ poll.from_date|date:"M" }}</div>
-                  {% endif %}
+                  	{% if poll.state == 1 %} {# voting open #}
+                    	<i class="fa fa-question"></i>
+                  	{% elif poll.state == 2 %} {# voting closed #}
+                  		<i class="fa fa-times"></i>
+                  	{% else %} {# archived #}
+                  		<i class="fa fa-doooodle"></i>
+                  	{% endif %}
                 </a>
                 <a class="pull-right fadedown-clickarea" href="#">
                     <i class="fa fa-chevron-down"></i>
                 </a>
-                {% if poll.state == 2 %}
-                  {% captureas detail_url %}{% group_url 'cosinnus:poll:doodle-vote' group=group slug=poll.slug%}{% endcaptureas %}
-                {% else %}
-                  {% captureas detail_url %}{{ poll.get_absolute_url }}{% endcaptureas %}
-                {% endif %}
-                <a class="pull-right" href="{{ detail_url }}">
+                <a class="pull-right" href="{{ poll.get_absolute_url }}">
                     <i class="fa fa-chain"></i>
                 </a>
                 <div class="media-body">
                     {% with creator=poll.creator %}
                         <span class="annotation">{% trans "by" %} <a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a></span>
                     {% endwith %}
-                    <a href="{{ detail_url }}">
+                    <a href="{{ poll.get_absolute_url }}">
                         {{ poll.title }}
                     </a>
                 </div>
@@ -34,71 +30,28 @@
         </ul>
     </div>
 
-    <div class="btn btn-white w100">
-        <ul class="media-list">
-            <li class="media">
-                <a class="pull-left" href="#">
-                    <i class="fa fa-clock-o"></i>
-                </a>
-                <div class="media-body">
-                    <span class="moment-data-date" data-date="{{ poll.from_date|date:"c" }}" title="{{ poll.from_date }}"></span>
-                    –
-                    <span class="moment-data-date" data-date="{{ poll.to_date|date:"c" }}" title="{{ poll.to_date }}"></span>
-                </div>
-            </li>
-        </ul>
-    </div>
-    {% if poll.media_tag_object.location %}
-    <div class="btn btn-white w100">
-        <ul class="media-list">
-            <li class="media">
-                <a class="pull-left" href="#">
-                    <i class="fa fa-map-marker"></i>
-                </a>
-                <div class="media-body">
-    			      <a href="{{ poll.media_tag_object.location_url }}" target="_blank">{{ poll.media_tag_object.location }}</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-    {% endif %}
     {% if poll.description and poll.description|length > 0 %}
-    <div class="btn btn-white w100 {% if not poll.url %}large-space{% endif %}">
-        <ul class="media-list">
-            <li class="media">
-                <a class="pull-left" href="#">
-                    <i class="fa fa-pencil"></i>
-                </a>
-                <div class="media-body">
-                    <p>
-                        {{ poll.description|urlizetrunc:25|url_target_blank|linebreaksbr }}
-                    </p>
-                </div>
-            </li>
-        </ul>
-    </div>
+	    <div class="btn btn-white w100 large-space">
+	        <ul class="media-list">
+	            <li class="media">
+	                <a class="pull-left" href="#">
+	                    <i class="fa fa-pencil"></i>
+	                </a>
+	                <div class="media-body">
+	                    <p>
+	                        {{ poll.description|textfield }}
+	                    </p>
+	                </div>
+	            </li>
+	        </ul>
+	    </div>
     {% endif %}
-    {% if poll.url %}
-    <div class="btn btn-white w100 large-space">
-        <ul class="media-list">
-            <li class="media">
-                <a class="pull-left" href="#">
-                    <i class="fa fa-chain"></i>
-                </a>
-                <div class="media-body">
-                    <a href="{{ poll.url }}">{{ poll.url }}</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-    {% endif %}
-
 
     {% include 'cosinnus/media_tags_readonly.html' with object=poll %}
     
     {% if user|has_write_access:poll %}
-        {% captureas modal_id %}deleteModal_{{poll.slug}}{% endcaptureas %}
-        <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{modal_id}}">
+        {% captureas delete_modal_id %}deleteModal_{{poll.slug}}{% endcaptureas %}
+        <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{delete_modal_id}}">
             <ul class="media-list">
                 <li class="media">
                     <a class="pull-left" href="#">
@@ -110,23 +63,61 @@
                 </li>
             </ul>
         </button>
-      {% if poll.state == 2 %}
-        {% captureas edit_url %}{% group_url "cosinnus:poll:doodle-edit" group=group slug=poll.slug %}{% endcaptureas %}
-      {% else %}
-        {% captureas edit_url %}{% group_url "cosinnus:poll:poll-edit" group=group slug=poll.slug %}{% endcaptureas %}
-      {% endif %}
-        <button type="button" class="btn btn-emphasized" href="{{ edit_url }}">
-            <ul class="media-list">
-                <li class="media">
-                    <a class="pull-left" href="#">
-                        <i class="fa fa-pencil"></i>
-                    </a>
-                    <div class="media-body">
-                        {% trans "Edit" %}
-                    </div>
-                </li>
-            </ul>
-        </button> 
+        {% if poll.state != 3 %}
+	        <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:poll:edit" group=group slug=poll.slug %}">
+	            <ul class="media-list">
+	                <li class="media">
+	                    <a class="pull-left" href="#">
+	                        <i class="fa fa-pencil"></i>
+	                    </a>
+	                    <div class="media-body">
+	                        {% trans "Edit" %}
+	                    </div>
+	                </li>
+	            </ul>
+	        </button> 
+        {% endif %}
+        {% if poll.state == 1 %}
+	        <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:poll:complete" group=group slug=poll.slug %}">
+	            <ul class="media-list">
+	                <li class="media">
+	                    <a class="pull-left" href="#">
+	                        <i class="fa fa-pencil"></i>
+	                    </a>
+	                    <div class="media-body">
+	                        {% trans "Close Poll" %}
+	                    </div>
+	                </li>
+	            </ul>
+	        </button> 
+        {% elif poll.state == 2 %}
+	        {% captureas reopen_modal_id %}reopenModal_{{poll.slug}}{% endcaptureas %}
+	        <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{reopen_modal_id}}">
+	            <ul class="media-list">
+	                <li class="media">
+	                    <a class="pull-left" href="#">
+	                        <i class="fa fa-eraser"></i>
+	                    </a>
+	                    <div class="media-body">
+	                        {% trans "Re-open" %}
+	                    </div>
+	                </li>
+	            </ul>
+	        </button> 
+	        {% captureas archive_modal_id %}archiveModal_{{poll.slug}}{% endcaptureas %}
+	        <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{archive_modal_id}}">
+	            <ul class="media-list">
+	                <li class="media">
+	                    <a class="pull-left" href="#">
+	                        <i class="fa fa-eraser"></i>
+	                    </a>
+	                    <div class="media-body">
+	                        {% trans "Archive" %}
+	                    </div>
+	                </li>
+	            </ul>
+	        </button>
+        {% endif %}
     {% endif %}
     
     {% include 'cosinnus/feedback/report_button_btn.html' with object=poll %}
@@ -134,15 +125,21 @@
 </div><!-- fadedown -->
 
 {% if user|has_write_access:poll %}    
-      {% if poll.state == 2 %}
-        {% captureas label %}{% blocktrans with title=poll.title %}Do you really want to delete unscheduled poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
-        {% captureas title %}{% trans "Delete unscheduled poll" %}{% endcaptureas %}
-        {% captureas action %}{% group_url 'cosinnus:poll:doodle-delete' group=group slug=poll.slug%}{% endcaptureas %}
-      {% else %}
-        {% captureas label %}{% blocktrans with title=poll.title %}Do you really want to delete poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
-        {% captureas title %}{% trans "Delete poll" %}{% endcaptureas %}
-        {% captureas action %}{% group_url 'cosinnus:poll:poll-delete' group=group slug=poll.slug%}{% endcaptureas %}
-      {% endif %}
-
-    {% include "cosinnus/modal_box.html" with id=modal_id label=label title=title form_action=action %}
+    {% captureas label %}{% blocktrans with title=poll.title %}Do you really want to delete poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
+    {% captureas title %}{% trans "Delete poll" %}{% endcaptureas %}
+    {% captureas action %}{% group_url 'cosinnus:poll:poll-delete' group=group slug=poll.slug %}{% endcaptureas %}
+    {% include "cosinnus/modal_box.html" with id=delete_modal_id label=label title=title form_action=action %}
+    
+    {% if poll.state == 2 %}
+    	{% captureas label %}{% blocktrans with title=poll.title %}Do you really want to re-open poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
+	    {% captureas title %}{% trans "Re-open poll" %}{% endcaptureas %}
+	    {% captureas action %}{% group_url 'cosinnus:poll:reopen' group=group slug=poll.slug %}{% endcaptureas %}
+	    {% include "cosinnus/modal_box.html" with id=reopen_modal_id label=label title=title form_action=action %}
+	    
+	    {% captureas label %}{% blocktrans with title=poll.title %}Do you really want to archive poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
+	    {% captureas title %}{% trans "Archive poll" %}{% endcaptureas %}
+	    {% captureas action %}{% group_url 'cosinnus:poll:archive' group=group slug=poll.slug %}{% endcaptureas %}
+	    {% include "cosinnus/modal_box.html" with id=archive_modal_id label=label title=title form_action=action %}
+    {% endif %}
+    
 {% endif %}

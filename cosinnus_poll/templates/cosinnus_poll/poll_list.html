@@ -6,8 +6,8 @@
 {% endblock page_title %}
 
 {% block breadcrumb %}
-        {{ block.super }}
-            <li class="active">{% trans "Kalender" %}</li>
+    {{ block.super }}
+    <li class="active">{% if poll_view == "past" %}{% trans "Archived Polls" %}{% else %}{% trans "Polls" %}{% endif %}</li>
 {% endblock %}
 
 {% block leftnav %}
@@ -15,156 +15,22 @@
 {% endblock leftnav %}
 
 {% block content %}
-    {% if not request.user or not request.user.is_authenticated %} 
-        {% include "cosinnus/not_logged_in_alert.html" %}
-    {% endif %}
-    
-    
+
 	<!-- a box with semi transparent background -->
-	<div class="content-box">
-	    {% if user.is_authenticated %}
-		    {% captureas content %}
-		        <div type="button" class="btn btn-default w100 regular-space">
-		            <ul class="media-list">
-		                <li class="media">
-		                    <div class="media-body">
-					            <span>{% trans "Copy this iCal-link into your calendar application to import current polls:" %}</span>
-					        </div>
-		                    <div class="media-body media-body-form-control">
-		                        <input class="form-control" onclick="this.focus();this.select()" readonly="readonly" value="{{ COSINNUS_BASE_URL|slice:":-1" }}{% group_url 'cosinnus:poll:feed' group=group %}?{% cosinnus_user_token SETTINGS.COSINNUS_EVENT_TOKEN_EVENT_FEED %}">
-		                    </div>
-		                </li>
-		            </ul>
-		        </div>
-		        <div class="clearfix large-space"></div>
-		    {% endcaptureas %}
-		    {% captureas title %}{% trans "iCal Feed" %}{% endcaptureas %}
-		    {% include "cosinnus/modal_box.html" with id="feedModal" label=content title=title title_icon="fa-calendar" %}
-	    {% endif %}
+	<div class="content-box large-space">
+        {% include 'cosinnus/common/filter_controls.html' %}        
 	    
-        <div class="big-calendar large-space"></div>
-        
-        <script type="application/javascript">
-	        var cosinnus_calendarPolls = [
-		        {% for poll in object_list %}
-		            {% if poll.from_date %}
-	                {
-	                    title: $.cosinnus.decodeEntities('{{ poll.title }}'),
-	                    start: moment("{{ poll.from_date|date:"c"}}"),
-	                    {% if poll.to_date %}
-	                    end: moment("{{ poll.to_date|date:"c"}}"),
-	                    {% endif %}
-	                    url: '{% group_url "cosinnus:poll:poll-detail" group=group slug=poll.slug %}'
-	                },
-	                {% endif %}
-	            
-	            {% endfor %}
-            
-            ];
-        </script>
-        
-        {% if request.user and request.user.is_authenticated %} 
-        <form method="GET" action="{% group_url 'cosinnus:poll:poll-add' group=group %}">
-	        <div type="button" class="btn btn-default w100 large-space">
-	            <ul class="media-list">
-	                <li class="media">
-	                    <a class="pull-left" href="#">
-	                        <i class="fa fa-plus"></i>
-	                    </a>
-	                    <div class="media-body media-body-form-control">
-	                        {% captureas placeholder %}{% trans "Enter the title for a new poll or select a day in the Calendar." %}{% endcaptureas %}
-	                        <input class="form-control next-button-is-for-sending"
-	                            placeholder="{{ placeholder }}" autocomplete="off"
-	                            name="title"
-	                            value="" />
-	                    </div>
-	                </li>
-	            </ul>
-	        </div>
-	        <button type="submit" class="btn btn-emphasized" style="display: none;">
-                <ul class="media-list">
-                    <li class="media">
-                        <a class="pull-left" href="#">
-                            <i class="fa fa-pencil"></i>
-                        </a>
-                        <div class="media-body">
-                            {% trans "Create" %}
-                        </div>
-                    </li>
-                </ul>
-            </button>
-        </form>
-        
-        <button href="#" data-toggle="modal" data-target="#feedModal" class="btn btn-emphasized">
-            <ul class="media-list">
-                <li class="media">
-                    <a class="pull-left" href="#">
-                        <i class="fa fa-calendar"></i>
-                    </a>
-                    <div class="media-body">
-                        {% trans "Export poll feed" %}
-                    </div>
-                </li>
-            </ul>
-        </button>
-	    <div class="clearfix"></div>
-        {% endif %}
-	
+	    {% for poll in future_polls %}
+        	{% include 'cosinnus_poll/list_object.html' %}
+	    {% empty %}
+	        {% if poll_view == 'past' %}
+	        	{% captureas empty_message %}{% trans "There are no archived polls." %}{% endcaptureas %
+	        {% else %}
+	        	{% captureas empty_message %}{% trans "There are no running polls." %}{% endcaptureas %
+	        {% endif %}
+	        {% include 'cosinnus/common/empty_button.html' with message=empty_message %}
+	    {% endfor %}
+	   
 	</div><!-- content-box -->
 	
-	{% if request.user and request.user.is_authenticated %} 
-	    <!-- Modal: Really sure you want to add the poll? -->
-	    <div class="modal fade" id="confirmPollModal" tabindex="1" role="dialog" aria-labelledby="confirmPollModalLabel" aria-hidden="true">
-	        <div class="modal-dialog">
-	            <div class="modal-content">
-	                <div class="modal-header">
-	                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-	                        <i class="fa fa-times"></i>
-	                    </button>
-	                    <h4 class="modal-title" id="confirmPollModalLabel">
-	                        <i class="fa fa-calendar"></i>
-	                        {% trans "Create Poll" %}
-	                    </h4>
-	                </div>
-	                <div class="modal-body">
-	                    <span id="calendarConfirmPollOneday">{% trans "Would you like to create an poll" %} {% trans "on" %}: <strong id="calendarConfirmPollDate" /></strong>?</span>
-	                    <span id="calendarConfirmPollMultiday">{% trans "Would you like to create an poll" %} {% trans "from" %} <strong id="calendarConfirmPollStart" /></strong> {% trans "until" %} <strong id="calendarConfirmPollEnd" /></strong>?</span>
-	                    
-	                </div>
-	                <div class="modal-footer">
-	                    <button type="button" class="btn btn-emphasized" data-dismiss="modal">
-	                        <ul class="media-list">
-	                            <li class="media">
-	                                <a class="pull-left" href="#">
-	                                    <i class="fa fa-times"></i>
-	                                </a>
-	                                <div class="media-body">
-	                                    {% trans "Cancel" %}
-	                                </div>
-	                            </li>
-	                        </ul>
-	                    </button>
-	                    
-	                    <form method="GET" action="{% group_url 'cosinnus:poll:poll-add' group=group %}">
-	                    <input type="hidden" name="start" id="calendarConfirmStartDate" />
-	                    <input type="hidden" name="end" id="calendarConfirmEndDate" />
-	                    <button type="submit" class="btn btn-emphasized" id="calendarConfirmPollButton">
-	                        <ul class="media-list">
-	                            <li class="media">
-	                                <a class="pull-left" href="#">
-	                                    <i class="fa fa-check"></i>
-	                                </a>
-	                                <div class="media-body">
-	                                    {% trans "OK" %}
-	                                </div>
-	                            </li>
-	                        </ul>
-	                    </button>
-	                    </form>
-	                </div>
-	            </div>
-	        </div>
-	    </div><!-- modal -->
-	{% endif %}
-	    
 {% endblock content %}

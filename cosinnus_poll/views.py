@@ -37,6 +37,7 @@ from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user
 from cosinnus.core.decorators.views import require_read_access,\
     require_user_token_access
 from django.contrib.sites.models import Site, get_current_site
+from annoying.functions import get_object_or_None
 
 
 class PollIndexView(RequireReadMixin, RedirectView):
@@ -52,10 +53,9 @@ class PollListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, List
     model = Poll
     filterset_class = PollFilter
     poll_view = 'current'   # or: 'past'
-    
+    template_name = 'cosinnus_poll/poll_list.html'
     
     """
-    
     template_name = "cosinnus_poll/poll_form.html"
     template_name = 'cosinnus_poll/poll_list_detailed.html'
     template_name = 'cosinnus_poll/poll_list.html'
@@ -67,6 +67,7 @@ class PollListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, List
     def get_queryset(self):
         """ In the calendar we only show scheduled polls """
         qs = super(PollListView, self).get_queryset()
+        self.unfiltered_qs = qs
         if self.poll_view == 'current':
             qs = current_poll_filter(qs)
         elif self.poll_view == 'past':
@@ -76,14 +77,14 @@ class PollListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, List
     
     def get_context_data(self, **kwargs):
         context = super(PollListView, self).get_context_data(**kwargs)
-        poll_count = super(PollListView, self).get_queryset().filter(state=Poll.STATE_VOTING_OPEN).count()
-        future_polls_count = self.queryset.count() if not self.show_past_polls else current_poll_filter(self.queryset).count()
+        running_polls_count = self.queryset.count() if self.poll_view == 'current' else current_poll_filter(self.unfiltered_qs).count()
+        past_polls_count = self.queryset.count() if self.poll_view == 'past' else past_poll_filter(self.unfiltered_qs).count()
         
         context.update({
-            'future_polls': self.queryset,
-            'future_polls_count': future_polls_count,
-            'poll_count': poll_count,
+            'running_polls_count': running_polls_count,
+            'past_polls_count': past_polls_count,
             'poll_view': self.poll_view,
+            'polls': context['object_list'],
         })
         return context
 
@@ -340,8 +341,15 @@ class PollCompleteView(RequireWriteMixin, FilterGroupMixin, UpdateView):
     """ Completes a doodle poll for a selected option, setting the poll to completed/archived.
         Notification triggers are handled in the model. """
     form_class = PollNoFieldForm
-    form_view = 'assign'
     model = Poll
+    option_id = None
+    mode = 'complete' # 'complete' or 'reopen' or 'archive'
+    MODES = ('complete', 'reopen', 'archive')
+    
+    def dispatch(self, request, *args, **kwargs):
+        self.assigned_option_id = kwargs.pop('option_id', None)
+        self.mode = kwargs.pop('mode')
+        return super(PollCompleteView, self).dispatch(request, *args, **kwargs)
     
     def get_object(self, queryset=None):
         obj = super(PollCompleteView, self).get_object(queryset)
@@ -356,27 +364,37 @@ class PollCompleteView(RequireWriteMixin, FilterGroupMixin, UpdateView):
         self.object = self.get_object()
         poll = self.object
         
-        """
-        TODO: FIXME: add a POST attribute here for state, then handle setting different states into others.
-        valid modes:
-            VOTING -> CLOSED
-            CLOSED -> ARCHIVED
-            (mabye) CLOSED -> VOTING (re-open)
-        """
-        
-        if self.object.state != Poll.STATE_VOTING_OPEN:
-            messages.error(request, _('This is poll is already scheduled. You cannot vote for it any more.'))
+        # check if valid action requested depending on poll state
+        if self.mode not in self.MODES:
+            messages.error(request, _('Invalid action for this poll. The request could not be completed!'))
             return HttpResponseRedirect(self.object.get_absolute_url())
-        if 'option_id' not in kwargs:
-            messages.error(request, _('Poll cannot be completed: No date was supplied.'))
-            return HttpResponseRedirect(self.object.get_absolute_url())
+        if (poll.state, self.mode) not in \
+                ((Poll.STATE_VOTING_OPEN, 'complete'), (Poll.STATE_CLOSED, 'reopen'), (Poll.STATE_CLOSED, 'archive')):
+            messages.error(request, _('This action is not permitted for this poll at this stage!'))
+            return HttpResponseRedirect(poll.get_absolute_url())
+
+        # change poll state        
+        if (poll.state, self.mode) == (Poll.STATE_VOTING_OPEN, 'complete'):
+            # complete the poll. a winning option may be selected, but doesn't have to be
+            option = get_object_or_None(Option, pk=self.option_id)
+            if option:
+                poll.winning_option = option
+            poll.closed_date = now()
+            poll.state = Poll.STATE_CLOSED
+            poll.save()
+            messages.success(request, _('The poll was closed successfully.'))
+        if (poll.state, self.mode) == (Poll.STATE_CLOSED, 'reopen'):
+            # reopen poll, set winning option and closed_date to none
+            poll.winning_option = None
+            poll.closed_date = None
+            poll.state = Poll.STATE_VOTING_OPEN
+            poll.save()
+            messages.success(request, _('The poll was re-opened successfully.'))
+        if (poll.state, self.mode) == (Poll.STATE_CLOSED, 'archive'):
+            poll.state = Poll.STATE_ARCHIVED
+            poll.save()
+            messages.success(request, _('The poll was archived successfully.'))
         
-        option = get_object_or_404(Option, pk=kwargs.get('option_id'))
-        
-        poll.state = Poll.STATE_SCHEDULED
-        poll.save()
-        
-        messages.success(request, _('The poll was created successfully at the specified date.'))
         return HttpResponseRedirect(self.object.get_absolute_url())
     
 poll_complete_view = PollCompleteView.as_view()
