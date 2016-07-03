@@ -19,20 +19,26 @@ from cosinnus.forms.attached_object import FormAttachable
 class _PollForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
                  FormAttachable):
     
+    # TODO: after form submission, restore initial values on these fields, if active votes exist
+    LOCKED_FIELDS_WHILE_ACTIVE_VOTES = ('multiple_votes', 'can_vote_maybe', 'anyone_can_vote')
+    
     url = forms.URLField(widget=forms.TextInput, required=False)
 
     class Meta:
         model = Poll
-        fields = ('description', 'multiple_votes', 'can_vote_maybe', 'anyone_can_vote')
+        fields = ('title', 'description', 'multiple_votes', 'can_vote_maybe', 'anyone_can_vote')
     
     def __init__(self, *args, **kwargs):
         super(_PollForm, self).__init__(*args, **kwargs)
         instance = kwargs.get('instance')
-        if instance:
-            self.fields['option'].queryset = Option.objects.filter(
-                poll=instance)
-        else:
-            del self.fields['option']
+    
+    def save(self, *args, **kwargs):
+        has_active_votes = self.instance.options.filter(votes__isnull=False).count() > 0
+        if has_active_votes:
+            print ">> TODO: reset initial values"
+            import ipdb; ipdb.set_trace(); from pprint import pprint as pp;
+        return super(_PollForm, self).save(*args, **kwargs)
+        
 
 PollForm = get_form(_PollForm)
 

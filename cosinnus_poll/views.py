@@ -93,7 +93,8 @@ poll_list_view = PollListView.as_view()
 
 
 class OptionInlineView(InlineFormSet):
-    extra = 1
+    extra = 10
+    max_num = 10
     form_class = OptionForm
     model = Option
 
@@ -165,7 +166,14 @@ poll_add_view = PollAddView.as_view()
 
 
 class PollEditView(PollFormMixin, AttachableViewMixin, UpdateWithInlinesView):
-
+    
+    def get_object(self, queryset=None):
+        ret = super(PollEditView, self).get_object(queryset=queryset)
+        if self.object.state == Poll.STATE_ARCHIVED:
+            messages.error(self.request, _('This poll is archived and cannot be edited anymore!'))
+            return HttpResponseRedirect(self.object.get_absolute_url())
+        return ret
+    
     def get_context_data(self, *args, **kwargs):
         context = super(PollEditView, self).get_context_data(*args, **kwargs)
         context.update({
@@ -197,11 +205,11 @@ poll_edit_view = PollEditView.as_view()
 
 
 class PollDeleteView(PollFormMixin, DeleteView):
-    message_success = _('Unscheduled poll "%(title)s" was deleted successfully.')
-    message_error = _('Unscheduled poll "%(title)s" could not be deleted.')
+    message_success = _('Poll "%(title)s" was deleted successfully.')
+    message_error = _('Poll "%(title)s" could not be deleted.')
 
     def get_success_url(self):
-        return group_aware_reverse('cosinnus:poll:doodle-list', kwargs={'group': self.group})
+        return group_aware_reverse('cosinnus:poll:list', kwargs={'group': self.group})
 
 poll_delete_view = PollDeleteView.as_view()
 
