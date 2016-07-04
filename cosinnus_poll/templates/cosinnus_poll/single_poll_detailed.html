@@ -1,115 +1,32 @@
 {% load i18n static cosinnus_tags widget_tweaks %}
 
-{# this template expects an {{ poll }} object to be passed to it. Also accepts hide_control_buttons to hide edit/delete buttons #}
-
-<div class="fadedown">
-    <div class="btn btn-emphasized w100 {% if poll.attached_image %}button-with-title-image{% endif %}">
-        {% if poll.attached_image %}
-	        <img src="{{ poll.attached_image.static_image_url }}" />
-	        <div></div> <!-- Gradient overlay -->
-        {% endif %}
-        <ul class="media-list">
-            <li class="media">
-                <a class="pull-left square-date-icon" href="#">
-                    {% if poll.state == 2%}
-                        <i class="fa  fa-calendar"></i>
-                    {% else %}
-	                    <div>{{ poll.from_date|date:"d" }}</div>
-	                    <div>{{ poll.from_date|date:"M" }}</div>
-	                {% endif %}
-                </a>
-                <a class="pull-right fadedown-clickarea" href="#">
-                    <i class="fa fa-chevron-down"></i>
-                </a>
-                <a class="pull-right" href="{{ poll.get_absolute_url }}">
-                    <i class="fa fa-chain"></i>
-                </a>
-                <div class="media-body">
-                	{% with creator=poll.creator %}
-                        <span class="annotation">{% trans "by" %} <a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a></span>
-                    {% endwith %}
-                    <a href="{{ poll.get_absolute_url }}">
-                        {{ poll.title }}
-                    </a>
-                </div>
-            </li>
-        </ul>
-    </div>
-    
-    {% include 'cosinnus/media_tags_readonly.html' with object=poll hide_attached=True %}
-    
-    {% if user|has_write_access:poll and not hide_control_buttons %}
-        {% captureas modal_id %}deleteModal_{{object.slug}}{% endcaptureas %}
-        <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{modal_id}}">
-            <ul class="media-list">
-                <li class="media">
-                    <a class="pull-left" href="#">
-                        <i class="fa fa-eraser"></i>
-                    </a>
-                    <div class="media-body">
-                        {% trans "Delete" %}
-                    </div>
-                </li>
-            </ul>
-        </button>
-        <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:poll:poll-edit" group=group slug=poll.slug %}">
-            <ul class="media-list">
-                <li class="media">
-                    <a class="pull-left" href="#">
-                        <i class="fa fa-pencil"></i>
-                    </a>
-                    <div class="media-body">
-                        {% trans "Edit" %}
-                    </div>
-                </li>
-            </ul>
-        </button> 
+<div class="btn btn-emphasized w100 {% if poll.attached_image %}button-with-title-image{% endif %}">
+    {% if poll.attached_image %}
+        <img src="{{ poll.attached_image.static_image_url }}" />
+        <div></div> <!-- Gradient overlay -->
     {% endif %}
-    
-    {% include 'cosinnus/feedback/report_button_btn.html' with object=poll %}
-    
-</div><!-- fadedown -->
-
-{% if user|has_write_access:poll and not hide_control_buttons %}    
-    {% captureas label %}{% blocktrans with title=object.title %}Do you really want to delete poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
-    {% captureas title %}{% trans "Delete Poll" %}{% endcaptureas %}
-    {% captureas action %}{% group_url 'cosinnus:poll:poll-delete' group=group slug=object.slug%}{% endcaptureas %}
-    {% include "cosinnus/modal_box.html" with id=modal_id label=label title=title form_action=action %}
-{% endif %}
-
-{% if poll.state != 2 %}
-<div class="btn btn-white w100">
     <ul class="media-list">
         <li class="media">
-            <a class="pull-left" href="#">
-                <i class="fa fa-clock-o"></i>
+            <a class="pull-left square-date-icon" href="#">
+                <i class="fa fa-bar-chart"></i>
+            </a>
+            <a class="pull-right" href="{{ poll.get_absolute_url }}">
+                <i class="fa fa-chain"></i>
             </a>
             <div class="media-body">
-                {% if poll.state == 3 %}
-                    {% trans "(Canceled!)" %}
-                {% endif %}
-                
-                {% include 'cosinnus_poll/common/humanized_poll_time.html' with poll=poll %}
+            	{% with creator=poll.creator %}
+                    <span class="annotation">{% trans "by" %} <a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a></span>
+                {% endwith %}
+                <a href="{{ poll.get_absolute_url }}">
+                    {{ poll.title }}
+                </a>
             </div>
         </li>
     </ul>
 </div>
-{% endif %}
 
-{% if poll.media_tag_object.location %}
-<div class="btn btn-white w100">
-    <ul class="media-list">
-        <li class="media">
-            <a class="pull-left" href="#">
-                <i class="fa fa-map-marker"></i>
-            </a>
-            <div class="media-body">
-			      <a href="{{ poll.media_tag_object.location_url }}" target="_blank">{{ poll.media_tag_object.location }}</a>
-            </div>
-        </li>
-    </ul>
-</div>
-{% endif %}
+{% include 'cosinnus/media_tags_readonly.html' with object=poll hide_attached=True %}
+    
 <div class="btn btn-white w100 {% if not poll.url %}{% if not poll.attached_objects.exists %}large-space{% endif %}{% endif %}">
     <ul class="media-list">
         <li class="media">
@@ -119,7 +36,7 @@
             <div class="media-body">
                 <p>
                 {% if poll.description and poll.description|length > 0 %}
-                    {{ poll.description|urlizetrunc:25|url_target_blank|linebreaksbr }}
+                    {{ poll.description|textfield }}
                 {% else %}
                     {% trans "(No description set)" %}
                 {% endif %}
@@ -128,21 +45,48 @@
         </li>
     </ul>
 </div>
-{% if poll.url %}
-<div class="btn btn-white w100 {% if not poll.attached_objects.exists %}large-space{% endif %}">
-    <ul class="media-list">
-        <li class="media">
-            <a class="pull-left" href="#">
-                <i class="fa fa-chain"></i>
-            </a>
-            <div class="media-body">
-                <a href="{{ poll.url }}">{{ poll.url }}</a>
-            </div>
-        </li>
-    </ul>
-</div>
-{% endif %}
 
 {% if poll.attached_objects.exists %}
     {% cosinnus_render_attached_objects poll %}
 {% endif %}
+
+{# announce winning option #}
+{% if poll.state != 1 %}
+	{% if poll.winning_option %}
+		<div>
+			<h2>The Winner is: {{ poll.winning_option }}</h2>
+		</div>
+	{% else %}
+		<div>
+			<h2>No option was selected as winner.</h2>
+		</div>
+	{% endif %}
+{% endif %}
+
+{% if options %}
+	
+	<div class="row large-space"> <!-- options panel -->
+		{% for option in options %}
+			
+			<div class="col-sm-3 col-xs-6">
+				{% include 'cosinnus_poll/single_poll_option.html' with option=option option_counter=forloop.counter %}
+		        <br/>
+		    </div>
+		    
+			{% if forloop.counter|divisibleby:4 %}
+	            <div class="clearfix hidden-xs-down"></div>
+	        {% elif forloop.counter|divisibleby:2 %}
+	            <div class="clearfix visible-xs"></div>
+	        {% endif %}
+		{% endfor %}
+	</div>
+
+
+{% else %}
+    {% comment %} No options were added {% endcomment %}
+    <!-- {% trans "There are no options for this poll yet!" %} -->
+    {% include 'cosinnus/common/empty_button.html' with message="There are no options for this poll yet!" %}
+{% endif %}
+
+
+

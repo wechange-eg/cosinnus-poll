@@ -10,7 +10,7 @@
 		                <div>{{ poll.from_date|date:"M" }}</div>
 		            </a>
                     <a class="pull-right" href="{{ poll.get_absolute_url }}">
-                        <i class="fa fa-calendar"></i>
+                        <i class="fa fa-bar-chart"></i>
                     </a>
                     <div class="media-body">
                         <a href="{{ poll.get_absolute_url }}">{{ poll.title }}</a>
@@ -52,7 +52,7 @@
                 {% if poll.to_date %}
                 end: moment("{{ poll.to_date|date:"c"}}"),
                 {% endif %}
-                url: '{% group_url "cosinnus:poll:poll-detail" group=poll.group slug=poll.slug %}'
+                url: '{% group_url "cosinnus:poll:detail" group=poll.group slug=poll.slug %}'
             },
             {% endif %}
         

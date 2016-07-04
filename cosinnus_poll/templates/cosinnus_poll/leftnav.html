@@ -22,14 +22,14 @@
 	
 {% else %} {# Poll / Doodle list view #}
 	
-    <button type="button" class="btn w100 btn-emphasized fine-space" href="{{ poll_list_page }}{% add_current_params %}">
+    <button type="button" class="btn w100 btn-{% if request.path == poll_list_page %}extra-{% endif %}emphasized fine-space" href="{{ poll_list_page }}{% add_current_params %}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left" href="#">
                     {% if running_polls_count %}
                         {{ running_polls_count }}
                     {% else %}
-                        <i class="fa fa-calendar"></i>
+                        <i class="fa fa-bar-chart"></i>
                     {% endif %}
                 </a>
                 <a class="pull-right" href="#">
@@ -44,18 +44,21 @@
         </ul>
     </button>
     
-    <button type="button" class="btn w100 btn-emphasized fine-space" href="{{ past_polls_count }}{% add_current_params %}">
+    <button type="button" class="btn w100 btn-{% if request.path == poll_list_past_page %}extra-{% endif %}emphasized fine-space" href="{{ poll_list_past_page }}{% add_current_params %}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left" href="#">
-                    {% if past_polls_count %}
-                        {{ past_polls_count }}
-                    {% else %}
-                        <i class="fa fa-calendar"></i>
-                    {% endif %}
+                	{% comment %}  
+	                    {% if past_polls_count or past_polls_count%}
+	                        {{ past_polls_count }}
+	                    {% else %}
+	                        <i class="fa fa-bar-chart"></i>
+	                    {% endif %}
+                	{% endcomment %}
+                    <i class="fa fa-bar-chart"></i>
                 </a>
                 <a class="pull-right" href="#">
-                    {% if request.path == past_polls_count %}
+                    {% if request.path == poll_list_past_page %}
                         <i class="fa fa-caret-right"></i>
                     {% endif %}
                 </a>

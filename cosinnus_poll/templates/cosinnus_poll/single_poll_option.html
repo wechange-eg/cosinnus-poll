@@ -1,0 +1,53 @@
+{% load i18n static cosinnus_tags thumbnail %}
+
+{# this expects {{ option }} in its context as parameter #}
+
+<div class="poll-option white-content">
+	
+	{% if option_counter %}
+		<label>{% trans "Option" %}&nbsp;{{ option_counter }}</label>
+	{% endif %}
+	
+	{% if option.image %}
+		<div class="regular-space">
+            <a href="{{ option.image.static_image_url }}" data-lightbox="poll-option-gallery" data-title="{% if option.description %}{{ option.description }}{% endif %}">
+                <img class="image" src="{% thumbnail option.image 300x300 crop=1 upscale=1 %}" title='{% if option.description %}{{ option.description }}{% endif %}'/>
+            </a>
+		</div>
+	{% endif %}
+	
+	{% if option.description %}
+		<p>
+			{{ option.description }}
+		</p>
+	{% endif %}
+	
+	{% if mode == 'vote' %}
+		<div>
+			vote now!
+		</div>	
+	
+		{% if user|has_write_access:poll %}
+			{% captureas close_poll_modal %}close_poll_modal_option_{{ option.pk }}{% endcaptureas %}
+			<button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{ close_poll_modal }}">
+			    <ul class="media-list">
+			      	<li class="media">
+				        <a class="pull-left" href="#">
+				          	<i class="fa fa-eraser"></i>
+				        </a>
+				        <div class="media-body">
+				          	{% trans "Make winner and complete poll" %}
+				        </div>
+					  </li>
+		    	  </ul>
+			  </button>
+			  {% captureas label %}{% blocktrans with description=option.description %}Do you really want to complete the poll and select "{{ description }}" as winner?{% endblocktrans %}{% endcaptureas %}
+			  {% captureas title %}{% trans "Complete poll without winner" %}{% endcaptureas %}
+			  {% captureas action %}{% group_url "cosinnus:poll:complete" group=group slug=poll.slug option_id=option.pk %}{% endcaptureas %}
+			  {% include "cosinnus/modal_box.html" with id=close_poll_modal label=label title=title form_action=action %}
+		    
+		{% endif %}
+	{% endif %}
+	
+	<div class="clearfix"></div>
+</div>

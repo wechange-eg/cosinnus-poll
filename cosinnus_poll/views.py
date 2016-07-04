@@ -33,11 +33,13 @@ from django.shortcuts import get_object_or_404
 from cosinnus.views.mixins.filters import CosinnusFilterMixin
 from cosinnus_poll.filters import PollFilter
 from cosinnus.utils.urls import group_aware_reverse
-from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user
+from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user,\
+    check_object_read_access, check_ug_membership
 from cosinnus.core.decorators.views import require_read_access,\
     require_user_token_access
 from django.contrib.sites.models import Site, get_current_site
 from annoying.functions import get_object_or_None
+from cosinnus.templatetags.cosinnus_tags import has_write_access
 
 
 class PollIndexView(RequireReadMixin, RedirectView):
@@ -52,17 +54,21 @@ class PollListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, List
 
     model = Poll
     filterset_class = PollFilter
-    poll_view = 'current'   # or: 'past'
+    poll_view = 'current'   # 'current' or 'past'
     template_name = 'cosinnus_poll/poll_list.html'
     
     """
+    FIXME: check these templates if needed still
     template_name = "cosinnus_poll/poll_form.html"
     template_name = 'cosinnus_poll/poll_list_detailed.html'
     template_name = 'cosinnus_poll/poll_list.html'
     template_name = 'cosinnus_poll/poll_list_detailed_past.html'
     poll_view = 'past'
-    
     """
+    
+    def dispatch(self, request, *args, **kwargs):
+        self.poll_view = kwargs.get('poll_view', 'current')
+        return super(PollListView, self).dispatch(request, *args, **kwargs)
     
     def get_queryset(self):
         """ In the calendar we only show scheduled polls """
@@ -92,18 +98,29 @@ poll_list_view = PollListView.as_view()
 
 
 
-class OptionInlineView(InlineFormSet):
+class OptionInlineFormset(InlineFormSet):
     extra = 10
     max_num = 10
     form_class = OptionForm
     model = Option
-
-
+    
+    """
+    FIXME: this should be how to check if there is at least one fom in the formset
+    def is_valid(self):
+        # this is how to validate the formset, but unsure how to access the data
+        return False
+    
+    def get_formset(self, *args, **kwargs):
+        ret = super(OptionInlineFormset, self).get_formset(*args, **kwargs)
+        ret.is_valid = self.is_valid
+        return ret
+    """
+    
 class PollFormMixin(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
                      UserFormKwargsMixin):
     form_class = PollForm
     model = Poll
-    inlines = [OptionInlineView]
+    inlines = [OptionInlineFormset]
     message_success = _('Poll "%(title)s" was edited successfully.')
     message_error = _('Poll "%(title)s" could not be edited.')
 
@@ -125,7 +142,7 @@ class PollFormMixin(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
         # no self.object if get_queryset from add/edit view returns empty
         if hasattr(self, 'object'):
             kwargs['slug'] = self.object.slug
-            urlname = 'cosinnus:poll:poll-detail'
+            urlname = 'cosinnus:poll:detail'
         else:
             urlname = 'cosinnus:poll:list'
         return group_aware_reverse(urlname, kwargs=kwargs)
@@ -168,11 +185,12 @@ poll_add_view = PollAddView.as_view()
 class PollEditView(PollFormMixin, AttachableViewMixin, UpdateWithInlinesView):
     
     def get_object(self, queryset=None):
-        ret = super(PollEditView, self).get_object(queryset=queryset)
-        if self.object.state == Poll.STATE_ARCHIVED:
+        obj = super(PollEditView, self).get_object(queryset=queryset)
+        self.object = obj
+        if obj.state == Poll.STATE_ARCHIVED:
             messages.error(self.request, _('This poll is archived and cannot be edited anymore!'))
             return HttpResponseRedirect(self.object.get_absolute_url())
-        return ret
+        return obj
     
     def get_context_data(self, *args, **kwargs):
         context = super(PollEditView, self).get_context_data(*args, **kwargs)
@@ -182,22 +200,12 @@ class PollEditView(PollFormMixin, AttachableViewMixin, UpdateWithInlinesView):
         return context
     
     def forms_valid(self, form, inlines):
+        
         # Save the options first so we can directly
         # access the amount of options afterwards
-        for formset in inlines:
-            formset.save()
+        #for formset in inlines:
+        #    formset.save()
 
-        option = form.cleaned_data.get('option')
-        if not option:
-            num_options = form.instance.options.count()
-            # TODO: check for >= 2 options set?
-            if num_options == 0:
-                option = None
-                messages.info(self.request, _('You should define at least one date option.'))
-        # update_fields=None leads to saving the complete model, we
-        # don't need to call obj.self here
-        # INFO: set_option saves the instance
-        form.instance.set_option(option, update_fields=None)
 
         return super(PollEditView, self).forms_valid(form, inlines)
 
@@ -224,25 +232,34 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
     form_class = VoteForm
     model = Poll
     template_name = 'cosinnus_poll/poll_vote.html'
+    mode = 'vote' # 'vote' or 'view'
+    MODES = ('vote', 'view',)
     
     """
         TODO: decide to show the vote view for open polls or the archived view for closed polls
             Also: check poll.anyone_can_vote to maybe show a read-only page only
     """
-    
+    @require_read_access()
+    def dispatch(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        poll = self.object
+        self.mode = 'view'
+        if poll.state == Poll.STATE_VOTING_OPEN and request.user.is_authenticated():
+            if check_object_read_access(poll, request.user) and (poll.anyone_can_vote or check_ug_membership(request.user, self.group)):
+                self.mode = 'vote'
+        return super(PollVoteView, self).dispatch(request, *args, **kwargs)
+        
     def post(self, request, *args, **kwargs):
-        if self.get_object().state != Poll.STATE_VOTING_OPEN:
+        if self.mode != 'vote':
             messages.error(request, _('The voting phase for this poll is over. You cannot vote for it any more.'))
-            return HttpResponseRedirect(request.path)
+            return HttpResponseRedirect(poll.get_absolute_url())
         return super(PollVoteView, self).post(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super(PollVoteView, self).get_context_data(**kwargs)
         
-        """
-        TODO: FIXME: simpler option ordering because we have no dates
-        """
         
+        """
         # we group formsets, votes and options by days (as in a day there might be more than one option)
         # the absolute order inside the two lists when traversing the options (iterated over days), 
         # is guaranteed to be sorted by date and time ascending, as is the user-grouped list of votes
@@ -273,7 +290,8 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
             formset_forms_grouped.append(formset_forms_grouped_l)
             vote_counts_grouped.append(vote_counts_grouped_l)
             options_list_grouped.append(options_list_grouped_l)
-        
+        """
+        """
         # determine and set the winning vote count of options (if there are votes)
         try:
             max_vote_count = max([max([vote[2] for vote in votes]) for votes in vote_counts_grouped])
@@ -283,27 +301,38 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
                         vote[3] = True
         except ValueError:
             pass
+        """
+        
+        
+        
+        self.option_formsets_dict = {} # { option-pk --> form }
+        if self.mode == 'vote':
+            # create a formset dict matching forms to option-pks so we can pull them together in the template easily
+            for form in context['formset'].forms:
+                print "form initi", form.initial['option']
+                self.option_formsets_dict[form.initial['option']] = form
+        
+        """
+        # TODO: Add some vote count for stats
+        """
         
         context.update({
             'object': self.object,
             'options': self.options,
-            'options_grouped': options_list_grouped,
-            'formset_forms_grouped': formset_forms_grouped,
-            'vote_counts_grouped': vote_counts_grouped,
-            'votes_user_grouped': dict(votes_user_grouped),
+            'option_formsets_dict': self.option_formsets_dict,
+            'user_votes_dict': self.user_votes_dict,
+            'mode': self.mode,
         })
         return context
 
     def get_initial(self):
+        """ get initial and create user-vote-dict """
         self.object = self.get_object()
-        self.options = self.object.options.order_by('from_date', 'to_date').all()
+        self.options = self.object.options.all().order_by('pk')
         
-        self.options_grouped = defaultdict(list)
-        for option in self.options:
-            self.options_grouped[option.from_date.date().isoformat()].append(option)
-                                                                    
         self.max_num = self.options.count()
         self.initial = []
+        self.user_votes_dict = {} # {<option-pk --> vote-choice }
         for option in self.options:
             vote = None
             if self.request.user.is_authenticated():
@@ -313,13 +342,13 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
                     pass
             self.initial.append({
                 'option': option.pk,
-                'choice': vote.choice if vote else Vote.VOTE_NO,
+                'choice': vote.choice if vote else -1,
             })
+            self.user_votes_dict[option.pk] = vote.choice if vote else -1
         return self.initial
 
     def get_success_url(self):
-        kwargs = {'group': self.group, 'slug': self.object.slug}
-        return group_aware_reverse('cosinnus:poll:doodle-vote', kwargs=kwargs)
+        return self.object.get_absolute_url()
 
     def formset_valid(self, formset):
         for form in formset:

@@ -32,7 +32,13 @@ class _PollForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
         super(_PollForm, self).__init__(*args, **kwargs)
         instance = kwargs.get('instance')
     
+    def clean(self, *args, **kwargs):
+        cleaned_data = super(_PollForm, self).clean(*args, **kwargs)
+        return cleaned_data
+        
     def save(self, *args, **kwargs):
+        
+        
         has_active_votes = self.instance.options.filter(votes__isnull=False).count() > 0
         if has_active_votes:
             print ">> TODO: reset initial values"
@@ -53,7 +59,9 @@ class OptionForm(forms.ModelForm):
         """ Enforce selecting either an image or description or both. """
         data = super(OptionForm, self).clean(*args, **kwargs)
         description = self.cleaned_data.get('description', None)
+        print ">> desc", description
         image = self.cleaned_data.get('image', None)
+        print ">> imgage", image
         if not description and not image:
             raise forms.ValidationError(_('You must specify either an image or a description for this poll option!'))
         return data

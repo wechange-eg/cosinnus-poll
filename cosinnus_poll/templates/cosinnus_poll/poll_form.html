@@ -29,7 +29,7 @@
 
     <!-- a box with semi transparent background -->
 	<div class="content-box">
-	   <form method="POST" action="">{% csrf_token %}
+	   <form method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
 			{% for formset in inlines %}
 		    	{{ formset.management_form }}
 		    {% endfor %}
@@ -76,7 +76,7 @@
 				    {% with option_formset=inlines.0 %}
 						{% for inlineform in option_formset %}
 							
-							<li class="media no-margin" id="options-wrapper-{{ forloop.counter0 }}" {% if not forloop.counter == 1 and not forloop.counter <= option_formset.management_form.initial.INITIAL_FORMS %}style="display: none;"{% endif %}>
+							<li class="media no-margin" id="options-wrapper-{{ forloop.counter0 }}" {% if not forloop.counter == 1 and not forloop.counter <= option_formset.management_form.INITIAL_FORMS.value|intify %}style="display: none;"{% endif %}>
 				                <a class="pull-left btn-emphasized" href="#">
 				                    <i class="fa fa-question"></i>
 				                </a>
@@ -84,6 +84,10 @@
 						            	
 						            	<div class="media">
 						            		<div class="form-control">
+						            			<span style="padding: 5px;" class="pull-right">
+						            				<label for="{{ inlineform.DELETE.id_for_label }}"><i class="fa fa-trash"></i> {% trans "Remove" %}:</label>
+													{{ inlineform.DELETE }}
+						            			</span>
 						            			<label style="padding: 5px;">{% trans "Edit Poll Option" %}&nbsp;{{ forloop.counter }}&nbsp;&nbsp;&nbsp;<em>{% trans "Write a description or select an image" %}</em></label>
 					            			</div>
 						                    <a class="pull-left">
@@ -105,14 +109,7 @@
 								                {% captureas placeholder %}{% trans "Choose and upload an image" %}{% endcaptureas %}
 								                {{ inlineform.image.errors }}
 								                {% render_field inlineform.image class+="form-control" placeholder=placeholder %}
-								                
-												<div>
-													<i>{% trans "File Size" %}: {% trans "max. 10 MB" %}</i>
-													&nbsp;&nbsp;&nbsp;&nbsp;
-													
-													<label for="{{ inlineform.DELETE.id_for_label }}">{% trans "Delete" %}:</label>
-													{{ inlineform.DELETE }}
-												</div>
+												<i>{% trans "File Size" %}: {% trans "max. 10 MB" %}</i>
 								            </div>
 								            
 								            
@@ -122,8 +119,8 @@
 						            </div>
 								</li>
 								
-								{% if forloop.counter >= option_formset.management_form.initial.INITIAL_FORMS and forloop.counter < option_formset.management_form.initial.MAX_NUM_FORMS %}
-									<div id="options-more-{{ forloop.counter0 }}" {% if not forloop.counter == 1 and not forloop.counter <= option_formset.management_form.initial.INITIAL_FORMS %}style="display: none;"{% endif %}>
+								{% if forloop.counter >= option_formset.management_form.INITIAL_FORMS.value and forloop.counter < option_formset.management_form.MAX_NUM_FORMS.value %}
+									<div id="options-more-{{ forloop.counter0 }}" {% if not forloop.counter == 1 and not forloop.counter <= option_formset.management_form.INITIAL_FORMS.value %}style="display: none;"{% endif %}>
 										
 										<button class="btn btn-emphasized pull-left no-margin" onclick="$('#options-more-{{ forloop.counter0 }}').hide(); $('#options-wrapper-{{ forloop.counter }}').show(); $('#options-more-{{ forloop.counter }}').show(); return false;">
 									        <ul class="media-list">

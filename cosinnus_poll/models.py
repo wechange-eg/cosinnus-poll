@@ -25,6 +25,7 @@ from cosinnus.utils.urls import group_aware_reverse
 from cosinnus_poll import cosinnus_notifications
 from django.contrib.auth import get_user_model
 from cosinnus.utils.files import _get_avatar_filename
+from cosinnus.models.mixins.images import ThumbnailableImageMixin
 
 
 def get_poll_image_filename(instance, filename):
@@ -109,7 +110,7 @@ class Poll(BaseTaggableObjectModel):
 
     def get_absolute_url(self):
         kwargs = {'group': self.group, 'slug': self.slug}
-        return group_aware_reverse('cosinnus:poll:poll-detail', kwargs=kwargs)
+        return group_aware_reverse('cosinnus:poll:detail', kwargs=kwargs)
 
     def set_winning_option(self, winning_option=None):
         if winning_option is None:
@@ -137,7 +138,9 @@ class Poll(BaseTaggableObjectModel):
 
 
 @python_2_unicode_compatible
-class Option(models.Model):
+class Option(ThumbnailableImageMixin, models.Model):
+    
+    image_attr_name = 'image'
     
     poll = models.ForeignKey(
         Poll,
@@ -192,7 +195,7 @@ class Vote(models.Model):
         Option,
         verbose_name=_('Option'),
         on_delete=models.CASCADE,
-        related_name='options',
+        related_name='votes',
     )
 
     voter = models.ForeignKey(
