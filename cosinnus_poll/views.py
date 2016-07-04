@@ -40,6 +40,7 @@ from cosinnus.core.decorators.views import require_read_access,\
 from django.contrib.sites.models import Site, get_current_site
 from annoying.functions import get_object_or_None
 from cosinnus.templatetags.cosinnus_tags import has_write_access
+from annoying.exceptions import Redirect
 
 
 class PollIndexView(RequireReadMixin, RedirectView):
@@ -123,17 +124,31 @@ class PollFormMixin(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
     inlines = [OptionInlineFormset]
     message_success = _('Poll "%(title)s" was edited successfully.')
     message_error = _('Poll "%(title)s" could not be edited.')
-
+    pre_voting_editing_enabled = True
+    
     def dispatch(self, request, *args, **kwargs):
         self.form_view = kwargs.get('form_view', None)
         return super(PollFormMixin, self).dispatch(request, *args, **kwargs)
-
+    
+    def _deactivate_non_editable_fields_after_votes_or_completion(self):
+        """ Shuts of all fields or formsets that shouldn't be editable
+            after votes have been placed or the poll has been closed. """
+        self.inlines = []
+        self.pre_voting_editing_enabled = False
+    
+    def get_object(self, *args, **kwargs):
+        poll = super(PollFormMixin, self).get_object(*args, **kwargs)
+        if poll.state != Poll.STATE_VOTING_OPEN or self.instance.options.filter(votes__isnull=False).count() > 0:
+            self._deactivate_non_editable_fields_after_votes_or_completion()
+        return poll
+    
     def get_context_data(self, **kwargs):
         context = super(PollFormMixin, self).get_context_data(**kwargs)
         tags = Poll.objects.tags()
         context.update({
             'tags': tags,
             'form_view': self.form_view,
+            'pre_voting_editing_enabled': self.pre_voting_editing_enabled,
         })
         return context
 
@@ -180,16 +195,23 @@ class PollAddView(PollFormMixin, AttachableViewMixin, CreateWithInlinesView):
 
 poll_add_view = PollAddView.as_view()
 
-
+class NoLongerEditableException(Exception):
+    pass
 
 class PollEditView(PollFormMixin, AttachableViewMixin, UpdateWithInlinesView):
+    
+    def dispatch(self, request, *args, **kwargs):
+        try:
+            return super(PollEditView, self).dispatch(request, *args, **kwargs)
+        except NoLongerEditableException:
+            messages.error(self.request, _('This poll is archived and cannot be edited anymore!'))
+            return HttpResponseRedirect(self.object.get_absolute_url())
     
     def get_object(self, queryset=None):
         obj = super(PollEditView, self).get_object(queryset=queryset)
         self.object = obj
         if obj.state == Poll.STATE_ARCHIVED:
-            messages.error(self.request, _('This poll is archived and cannot be edited anymore!'))
-            return HttpResponseRedirect(self.object.get_absolute_url())
+            raise NoLongerEditableException()
         return obj
     
     def get_context_data(self, *args, **kwargs):

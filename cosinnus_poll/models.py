@@ -282,7 +282,7 @@ def post_vote_delete(sender, **kwargs):
 def post_vote_save(sender, **kwargs):
     kwargs['instance'].option.update_vote_count()
 
-   
+
 def current_poll_filter(queryset):
     """ Filters a queryset of polls for polls are open or closed (but not archived). """
     return queryset.exclude(state=Poll.STATE_ARCHIVED).order_by('state', '-closed_date')

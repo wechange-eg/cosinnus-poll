@@ -37,8 +37,6 @@ class _PollForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
         return cleaned_data
         
     def save(self, *args, **kwargs):
-        
-        
         has_active_votes = self.instance.options.filter(votes__isnull=False).count() > 0
         if has_active_votes:
             print ">> TODO: reset initial values"
