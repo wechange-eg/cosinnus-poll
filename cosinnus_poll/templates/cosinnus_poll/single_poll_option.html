@@ -11,24 +11,36 @@
 		{% endif %}>
 	    <ul class="media-list">
 	        <li class="media">
-	            <a class="pull-left poll-option-display poll-option-display-yes" href="#">
-	          		<i class="fa fa-check"></i>
-	            </a>
-	            <a class="pull-left poll-option-display poll-option-display-maybe" href="#">
-	          		<i class="fa fa-question"></i>
-	            </a>
-	            <a class="pull-left poll-option-display poll-option-display-no" href="#">
-	          		<i class="fa fa-close"></i>
-	            </a>
+	        	<span class="pull-left vote-count">
+	          		<span class="vote-count-yes">
+	          			1832
+          			</span>
+	          		<span class="vote-count-other">
+	          			<span class="vote-count-maybe">233</span>
+	          			{% if True %}
+	          			<br/>
+	          			<span class="vote-count-no">53</span>
+	          			{% endif %}
+          			</span>
+	            </span>
 	            
 				{% if user|has_write_access:poll %}
 					{% captureas close_poll_modal %}close_poll_modal_option_{{ option.pk }}{% endcaptureas %}
-					<a class="pull-right" data-toggle="modal" data-target="#{{ close_poll_modal }}" title="{% trans "Make winner and complete poll" %}">
+					<a class="pull-right vote-trophy" data-toggle="modal" data-target="#{{ close_poll_modal }}" title="{% trans "Make winner and complete poll" %}">
 	                    {# Complete dialog is outside of element #}
-	                    <i class="fa fa-sign-out"></i><i class="fa fa-check"></i>
+	                    <i class="fa fa-trophy"></i>
 	                </a>
-	                
 				{% endif %}
+				
+	            <a class="pull-right poll-option-display poll-option-display-yes" href="#">
+	          		<i class="fa fa-check"></i>
+	            </a>
+	            <a class="pull-right poll-option-display poll-option-display-maybe" href="#">
+	          		<i class="fa fa-question"></i>
+	            </a>
+	            <a class="pull-right poll-option-display poll-option-display-no" href="#">
+	          		<i class="fa fa-close"></i>
+	            </a>
 	            
 	            <div class="media-body">
 	                <span class="annotation poll-option-display poll-option-display-yes">
