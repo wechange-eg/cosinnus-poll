@@ -38,32 +38,9 @@
     
         </div><!-- content-box -->
     
-        {% if mode == 'vote' %}
-		    <form id="poll_vote_form" action="." method="post" class="form-horizontal">
-			    {% csrf_token %}
-			    {{ formset.management_form }}
-                {% for form in formset %}
-                    {{ form.option.as_widget }}
-	                <input type="hidden" id="id_{{ form.choice.html_name }}" name="{{ form.choice.html_name }}" value="{{ form.choice.value }}" />
-                {% endfor %}
-                
-				<button type="submit" class="btn btn-emphasized">
-					<ul class="media-list">
-					  <li class="media">
-					    <a class="pull-left" href="#">
-					      <i class="fa fa-floppy-o"></i>
-					    </a>
-					    <div class="media-body">
-					      {% trans "Vote" %}
-					    </div>
-					  </li>
-					</ul>
-				</button>
-            </form>
-        {% endif %}
-        
-            
         {% if user|has_write_access:poll %}
+        	<div class="large-space"> <!-- first button row -->
+            
               {% captureas delete_modal_id %}deleteModal_{{poll.slug}}{% endcaptureas %}
               <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{delete_modal_id}}">
                 <ul class="media-list">
@@ -85,22 +62,22 @@
               {% include "cosinnus/modal_box.html" with id=delete_modal_id label=label title=title form_action=action %}
               
               {% if not poll.state == 3 %}
-              <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:poll:edit" group=group slug=poll.slug %}">
-                <ul class="media-list">
-                  <li class="media">
-                    <a class="pull-left" href="#">
-                      <i class="fa fa-pencil"></i>
-                    </a>
-                    <div class="media-body">
-                      {% trans "Edit" %}
-                    </div>
-                  </li>
-                </ul>
-              </button>
+	              <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:poll:edit" group=group slug=poll.slug %}">
+	                <ul class="media-list">
+	                  <li class="media">
+	                    <a class="pull-left" href="#">
+	                      <i class="fa fa-pencil"></i>
+	                    </a>
+	                    <div class="media-body">
+	                      {% trans "Edit" %}
+	                    </div>
+	                  </li>
+	                </ul>
+	              </button>
               {% endif %}
               
               {% if poll.state == 1 %}
-                  <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#close_poll_no_winner_modal">
+                  <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#close_poll_no_winner_modal" title="{% trans "Complete without winner" %}">
                     <ul class="media-list">
                       <li class="media">
                         <a class="pull-left" href="#">
@@ -154,12 +131,46 @@
                 {% captureas title %}{% trans "Archive poll" %}{% endcaptureas %}
                 {% captureas action %}{% group_url 'cosinnus:poll:archive' group=group slug=poll.slug %}{% endcaptureas %}
                 {% include "cosinnus/modal_box.html" with id=archive_modal_id label=label title=title form_action=action %}
-            {% endif %}
-          
+              {% endif %}
+	          
+	          {% include 'cosinnus/feedback/report_button_btn.html' with object=poll %}
+        
+	          <div class="clearfix"></div>
+	        </div> <!-- first button row -->
         {% endif %}
         
         
-        {% include 'cosinnus/feedback/report_button_btn.html' with object=poll %}
+    	<div class="large-space"> <!-- second button row -->
+        	{% if mode == 'vote' %}
+			    <form id="poll_vote_form" action="." method="post" class="form-horizontal">
+				    {% csrf_token %}
+				    {{ formset.management_form }}
+	                {% for form in formset %}
+	                    {{ form.option.as_widget }}
+		                <input type="hidden" id="id_{{ form.choice.html_name }}" name="{{ form.choice.html_name }}" value="{{ form.choice.value }}" />
+	                {% endfor %}
+	                
+					<button type="submit" class="btn btn-emphasized">
+						<ul class="media-list">
+						  <li class="media">
+						    <a class="pull-left" href="#">
+						      <i class="fa fa-floppy-o"></i>
+						    </a>
+						    <div class="media-body">
+						      {% trans "Vote" %}!
+						    </div>
+						  </li>
+						</ul>
+					</button>
+	            </form>
+	        </div>
+        	{% endif %}
+			
+			{% if not user|has_write_access:poll %}	        
+	        	{% include 'cosinnus/feedback/report_button_btn.html' with object=poll %}
+	        {% endif %}
+	        
+        <div class="clearfix"></div>
         
     </div> <!-- buttons and content box -->
     

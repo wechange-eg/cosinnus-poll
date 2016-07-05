@@ -2,64 +2,61 @@
 
 {# this expects {{ option }} in its context as parameter #}
 {# If we are in vote mode, we expect a ``option_formsets_dict`` context variable, which has a mapping of { option_id --> VoteForm } #}
+{% with form=option_formsets_dict|dict_lookup:option.id %}
+	<div class="btn btn-emphasized w100 large-space poll-option {% if mode == 'vote' %}{% if form.choice.value == 2 %}poll-option-yes{% elif form.choice.value == 1 %}poll-option-maybe{% else %}poll-option-no{% endif %}{% endif %}"
+		{% if  mode == 'vote' and form %}
+			data-poll-option-vote-id="id_{{ form.choice.html_name }}" 
+			data-poll-can-vote-maybe="{% if poll.can_vote_maybe %}1{% else %}0{% endif %}"
+			data-poll-multiple-votes="{% if poll.multiple_votes %}1{% else %}0{% endif %}"
+		{% endif %}>
+	    <ul class="media-list">
+	        <li class="media">
+	            <a class="pull-left poll-option-display poll-option-display-yes" href="#">
+	          		<i class="fa fa-check"></i>
+	            </a>
+	            <a class="pull-left poll-option-display poll-option-display-maybe" href="#">
+	          		<i class="fa fa-question"></i>
+	            </a>
+	            <a class="pull-left poll-option-display poll-option-display-no" href="#">
+	          		<i class="fa fa-close"></i>
+	            </a>
+	            
+				{% if user|has_write_access:poll %}
+					{% captureas close_poll_modal %}close_poll_modal_option_{{ option.pk }}{% endcaptureas %}
+					<a class="pull-right" data-toggle="modal" data-target="#{{ close_poll_modal }}" title="{% trans "Make winner and complete poll" %}">
+	                    {# Complete dialog is outside of element #}
+	                    <i class="fa fa-sign-out"></i><i class="fa fa-check"></i>
+	                </a>
+	                
+				{% endif %}
+	            
+	            <div class="media-body">
+	                <span class="annotation poll-option-display poll-option-display-yes">
+		          		{% trans "Yes" %}
+		            </span>
+		            <span class="annotation poll-option-display poll-option-display-maybe">
+		          		{% trans "Maybe" %}
+		            </span>
+		            <span class="annotation poll-option-display poll-option-display-no">
+		          		{% trans "No" %}
+		            </span>
+	                
+	                <span>{{ option.description }}</span>
+	            </div>
+	        </li>
+	    </ul>
+	</div>
+	
+	{% if mode == 'vote' and user|has_write_access:poll %}
+		{% captureas label %}{% blocktrans with description=option.description %}Do you really want to complete the poll and select "{{ description }}" as winner?{% endblocktrans %}{% endcaptureas %}
+		{% captureas title %}{% trans "Complete poll" %}{% endcaptureas %}
+		{% captureas action %}{% group_url "cosinnus:poll:complete" group=group slug=poll.slug option_id=option.pk %}{% endcaptureas %}
+	    {% include "cosinnus/modal_box.html" with id=close_poll_modal label=label title=title form_action=action %}
+	{% endif %}
 
-{% if mode == 'vote' %}
-	{% with form=option_formsets_dict|dict_lookup:option.id %}
-		<div class="btn btn-emphasized w100 large-space poll-option {% if mode == 'vote' %}{% if form.choice.value == 2 %}poll-option-yes{% elif form.choice.value == 1 %}poll-option-maybe{% else %}poll-option-no{% endif %}{% endif %}"
-			{% if form %}
-				data-poll-option-vote-id="id_{{ form.choice.html_name }}" 
-				data-poll-can-vote-maybe="{% if poll.can_vote_maybe %}1{% else %}0{% endif %}"
-				data-poll-multiple-votes="{% if poll.multiple_votes %}1{% else %}0{% endif %}"
-			{% endif %}>
-		    <ul class="media-list">
-		        <li class="media">
-		            <a class="pull-left poll-option-display poll-option-display-yes" href="#">
-		          		<i class="fa fa-check"></i>
-		            </a>
-		            <a class="pull-left poll-option-display poll-option-display-maybe" href="#">
-		          		<i class="fa fa-question"></i>
-		            </a>
-		            <a class="pull-left poll-option-display poll-option-display-no" href="#">
-		          		<i class="fa fa-close"></i>
-		            </a>
-		            
-		            
-					{% if user|has_write_access:poll %}
-						
-						{% captureas close_poll_modal %}close_poll_modal_option_{{ option.pk }}{% endcaptureas %}
-						<a class="pull-right" data-toggle="modal" data-target="#{{ close_poll_modal }}" title="{% trans "Make winner and complete poll" %}">
-		                    <i class="fa fa-sign-out"></i><i class="fa fa-check"></i>
-		                    {# Complete dialog is outside of element #}
-		                </a>
-						
-					{% endif %}
-		            
-		            <div class="media-body">
-		                <span class="annotation poll-option-display poll-option-display-yes">
-			          		{% trans "Yes" %}
-			            </span>
-			            <span class="annotation poll-option-display poll-option-display-maybe">
-			          		{% trans "Maybe" %}
-			            </span>
-			            <span class="annotation poll-option-display poll-option-display-no">
-			          		{% trans "No" %}
-			            </span>
-		                
-		                <span>{{ option.description }}</span>
-		            </div>
-		        </li>
-		    </ul>
-		</div>
+{% endwith %}
 
-	{% endwith %}
-{% endif %}
 
-{% if mode == 'vote' and user|has_write_access:poll %}
-	{% captureas label %}{% blocktrans with description=option.description %}Do you really want to complete the poll and select "{{ description }}" as winner?{% endblocktrans %}{% endcaptureas %}
-	{% captureas title %}{% trans "Complete poll" %}{% endcaptureas %}
-	{% captureas action %}{% group_url "cosinnus:poll:complete" group=group slug=poll.slug option_id=option.pk %}{% endcaptureas %}
-    {% include "cosinnus/modal_box.html" with id=close_poll_modal label=label title=title form_action=action %}
-{% endif %}
 		    
 {% comment %}  
 Disabled items

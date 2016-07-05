@@ -1,24 +1,23 @@
 
-.poll-option {
-    cursor: pointer !important;
-}
-
 .poll-option.poll-option-yes,
 .poll-option.poll-option-yes .media,
 .poll-option.poll-option-yes .media-body {
     background-color: #99ff66 !important;
+    cursor: pointer !important;
 }
 
 .poll-option.poll-option-maybe,
 .poll-option.poll-option-maybe .media,
 .poll-option.poll-option-maybe .media-body {
     background-color: #ffcc66 !important;
+    cursor: pointer !important;
 }
 
 .poll-option.poll-option-no,
 .poll-option.poll-option-no .media,
 .poll-option.poll-option-no .media-body {
     background-color: #ff6666 !important;
+    cursor: pointer !important;
 }
 
 .poll-option-display {
