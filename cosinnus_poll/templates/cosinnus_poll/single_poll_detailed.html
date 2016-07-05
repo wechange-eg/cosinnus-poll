@@ -53,9 +53,11 @@
 {# announce winning option #}
 {% if poll.state != 1 %}
 	{% if poll.winning_option %}
-		<div>
-			<h2>The Winner is: {{ poll.winning_option }}</h2>
+		<div class="large-space">
+			<h2>{% trans "The Winner is" %}:</h2>
+			{% include 'cosinnus_poll/single_poll_option.html' with option=poll.winning_option %}
 		</div>
+		<h2>{% trans "Available options were" %}:</h2>
 	{% else %}
 		<div>
 			<h2>No option was selected as winner.</h2>
@@ -65,19 +67,11 @@
 
 {% if options %}
 	
-	<div class="row large-space"> <!-- options panel -->
+	<div class="large-space"> <!-- options panel -->
 		{% for option in options %}
 			
-			<div class="col-sm-3 col-xs-6">
-				{% include 'cosinnus_poll/single_poll_option.html' with option=option option_counter=forloop.counter %}
-		        <br/>
-		    </div>
+			{% include 'cosinnus_poll/single_poll_option.html' with option=option option_counter=forloop.counter %}
 		    
-			{% if forloop.counter|divisibleby:4 %}
-	            <div class="clearfix hidden-xs-down"></div>
-	        {% elif forloop.counter|divisibleby:2 %}
-	            <div class="clearfix visible-xs"></div>
-	        {% endif %}
 		{% endfor %}
 	</div>
 

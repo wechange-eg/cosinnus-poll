@@ -149,7 +149,7 @@ class Option(ThumbnailableImageMixin, models.Model):
         related_name='options',
     )
     
-    description = models.TextField(_('Description'), blank=True, null=True)
+    description = models.TextField(_('Description'), blank=False, null=False)
     image = models.ImageField(
         _('Image'),
         upload_to=get_poll_image_filename,

@@ -22,7 +22,7 @@
 	
 {% else %} {# Poll / Doodle list view #}
 	
-    <button type="button" class="btn w100 btn-{% if request.path == poll_list_page %}extra-{% endif %}emphasized fine-space" href="{{ poll_list_page }}{% add_current_params %}">
+    <button type="button" class="btn w100 btn-{% if request.path == poll_list_page or poll and poll.state < 3 %}extra-{% endif %}emphasized fine-space" href="{{ poll_list_page }}{% add_current_params %}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left" href="#">
@@ -33,7 +33,7 @@
                     {% endif %}
                 </a>
                 <a class="pull-right" href="#">
-                    {% if request.path == poll_list_page %}
+                    {% if request.path == poll_list_page or poll and poll.state < 3 %}
 	                    <i class="fa fa-caret-right"></i>
                     {% endif %}
                 </a>
@@ -44,7 +44,7 @@
         </ul>
     </button>
     
-    <button type="button" class="btn w100 btn-{% if request.path == poll_list_past_page %}extra-{% endif %}emphasized fine-space" href="{{ poll_list_past_page }}{% add_current_params %}">
+    <button type="button" class="btn w100 btn-{% if request.path == poll_list_past_page or poll and poll.state == 3 %}extra-{% endif %}emphasized fine-space" href="{{ poll_list_past_page }}{% add_current_params %}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left" href="#">
@@ -58,7 +58,7 @@
                     <i class="fa fa-bar-chart"></i>
                 </a>
                 <a class="pull-right" href="#">
-                    {% if request.path == poll_list_past_page %}
+                    {% if request.path == poll_list_past_page or poll and poll.state == 3 %}
                         <i class="fa fa-caret-right"></i>
                     {% endif %}
                 </a>

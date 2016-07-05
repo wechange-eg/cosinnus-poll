@@ -99,7 +99,7 @@
 							            				<label for="{{ inlineform.DELETE.id_for_label }}"><i class="fa fa-trash"></i> {% trans "Remove" %}:</label>
 														{{ inlineform.DELETE }}
 							            			</span>
-							            			<label style="padding: 5px;">{% trans "Edit Poll Option" %}&nbsp;{{ forloop.counter }}&nbsp;&nbsp;&nbsp;<em>{% trans "Write a description or select an image" %}</em></label>
+							            			<label style="padding: 5px;">{% trans "Edit Poll Option" %}&nbsp;{{ forloop.counter }}&nbsp;&nbsp;&nbsp;<em>{% trans "Describe this option" %}</em></label>
 						            			</div>
 							                    <a class="pull-left">
 								 					<i class="fa fa-edit"></i>
@@ -109,6 +109,10 @@
 									                {{ inlineform.description.errors }}
 									                {% render_field inlineform.description class+="form-control" style+="height: 72px; padding: 7px 10px 5px 10px;" placeholder=placeholder %}
 									            </div>
+									            {% comment %}
+									            
+									            	Images in options are now disabled. Re-enable this to have images in options.
+									            
 												<a class="pull-left">
 													{% if inlineform.image.value %}
 														<img class="image" src="{% thumbnail inlineform.image.value 40x40 crop=1 upscale=1 %}"></img>
@@ -122,6 +126,7 @@
 									                {% render_field inlineform.image class+="form-control" placeholder=placeholder %}
 													<i>{% trans "File Size" %}: {% trans "max. 10 MB" %}</i>
 									            </div>
+									            {% endcomment %}
 									            
 									            
 									        </div>

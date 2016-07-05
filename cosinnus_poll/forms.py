@@ -51,17 +51,25 @@ class OptionForm(forms.ModelForm):
 
     class Meta:
         model = Option
-        fields = ('description', 'image',)
-        
+        fields = ('description',)# 'image',) # Images are disabled for now
+    
+    def clean_description(self):
+        description = self.cleaned_data.get('description', '')
+        description = description.strip()
+        if not description:
+            raise forms.ValidationError(_('You must write a description for this poll option!'))
+        return description
+    
     def clean(self, *args, **kwargs):
         """ Enforce selecting either an image or description or both. """
         data = super(OptionForm, self).clean(*args, **kwargs)
+        """
         description = self.cleaned_data.get('description', None)
-        print ">> desc", description
+        # images are disabled for now
         image = self.cleaned_data.get('image', None)
-        print ">> imgage", image
         if not description and not image:
             raise forms.ValidationError(_('You must specify either an image or a description for this poll option!'))
+        """
         return data
 
 

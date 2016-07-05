@@ -138,7 +138,7 @@ class PollFormMixin(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
     
     def get_object(self, *args, **kwargs):
         poll = super(PollFormMixin, self).get_object(*args, **kwargs)
-        if poll.state != Poll.STATE_VOTING_OPEN or self.instance.options.filter(votes__isnull=False).count() > 0:
+        if poll.state != Poll.STATE_VOTING_OPEN or poll.options.filter(votes__isnull=False).count() > 0:
             self._deactivate_non_editable_fields_after_votes_or_completion()
         return poll
     
@@ -406,7 +406,7 @@ class PollCompleteView(RequireWriteMixin, FilterGroupMixin, UpdateView):
     MODES = ('complete', 'reopen', 'archive')
     
     def dispatch(self, request, *args, **kwargs):
-        self.assigned_option_id = kwargs.pop('option_id', None)
+        self.option_id = kwargs.pop('option_id', None)
         self.mode = kwargs.pop('mode')
         return super(PollCompleteView, self).dispatch(request, *args, **kwargs)
     
