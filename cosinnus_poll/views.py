@@ -364,7 +364,7 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
                     pass
             self.initial.append({
                 'option': option.pk,
-                'choice': vote.choice if vote else -1,
+                'choice': vote.choice if vote else 0,
             })
             self.user_votes_dict[option.pk] = vote.choice if vote else -1
         return self.initial

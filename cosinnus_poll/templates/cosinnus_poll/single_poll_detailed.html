@@ -69,9 +69,7 @@
 	
 	<div class="large-space"> <!-- options panel -->
 		{% for option in options %}
-			
 			{% include 'cosinnus_poll/single_poll_option.html' with option=option option_counter=forloop.counter %}
-		    
 		{% endfor %}
 	</div>
 

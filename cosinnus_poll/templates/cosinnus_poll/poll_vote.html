@@ -39,18 +39,27 @@
         </div><!-- content-box -->
     
         {% if mode == 'vote' %}
-          <button type="submit" class="btn btn-emphasized" onclick="$('#cosinnus_vote_form').submit(); return false;">
-            <ul class="media-list">
-              <li class="media">
-                <a class="pull-left" href="#">
-                  <i class="fa fa-floppy-o"></i>
-                </a>
-                <div class="media-body">
-                  {% trans "Vote" %}
-                </div>
-              </li>
-            </ul>
-          </button>
+		    <form id="poll_vote_form" action="." method="post" class="form-horizontal">
+			    {% csrf_token %}
+			    {{ formset.management_form }}
+                {% for form in formset %}
+                    {{ form.option.as_widget }}
+	                <input type="hidden" id="id_{{ form.choice.html_name }}" name="{{ form.choice.html_name }}" value="{{ form.choice.value }}" />
+                {% endfor %}
+                
+				<button type="submit" class="btn btn-emphasized">
+					<ul class="media-list">
+					  <li class="media">
+					    <a class="pull-left" href="#">
+					      <i class="fa fa-floppy-o"></i>
+					    </a>
+					    <div class="media-body">
+					      {% trans "Vote" %}
+					    </div>
+					  </li>
+					</ul>
+				</button>
+            </form>
         {% endif %}
         
             
@@ -95,7 +104,7 @@
                     <ul class="media-list">
                       <li class="media">
                         <a class="pull-left" href="#">
-                          <i class="fa fa-eraser"></i>
+                          <i class="fa fa-check"></i>
                         </a>
                         <div class="media-body">
                           {% trans "Complete without winner" %}
