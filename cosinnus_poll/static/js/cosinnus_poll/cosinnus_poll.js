@@ -110,6 +110,7 @@ $(function() {
         event.preventDefault();
         var vote_id = $this.attr('data-poll-option-vote-id');
         if (vote_id) {
+            // on click of active vote option: cycle through vote choices
             var can_vote_maybe = $this.attr('data-poll-can-vote-maybe') == '1';
             var multiple_votes = $this.attr('data-poll-multiple-votes') == '1';
             

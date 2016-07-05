@@ -170,14 +170,14 @@
 						</ul>
 					</button>
 	            </form>
-	        </div>
         	{% endif %}
 			
 			{% if not user|has_write_access:poll %}	        
 	        	{% include 'cosinnus/feedback/report_button_btn.html' with object=poll %}
 	        {% endif %}
 	        
-        <div class="clearfix"></div>
+        	<div class="clearfix"></div>
+        </div> <!-- second button row -->
         
     </div> <!-- buttons and content box -->
     

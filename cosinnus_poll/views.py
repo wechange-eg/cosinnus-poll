@@ -41,6 +41,7 @@ from django.contrib.sites.models import Site, get_current_site
 from annoying.functions import get_object_or_None
 from cosinnus.templatetags.cosinnus_tags import has_write_access
 from annoying.exceptions import Redirect
+from django import forms
 
 
 class PollIndexView(RequireReadMixin, RedirectView):
@@ -269,7 +270,10 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
         if poll.state == Poll.STATE_VOTING_OPEN and request.user.is_authenticated():
             if check_object_read_access(poll, request.user) and (poll.anyone_can_vote or check_ug_membership(request.user, self.group)):
                 self.mode = 'vote'
-        return super(PollVoteView, self).dispatch(request, *args, **kwargs)
+        try:
+            return super(PollVoteView, self).dispatch(request, *args, **kwargs)
+        except Redirect:
+            return HttpResponseRedirect(self.object.get_absolute_url())
         
     def post(self, request, *args, **kwargs):
         if self.mode != 'vote':
@@ -373,14 +377,26 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
         return self.object.get_absolute_url()
 
     def formset_valid(self, formset):
+        option_choices = {} # { option_id --> choice }
+        
         for form in formset:
             cd = form.cleaned_data
             option = int(cd.get('option'))
             choice = int(cd.get('choice', 0))
             if option:
-                vote, _created = Vote.objects.get_or_create(option_id=option, voter=self.request.user)
-                vote.choice = choice
-                vote.save()
+                option_choices[option] = choice
+        
+        if not self.object.multiple_votes and not len([True for choice in option_choices.values() if choice == Vote.VOTE_YES]) == 1:
+            messages.error(self.request, _('In this poll you must vote for exactly one item!'))
+            raise Redirect()
+        
+        for option, choice in option_choices.items():
+            if not self.object.can_vote_maybe and choice == Vote.VOTE_MAYBE:
+                choice = Vote.VOTE_NO
+            vote, _created = Vote.objects.get_or_create(option_id=option, voter=self.request.user)
+            vote.choice = choice
+            vote.save()
+            
         
         ret = super(PollVoteView, self).formset_valid(formset)
         messages.success(self.request, self.message_success )
