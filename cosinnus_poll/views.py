@@ -258,10 +258,6 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
     mode = 'vote' # 'vote' or 'view'
     MODES = ('vote', 'view',)
     
-    """
-        TODO: decide to show the vote view for open polls or the archived view for closed polls
-            Also: check poll.anyone_can_vote to maybe show a read-only page only
-    """
     @require_read_access()
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
@@ -284,63 +280,11 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
     def get_context_data(self, **kwargs):
         context = super(PollVoteView, self).get_context_data(**kwargs)
         
-        
-        """
-        # we group formsets, votes and options by days (as in a day there might be more than one option)
-        # the absolute order inside the two lists when traversing the options (iterated over days), 
-        # is guaranteed to be sorted by date and time ascending, as is the user-grouped list of votes
-        formset_forms_grouped = []
-        vote_counts_grouped = []
-        options_list_grouped = []
-        votes_user_grouped = defaultdict(list) # these are grouped by user, and sorted by option, not day!
-        for day, options in sorted(self.options_grouped.items(), key=lambda item: item[1][0].from_date):
-            formset_forms_grouped_l = []
-            vote_counts_grouped_l = []
-            options_list_grouped_l = []
-            
-            for option in options:
-                options_list_grouped_l.append(option)
-                # group the vote formsets in the same order we grouped the options
-                for form in context['formset'].forms:
-                    if option.pk == form.initial.get('option', -1):
-                        formset_forms_grouped_l.append(form)
-                # create a grouped total count for all the votes
-                # use sorted_votes here, it's cached
-                # format: [no_votes, maybe_votes, yes_notes, is_most_overall_votes]
-                counts = [0, 0, 0, False]
-                for vote in option.sorted_votes:
-                    counts[vote.choice] += 1
-                    votes_user_grouped[vote.voter.username].append(vote)
-                vote_counts_grouped_l.append(counts)
-            
-            formset_forms_grouped.append(formset_forms_grouped_l)
-            vote_counts_grouped.append(vote_counts_grouped_l)
-            options_list_grouped.append(options_list_grouped_l)
-        """
-        """
-        # determine and set the winning vote count of options (if there are votes)
-        try:
-            max_vote_count = max([max([vote[2] for vote in votes]) for votes in vote_counts_grouped])
-            for votes in vote_counts_grouped:
-                for vote in votes:
-                    if vote[2] == max_vote_count:
-                        vote[3] = True
-        except ValueError:
-            pass
-        """
-        
-        
-        
         self.option_formsets_dict = {} # { option-pk --> form }
         if self.mode == 'vote':
             # create a formset dict matching forms to option-pks so we can pull them together in the template easily
             for form in context['formset'].forms:
-                print "form initi", form.initial['option']
                 self.option_formsets_dict[form.initial['option']] = form
-        
-        """
-        # TODO: Add some vote count for stats
-        """
         
         context.update({
             'object': self.object,

@@ -30,18 +30,15 @@ class _PollForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
     
     def __init__(self, *args, **kwargs):
         super(_PollForm, self).__init__(*args, **kwargs)
-        instance = kwargs.get('instance')
-    
+        # if a Poll has been voted on, no more options can be edited. remove their fields to avoid data injection
+        has_active_votes = self.instance.options.filter(votes__isnull=False).count() > 0
+        if has_active_votes or self.instance and self.instance.state != Poll.STATE_VOTING_OPEN:
+            for remove_field in self.LOCKED_FIELDS_WHILE_ACTIVE_VOTES:
+                del self.fields[remove_field]
+                
     def clean(self, *args, **kwargs):
         cleaned_data = super(_PollForm, self).clean(*args, **kwargs)
         return cleaned_data
-        
-    def save(self, *args, **kwargs):
-        has_active_votes = self.instance.options.filter(votes__isnull=False).count() > 0
-        if has_active_votes:
-            print ">> TODO: reset initial values?"
-            pass
-        return super(_PollForm, self).save(*args, **kwargs)
         
 
 PollForm = get_form(_PollForm)

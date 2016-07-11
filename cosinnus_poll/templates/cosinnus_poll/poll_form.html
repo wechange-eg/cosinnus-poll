@@ -60,6 +60,7 @@
                                 </li>
                             </ol>
                             
+                            {% if form.forms.obj.can_vote_maybe %}
 	                        <ol class="input-area">
                                 <li class="w100">
                                     {{ form.forms.obj.multiple_votes.errors }}
@@ -67,7 +68,9 @@
 		                            <label for="{{ form.forms.obj.multiple_votes.auto_id }}" style="white-space: normal;">{% trans "Multiple Votes" %} - <small>{% trans "If disabled, users can only vote for one option" %}</small></label>
                                 </li>
                             </ol>
+                            {% endif %}
                             
+                            {% if form.forms.obj.multiple_votes %}
 	                        <ol class="input-area">
                                 <li class="w100">
                                     {{ form.forms.obj.can_vote_maybe.errors }}
@@ -75,7 +78,9 @@
 		                            <label for="{{ form.forms.obj.can_vote_maybe.auto_id }}" style="white-space: normal;">{% trans '"Maybe" option enabled' %} - <small>{% trans 'In addition to "Yes" and "No"' %}</small></label>
                                 </li>
                             </ol>
+                            {% endif %}
                             
+                            {% if form.forms.obj.anyone_can_vote %}
 	                        <ol class="input-area">
                                 <li class="w100">
                                     {{ form.forms.obj.anyone_can_vote.errors }}
@@ -83,6 +88,7 @@
 		                            <label for="{{ form.forms.obj.anyone_can_vote.auto_id }}" style="white-space: normal;">{% trans "Public voting" %} - <small>{% trans "Anyone logged in user this poll is visible for can vote for it. If disabled, only group/project members can vote on it." %}</small></label>
                                 </li>
                             </ol>
+                            {% endif %}
                             
                             
 	                        {% include 'cosinnus/media_tags.html' %}
