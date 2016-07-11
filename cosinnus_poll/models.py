@@ -103,9 +103,11 @@ class Poll(BaseTaggableObjectModel):
             cosinnus_notifications.poll_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
         if not created and self.__state == Poll.STATE_VOTING_OPEN and self.state == Poll.STATE_CLOSED:
             # poll went from open to closed, so maybe send a notification for poll closed?
-            # TODO: create notification for poll being closed?
-            #cosinnus_notifications.poll_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
-            pass
+            # send signal only for voters as audience!
+            voter_ids = list(set(self.options.all().values_list('votes__voter__id', flat=True)))
+            voter_ids.remove(self.creator.id)
+            voters = get_user_model().objects.filter(id__in=voter_ids)
+            cosinnus_notifications.poll_completed.send(sender=self, user=self.creator, obj=self, audience=voters)
         self.__state = self.state
 
     def get_absolute_url(self):

@@ -11,6 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 
 """ Signal definitions """
 poll_created = dispatch.Signal(providing_args=["user", "obj", "audience"])
+poll_completed = dispatch.Signal(providing_args=["user", "obj", "audience"])
 poll_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
 tagged_poll_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
 voted_poll_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
@@ -43,6 +44,13 @@ notifications = {
         'mail_template': 'cosinnus_poll/notifications/poll_created.txt',
         'subject_template': 'cosinnus_poll/notifications/poll_created_subject.txt',
         'signals': [poll_created],
+        'default': True,
+    }, 
+    'poll_completed': {
+        'label': _('A poll you voted on was completed'), 
+        'mail_template': 'cosinnus_poll/notifications/poll_completed.txt',
+        'subject_template': 'cosinnus_poll/notifications/poll_completed_subject.txt',
+        'signals': [poll_completed],
         'default': True,
     },  
     'poll_comment_posted': {
