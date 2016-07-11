@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-01 16:09+0200\n"
+"POT-Creation-Date: 2016-07-11 16:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,49 +17,44 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\cosinnus_app.py:13 .\models.py:110 .\templates\cosinnus_event\base.html:6
-#: .\templates\cosinnus_event\doodle_list.html:5
-#: .\templates\cosinnus_event\event_list.html:5
-#: .\templates\cosinnus_event\event_list_detailed.html:5
-#: .\templates\cosinnus_event\event_list_detailed.html:10
-#: .\templates\cosinnus_event\event_list_detailed_past.html:5
-#: .\templates\cosinnus_event\event_list_detailed_past.html:10
-#: .\templates\cosinnus_event\widgets\event_widget_form.html:5 .\views.py:470
-msgid "Events"
+#: .\cosinnus_app.py:13 .\models.py:84 .\templates\cosinnus_poll\base.html:6
+#: .\templates\cosinnus_poll\leftnav.html:41
+#: .\templates\cosinnus_poll\poll_list.html:5
+#: .\templates\cosinnus_poll\poll_list.html:10
+msgid "Polls"
 msgstr ""
 
-#: .\cosinnus_app.py:20
-#: .\templates\cosinnus_event\event_list_standalone.html:11
+#: .\cosinnus_app.py:20 .\templates\cosinnus_poll\poll_list_standalone.html:11
 msgctxt "the_app"
-msgid "event"
+msgid "poll"
 msgstr ""
 
 #: .\cosinnus_notifications.py:43
-msgid "A user created a new event"
+msgid "A user created a new poll"
 msgstr ""
 
 #: .\cosinnus_notifications.py:50
-msgid "A user created a new event poll"
+msgid "A poll you voted on was completed"
 msgstr ""
 
 #: .\cosinnus_notifications.py:57
-msgid "A user commented on one of your events"
+msgid "A user commented on one of your polls"
 msgstr ""
 
 #: .\cosinnus_notifications.py:64
-msgid "A user commented on a event you were tagged in"
+msgid "A user commented on a poll you were tagged in"
 msgstr ""
 
 #: .\cosinnus_notifications.py:71
-msgid "A user commented on an event you voted in"
+msgid "A user commented on an poll you voted in"
 msgstr ""
 
 #: .\dashboard.py:28
-msgid "Upcoming Events"
+msgid "Current Polls"
 msgstr ""
 
-#: .\dashboard.py:48
-msgid "No upcoming events"
+#: .\dashboard.py:47
+msgid "No current polls"
 msgstr ""
 
 #: .\filters.py:14
@@ -67,493 +62,306 @@ msgid "Created By"
 msgstr ""
 
 #: .\filters.py:20
-msgid "Soonest Upcoming"
-msgstr ""
-
-#: .\filters.py:21
 msgid "Newest Created"
 msgstr ""
 
-#: .\filters.py:22
+#: .\filters.py:21
 msgid "Title"
 msgstr ""
 
-#: .\models.py:56
-msgid "Scheduled"
+#: .\forms.py:56
+msgid "You must write a description for this poll option!"
 msgstr ""
 
-#: .\models.py:57
+#: .\models.py:47
 msgid "Voting open"
 msgstr ""
 
-#: .\models.py:58
-msgid "Canceled"
+#: .\models.py:48
+msgid "Voting closed"
 msgstr ""
 
-#: .\models.py:62 .\models.py:208
-msgid "Start"
+#: .\models.py:49
+msgid "Poll archived"
 msgstr ""
 
-#: .\models.py:65 .\models.py:211
-msgid "End"
-msgstr ""
-
-#: .\models.py:68
+#: .\models.py:53
 msgid "State"
 msgstr ""
 
-#: .\models.py:74
-msgid "Note"
+#: .\models.py:57 .\models.py:155 .\templates\cosinnus_poll\poll_form.html:138
+msgid "Description"
 msgstr ""
 
-#: .\models.py:78
-msgid "Event date"
+#: .\models.py:59
+msgid "Multiple options votable"
 msgstr ""
 
-#: .\models.py:85
-msgid "Location"
+#: .\models.py:60
+msgid ""
+"Does this poll allow users to vote on multiple options or just decide for "
+"one?"
 msgstr ""
 
-#: .\models.py:86
-msgid "Latitude"
+#: .\models.py:61 .\templates\cosinnus_poll\poll_form.html:78
+msgid "\"Maybe\" option enabled"
 msgstr ""
 
-#: .\models.py:87
-msgid "Longitude"
+#: .\models.py:62
+msgid ""
+"Is the maybe option enabled? Ignored and defaulting to False if "
+"``multiple_votes==False``"
 msgstr ""
 
-#: .\models.py:89
-msgid "Street"
+#: .\models.py:63
+msgid "Anyone can vote"
 msgstr ""
 
-#: .\models.py:91
-msgid "ZIP code"
+#: .\models.py:64
+msgid ""
+"If true, anyone who can see this poll can vote on it. If false, only group "
+"members can."
 msgstr ""
 
-#: .\models.py:93
-msgid "City"
+#: .\models.py:67
+msgid "Start"
+msgstr ""
+
+#: .\models.py:70
+msgid "Winning Option"
+msgstr ""
+
+#: .\models.py:83 .\models.py:150
+msgid "Poll"
 msgstr ""
 
 #: .\models.py:95
-msgid "Is public (on website)"
+#, python-format
+msgid "Poll: %(poll)s (%(state)s)"
 msgstr ""
 
-#: .\models.py:98
+#: .\models.py:157
 msgid "Image"
 msgstr ""
 
-#: .\models.py:103
-msgid "URL"
-msgstr ""
-
-#: .\models.py:109 .\models.py:215
-#: .\templates\cosinnus_event\event_detail.html:5
-#: .\templates\cosinnus_event\event_detail.html:10
-msgid "Event"
-msgstr ""
-
-#: .\models.py:119
-#, python-format
-msgid "%(event)s (%(date)s - %(end)s)"
-msgstr ""
-
-#: .\models.py:125
-#, python-format
-msgid "%(event)s (%(from)s - %(to)s)"
-msgstr ""
-
-#: .\models.py:131
-#, python-format
-msgid "%(event)s (pending)"
-msgstr ""
-
-#: .\models.py:221 .\models.py:293
+#: .\models.py:163 .\models.py:217
 msgctxt "the subject"
 msgid "Votes"
 msgstr ""
 
-#: .\models.py:226 .\models.py:274
-msgid "Suggestion"
+#: .\models.py:167
+msgid "Poll Option"
 msgstr ""
 
-#: .\models.py:227
-msgid "Suggestions"
+#: .\models.py:168
+msgid "Poll Options"
 msgstr ""
 
-#: .\models.py:267 .\templates\cosinnus_event\doodle_vote.html:71
-#: .\templates\cosinnus_event\doodle_vote.html:89
-#: .\templates\cosinnus_event\doodle_vote.html:162
+#: .\models.py:192 .\templates\cosinnus_poll\single_poll_option.html:14
+#: .\templates\cosinnus_poll\single_poll_option.html:20
+#: .\templates\cosinnus_poll\single_poll_option.html:26
+#: .\templates\cosinnus_poll\single_poll_option.html:52
 msgid "Yes"
 msgstr ""
 
-#: .\models.py:268 .\templates\cosinnus_event\doodle_vote.html:75
-#: .\templates\cosinnus_event\doodle_vote.html:90
-#: .\templates\cosinnus_event\doodle_vote.html:163
+#: .\models.py:193 .\templates\cosinnus_poll\single_poll_option.html:14
+#: .\templates\cosinnus_poll\single_poll_option.html:20
+#: .\templates\cosinnus_poll\single_poll_option.html:26
+#: .\templates\cosinnus_poll\single_poll_option.html:55
 msgid "Maybe"
 msgstr ""
 
-#: .\models.py:269 .\templates\cosinnus_event\doodle_vote.html:79
-#: .\templates\cosinnus_event\doodle_vote.html:91
-#: .\templates\cosinnus_event\doodle_vote.html:164
+#: .\models.py:194 .\templates\cosinnus_poll\single_poll_option.html:14
+#: .\templates\cosinnus_poll\single_poll_option.html:20
+#: .\templates\cosinnus_poll\single_poll_option.html:26
+#: .\templates\cosinnus_poll\single_poll_option.html:58
 msgid "No"
 msgstr ""
 
-#: .\models.py:281
+#: .\models.py:199
+msgid "Option"
+msgstr ""
+
+#: .\models.py:206
 msgid "Voter"
 msgstr ""
 
-#: .\models.py:286 .\templates\cosinnus_event\doodle_vote.html:192
+#: .\models.py:211 .\templates\cosinnus_poll\poll_vote.html:167
 msgid "Vote"
 msgstr ""
 
-#: .\models.py:292
+#: .\models.py:216
 msgctxt "the subject"
 msgid "Vote"
 msgstr ""
 
-#: .\models.py:309
+#: .\models.py:231
 msgid "Creator"
 msgstr ""
 
-#: .\models.py:310
+#: .\models.py:232
 msgid "Created"
 msgstr ""
 
-#: .\models.py:311
+#: .\models.py:233
 msgid "Last modified"
 msgstr ""
 
-#: .\models.py:313
+#: .\models.py:235
 msgid "Text"
 msgstr ""
 
-#: .\models.py:317
+#: .\models.py:239
 msgid "Comment"
 msgstr ""
 
-#: .\models.py:318 .\templates\cosinnus_event\event_comments.html:34
+#: .\models.py:240 .\templates\cosinnus_poll\poll_comments.html:34
 msgid "Comments"
 msgstr ""
 
-#: .\templates\cosinnus_event\common\humanized_event_time.html:8
-#: .\templates\cosinnus_event\common\humanized_event_time.html:32
-msgctxt "time"
-msgid "all day"
+#: .\templates\cosinnus_poll\leftnav.html:17
+msgid "Back to Polls"
 msgstr ""
 
-#: .\templates\cosinnus_event\common\humanized_event_time.html:10
-msgctxt "time"
-msgid "at"
+#: .\templates\cosinnus_poll\leftnav.html:67
+msgid "Past Polls"
 msgstr ""
 
-#: .\templates\cosinnus_event\common\humanized_event_time.html:12
-#: .\templates\cosinnus_event\common\humanized_event_time.html:19
-#: .\templates\cosinnus_event\common\humanized_event_time.html:26
-#: .\templates\cosinnus_event\common\humanized_event_time.html:35
-msgctxt "time"
-msgid "o'clock"
-msgstr ""
-
-#: .\templates\cosinnus_event\common\humanized_event_time.html:15
-msgctxt "time"
-msgid "from"
-msgstr ""
-
-#: .\templates\cosinnus_event\common\humanized_event_time.html:17
-#: .\templates\cosinnus_event\common\humanized_event_time.html:29
-msgctxt "time"
-msgid "until"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_form.html:6
-#: .\templates\cosinnus_event\doodle_form.html:17
-msgid "Add unscheduled event"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_form.html:8
-#: .\templates\cosinnus_event\doodle_form.html:19
-#: .\templates\cosinnus_event\doodle_vote.html:229
-#: .\templates\cosinnus_event\event_form.html:8
-#: .\templates\cosinnus_event\event_form.html:19
-#: .\templates\cosinnus_event\list_object.html:125
-#: .\templates\cosinnus_event\single_event_detailed.html:62
-msgid "Edit"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_form.html:46
-#: .\templates\cosinnus_event\doodle_list.html:37
-msgid "Enter a title for the new event to be scheduled."
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_form.html:65
-#: .\templates\cosinnus_event\event_form.html:72
-#: .\templates\cosinnus_event\event_form.html:95
-msgid "Time"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_form.html:78
-msgid "Please select the available days in the calendar."
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_form.html:79
-msgid "You can select the same day more than once."
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_form.html:80
-msgid "Time: e.g. 10 or 10:30."
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_form.html:90
-msgid ""
-"Note: You cannot edit the dates for this event poll because someone has "
-"already cast their vote!"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_form.html:100
-#: .\templates\cosinnus_event\event_form.html:109
-msgid "Enter a description for the event (optional)."
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_form.html:108
-#: .\templates\cosinnus_event\event_form.html:117
-msgid "External Link for the event (optional)."
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_form.html:115
-#: .\templates\cosinnus_event\event_form.html:124
-msgid "Location (optional)."
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_form.html:131
-#: .\templates\cosinnus_event\doodle_list.html:52
-#: .\templates\cosinnus_event\event_form.html:140
-#: .\templates\cosinnus_event\event_list.html:91
-msgid "Create"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_form.html:133
-#: .\templates\cosinnus_event\event_form.html:142
-msgid "Save"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_list.html:10
-msgid "Schedule an event"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_list.html:63
-msgid "There are no open event polls."
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_vote.html:5
-msgctxt "the_verb"
-msgid "Vote"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_vote.html:12
-#, python-format
-msgid "Vote for %(title)s"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_vote.html:30
-msgid "This event has already been scheduled. Voting is closed."
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_vote.html:33
-msgid "This event has been canceled. Voting is closed."
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_vote.html:39
-msgid "Nobody has voted for this event poll yet."
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_vote.html:105
-msgid "Create an event from one of the suggestions"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_vote.html:114
-#, python-format
-msgid "Set the date to %(suggestion)s."
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_vote.html:125
-msgid "When do you have time?"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_vote.html:177
-msgid "There are no date suggestions for this event poll yet!"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_vote.html:209
-#: .\templates\cosinnus_event\event_comments.html:71
-#: .\templates\cosinnus_event\list_object.html:108
-#: .\templates\cosinnus_event\single_event_detailed.html:50
-msgid "Delete"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_vote.html:215
-#: .\templates\cosinnus_event\list_object.html:138
-#, python-format
-msgid "Do you really want to delete unscheduled event „%(title)s“?"
-msgstr ""
-
-#: .\templates\cosinnus_event\doodle_vote.html:216
-#: .\templates\cosinnus_event\list_object.html:139
-msgid "Delete unscheduled event"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_comments.html:95
-msgid "Write comment..."
-msgstr ""
-
-#: .\templates\cosinnus_event\event_comments.html:108
-msgid "Post"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_form.html:6
-#: .\templates\cosinnus_event\event_form.html:17
-msgid "Add event"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_form.html:44
-msgid "Enter a title for the new event."
-msgstr ""
-
-#: .\templates\cosinnus_event\event_form.html:55
-msgid "From"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_form.html:57
-#: .\templates\cosinnus_event\event_form.html:80
-msgid "Date"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_form.html:60
-msgid "Start date."
-msgstr ""
-
-#: .\templates\cosinnus_event\event_form.html:78
-msgid "Until"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_form.html:83
-msgid "End date."
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list.html:10
-msgid "Kalender"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list.html:31
-msgid ""
-"Copy this iCal-link into your calendar application to import current events:"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list.html:41
-msgid "iCal Feed"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list.html:75
-msgid "Enter the title for a new event or select a day in the Calendar."
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list.html:105
-msgid "Export event feed"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list.html:126
-msgid "Create Event"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list.html:130
-#: .\templates\cosinnus_event\event_list.html:131
-msgid "Would you like to create an event"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list.html:130
-msgid "on"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list.html:131
-msgid "from"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list.html:131
-msgid "until"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list.html:142
-msgid "Cancel"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list.html:158
-msgid "OK"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list_detailed.html:10
-#: .\templates\cosinnus_event\event_list_detailed_past.html:10
-msgid "Planned Events"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list_detailed.html:10
-#: .\templates\cosinnus_event\event_list_detailed_past.html:10
-#: .\templates\cosinnus_event\leftnav.html:99
-msgid "Past Events"
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list_detailed.html:30
-msgid "There are no current or future events."
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list_detailed_past.html:30
-msgid "There are no past events."
-msgstr ""
-
-#: .\templates\cosinnus_event\event_list_standalone.html:23
-#: .\templates\cosinnus_event\widgets\upcoming.html:37
-msgid "There are no upcoming events"
-msgstr ""
-
-#: .\templates\cosinnus_event\leftnav.html:19
-msgid "Back to Events"
-msgstr ""
-
-#: .\templates\cosinnus_event\leftnav.html:35
-msgid "Return to Event Polls"
-msgstr ""
-
-#: .\templates\cosinnus_event\leftnav.html:59
-msgid "Calendar"
-msgstr ""
-
-#: .\templates\cosinnus_event\leftnav.html:81
-msgid "List"
-msgstr ""
-
-#: .\templates\cosinnus_event\leftnav.html:121
-msgid "Event Polls"
-msgstr ""
-
-#: .\templates\cosinnus_event\list_object.html:27
-#: .\templates\cosinnus_event\single_event_detailed.html:29
+#: .\templates\cosinnus_poll\list_object.html:23
+#: .\templates\cosinnus_poll\single_poll_detailed.html:18
 msgid "by"
 msgstr ""
 
-#: .\templates\cosinnus_event\list_object.html:142
-#: .\templates\cosinnus_event\single_event_detailed.html:74
+#: .\templates\cosinnus_poll\list_object.html:61
+#: .\templates\cosinnus_poll\poll_comments.html:71
+#: .\templates\cosinnus_poll\poll_vote.html:59
+msgid "Delete"
+msgstr ""
+
+#: .\templates\cosinnus_poll\list_object.html:74
+#: .\templates\cosinnus_poll\poll_form.html:8
+#: .\templates\cosinnus_poll\poll_form.html:19
+#: .\templates\cosinnus_poll\poll_vote.html:79
+msgid "Edit"
+msgstr ""
+
+#: .\templates\cosinnus_poll\list_object.html:89
+#: .\templates\cosinnus_poll\poll_vote.html:113
+msgid "Re-open"
+msgstr ""
+
+#: .\templates\cosinnus_poll\list_object.html:102
+#: .\templates\cosinnus_poll\poll_vote.html:126
+msgid "Archive"
+msgstr ""
+
+#: .\templates\cosinnus_poll\list_object.html:115
+#: .\templates\cosinnus_poll\poll_vote.html:65
 #, python-format
-msgid "Do you really want to delete event „%(title)s“?"
+msgid "Do you really want to delete poll „%(title)s“?"
 msgstr ""
 
-#: .\templates\cosinnus_event\list_object.html:143
-msgid "Delete event"
+#: .\templates\cosinnus_poll\list_object.html:116
+#: .\templates\cosinnus_poll\poll_vote.html:66
+msgid "Delete poll"
 msgstr ""
 
-#: .\templates\cosinnus_event\notifications\doodle_created.txt:1
+#: .\templates\cosinnus_poll\list_object.html:121
+#: .\templates\cosinnus_poll\poll_vote.html:132
+#, python-format
+msgid "Do you really want to re-open poll „%(title)s“?"
+msgstr ""
+
+#: .\templates\cosinnus_poll\list_object.html:122
+#: .\templates\cosinnus_poll\poll_vote.html:133
+msgid "Re-open poll"
+msgstr ""
+
+#: .\templates\cosinnus_poll\list_object.html:126
+#: .\templates\cosinnus_poll\poll_vote.html:137
+#, python-format
+msgid "Do you really want to archive poll „%(title)s“?"
+msgstr ""
+
+#: .\templates\cosinnus_poll\list_object.html:127
+#: .\templates\cosinnus_poll\poll_vote.html:138
+msgid "Archive poll"
+msgstr ""
+
+#: .\templates\cosinnus_poll\notifications\poll_comment_posted.html:1
+#, python-format
+msgid ""
+"Hi, %(receiver_name)s!\n"
+"\n"
+"%(sender_name)s has posted a comment on a poll you created in %(team_name)"
+"s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"on your poll:\n"
+"\n"
+"\"%(poll_title)s\"\n"
+"\n"
+"\n"
+"Follow this link to see the comment: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Follow this link to edit your notification preferences: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Your %(site_name)s team.\n"
+"\n"
+msgstr ""
+
+#: .\templates\cosinnus_poll\notifications\poll_comment_posted_subject.txt:1
+#, python-format
+msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+msgstr ""
+
+#: .\templates\cosinnus_poll\notifications\poll_completed.txt:1
 #, python-format
 msgid ""
 "Hi %(receiver_name)s,\n"
 "\n"
-"a new event \"%(object_name)s\" in %(team_name)s was created by %"
+"the poll \"%(object_name)s\", was completed in %(team_name)s by %"
+"(sender_name)s!\n"
+msgstr ""
+
+#: .\templates\cosinnus_poll\notifications\poll_completed.txt:6
+msgid "The winning option was:"
+msgstr ""
+
+#: .\templates\cosinnus_poll\notifications\poll_completed.txt:10
+msgid "There was no winning option."
+msgstr ""
+
+#: .\templates\cosinnus_poll\notifications\poll_completed.txt:12
+#, python-format
+msgid ""
+"\n"
+"You can find the poll by following this link: %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(Follow this link to edit your notification preferences: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Your %(site_name)s Team."
+msgstr ""
+
+#: .\templates\cosinnus_poll\notifications\poll_completed_subject.txt:1
+#, python-format
+msgid "Poll: \"%(object_name)s\" was completed in %(team_name)s."
+msgstr ""
+
+#: .\templates\cosinnus_poll\notifications\poll_created.txt:1
+#, python-format
+msgid ""
+"Hi %(receiver_name)s,\n"
+"\n"
+"a new poll \"%(object_name)s\", was created in %(team_name)s by %"
 "(sender_name)s. \n"
 "\n"
 "You can find it by following this link: %(object_url)s\n"
@@ -566,80 +374,57 @@ msgid ""
 "Your %(site_name)s Team."
 msgstr ""
 
-#: .\templates\cosinnus_event\notifications\doodle_created_subject.txt:1
+#: .\templates\cosinnus_poll\notifications\poll_created_subject.txt:1
 #, python-format
-msgid "A new event poll: \"%(object_name)s\" was created in %(team_name)s."
+msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
 msgstr ""
 
-#: .\templates\cosinnus_event\notifications\event_comment_posted.html:1
+#: .\templates\cosinnus_poll\notifications\tagged_poll_comment_posted.html:1
 #, python-format
 msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s has posted a comment on an event you created in %(team_name)"
+"%(sender_name)s has posted a comment on a poll you were tagged in, in %"
+"(team_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"on the poll:\n"
+"\n"
+"\"%(poll_title)s\"\n"
+"\n"
+"\n"
+"Follow this link to see the comment: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Follow this link to edit your notification preferences: %"
+"(notification_settings_url)s )\n"
+"\n"
+"Your %(site_name)s team.\n"
+"\n"
+msgstr ""
+
+#: .\templates\cosinnus_poll\notifications\tagged_poll_comment_posted_subject.txt:1
+#, python-format
+msgid "%(sender_name)s commented on a poll you were tagged in %(team_name)s."
+msgstr ""
+
+#: .\templates\cosinnus_poll\notifications\voted_poll_comment_posted.html:1
+#, python-format
+msgid ""
+"Hi, %(receiver_name)s!\n"
+"\n"
+"%(sender_name)s has posted a comment on a poll you voted in in %(team_name)"
 "s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
 "\n"
-"on your event:\n"
+"on the poll:\n"
 "\n"
-"\"%(event_title)s\"\n"
-"\n"
-"\n"
-"Follow this link to see the comment: \n"
-"%(object_url)s\n"
-"\n"
-"\n"
-"(Follow this link to edit your notification preferences: %"
-"(notification_settings_url)s )\n"
-"\n"
-"Your %(site_name)s team.\n"
-"\n"
-msgstr ""
-
-#: .\templates\cosinnus_event\notifications\event_comment_posted_subject.txt:1
-#, python-format
-msgid "%(sender_name)s commented on one of your events in %(team_name)s."
-msgstr ""
-
-#: .\templates\cosinnus_event\notifications\event_created.txt:1
-#, python-format
-msgid ""
-"Hi %(receiver_name)s,\n"
-"\n"
-"a new event \"%(object_name)s\", on %(event_date)s, was announced in %"
-"(team_name)s by %(sender_name)s. \n"
-"\n"
-"You can find it by following this link: %(object_url)s\n"
-"\n"
-"\n"
-"\n"
-"(Follow this link to edit your notification preferences: %"
-"(notification_settings_url)s )\n"
-"\n"
-"Your %(site_name)s Team."
-msgstr ""
-
-#: .\templates\cosinnus_event\notifications\event_created_subject.txt:1
-#, python-format
-msgid "A new event: \"%(object_name)s\" was announced in %(team_name)s."
-msgstr ""
-
-#: .\templates\cosinnus_event\notifications\tagged_event_comment_posted.html:1
-#, python-format
-msgid ""
-"Hi, %(receiver_name)s!\n"
-"\n"
-"%(sender_name)s has posted a comment on an event you were tagged in, in %"
-"(team_name)s:\n"
-"\n"
-"\"%(comment_text)s\"\n"
-"\n"
-"\n"
-"on the event:\n"
-"\n"
-"\"%(event_title)s\"\n"
+"\"%(poll_title)s\"\n"
 "\n"
 "\n"
 "Follow this link to see the comment: \n"
@@ -653,160 +438,262 @@ msgid ""
 "\n"
 msgstr ""
 
-#: .\templates\cosinnus_event\notifications\tagged_event_comment_posted_subject.txt:1
+#: .\templates\cosinnus_poll\notifications\voted_poll_comment_posted_subject.txt:1
 #, python-format
-msgid "%(sender_name)s commented on a event you were tagged in %(team_name)s."
+msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s."
 msgstr ""
 
-#: .\templates\cosinnus_event\notifications\voted_event_comment_posted.html:1
+#: .\templates\cosinnus_poll\poll_comments.html:95
+msgid "Write comment..."
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_comments.html:108
+msgid "Post"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:6
+#: .\templates\cosinnus_poll\poll_form.html:17
+msgid "Add poll"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:48
+msgid "Enter a title for the new poll."
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:58
+msgid "Enter a description for the poll (optional)."
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:68
+msgid "Multiple Votes"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:68
+msgid "If disabled, users can only vote for one option"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:78
+msgid "In addition to \"Yes\" and \"No\""
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:88
+msgid "Public voting"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:88
+msgid ""
+"Any logged in user who can see this poll can vote on it. If disabled, only "
+"group/project members can vote on it."
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:101
+msgid ""
+"Note: You cannot edit the options for this poll because someone has already "
+"cast their vote or the poll has been completed!"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:129
+msgid "Remove"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:132
+msgid "Edit Poll Option"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:132
+msgid "Describe this option"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:179
+msgid "Add option"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:202
+#: .\templates\cosinnus_poll\poll_list.html:48
+msgid "Create"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_form.html:204
+msgid "Save"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_list.html:10
+msgid "Archived Polls"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_list.html:32
+msgid "Enter the title for a new poll."
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_list.html:60
+msgid "There are no archived polls."
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_list.html:62
+msgid "There are no running polls."
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_list_standalone.html:23
+msgid "There are no upcoming polls"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_vote.html:5
+msgctxt "the_verb"
+msgid "Vote"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_vote.html:12
+#, python-format
+msgid "Vote for %(title)s"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_vote.html:35
+msgid "This poll has been completed. Voting is closed."
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_vote.html:38
+msgid "This is an archived poll."
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_vote.html:87
+#: .\templates\cosinnus_poll\poll_vote.html:94
+msgid "Complete without winner"
+msgstr ""
+
+#: .\templates\cosinnus_poll\poll_vote.html:99
 #, python-format
 msgid ""
-"Hi, %(receiver_name)s!\n"
-"\n"
-"%(sender_name)s has posted a comment on an event poll you voted in in %"
-"(team_name)s:\n"
-"\n"
-"\"%(comment_text)s\"\n"
-"\n"
-"\n"
-"on the event poll:\n"
-"\n"
-"\"%(event_title)s\"\n"
-"\n"
-"\n"
-"Follow this link to see the comment: \n"
-"%(object_url)s\n"
-"\n"
-"\n"
-"(Follow this link to edit your notification preferences: %"
-"(notification_settings_url)s )\n"
-"\n"
-"Your %(site_name)s team.\n"
-"\n"
+"Do you really want to complete poll \"%(title)s\" with no winning option?"
 msgstr ""
 
-#: .\templates\cosinnus_event\notifications\voted_event_comment_posted_subject.txt:1
-#, python-format
-msgid ""
-"%(sender_name)s commented on an event poll you voted in in %(team_name)s."
+#: .\templates\cosinnus_poll\poll_vote.html:100
+msgid "Complete poll without winner"
 msgstr ""
 
-#: .\templates\cosinnus_event\single_event_detailed.html:75
-msgid "Delete Event"
-msgstr ""
-
-#: .\templates\cosinnus_event\single_event_detailed.html:89
-msgid "(Canceled!)"
-msgstr ""
-
-#: .\templates\cosinnus_event\single_event_detailed.html:124
+#: .\templates\cosinnus_poll\single_poll_detailed.html:41
 msgid "(No description set)"
 msgstr ""
 
-#: .\templates\cosinnus_event\widgets\event_widget.html:31
-msgid "More"
+#: .\templates\cosinnus_poll\single_poll_detailed.html:57
+msgid "The Winner is"
 msgstr ""
 
-#: .\templates\cosinnus_event\widgets\event_widget_form.html:14
-msgid "Upcoming events"
+#: .\templates\cosinnus_poll\single_poll_detailed.html:60
+msgid "Available options were"
 msgstr ""
 
-#: .\views.py:130
+#: .\templates\cosinnus_poll\single_poll_detailed.html:80
+msgid "There are no options for this poll yet!"
+msgstr ""
+
+#: .\templates\cosinnus_poll\single_poll_option.html:14
+#: .\templates\cosinnus_poll\single_poll_option.html:20
+#: .\templates\cosinnus_poll\single_poll_option.html:26
+msgid "Votes"
+msgstr ""
+
+#: .\templates\cosinnus_poll\single_poll_option.html:34
+msgid "Make winner and complete poll"
+msgstr ""
+
+#: .\templates\cosinnus_poll\single_poll_option.html:68
 #, python-format
-msgid "Event \"%(title)s\" was edited successfully."
+msgid ""
+"Do you really want to complete the poll and select \"%(description)s\" as "
+"winner?"
 msgstr ""
 
-#: .\views.py:131
+#: .\templates\cosinnus_poll\single_poll_option.html:69
+msgid "Complete poll"
+msgstr ""
+
+#: .\templates\cosinnus_poll\widgets\current.html:35
+msgid "There are no polls yet"
+msgstr ""
+
+#: .\views.py:105
 #, python-format
-msgid "Event \"%(title)s\" could not be edited."
+msgid "Poll \"%(title)s\" was edited successfully."
 msgstr ""
 
-#: .\views.py:173
+#: .\views.py:106
 #, python-format
-msgid "Unscheduled event \"%(title)s\" was edited successfully."
+msgid "Poll \"%(title)s\" could not be edited."
 msgstr ""
 
-#: .\views.py:174
+#: .\views.py:161
 #, python-format
-msgid "Unscheduled event \"%(title)s\" could not be edited."
+msgid "Poll \"%(title)s\" was added successfully."
 msgstr ""
 
-#: .\views.py:189
+#: .\views.py:162
 #, python-format
-msgid "Event \"%(title)s\" was added successfully."
+msgid "Poll \"%(title)s\" could not be added."
 msgstr ""
 
-#: .\views.py:190
+#: .\views.py:172
+msgid "You should define at least one poll option!"
+msgstr ""
+
+#: .\views.py:186
+msgid "This poll is archived and cannot be edited anymore!"
+msgstr ""
+
+#: .\views.py:217
 #, python-format
-msgid "Event \"%(title)s\" could not be added."
+msgid "Poll \"%(title)s\" was deleted successfully."
 msgstr ""
 
-#: .\views.py:204
+#: .\views.py:218
 #, python-format
-msgid "Unscheduled event \"%(title)s\" was added successfully."
+msgid "Poll \"%(title)s\" could not be deleted."
 msgstr ""
 
-#: .\views.py:205
-#, python-format
-msgid "Unscheduled event \"%(title)s\" could not be added."
-msgstr ""
-
-#: .\views.py:217 .\views.py:250
-msgid "You should define at least one date suggestion."
-msgstr ""
-
-#: .\views.py:263
-#, python-format
-msgid "Event \"%(title)s\" was deleted successfully."
-msgstr ""
-
-#: .\views.py:264
-#, python-format
-msgid "Event \"%(title)s\" could not be deleted."
-msgstr ""
-
-#: .\views.py:273
-#, python-format
-msgid "Unscheduled event \"%(title)s\" was deleted successfully."
-msgstr ""
-
-#: .\views.py:274
-#, python-format
-msgid "Unscheduled event \"%(title)s\" could not be deleted."
-msgstr ""
-
-#: .\views.py:301
+#: .\views.py:229
 msgid "Your votes were saved successfully."
 msgstr ""
 
-#: .\views.py:302
+#: .\views.py:230
 msgid "Your votes could not be saved."
 msgstr ""
 
-#: .\views.py:311 .\views.py:442
-msgid "This is event is already scheduled. You cannot vote for it any more."
+#: .\views.py:254
+msgid ""
+"The voting phase for this poll is over. You cannot vote for it any more."
 msgstr ""
 
-#: .\views.py:434
+#: .\views.py:322
+msgid "In this poll you must vote for exactly one item!"
+msgstr ""
+
+#: .\views.py:367
 msgid "The complete request can only be sent via POST!"
 msgstr ""
 
-#: .\views.py:445
-msgid "Event cannot be completed: No date was supplied."
+#: .\views.py:376
+msgid "Invalid action for this poll. The request could not be completed!"
 msgstr ""
 
-#: .\views.py:455
-msgid "The event was created successfully at the specified date."
+#: .\views.py:380
+msgid "This action is not permitted for this poll at this stage!"
 msgstr ""
 
-#: .\views.py:471
-msgid "Upcoming events in"
+#: .\views.py:392
+msgid "The poll was closed successfully."
 msgstr ""
 
-#: .\views.py:553
+#: .\views.py:399
+msgid "The poll was re-opened successfully."
+msgstr ""
+
+#: .\views.py:403
+msgid "The poll was archived successfully."
+msgstr ""
+
+#: .\views.py:418
 msgid "Your comment was added successfully."
 msgstr ""
 
-#: .\views.py:593
+#: .\views.py:458
 msgid "Your comment was deleted successfully."
 msgstr ""
