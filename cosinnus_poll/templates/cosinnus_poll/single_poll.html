@@ -1,17 +1,18 @@
 {% load i18n cosinnus_tags %}
 
 {% with poll=object %}
-    <div class="app-calendar">
+    <div class="app-poll">
         <div class="btn btn-emphasized w100" >
             <ul class="media-list large-space">
                 <li class="media">
                     <a class="pull-left square-date-icon" href="#">
-                        {% if poll.state == 2 %}
-                            <i class="fa  fa-bar-chart"></i>
-                        {% else %}
-                            <div>{{ poll.from_date|date:"d" }}</div>
-                            <div>{{ poll.from_date|date:"M" }}</div>
-                        {% endif %}
+                        {% if poll.state == 1 %} {# voting open #}
+	                    	<i class="fa fa-question-circle"></i>
+	                  	{% elif poll.state == 2 %} {# voting closed #}
+	                  		<i class="fa fa-bar-chart"></i>
+	                  	{% else %} {# archived #}
+	                  		<i class="fa fa-bar-chart"></i>
+	                  	{% endif %}
                     </a>
                     <div class="media-body no-vertical-padding ">
                         <span class="annotation">
