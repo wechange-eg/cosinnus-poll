@@ -28,7 +28,6 @@ class CurrentPolls(DashboardWidget):
     title = _('Current Polls')
     user_model_attr = None  # No filtering on user page
     widget_name = 'current'
-    widget_template_name = 'cosinnus_poll/widgets/poll_widget.html'
     template_name = 'cosinnus_poll/widgets/current.html'
     
     def get_data(self, offset=0):

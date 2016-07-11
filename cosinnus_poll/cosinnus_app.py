@@ -14,7 +14,7 @@ def register():
     attached_object_registry.register('cosinnus_poll.Poll',
                              'cosinnus_poll.utils.renderer.PollRenderer')
     url_registry.register_urlconf('cosinnus_poll', 'cosinnus_poll.urls')
-    widget_registry.register('poll', 'cosinnus_poll.dashboard.UpcomingPolls')
+    widget_registry.register('poll', 'cosinnus_poll.dashboard.CurrentPolls')
     
     # makemessages replacement protection
     name = pgettext_lazy("the_app", "poll")
