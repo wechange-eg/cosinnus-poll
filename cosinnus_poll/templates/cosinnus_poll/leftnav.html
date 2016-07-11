@@ -44,7 +44,7 @@
         </ul>
     </button>
     
-    <button type="button" class="btn w100 btn-{% if request.path == poll_list_past_page or poll and poll.state == 3 %}extra-{% endif %}emphasized fine-space" href="{{ poll_list_past_page }}{% add_current_params %}">
+    <button type="button" class="btn w100 btn-{% if request.path == poll_list_past_page or poll and poll.state == 3 %}extra-{% endif %}emphasized" href="{{ poll_list_past_page }}{% add_current_params %}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left" href="#">
