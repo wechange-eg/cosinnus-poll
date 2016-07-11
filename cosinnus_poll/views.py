@@ -347,6 +347,7 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
             'options': self.options,
             'option_formsets_dict': self.option_formsets_dict,
             'user_votes_dict': self.user_votes_dict,
+            'options_votes_dict': self.options_votes_dict,
             'mode': self.mode,
         })
         return context
@@ -359,6 +360,8 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
         self.max_num = self.options.count()
         self.initial = []
         self.user_votes_dict = {} # {<option-pk --> vote-choice }
+        self.options_votes_dict = {} # {<option-pk --> [num_votes_no, num_votes_maybe, num_votes_yes] }
+        
         for option in self.options:
             vote = None
             if self.request.user.is_authenticated():
@@ -371,6 +374,13 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
                 'choice': vote.choice if vote else 0,
             })
             self.user_votes_dict[option.pk] = vote.choice if vote else -1
+            
+            # count existing votes
+            option_counts = [0, 0, 0] # [num_votes_no, num_votes_maybe, num_votes_yes]
+            for vote in option.votes.all():
+                option_counts[vote.choice] += 1
+            self.options_votes_dict[option.pk] = option_counts
+            
         return self.initial
 
     def get_success_url(self):

@@ -2,7 +2,7 @@
 
 {# this expects {{ option }} in its context as parameter #}
 {# If we are in vote mode, we expect a ``option_formsets_dict`` context variable, which has a mapping of { option_id --> VoteForm } #}
-{% with form=option_formsets_dict|dict_lookup:option.id %}
+{% with form=option_formsets_dict|dict_lookup:option.id vote_counts=options_votes_dict|dict_lookup:option.id %}
 	<div class="btn btn-emphasized w100 large-space poll-option {% if mode == 'vote' %}{% if form.choice.value == 2 %}poll-option-yes{% elif form.choice.value == 1 %}poll-option-maybe{% else %}poll-option-no{% endif %}{% endif %}"
 		{% if  mode == 'vote' and form %}
 			data-poll-option-vote-id="id_{{ form.choice.html_name }}" 
@@ -11,16 +11,20 @@
 		{% endif %}>
 	    <ul class="media-list">
 	        <li class="media">
-	        	<span class="pull-left vote-count">
+	        	<span class="pull-left vote-count" title="{% trans "Votes" %}: {% trans "Yes" %}: {{ vote_counts.2 }} {% if poll.can_vote_maybe %} {% trans "Maybe" %}: {{ vote_counts.1 }} {% endif %} {% trans "No" %}: {{ vote_counts.0 }}">
 	          		<span class="vote-count-yes">
-	          			1832
+	          			+{{ vote_counts.2 }}
           			</span>
 	          		<span class="vote-count-other">
-	          			<span class="vote-count-maybe">233</span>
-	          			{% if True %}
-	          			<br/>
-	          			<span class="vote-count-no">53</span>
+	          			{% if poll.can_vote_maybe %}
+		          			<span class="vote-count-maybe">
+		          				{{ vote_counts.1 }}
+	          				</span>
+		          			<br/>
 	          			{% endif %}
+	          			<span class="vote-count-no">
+		          			{{ vote_counts.0 }}
+	          			</span>
           			</span>
 	            </span>
 	            
@@ -33,13 +37,13 @@
 				{% endif %}
 				
 	            <a class="pull-right poll-option-display poll-option-display-yes" href="#">
-	          		<i class="fa fa-check"></i>
+	          		<i class="fa fa-plus"></i>
 	            </a>
 	            <a class="pull-right poll-option-display poll-option-display-maybe" href="#">
 	          		<i class="fa fa-question"></i>
 	            </a>
 	            <a class="pull-right poll-option-display poll-option-display-no" href="#">
-	          		<i class="fa fa-close"></i>
+	          		<i class="fa fa-minus"></i>
 	            </a>
 	            
 	            <div class="media-body">
