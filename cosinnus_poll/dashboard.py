@@ -35,7 +35,10 @@ class CurrentPolls(DashboardWidget):
             if has_more == False, the receiving widget will assume no further data can be loaded.
          """
         count = int(self.config['amount'])
-        all_current_polls = self.get_queryset().select_related('group').all()
+        all_current_polls = self.get_queryset().\
+                filter(state__lt=Poll.STATE_ARCHIVED).\
+                order_by('-created').\
+                select_related('group').all()
         polls = all_current_polls
         
         if count != 0:
