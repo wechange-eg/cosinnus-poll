@@ -91,8 +91,8 @@ poll_list_view = PollListView.as_view()
 
 
 class OptionInlineFormset(InlineFormSet):
-    extra = 10
-    max_num = 10
+    extra = 25
+    max_num = 25
     form_class = OptionForm
     model = Option
     
