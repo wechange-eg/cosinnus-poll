@@ -2,22 +2,22 @@
 {% load i18n static cosinnus_tags widget_tweaks thumbnail %}
 
 {% block page_title %}
-	{% if form_view == "add" %}
-	  {% trans "Add poll" %}
-	{% elif form_view == "edit" %}
-	  {% trans "Edit" %} {{ poll.title }}
-	{% endif %}
+    {% if form_view == "add" %}
+      {% trans "Add poll" %}
+    {% elif form_view == "edit" %}
+      {% trans "Edit" %} {{ poll.title }}
+    {% endif %}
 {{ block.super }}
 {% endblock page_title %}
 
 {% block breadcrumb %}
         {{ block.super }}
         <li class="active">
-	        {% if form_view == "add" %}
-			  {% trans "Add poll" %}
-			{% elif form_view == "edit" %}
-			  {% trans "Edit" %} {{ poll.title }}
-			{% endif %}
+            {% if form_view == "add" %}
+              {% trans "Add poll" %}
+            {% elif form_view == "edit" %}
+              {% trans "Edit" %} {{ poll.title }}
+            {% endif %}
         </li>
 {% endblock %}
 
@@ -28,187 +28,187 @@
 {% block content %}
 
     <!-- a box with semi transparent background -->
-	<div class="content-box">
-	   <form method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
-			{% for formset in inlines %}
-		    	{{ formset.management_form }}
-		    {% endfor %}
-		    
-		    <div type="button" class="btn btn-default w100 {% if pre_voting_editing_enabled %}large-space{% endif %}">
-		        <ul class="media-list">
-		            <li class="media">
-		                <a class="pull-left btn-emphasized" href="#">
-		                    <i class="fa fa-plus"></i>
-		                </a>
-		                <div class="media-body media-body-form-control">
-		                    {{ form.forms.obj.non_field_errors }}
+    <div class="content-box">
+       <form method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
+            {% for formset in inlines %}
+                {{ formset.management_form }}
+            {% endfor %}
+            
+            <div type="button" class="btn btn-default w100 {% if pre_voting_editing_enabled %}large-space{% endif %}">
+                <ul class="media-list">
+                    <li class="media">
+                        <a class="pull-left btn-emphasized" href="#">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                        <div class="media-body media-body-form-control">
+                            {{ form.forms.obj.non_field_errors }}
                             {{ form.forms.media_tag.non_field_errors }}
-		                    
-		                    {{ form.forms.obj.title.errors }}
-	                        {% captureas placeholder %}{% trans "Enter a title for the new poll." %}{% endcaptureas %}
+                            
+                            {{ form.forms.obj.title.errors }}
+                            {% captureas placeholder %}{% trans "Enter a title for the new poll." %}{% endcaptureas %}
                             {% if request.GET.title %}
                                 {% render_field form.forms.obj.title class+="form-control" placeholder=placeholder value=request.GET.title %}
                             {% else %}
                                 {% render_field form.forms.obj.title class+="form-control" placeholder=placeholder %}
-	                        {% endif %}
-	                        
-	                        <ol class="input-area">
+                            {% endif %}
+                            
+                            <ol class="input-area">
                                 <li class="w100">
                                     {{ form.forms.obj.description.errors }}
-		                            {% captureas placeholder %}{% trans "Enter a description for the poll (optional)." %}{% endcaptureas %}
-		                            {% render_field form.forms.obj.description class+="form-control" placeholder=placeholder %}
+                                    {% captureas placeholder %}{% trans "Enter a description for the poll (optional)." %}{% endcaptureas %}
+                                    {% render_field form.forms.obj.description class+="form-control" placeholder=placeholder %}
                                 </li>
                             </ol>
                             
                             {% if form.forms.obj.can_vote_maybe %}
-	                        <ol class="input-area">
+                            <ol class="input-area">
                                 <li class="w100">
                                     {{ form.forms.obj.multiple_votes.errors }}
-		                            {% render_field form.forms.obj.multiple_votes %}
-		                            <label for="{{ form.forms.obj.multiple_votes.auto_id }}" style="white-space: normal;">{% trans "Multiple Votes" %} - <small>{% trans "If disabled, users can only vote for one option" %}</small></label>
+                                    {% render_field form.forms.obj.multiple_votes %}
+                                    <label for="{{ form.forms.obj.multiple_votes.auto_id }}" style="white-space: normal;">{% trans "Multiple Votes" %} - <small>{% trans "If disabled, users can only vote for one option" %}</small></label>
                                 </li>
                             </ol>
                             {% endif %}
                             
                             {% if form.forms.obj.multiple_votes %}
-	                        <ol class="input-area">
+                            <ol class="input-area">
                                 <li class="w100">
                                     {{ form.forms.obj.can_vote_maybe.errors }}
-		                            {% render_field form.forms.obj.can_vote_maybe %}
-		                            <label for="{{ form.forms.obj.can_vote_maybe.auto_id }}" style="white-space: normal;">{% trans '"Maybe" option enabled' %} - <small>{% trans 'In addition to "Yes" and "No"' %}</small></label>
+                                    {% render_field form.forms.obj.can_vote_maybe %}
+                                    <label for="{{ form.forms.obj.can_vote_maybe.auto_id }}" style="white-space: normal;">{% trans '"Maybe" option enabled' %} - <small>{% trans 'In addition to "Yes" and "No"' %}</small></label>
                                 </li>
                             </ol>
                             {% endif %}
                             
                             {% if form.forms.obj.anyone_can_vote %}
-	                        <ol class="input-area">
+                            <ol class="input-area">
                                 <li class="w100">
                                     {{ form.forms.obj.anyone_can_vote.errors }}
-		                            {% render_field form.forms.obj.anyone_can_vote %}
-		                            <label for="{{ form.forms.obj.anyone_can_vote.auto_id }}" style="white-space: normal;">{% trans "Public voting" %} - <small>{% trans "Anyone logged in user this poll is visible for can vote for it. If disabled, only group/project members can vote on it." %}</small></label>
+                                    {% render_field form.forms.obj.anyone_can_vote %}
+                                    <label for="{{ form.forms.obj.anyone_can_vote.auto_id }}" style="white-space: normal;">{% trans "Public voting" %} - <small>{% trans "Anyone logged in user this poll is visible for can vote for it. If disabled, only group/project members can vote on it." %}</small></label>
                                 </li>
                             </ol>
                             {% endif %}
                             
                             
-	                        {% include 'cosinnus/media_tags.html' %}
+                            {% include 'cosinnus/media_tags.html' %}
                             
                             {% if not pre_voting_editing_enabled %}
-	                            <ol class="input-area">
-	                                <li class="w100">
-	                                    <p style="padding: 5px;">
-	                                    	<i class="fa fa-warning"></i> 
-	                                    	{% trans "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!" %}
-                                    	</p>
-	                                </li>
-	                            </ol>
+                                <ol class="input-area">
+                                    <li class="w100">
+                                        <p style="padding: 5px;">
+                                            <i class="fa fa-warning"></i> 
+                                            {% trans "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!" %}
+                                        </p>
+                                    </li>
+                                </ol>
                             {% endif %}
                             
-		                </div>
-		            </li>
-		            
-		        </ul>
-		    </div>
-		    
-		    {% with option_formset=inlines.0 %}
-			    {% if option_formset and pre_voting_editing_enabled %}
-				    <div type="button" class="btn btn-default w100 large-space">
-				        <ul class="media-list">
-			             
-							{% for inlineform in option_formset %}
-								
-								<li class="media no-margin" id="options-wrapper-{{ forloop.counter0 }}" {% if not forloop.counter == 1 and not forloop.counter <= option_formset.management_form.INITIAL_FORMS.value|intify %}style="display: none;"{% endif %}>
-					                <a class="pull-left btn-emphasized" href="#">
-					                    <i class="fa fa-question"></i>
-					                </a>
-					                <div class="media-body media-body-form-control {% if forloop.last %}regular-space{% else %}fine-space{% endif %}">
-							            	
-							            	<div class="media">
-							            		<div class="form-control">
-							            			<span style="padding: 5px;" class="pull-right">
-							            				<label for="{{ inlineform.DELETE.id_for_label }}"><i class="fa fa-trash"></i> {% trans "Remove" %}:</label>
-														{{ inlineform.DELETE }}
-							            			</span>
-							            			<label style="padding: 5px;">{% trans "Edit Poll Option" %}&nbsp;{{ forloop.counter }}&nbsp;&nbsp;&nbsp;<em>{% trans "Describe this option" %}</em></label>
-						            			</div>
-							                    <a class="pull-left">
-								 					<i class="fa fa-edit"></i>
-												</a>
-												<div class="media-body media-body-form-control">
-								                    {% captureas placeholder %}{% trans "Description" %}{% endcaptureas %}
-									                {{ inlineform.description.errors }}
-									                {% render_field inlineform.description class+="form-control" style+="height: 72px; padding: 7px 10px 5px 10px;" placeholder=placeholder %}
-									            </div>
-									            {% comment %}
-									            
-									            	Images in options are now disabled. Re-enable this to have images in options.
-									            
-												<a class="pull-left">
-													{% if inlineform.image.value %}
-														<img class="image" src="{% thumbnail inlineform.image.value 40x40 crop=1 upscale=1 %}"></img>
-													{% else %}
-									 					<i class="fa fa-image"></i>
-													{% endif %}
-												</a>
-												<div style="padding: 0px 10px; display: inline-block;">
-									                {% captureas placeholder %}{% trans "Choose and upload an image" %}{% endcaptureas %}
-									                {{ inlineform.image.errors }}
-									                {% render_field inlineform.image class+="form-control" placeholder=placeholder %}
-													<i>{% trans "File Size" %}: {% trans "max. 10 MB" %}</i>
-									            </div>
-									            {% endcomment %}
-									            
-									            
-									        </div>
-											{{ inlineform.poll }}
-											{{ inlineform.id }}
-							            </div>
-									</li>
-									
-									{% if forloop.counter >= option_formset.management_form.INITIAL_FORMS.value and forloop.counter < option_formset.management_form.MAX_NUM_FORMS.value %}
-										<div id="options-more-{{ forloop.counter0 }}" {% if not forloop.counter == 1 and not forloop.counter <= option_formset.management_form.INITIAL_FORMS.value %}style="display: none;"{% endif %}>
-											
-											<button class="btn btn-emphasized pull-left no-margin" onclick="$('#options-more-{{ forloop.counter0 }}').hide(); $('#options-wrapper-{{ forloop.counter }}').show().children().find('textarea, input').focus(); $('#options-more-{{ forloop.counter }}').show(); return false;">
-										        <ul class="media-list">
-										            <li class="media">
-										                <a class="pull-left" href="#">
-										                    <i class="fa fa-plus"></i>
-										                </a>
-										                <div class="media-body">
-											                {% trans "Add option" %}
-										                </div>
-										            </li>
-										        </ul>
-										    </button>
-										    
-										</div>
-									{% endif %}
-							{% endfor %}
-							
-				        </ul>
-				    </div>
-				{% endif %}
-			{% endwith %}
-		
-		    <button type="submit" class="btn btn-emphasized" id="createPollButton">
-		        <ul class="media-list">
-		            <li class="media">
-		                <a class="pull-left" href="#">
-		                    <i class="fa fa-pencil"></i>
-		                </a>
-		                <div class="media-body">
-		                    {% if form_view == "add" %}
-				              {% trans "Create" %}
-				            {% elif form_view == "edit" %}
-				              {% trans "Save" %}
-				            {% endif %}
-		                </div>
-		            </li>
-		        </ul>
-		    </button>
-	   
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            {% with option_formset=inlines.0 %}
+                {% if option_formset and pre_voting_editing_enabled %}
+                    <div type="button" class="btn btn-default w100 large-space">
+                        <ul class="media-list">
+                         
+                            {% for inlineform in option_formset %}
+                                
+                                <li class="media no-margin" id="options-wrapper-{{ forloop.counter0 }}" {% if not forloop.counter == 1 and not forloop.counter <= option_formset.management_form.INITIAL_FORMS.value|intify %}style="display: none;"{% endif %}>
+                                    <a class="pull-left btn-emphasized" href="#">
+                                        <i class="fa fa-question"></i>
+                                    </a>
+                                    <div class="media-body media-body-form-control {% if forloop.last %}regular-space{% else %}fine-space{% endif %}">
+                                            
+                                            <div class="media">
+                                                <div class="form-control">
+                                                    <span style="padding: 5px;" class="pull-right">
+                                                        <label for="{{ inlineform.DELETE.id_for_label }}"><i class="fa fa-trash"></i> {% trans "Remove" %}:</label>
+                                                        {{ inlineform.DELETE }}
+                                                    </span>
+                                                    <label style="padding: 5px;">{% trans "Edit Poll Option" %}&nbsp;{{ forloop.counter }}&nbsp;&nbsp;&nbsp;<em>{% trans "Describe this option" %}</em></label>
+                                                </div>
+                                                <a class="pull-left">
+                                                     <i class="fa fa-edit"></i>
+                                                </a>
+                                                <div class="media-body media-body-form-control">
+                                                    {% captureas placeholder %}{% trans "Description" %}{% endcaptureas %}
+                                                    {{ inlineform.description.errors }}
+                                                    {% render_field inlineform.description class+="form-control" style+="height: 72px; padding: 7px 10px 5px 10px;" placeholder=placeholder %}
+                                                </div>
+                                                {% comment %}
+                                                
+                                                    Images in options are now disabled. Re-enable this to have images in options.
+                                                
+                                                <a class="pull-left">
+                                                    {% if inlineform.image.value %}
+                                                        <img class="image" src="{% thumbnail inlineform.image.value 40x40 crop=1 upscale=1 %}"></img>
+                                                    {% else %}
+                                                         <i class="fa fa-image"></i>
+                                                    {% endif %}
+                                                </a>
+                                                <div style="padding: 0px 10px; display: inline-block;">
+                                                    {% captureas placeholder %}{% trans "Choose and upload an image" %}{% endcaptureas %}
+                                                    {{ inlineform.image.errors }}
+                                                    {% render_field inlineform.image class+="form-control" placeholder=placeholder %}
+                                                    <i>{% trans "File Size" %}: {% trans "max. 10 MB" %}</i>
+                                                </div>
+                                                {% endcomment %}
+                                                
+                                                
+                                            </div>
+                                            {{ inlineform.poll }}
+                                            {{ inlineform.id }}
+                                        </div>
+                                    </li>
+                                    
+                                    {% if forloop.counter >= option_formset.management_form.INITIAL_FORMS.value and forloop.counter < option_formset.management_form.MAX_NUM_FORMS.value %}
+                                        <div id="options-more-{{ forloop.counter0 }}" {% if not forloop.counter == 1 and not forloop.counter <= option_formset.management_form.INITIAL_FORMS.value %}style="display: none;"{% endif %}>
+                                            
+                                            <button class="btn btn-emphasized pull-left no-margin" onclick="$('#options-more-{{ forloop.counter0 }}').hide(); $('#options-wrapper-{{ forloop.counter }}').show().children().find('textarea, input').focus(); $('#options-more-{{ forloop.counter }}').show(); return false;">
+                                                <ul class="media-list">
+                                                    <li class="media">
+                                                        <a class="pull-left" href="#">
+                                                            <i class="fa fa-plus"></i>
+                                                        </a>
+                                                        <div class="media-body">
+                                                            {% trans "Add option" %}
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </button>
+                                            
+                                        </div>
+                                    {% endif %}
+                            {% endfor %}
+                            
+                        </ul>
+                    </div>
+                {% endif %}
+            {% endwith %}
+        
+            <button type="submit" class="btn btn-emphasized" id="createPollButton">
+                <ul class="media-list">
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <i class="fa fa-pencil"></i>
+                        </a>
+                        <div class="media-body">
+                            {% if form_view == "add" %}
+                              {% trans "Create" %}
+                            {% elif form_view == "edit" %}
+                              {% trans "Save" %}
+                            {% endif %}
+                        </div>
+                    </li>
+                </ul>
+            </button>
+       
         </form>
-	
-	</div><!-- content-box -->
+    
+    </div><!-- content-box -->
     
 {% endblock content %}

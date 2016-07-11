@@ -4,13 +4,13 @@
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left square-date-icon" href="#">
-                  	{% if poll.state == 1 %} {# voting open #}
-                    	<i class="fa fa-question-circle"></i>
-                  	{% elif poll.state == 2 %} {# voting closed #}
-                  		<i class="fa fa-bar-chart"></i>
-                  	{% else %} {# archived #}
-                  		<i class="fa fa-bar-chart"></i>
-                  	{% endif %}
+                      {% if poll.state == 1 %} {# voting open #}
+                        <i class="fa fa-question-circle"></i>
+                      {% elif poll.state == 2 %} {# voting closed #}
+                          <i class="fa fa-bar-chart"></i>
+                      {% else %} {# archived #}
+                          <i class="fa fa-bar-chart"></i>
+                      {% endif %}
                 </a>
                 <a class="pull-right fadedown-clickarea" href="#">
                     <i class="fa fa-chevron-down"></i>
@@ -31,20 +31,20 @@
     </div>
 
     {% if poll.description and poll.description|length > 0 %}
-	    <div class="btn btn-white w100">
-	        <ul class="media-list">
-	            <li class="media">
-	                <a class="pull-left" href="#">
-	                    <i class="fa fa-pencil"></i>
-	                </a>
-	                <div class="media-body">
-	                    <p>
-	                        {{ poll.description|textfield }}
-	                    </p>
-	                </div>
-	            </li>
-	        </ul>
-	    </div>
+        <div class="btn btn-white w100">
+            <ul class="media-list">
+                <li class="media">
+                    <a class="pull-left" href="#">
+                        <i class="fa fa-pencil"></i>
+                    </a>
+                    <div class="media-body">
+                        <p>
+                            {{ poll.description|textfield }}
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
     {% endif %}
 
     {% include 'cosinnus/media_tags_readonly.html' with object=poll %}
@@ -64,46 +64,46 @@
             </ul>
         </button>
         {% if poll.state != 3 %}
-	        <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:poll:edit" group=group slug=poll.slug %}">
-	            <ul class="media-list">
-	                <li class="media">
-	                    <a class="pull-left" href="#">
-	                        <i class="fa fa-pencil"></i>
-	                    </a>
-	                    <div class="media-body">
-	                        {% trans "Edit" %}
-	                    </div>
-	                </li>
-	            </ul>
-	        </button> 
+            <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:poll:edit" group=group slug=poll.slug %}">
+                <ul class="media-list">
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <i class="fa fa-pencil"></i>
+                        </a>
+                        <div class="media-body">
+                            {% trans "Edit" %}
+                        </div>
+                    </li>
+                </ul>
+            </button> 
         {% endif %}
         {% if poll.state == 2 %}
-	        {% captureas reopen_modal_id %}reopenModal_{{poll.slug}}{% endcaptureas %}
-	        <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{reopen_modal_id}}">
-	            <ul class="media-list">
-	                <li class="media">
-	                    <a class="pull-left" href="#">
-	                        <i class="fa fa-eraser"></i>
-	                    </a>
-	                    <div class="media-body">
-	                        {% trans "Re-open" %}
-	                    </div>
-	                </li>
-	            </ul>
-	        </button> 
-	        {% captureas archive_modal_id %}archiveModal_{{poll.slug}}{% endcaptureas %}
-	        <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{archive_modal_id}}">
-	            <ul class="media-list">
-	                <li class="media">
-	                    <a class="pull-left" href="#">
-	                        <i class="fa fa-eraser"></i>
-	                    </a>
-	                    <div class="media-body">
-	                        {% trans "Archive" %}
-	                    </div>
-	                </li>
-	            </ul>
-	        </button>
+            {% captureas reopen_modal_id %}reopenModal_{{poll.slug}}{% endcaptureas %}
+            <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{reopen_modal_id}}">
+                <ul class="media-list">
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <i class="fa fa-eraser"></i>
+                        </a>
+                        <div class="media-body">
+                            {% trans "Re-open" %}
+                        </div>
+                    </li>
+                </ul>
+            </button> 
+            {% captureas archive_modal_id %}archiveModal_{{poll.slug}}{% endcaptureas %}
+            <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{archive_modal_id}}">
+                <ul class="media-list">
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <i class="fa fa-eraser"></i>
+                        </a>
+                        <div class="media-body">
+                            {% trans "Archive" %}
+                        </div>
+                    </li>
+                </ul>
+            </button>
         {% endif %}
     {% endif %}
     
@@ -118,15 +118,15 @@
     {% include "cosinnus/modal_box.html" with id=delete_modal_id label=label title=title form_action=action %}
     
     {% if poll.state == 2 %}
-    	{% captureas label %}{% blocktrans with title=poll.title %}Do you really want to re-open poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
-	    {% captureas title %}{% trans "Re-open poll" %}{% endcaptureas %}
-	    {% captureas action %}{% group_url 'cosinnus:poll:reopen' group=group slug=poll.slug %}{% endcaptureas %}
-	    {% include "cosinnus/modal_box.html" with id=reopen_modal_id label=label title=title form_action=action %}
-	    
-	    {% captureas label %}{% blocktrans with title=poll.title %}Do you really want to archive poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
-	    {% captureas title %}{% trans "Archive poll" %}{% endcaptureas %}
-	    {% captureas action %}{% group_url 'cosinnus:poll:archive' group=group slug=poll.slug %}{% endcaptureas %}
-	    {% include "cosinnus/modal_box.html" with id=archive_modal_id label=label title=title form_action=action %}
+        {% captureas label %}{% blocktrans with title=poll.title %}Do you really want to re-open poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
+        {% captureas title %}{% trans "Re-open poll" %}{% endcaptureas %}
+        {% captureas action %}{% group_url 'cosinnus:poll:reopen' group=group slug=poll.slug %}{% endcaptureas %}
+        {% include "cosinnus/modal_box.html" with id=reopen_modal_id label=label title=title form_action=action %}
+        
+        {% captureas label %}{% blocktrans with title=poll.title %}Do you really want to archive poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
+        {% captureas title %}{% trans "Archive poll" %}{% endcaptureas %}
+        {% captureas action %}{% group_url 'cosinnus:poll:archive' group=group slug=poll.slug %}{% endcaptureas %}
+        {% include "cosinnus/modal_box.html" with id=archive_modal_id label=label title=title form_action=action %}
     {% endif %}
     
 {% endif %}

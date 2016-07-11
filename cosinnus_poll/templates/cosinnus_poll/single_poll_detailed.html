@@ -14,7 +14,7 @@
                 <i class="fa fa-chain"></i>
             </a>
             <div class="media-body">
-            	{% with creator=poll.creator %}
+                {% with creator=poll.creator %}
                     <span class="annotation">{% trans "by" %} <a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a></span>
                 {% endwith %}
                 <a href="{{ poll.get_absolute_url }}">
@@ -52,26 +52,26 @@
 
 {# announce winning option #}
 {% if poll.state != 1 %}
-	{% if poll.winning_option %}
-		<div class="large-space">
-			<h2>{% trans "The Winner is" %}:</h2>
-			{% include 'cosinnus_poll/single_poll_option.html' with option=poll.winning_option %}
-		</div>
-		<h2>{% trans "Available options were" %}:</h2>
-	{% else %}
-		<div>
-			<h2>No option was selected as winner.</h2>
-		</div>
-	{% endif %}
+    {% if poll.winning_option %}
+        <div class="large-space">
+            <h2>{% trans "The Winner is" %}:</h2>
+            {% include 'cosinnus_poll/single_poll_option.html' with option=poll.winning_option %}
+        </div>
+        <h2>{% trans "Available options were" %}:</h2>
+    {% else %}
+        <div>
+            <h2>No option was selected as winner.</h2>
+        </div>
+    {% endif %}
 {% endif %}
 
 {% if options %}
-	
-	<div class="large-space"> <!-- options panel -->
-		{% for option in options %}
-			{% include 'cosinnus_poll/single_poll_option.html' with option=option option_counter=forloop.counter %}
-		{% endfor %}
-	</div>
+    
+    <div class="large-space"> <!-- options panel -->
+        {% for option in options %}
+            {% include 'cosinnus_poll/single_poll_option.html' with option=option option_counter=forloop.counter %}
+        {% endfor %}
+    </div>
 
 
 {% else %}

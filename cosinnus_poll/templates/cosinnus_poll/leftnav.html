@@ -6,22 +6,22 @@
 
 {% if return_to == "polls" %}
 
-	<button type="button" class="btn w100 btn-emphasized" href="{% group_url 'cosinnus:poll:list' group=group %}{% add_current_params %}">
-	    <ul class="media-list">
-	        <li class="media">
-	            <a class="pull-left" href="#">
-	                <i class="fa fa-reply"></i>
-	            </a>
-	            <a class="pull-right" href="#"></a><!-- only block width -->
-	            <div class="media-body">
-	                {% trans "Back to Polls" %}
-	            </div>
-	        </li>
-	    </ul>
-	</button>
-	
+    <button type="button" class="btn w100 btn-emphasized" href="{% group_url 'cosinnus:poll:list' group=group %}{% add_current_params %}">
+        <ul class="media-list">
+            <li class="media">
+                <a class="pull-left" href="#">
+                    <i class="fa fa-reply"></i>
+                </a>
+                <a class="pull-right" href="#"></a><!-- only block width -->
+                <div class="media-body">
+                    {% trans "Back to Polls" %}
+                </div>
+            </li>
+        </ul>
+    </button>
+    
 {% else %} {# Poll list view #}
-	
+    
     <button type="button" class="btn w100 btn-{% if request.path == poll_list_page or poll and poll.state < 3 %}extra-{% endif %}emphasized fine-space" href="{{ poll_list_page }}{% add_current_params %}">
         <ul class="media-list">
             <li class="media">
@@ -33,9 +33,9 @@
                     {% endif %}
                 </a>
                 {% if request.path == poll_list_page or poll and poll.state < 3 %}
-                	<a class="pull-right" href="#">
-	                    <i class="fa fa-caret-right"></i>
-                	</a>
+                    <a class="pull-right" href="#">
+                        <i class="fa fa-caret-right"></i>
+                    </a>
                 {% endif %}
                 <div class="media-body">
                     {% trans "Polls" %}
@@ -48,13 +48,13 @@
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left" href="#">
-                	{% comment %}  
-	                    {% if past_polls_count or past_polls_count%}
-	                        {{ past_polls_count }}
-	                    {% else %}
-	                        <i class="fa fa-bar-chart"></i>
-	                    {% endif %}
-                	{% endcomment %}
+                    {% comment %}  
+                        {% if past_polls_count or past_polls_count%}
+                            {{ past_polls_count }}
+                        {% else %}
+                            <i class="fa fa-bar-chart"></i>
+                        {% endif %}
+                    {% endcomment %}
                     <i class="fa fa-bar-chart"></i>
                 </a>
                 <a class="pull-right" href="#">
