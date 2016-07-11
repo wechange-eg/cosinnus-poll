@@ -20,7 +20,7 @@
 	    </ul>
 	</button>
 	
-{% else %} {# Poll / Doodle list view #}
+{% else %} {# Poll list view #}
 	
     <button type="button" class="btn w100 btn-{% if request.path == poll_list_page or poll and poll.state < 3 %}extra-{% endif %}emphasized fine-space" href="{{ poll_list_page }}{% add_current_params %}">
         <ul class="media-list">

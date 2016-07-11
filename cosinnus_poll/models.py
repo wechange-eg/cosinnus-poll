@@ -105,7 +105,8 @@ class Poll(BaseTaggableObjectModel):
             # poll went from open to closed, so maybe send a notification for poll closed?
             # send signal only for voters as audience!
             voter_ids = list(set(self.options.all().values_list('votes__voter__id', flat=True)))
-            voter_ids.remove(self.creator.id)
+            if self.creator.id in voter_ids:
+                voter_ids.remove(self.creator.id)
             voters = get_user_model().objects.filter(id__in=voter_ids)
             cosinnus_notifications.poll_completed.send(sender=self, user=self.creator, obj=self, audience=voters)
         self.__state = self.state
@@ -135,7 +136,7 @@ class Poll(BaseTaggableObjectModel):
     
     def get_voters_pks(self):
         """ Gets the pks of all Users that have voted for this poll.
-            Returns an empty list if nobody has voted or the poll isn't a doodle. """
+            Returns an empty list if nobody has voted on the poll. """
         return self.options.all().values_list('votes__voter__id', flat=True).distinct()
 
 

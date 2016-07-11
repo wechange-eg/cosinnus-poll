@@ -423,7 +423,7 @@ poll_vote_view = PollVoteView.as_view()
 
 
 class PollCompleteView(RequireWriteMixin, FilterGroupMixin, UpdateView):
-    """ Completes a doodle poll for a selected option, setting the poll to completed/archived.
+    """ Completes a poll for a selected option, setting the poll to completed/archived.
         Notification triggers are handled in the model. """
     form_class = PollNoFieldForm
     model = Poll
@@ -491,7 +491,7 @@ class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
     form_class = CommentForm
     group_field = 'poll__group'
     model = Comment
-    template_name = 'cosinnus_poll/poll_detail.html'
+    template_name = 'cosinnus_poll/poll_vote.html'
     
     message_success = _('Your comment was added successfully.')
 
