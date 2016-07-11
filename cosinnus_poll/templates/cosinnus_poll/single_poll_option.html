@@ -13,18 +13,19 @@
             <li class="media">
                 <span class="pull-left vote-count" title="{% trans "Votes" %}: {% trans "Yes" %}: {{ vote_counts.2 }} {% if poll.can_vote_maybe %} {% trans "Maybe" %}: {{ vote_counts.1 }} {% endif %} {% trans "No" %}: {{ vote_counts.0 }}">
                       <span class="vote-count-yes">
-                          +{{ vote_counts.2 }}
+                          {{ vote_counts.2 }}
                       </span>
-                      <span class="vote-count-other">
-                          {% if poll.can_vote_maybe %}
-                              <span class="vote-count-maybe">
-                                  {{ vote_counts.1 }}
-                              </span>
-                              <br/>
-                          {% endif %}
-                          <span class="vote-count-no">
-                              {{ vote_counts.0 }}
-                          </span>
+                </span>
+                {% if poll.can_vote_maybe %}
+                <span class="pull-left vote-count" title="{% trans "Votes" %}: {% trans "Yes" %}: {{ vote_counts.2 }} {% if poll.can_vote_maybe %} {% trans "Maybe" %}: {{ vote_counts.1 }} {% endif %} {% trans "No" %}: {{ vote_counts.0 }}">
+                      <span class="vote-count-maybe">
+                          {{ vote_counts.1 }}
+                      </span>
+                </span>
+                {% endif %}
+                <span class="pull-left vote-count" title="{% trans "Votes" %}: {% trans "Yes" %}: {{ vote_counts.2 }} {% if poll.can_vote_maybe %} {% trans "Maybe" %}: {{ vote_counts.1 }} {% endif %} {% trans "No" %}: {{ vote_counts.0 }}">
+                      <span class="vote-count-no">
+                          {{ vote_counts.0 }}
                       </span>
                 </span>
                 
@@ -37,13 +38,13 @@
                 {% endif %}
                 
                 <a class="pull-right poll-option-display poll-option-display-yes" href="#">
-                      <i class="fa fa-plus"></i>
+                      <i class="fa fa-thumbs-up"></i>
                 </a>
                 <a class="pull-right poll-option-display poll-option-display-maybe" href="#">
                       <i class="fa fa-question"></i>
                 </a>
                 <a class="pull-right poll-option-display poll-option-display-no" href="#">
-                      <i class="fa fa-minus"></i>
+                      <i class="fa fa-thumbs-down"></i>
                 </a>
                 
                 <div class="media-body">

@@ -38,7 +38,9 @@
     min-width: 40px !important;
     padding: 0 2px 0 4px;
     font-weight: bold; /* or maybe not bold? */
+    border-right: 1px solid #CCC;
 }
+/* unused
 .vote-count .vote-count-other {
     font-size: 10px !important;
     line-height: 12px !important;
@@ -46,8 +48,10 @@
     position: relative;
     top: 3px;
 }
+*/
 
 .vote-count-yes {
+    color: #779b48;
 }
 .vote-count-maybe {
     color: #efa02d;
