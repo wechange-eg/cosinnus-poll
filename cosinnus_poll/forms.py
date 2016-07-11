@@ -19,7 +19,6 @@ from cosinnus.forms.attached_object import FormAttachable
 class _PollForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
                  FormAttachable):
     
-    # TODO: after form submission, restore initial values on these fields, if active votes exist
     LOCKED_FIELDS_WHILE_ACTIVE_VOTES = ('multiple_votes', 'can_vote_maybe', 'anyone_can_vote')
     
     url = forms.URLField(widget=forms.TextInput, required=False)

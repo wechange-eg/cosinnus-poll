@@ -59,15 +59,6 @@ class PollListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, List
     poll_view = 'current'   # 'current' or 'past'
     template_name = 'cosinnus_poll/poll_list.html'
     
-    """
-    FIXME: check these templates if needed still
-    template_name = "cosinnus_poll/poll_form.html"
-    template_name = 'cosinnus_poll/poll_list_detailed.html'
-    template_name = 'cosinnus_poll/poll_list.html'
-    template_name = 'cosinnus_poll/poll_list_detailed_past.html'
-    poll_view = 'past'
-    """
-    
     def dispatch(self, request, *args, **kwargs):
         self.poll_view = kwargs.get('poll_view', 'current')
         return super(PollListView, self).dispatch(request, *args, **kwargs)
@@ -99,24 +90,12 @@ class PollListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, List
 poll_list_view = PollListView.as_view()
 
 
-
 class OptionInlineFormset(InlineFormSet):
     extra = 10
     max_num = 10
     form_class = OptionForm
     model = Option
     
-    """
-    FIXME: this should be how to check if there is at least one fom in the formset
-    def is_valid(self):
-        # this is how to validate the formset, but unsure how to access the data
-        return False
-    
-    def get_formset(self, *args, **kwargs):
-        ret = super(OptionInlineFormset, self).get_formset(*args, **kwargs)
-        ret.is_valid = self.is_valid
-        return ret
-    """
     
 class PollFormMixin(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
                      UserFormKwargsMixin):
@@ -188,7 +167,6 @@ class PollAddView(PollFormMixin, AttachableViewMixin, CreateWithInlinesView):
         ret = super(PollAddView, self).forms_valid(form, inlines)
 
         # Check for non or a single option and set it and inform the user
-        # TODO: check for >= 2 options set?
         num_options = self.object.options.count()
         if num_options == 0:
             messages.info(self.request, _('You should define at least one poll option!'))
