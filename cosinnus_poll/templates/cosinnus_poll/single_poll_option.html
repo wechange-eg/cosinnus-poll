@@ -4,7 +4,7 @@
 {# If we are in vote mode, we expect a ``option_formsets_dict`` context variable, which has a mapping of { option_id --> VoteForm } #}
 {% with form=option_formsets_dict|dict_lookup:option.id vote_counts=options_votes_dict|dict_lookup:option.id %}
 	<div class="btn btn-emphasized w100 large-space poll-option {% if mode == 'vote' %}{% if form.choice.value == 2 %}poll-option-yes{% elif form.choice.value == 1 %}poll-option-maybe{% else %}poll-option-no{% endif %}{% endif %}"
-		{% if  mode == 'vote' and form %}
+		{% if mode == 'vote' and form %}
 			data-poll-option-vote-id="id_{{ form.choice.html_name }}" 
 			data-poll-can-vote-maybe="{% if poll.can_vote_maybe %}1{% else %}0{% endif %}"
 			data-poll-multiple-votes="{% if poll.multiple_votes %}1{% else %}0{% endif %}"
@@ -28,7 +28,7 @@
           			</span>
 	            </span>
 	            
-				{% if user|has_write_access:poll %}
+				{% if user|has_write_access:poll and mode == 'vote' %}
 					{% captureas close_poll_modal %}close_poll_modal_option_{{ option.pk }}{% endcaptureas %}
 					<a class="pull-right vote-trophy" data-toggle="modal" data-target="#{{ close_poll_modal }}" title="{% trans "Make winner and complete poll" %}">
 	                    {# Complete dialog is outside of element #}

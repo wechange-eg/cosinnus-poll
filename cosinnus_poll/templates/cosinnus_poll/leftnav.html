@@ -32,11 +32,11 @@
                         <i class="fa fa-bar-chart"></i>
                     {% endif %}
                 </a>
-                <a class="pull-right" href="#">
-                    {% if request.path == poll_list_page or poll and poll.state < 3 %}
+                {% if request.path == poll_list_page or poll and poll.state < 3 %}
+                	<a class="pull-right" href="#">
 	                    <i class="fa fa-caret-right"></i>
-                    {% endif %}
-                </a>
+                	</a>
+                {% endif %}
                 <div class="media-body">
                     {% trans "Polls" %}
                 </div>

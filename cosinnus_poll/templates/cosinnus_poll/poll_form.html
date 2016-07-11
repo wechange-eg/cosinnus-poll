@@ -60,6 +60,30 @@
                                 </li>
                             </ol>
                             
+	                        <ol class="input-area">
+                                <li class="w100">
+                                    {{ form.forms.obj.multiple_votes.errors }}
+		                            {% render_field form.forms.obj.multiple_votes %}
+		                            <label for="{{ form.forms.obj.multiple_votes.auto_id }}" style="white-space: normal;">{% trans "Multiple Votes" %} - <small>{% trans "If disabled, users can only vote for one option" %}</small></label>
+                                </li>
+                            </ol>
+                            
+	                        <ol class="input-area">
+                                <li class="w100">
+                                    {{ form.forms.obj.can_vote_maybe.errors }}
+		                            {% render_field form.forms.obj.can_vote_maybe %}
+		                            <label for="{{ form.forms.obj.can_vote_maybe.auto_id }}" style="white-space: normal;">{% trans '"Maybe" option enabled' %} - <small>{% trans 'In addition to "Yes" and "No"' %}</small></label>
+                                </li>
+                            </ol>
+                            
+	                        <ol class="input-area">
+                                <li class="w100">
+                                    {{ form.forms.obj.anyone_can_vote.errors }}
+		                            {% render_field form.forms.obj.anyone_can_vote %}
+		                            <label for="{{ form.forms.obj.anyone_can_vote.auto_id }}" style="white-space: normal;">{% trans "Public voting" %} - <small>{% trans "Anyone logged in user this poll is visible for can vote for it. If disabled, only group/project members can vote on it." %}</small></label>
+                                </li>
+                            </ol>
+                            
                             
 	                        {% include 'cosinnus/media_tags.html' %}
                             
@@ -138,7 +162,7 @@
 									{% if forloop.counter >= option_formset.management_form.INITIAL_FORMS.value and forloop.counter < option_formset.management_form.MAX_NUM_FORMS.value %}
 										<div id="options-more-{{ forloop.counter0 }}" {% if not forloop.counter == 1 and not forloop.counter <= option_formset.management_form.INITIAL_FORMS.value %}style="display: none;"{% endif %}>
 											
-											<button class="btn btn-emphasized pull-left no-margin" onclick="$('#options-more-{{ forloop.counter0 }}').hide(); $('#options-wrapper-{{ forloop.counter }}').show(); $('#options-more-{{ forloop.counter }}').show(); return false;">
+											<button class="btn btn-emphasized pull-left no-margin" onclick="$('#options-more-{{ forloop.counter0 }}').hide(); $('#options-wrapper-{{ forloop.counter }}').show().children().find('textarea, input').focus(); $('#options-more-{{ forloop.counter }}').show(); return false;">
 										        <ul class="media-list">
 										            <li class="media">
 										                <a class="pull-left" href="#">

@@ -278,7 +278,7 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
     def post(self, request, *args, **kwargs):
         if self.mode != 'vote':
             messages.error(request, _('The voting phase for this poll is over. You cannot vote for it any more.'))
-            return HttpResponseRedirect(poll.get_absolute_url())
+            return HttpResponseRedirect(self.get_object().get_absolute_url())
         return super(PollVoteView, self).post(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
