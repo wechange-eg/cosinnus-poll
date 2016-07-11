@@ -1,1 +1,1 @@
-{% include 'cosinnus_event/single_event.html' with object=object %}
+{% include 'cosinnus_poll/single_poll.html' with object=object %}
