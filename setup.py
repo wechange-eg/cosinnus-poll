@@ -54,6 +54,7 @@ setup(
     install_requires=[
         'cosinnus>=0.4.2.dev0',
         'django-extra-views>=0.6.3',
+        'django-annoying==0.7.6',
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',
