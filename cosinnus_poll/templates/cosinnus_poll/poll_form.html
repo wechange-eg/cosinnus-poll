@@ -64,7 +64,7 @@
                             <ol class="input-area">
                                 <li class="w100">
                                     {{ form.forms.obj.multiple_votes.errors }}
-                                    {% render_field form.forms.obj.multiple_votes %}
+                                    {% render_field form.forms.obj.multiple_votes class+="form-control" %}
                                     <label for="{{ form.forms.obj.multiple_votes.auto_id }}" style="white-space: normal;">{% trans "Multiple Votes" %} - <small>{% trans "If disabled, users can only vote for one option" %}</small></label>
                                 </li>
                             </ol>
