@@ -11,22 +11,26 @@
         {% endif %}>
         <ul class="media-list">
             <li class="media">
-                <span class="pull-left vote-count" title="{% trans "Votes" %}: {% trans "Yes" %}: {{ vote_counts.2 }} {% if poll.can_vote_maybe %} {% trans "Maybe" %}: {{ vote_counts.1 }} {% endif %} {% trans "No" %}: {{ vote_counts.0 }}">
-                      <span class="vote-count-yes">
-                          +{{ vote_counts.2 }}
-                      </span>
-                      <span class="vote-count-other">
-                          {% if poll.can_vote_maybe %}
-                              <span class="vote-count-maybe">
-                                  {{ vote_counts.1 }}
-                              </span>
-                              <br/>
-                          {% endif %}
-                          <span class="vote-count-no">
-                              {{ vote_counts.0 }}
-                          </span>
-                      </span>
-                </span>
+                
+                {# The inputs here are only for display; they don't carry data in the form. All data handling is done in the JS script #}
+                <a class="pull-left poll-option-display poll-option-display-yes poll-option-display-color" href="#">
+                	{% if poll.multiple_votes %}
+                    	<input type="checkbox" class="noselect vote-control" checked="true">
+                    {% else %}
+                    	<input type="radio" class="noselect vote-control" checked="true">
+                    {% endif %}
+                </a>
+                <a class="pull-left poll-option-display poll-option-display-maybe poll-option-display-color" href="#">
+                	(<input type="checkbox" class="noselect vote-control" checked="true">) 	
+                </a>
+                <a class="pull-left poll-option-display poll-option-display-no poll-option-display-color" href="#">
+                	{% if poll.multiple_votes %}
+	                	<input type="checkbox"class="noselect vote-control"> 	
+                    {% else %}
+                    	<input type="radio" class="noselect vote-control">
+                	{% endif %}
+                </a>
+                
                 
                 {% if user|has_write_access:poll and mode == 'vote' %}
                     {% captureas close_poll_modal %}close_poll_modal_option_{{ option.pk }}{% endcaptureas %}
@@ -36,15 +40,26 @@
                     </a>
                 {% endif %}
                 
-                <a class="pull-right poll-option-display poll-option-display-yes" href="#">
-                      <i class="fa fa-plus"></i>
-                </a>
-                <a class="pull-right poll-option-display poll-option-display-maybe" href="#">
-                      <i class="fa fa-question"></i>
-                </a>
-                <a class="pull-right poll-option-display poll-option-display-no" href="#">
-                      <i class="fa fa-minus"></i>
-                </a>
+                <span class="pull-right vote-count" title="{% trans "Votes" %}: {% trans "Yes" %}: {{ vote_counts.2 }} {% if poll.can_vote_maybe %} {% trans "Maybe" %}: {{ vote_counts.1 }} {% endif %} {% trans "No" %}: {{ vote_counts.0 }}">
+					<span class="vote-count-no">
+						{% trans "No" %}: <b>{{ vote_counts.0 }}</b>
+					</span>
+            	</span>
+                <span class="vote-count-divider"></span>
+                {% if poll.can_vote_maybe and poll.multiple_votes %}
+                <span class="pull-right vote-count" title="{% trans "Votes" %}: {% trans "Yes" %}: {{ vote_counts.2 }} {% if poll.can_vote_maybe %} {% trans "Maybe" %}: {{ vote_counts.1 }} {% endif %} {% trans "No" %}: {{ vote_counts.0 }}">
+					<span class="vote-count-maybe">
+						{% trans "Maybe" %}: <b>{{ vote_counts.1 }}</b>
+					</span>
+                </span>
+                <span class="vote-count-divider"></span>
+                {% endif %}
+                <span class="pull-right vote-count" title="{% trans "Votes" %}: {% trans "Yes" %}: {{ vote_counts.2 }} {% if poll.can_vote_maybe %} {% trans "Maybe" %}: {{ vote_counts.1 }} {% endif %} {% trans "No" %}: {{ vote_counts.0 }}">
+                    <span class="vote-count-yes">
+                        {% trans "Yes" %}: <b>{{ vote_counts.2 }}</b>
+                    </span>
+                </span>
+                <span class="vote-count-divider"></span>
                 
                 <div class="media-body">
                     <span class="annotation poll-option-display poll-option-display-yes">

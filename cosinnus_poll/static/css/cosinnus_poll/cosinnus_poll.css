@@ -1,27 +1,35 @@
 
 .poll-option.poll-option-yes,
 .poll-option.poll-option-yes .media,
-.poll-option.poll-option-yes .media-body {
-    background-color: #779b48 !important;
-    cursor: pointer !important;
-}
-
+.poll-option.poll-option-yes .media-body,
 .poll-option.poll-option-maybe,
 .poll-option.poll-option-maybe .media,
-.poll-option.poll-option-maybe .media-body {
-    background-color: #efa02d !important;
-    cursor: pointer !important;
-}
-
+.poll-option.poll-option-maybe .media-body,
 .poll-option.poll-option-no,
 .poll-option.poll-option-no .media,
-.poll-option.poll-option-no .media-body {
+.poll-option.poll-option-no .media-body
+{
+    cursor: pointer !important;    
+}
+
+.poll-option .poll-option-display-yes.poll-option-display-color {
+    background-color: #779b48 !important;
+}
+
+.poll-option .poll-option-display-maybe.poll-option-display-color {
+    background-color: #efa02d !important;
+}
+
+.poll-option .poll-option-display-no.poll-option-display-color {
     background-color: #e55c55 !important;
-    cursor: pointer !important;
 }
 
 .poll-option-display {
     display: none;
+}
+.poll-option-display:hover {
+    text-decoration: none;
+    cursor: pointer;
 }
 .poll-option.poll-option-yes .poll-option-display-yes {
     display: inherit;
@@ -33,27 +41,31 @@
     display: inline;
 }
 
-.vote-count {
-    width: auto !important;
-    min-width: 40px !important;
-    padding: 0 2px 0 4px;
-    font-weight: bold; /* or maybe not bold? */
-}
-.vote-count .vote-count-other {
-    font-size: 10px !important;
-    line-height: 12px !important;
+.vote-control {
     display: inline-block;
+    width: auto;
+    height: 18px;
+    width: 18px;
+    margin: 6px 2px 0 2px !important;
+    top: 4px;
     position: relative;
-    top: 3px;
+    cursor: pointer;
 }
 
-.vote-count-yes {
+.vote-count {
+    width: auto !important;
+    min-width: 60px !important;
+    padding: 0 6px;
+    font-size: 12px !important;
 }
-.vote-count-maybe {
-    color: #efa02d;
-}
-.vote-count-no {
-    color: #e55c55;
+.vote-count-divider {
+    display: inline-block;
+    position: relative;
+    float: right;
+    border-left: 1px solid #CCC;
+    width: 0;
+    height: 24px;
+    top: 8px;
 }
 
 .app-poll .btn-emphasized:hover .media > .pull-right {
