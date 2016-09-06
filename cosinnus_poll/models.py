@@ -20,7 +20,8 @@ from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 from cosinnus_poll.conf import settings
 from cosinnus_poll.managers import PollManager
 from cosinnus.models import BaseTaggableObjectModel
-from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user
+from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user,\
+    check_object_read_access
 from cosinnus.utils.urls import group_aware_reverse
 from cosinnus_poll import cosinnus_notifications
 from django.contrib.auth import get_user_model
@@ -272,6 +273,9 @@ class Comment(models.Model):
         """ Needed by the notifications system """
         return self.poll.group
 
+    def grant_extra_read_permissions(self, user):
+        """ Comments inherit their visibility from their commented on parent """
+        return check_object_read_access(self.poll, user)
 
 @receiver(post_delete, sender=Vote)
 def post_vote_delete(sender, **kwargs):
