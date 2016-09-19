@@ -45,6 +45,16 @@ notifications = {
         'subject_template': 'cosinnus_poll/notifications/poll_created_subject.txt',
         'signals': [poll_created],
         'default': True,
+        
+        'is_html': True,
+        'snippet_type': 'poll',
+        'event_text': _('New poll by %(sender_name)s'),
+        'subject_text': _('A new poll: "%(object_name)s" was created in %(team_name)s.'),
+        'data_attributes': {
+            'object_name': 'title', 
+            'object_url': 'get_absolute_url', 
+            'object_text': 'description',
+        },
     }, 
     'poll_completed': {
         'label': _('A poll you voted on was completed'), 
@@ -52,6 +62,16 @@ notifications = {
         'subject_template': 'cosinnus_poll/notifications/poll_completed_subject.txt',
         'signals': [poll_completed],
         'default': True,
+        
+        'is_html': True,
+        'snippet_type': 'poll',
+        'event_text': _("%(sender_name)s's completed the poll"),
+        'subject_text': _('Poll "%(object_name)s" was completed in %(team_name)s.'),
+        'data_attributes': {
+            'object_name': 'title', 
+            'object_url': 'get_absolute_url', 
+            'object_text': 'description',
+        },
     },  
     'poll_comment_posted': {
         'label': _('A user commented on one of your polls'), 
@@ -59,6 +79,19 @@ notifications = {
         'subject_template': 'cosinnus_poll/notifications/poll_comment_posted_subject.txt',
         'signals': [poll_comment_posted],
         'default': True,
+        
+        'is_html': True,
+        'snippet_type': 'poll',
+        'event_text': _('%(sender_name)s commented on your poll'),
+        'subject_text': _('%(sender_name)s commented on one of your polls'),
+        'sub_event_text': _('%(sender_name)s'),
+        'data_attributes': {
+            'object_name': 'poll.title', 
+            'object_url': 'get_absolute_url', 
+            'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
+            'sub_object_text': 'text',
+        },
     },    
     'tagged_poll_comment_posted': {
         'label': _('A user commented on a poll you were tagged in'), 
@@ -66,6 +99,19 @@ notifications = {
         'subject_template': 'cosinnus_poll/notifications/tagged_poll_comment_posted_subject.txt',
         'signals': [tagged_poll_comment_posted],
         'default': True,
+        
+        'is_html': True,
+        'snippet_type': 'poll',
+        'event_text': _('%(sender_name)s commented on a poll you were tagged in'),
+        'subject_text': _('%(sender_name)s commented on a poll you were tagged in in %(team_name)s'),
+        'sub_event_text': _('%(sender_name)s'),
+        'data_attributes': {
+            'object_name': 'poll.title', 
+            'object_url': 'get_absolute_url', 
+            'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
+            'sub_object_text': 'text',
+        },
     },  
     'voted_poll_comment_posted': {
         'label': _('A user commented on an poll you voted in'), 
@@ -73,5 +119,18 @@ notifications = {
         'subject_template': 'cosinnus_poll/notifications/voted_poll_comment_posted_subject.txt',
         'signals': [voted_poll_comment_posted],
         'default': True,
+        
+        'is_html': True,
+        'snippet_type': 'poll',
+        'event_text': _('%(sender_name)s commented on a poll you voted in'),
+        'subject_text': _('%(sender_name)s commented on a poll you voted in in %(team_name)s'),
+        'sub_event_text': _('%(sender_name)s'),
+        'data_attributes': {
+            'object_name': 'poll.title', 
+            'object_url': 'get_absolute_url', 
+            'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
+            'sub_object_text': 'text',
+        },
     },  
 }
