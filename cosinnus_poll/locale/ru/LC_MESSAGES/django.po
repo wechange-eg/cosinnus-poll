@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wechange RU\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-11 16:41+0200\n"
-"PO-Revision-Date: 2016-08-16 14:46+0200\n"
+"POT-Creation-Date: 2016-09-20 15:16+0200\n"
+"PO-Revision-Date: 2016-09-20 13:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,253 +17,290 @@ msgstr ""
 "Language: ru\n"
 "X-Generator: Poedit 1.8.4\n"
 
-#: .\cosinnus_app.py:13 .\models.py:84 .\templates\cosinnus_poll\base.html:6 .\templates\cosinnus_poll\leftnav.html:41 .\templates\cosinnus_poll\poll_list.html:5
-#: .\templates\cosinnus_poll\poll_list.html:10
+#, fuzzy
+#| msgid "Post"
 msgid "Polls"
 msgstr "Опросы"
 
-#: .\cosinnus_app.py:20 .\templates\cosinnus_poll\poll_list_standalone.html:11
 msgctxt "the_app"
 msgid "poll"
 msgstr "Опрос"
 
-#: .\cosinnus_notifications.py:43
+#, fuzzy
+#| msgid "A user created a new event poll"
 msgid "A user created a new poll"
 msgstr "Пользователь создал новый опрос"
 
-#: .\cosinnus_notifications.py:50
+#, python-format
+msgid "New poll by %(sender_name)s"
+msgstr ""
+
+#, fuzzy, python-format
+#| msgid "A new event poll: \"%(object_name)s\" was created in %(team_name)s."
+msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
+msgstr "Новый опрос: \"%(object_name)s\" создан в %(team_name)s"
+
 msgid "A poll you voted on was completed"
 msgstr "Опрос, в котором вы принимали участие, был завершен"
 
-#: .\cosinnus_notifications.py:57
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your events in %(team_name)s."
+msgid "%(sender_name)s completed the poll"
+msgstr "Пользователь %(sender_name)s прокомментировал один из ваших опросов в %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "A new event poll: \"%(object_name)s\" was created in %(team_name)s."
+msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
+msgstr "Новый опрос: \"%(object_name)s\" создан в %(team_name)s"
+
+#, fuzzy
+#| msgid "A user commented on one of your events"
 msgid "A user commented on one of your polls"
 msgstr "Пользователь прокомментировал ваш опрос"
 
-#: .\cosinnus_notifications.py:64
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your events in %(team_name)s."
+msgid "%(sender_name)s commented on your poll"
+msgstr "Пользователь %(sender_name)s прокомментировал один из ваших опросов в %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your events in %(team_name)s."
+msgid "%(sender_name)s commented on one of your polls"
+msgstr "Пользователь %(sender_name)s прокомментировал один из ваших опросов в %(team_name)s."
+
+#, python-format
+msgid "%(sender_name)s"
+msgstr ""
+
+#, fuzzy
+#| msgid "A user commented on a event you were tagged in"
 msgid "A user commented on a poll you were tagged in"
 msgstr "Пользователь прокомментировал опрос, в котором вы отмечены"
 
-#: .\cosinnus_notifications.py:71
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a event you were tagged in %(team_name)s."
+msgid "%(sender_name)s commented on a poll you were tagged in"
+msgstr "Пользователь %(sender_name)s прокомментировал опрос, в котором вы были отмечены, в %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a event you were tagged in %(team_name)s."
+msgid "%(sender_name)s commented on a poll you were tagged in in %(team_name)s"
+msgstr "Пользователь %(sender_name)s прокомментировал опрос, в котором вы были отмечены, в %(team_name)s."
+
+#, fuzzy
+#| msgid "A user commented on an event you voted in"
 msgid "A user commented on an poll you voted in"
 msgstr "Пользователь прокомментировал опрос, в голосовании по которому вы участвовали\""
 
-#: .\dashboard.py:28
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on an event poll you voted in in %(team_name)s."
+msgid "%(sender_name)s commented on a poll you voted in"
+msgstr "Пользователь %(sender_name)s прокомментировал опрос, по которому вы проголосовали в %(team_name)s"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on an event poll you voted in in %(team_name)s."
+msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s"
+msgstr "Пользователь %(sender_name)s прокомментировал опрос, по которому вы проголосовали в %(team_name)s"
+
+#, fuzzy
+#| msgid "Event Polls"
 msgid "Current Polls"
 msgstr "Голосования"
 
-#: .\dashboard.py:47
 msgid "No current polls"
 msgstr "Нет голосований"
 
-#: .\filters.py:14
 msgid "Created By"
 msgstr "Создатель"
 
-#: .\filters.py:20
 msgid "Newest Created"
 msgstr "Последнее из созданных событий"
 
-#: .\filters.py:21
 msgid "Title"
 msgstr "Название"
 
-#: .\forms.py:56
+#, fuzzy
+#| msgid "Enter a description for the event (optional)."
 msgid "You must write a description for this poll option!"
-msgstr "Введите описание опроса (необязательно)"
+msgstr "Сформулируйте свой вопрос"
 
-#: .\models.py:47
 msgid "Voting open"
 msgstr "Голосование открыто"
 
-#: .\models.py:48
+#, fuzzy
+#| msgid "Voting open"
 msgid "Voting closed"
 msgstr "Голосование закрыто"
 
-#: .\models.py:49
 msgid "Poll archived"
 msgstr "Архивировать опрос"
 
-#: .\models.py:53
 msgid "State"
 msgstr "Статус"
 
-#: .\models.py:57 .\models.py:155 .\templates\cosinnus_poll\poll_form.html:138
+#, fuzzy
+#| msgid "(No description set)"
 msgid "Description"
 msgstr "Описание"
 
-#: .\models.py:59
 msgid "Multiple options votable"
 msgstr "Несколько вариантов голосования"
 
-#: .\models.py:60
 msgid "Does this poll allow users to vote on multiple options or just decide for one?"
 msgstr "Позволяет ли этот опрос выбирать пользователям несколько вариантов ответа или голосовать только за \"один\""
 
-#: .\models.py:61 .\templates\cosinnus_poll\poll_form.html:78
 msgid "\"Maybe\" option enabled"
 msgstr "\"Может быть\" допускается выбор\""
 
-#: .\models.py:62
 msgid "Is the maybe option enabled? Ignored and defaulting to False if ``multiple_votes==False``"
 msgstr "Могут Пользователи \"Может быть\" выбрать? Будет проигнорировано и  квалифицированно как \"Ложь\", если выбрано ``multiple_votes==False``"
 
-#: .\models.py:63
 msgid "Anyone can vote"
 msgstr "Любой пользователь может проголосовать"
 
-#: .\models.py:64
 msgid "If true, anyone who can see this poll can vote on it. If false, only group members can."
 msgstr "Если Да, любой пользователь может видеть опрос и принять в нём участие. Если Нет, \"Принять участие в опросе могут только члены группы"
 
-#: .\models.py:67
 msgid "Start"
 msgstr "Начало"
 
-#: .\models.py:70
 msgid "Winning Option"
 msgstr "Победивший вариант"
 
-#: .\models.py:83 .\models.py:150
 msgid "Poll"
 msgstr "Опрос"
 
-#: .\models.py:95
 #, python-format
 msgid "Poll: %(poll)s (%(state)s)"
 msgstr "\"Опрос: %(poll)s (%(state)s)\""
 
-#: .\models.py:157
 msgid "Image"
 msgstr "Изображение"
 
-#: .\models.py:163 .\models.py:217
 msgctxt "the subject"
 msgid "Votes"
 msgstr "Голоса"
 
-#: .\models.py:167
 msgid "Poll Option"
 msgstr "Вариант опроса"
 
-#: .\models.py:168
 msgid "Poll Options"
 msgstr "Варианты опроса"
 
-#: .\models.py:192 .\templates\cosinnus_poll\single_poll_option.html:14 .\templates\cosinnus_poll\single_poll_option.html:20
-#: .\templates\cosinnus_poll\single_poll_option.html:26 .\templates\cosinnus_poll\single_poll_option.html:52
 msgid "Yes"
 msgstr "Да"
 
-#: .\models.py:193 .\templates\cosinnus_poll\single_poll_option.html:14 .\templates\cosinnus_poll\single_poll_option.html:20
-#: .\templates\cosinnus_poll\single_poll_option.html:26 .\templates\cosinnus_poll\single_poll_option.html:55
 msgid "Maybe"
 msgstr "Может быть"
 
-#: .\models.py:194 .\templates\cosinnus_poll\single_poll_option.html:14 .\templates\cosinnus_poll\single_poll_option.html:20
-#: .\templates\cosinnus_poll\single_poll_option.html:26 .\templates\cosinnus_poll\single_poll_option.html:58
 msgid "No"
 msgstr "Нет"
 
-#: .\models.py:199
 msgid "Option"
 msgstr "Вариант"
 
-#: .\models.py:206
 msgid "Voter"
 msgstr "Кто голосует"
 
-#: .\models.py:211 .\templates\cosinnus_poll\poll_vote.html:167
 msgid "Vote"
 msgstr "Голосовать"
 
-#: .\models.py:216
 msgctxt "the subject"
 msgid "Vote"
 msgstr "Голос"
 
-#: .\models.py:231
 msgid "Creator"
 msgstr "Создатель"
 
-#: .\models.py:232
 msgid "Created"
 msgstr "Создано"
 
-#: .\models.py:233
 msgid "Last modified"
 msgstr "Последние изменения внесены"
 
-#: .\models.py:235
 msgid "Text"
 msgstr "Текст"
 
-#: .\models.py:239
 msgid "Comment"
 msgstr "Комментарий"
 
-#: .\models.py:240 .\templates\cosinnus_poll\poll_comments.html:34
 msgid "Comments"
 msgstr "Комментарии"
 
-#: .\templates\cosinnus_poll\leftnav.html:17
+#, fuzzy
+#| msgid "Back to Events"
 msgid "Back to Polls"
 msgstr "Назад к опросам"
 
-#: .\templates\cosinnus_poll\leftnav.html:67
+#, fuzzy
+#| msgid "Event Polls"
 msgid "Past Polls"
-msgstr "Архив опросов"
+msgstr "Последние опросы"
 
-#: .\templates\cosinnus_poll\list_object.html:23 .\templates\cosinnus_poll\single_poll_detailed.html:18
 msgid "by"
-msgstr "Создатель"
+msgstr ""
 
-#: .\templates\cosinnus_poll\list_object.html:61 .\templates\cosinnus_poll\poll_comments.html:71 .\templates\cosinnus_poll\poll_vote.html:59
 msgid "Delete"
 msgstr "Удалить"
 
-#: .\templates\cosinnus_poll\list_object.html:74 .\templates\cosinnus_poll\poll_form.html:8 .\templates\cosinnus_poll\poll_form.html:19
-#: .\templates\cosinnus_poll\poll_vote.html:79
 msgid "Edit"
 msgstr "Редактировать"
 
-#: .\templates\cosinnus_poll\list_object.html:89 .\templates\cosinnus_poll\poll_vote.html:113
 msgid "Re-open"
 msgstr "Возобновить"
 
-#: .\templates\cosinnus_poll\list_object.html:102 .\templates\cosinnus_poll\poll_vote.html:126
 msgid "Archive"
 msgstr "Архивировать"
 
-#: .\templates\cosinnus_poll\list_object.html:115 .\templates\cosinnus_poll\poll_vote.html:65
-#, python-format
+#, fuzzy, python-format
+#| msgid "Do you really want to delete event „%(title)s“?"
 msgid "Do you really want to delete poll „%(title)s“?"
 msgstr "Вы действительно хотите удалить опрос „%(title)s“?"
 
-#: .\templates\cosinnus_poll\list_object.html:116 .\templates\cosinnus_poll\poll_vote.html:66
+#, fuzzy
+#| msgid "Delete"
 msgid "Delete poll"
 msgstr "Удалить опрос"
 
-#: .\templates\cosinnus_poll\list_object.html:121 .\templates\cosinnus_poll\poll_vote.html:132
-#, python-format
+#, fuzzy, python-format
+#| msgid "Do you really want to delete event „%(title)s“?"
 msgid "Do you really want to re-open poll „%(title)s“?"
 msgstr "Вы действительно хотите возобновить опрос „%(title)s“?"
 
-#: .\templates\cosinnus_poll\list_object.html:122 .\templates\cosinnus_poll\poll_vote.html:133
 msgid "Re-open poll"
 msgstr "Возобновить опрос"
 
-#: .\templates\cosinnus_poll\list_object.html:126 .\templates\cosinnus_poll\poll_vote.html:137
-#, python-format
+#, fuzzy, python-format
+#| msgid "Do you really want to delete event „%(title)s“?"
 msgid "Do you really want to archive poll „%(title)s“?"
 msgstr "Вы действительно хотите архивировать опрос „%(title)s“?"
 
-#: .\templates\cosinnus_poll\list_object.html:127 .\templates\cosinnus_poll\poll_vote.html:138
 msgid "Archive poll"
 msgstr "Архивировать опрос"
 
 # checken, wie es auf RU aussieht
-#: .\templates\cosinnus_poll\notifications\poll_comment_posted.html:1
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "Hi, %(receiver_name)s!\n"
+#| "\n"
+#| "%(sender_name)s has posted a comment on an event you created in %(team_name)s:\n"
+#| "\n"
+#| "\"%(comment_text)s\"\n"
+#| "\n"
+#| "\n"
+#| "on your event:\n"
+#| "\n"
+#| "\"%(event_title)s\"\n"
+#| "\n"
+#| "\n"
+#| "Follow this link to see the comment: \n"
+#| "%(object_url)s\n"
+#| "\n"
+#| "\n"
+#| "(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
+#| "\n"
+#| "Your %(site_name)s team.\n"
+#| "\n"
 msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
@@ -295,7 +332,7 @@ msgstr ""
 "\n"
 "к вашему опросу:\n"
 "\n"
-"\"%(poll_title)s\"\n"
+"\"%(event_title)s\"\n"
 "\n"
 "\n"
 "Проследуйте по этой ссылке, чтобы ознакомиться с комментарием: \n"
@@ -307,32 +344,38 @@ msgstr ""
 "Ваша команда %(site_name)s.\n"
 "\n"
 
-#: .\templates\cosinnus_poll\notifications\poll_comment_posted_subject.txt:1
-#, python-format
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your events in %(team_name)s."
 msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
 msgstr "Пользователь %(sender_name)s прокомментировал один из ваших опросов в %(team_name)s."
 
-#: .\templates\cosinnus_poll\notifications\poll_completed.txt:1
-#, python-format
+#, fuzzy, python-format
+#| msgid "A new event poll: \"%(object_name)s\" was created in %(team_name)s."
 msgid ""
 "Hi %(receiver_name)s,\n"
 "\n"
 "the poll \"%(object_name)s\", was completed in %(team_name)s by %(sender_name)s!\n"
-msgstr ""
-"Здравствуйте, %(receiver_name)s!\n"
-"\n"
-"пользователь %(sender_name)s создал новый опрос \"%(object_name)s\" в %(team_name)s. \n"
+msgstr "Опрос: \"%(object_name)s\" завершен пользователем %(team_name)s"
 
-#: .\templates\cosinnus_poll\notifications\poll_completed.txt:6
 msgid "The winning option was:"
 msgstr "Победивший вариант"
 
-#: .\templates\cosinnus_poll\notifications\poll_completed.txt:10
 msgid "There was no winning option."
 msgstr "Победитель не был выявлен"
 
-#: .\templates\cosinnus_poll\notifications\poll_completed.txt:12
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "Hi %(receiver_name)s,\n"
+#| "\n"
+#| "a new event \"%(object_name)s\" in %(team_name)s was created by %(sender_name)s. \n"
+#| "\n"
+#| "You can find it by following this link: %(object_url)s\n"
+#| "\n"
+#| "\n"
+#| "\n"
+#| "(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
+#| "\n"
+#| "Your %(site_name)s Team."
 msgid ""
 "\n"
 "You can find the poll by following this link: %(object_url)s\n"
@@ -343,6 +386,9 @@ msgid ""
 "\n"
 "Your %(site_name)s Team."
 msgstr ""
+"Здравствуйте, %(receiver_name)s,\n"
+"\n"
+"пользователь %(sender_name)s создал новый опрос \"%(object_name)s\" в %(team_name)s. \n"
 "\n"
 "Вы можете найти его по этой ссылке: %(object_url)s\n"
 "\n"
@@ -352,13 +398,24 @@ msgstr ""
 "\n"
 "Ваша команда %(site_name)s"
 
-#: .\templates\cosinnus_poll\notifications\poll_completed_subject.txt:1
-#, python-format
+#, fuzzy, python-format
+#| msgid "A new event poll: \"%(object_name)s\" was created in %(team_name)s."
 msgid "Poll: \"%(object_name)s\" was completed in %(team_name)s."
 msgstr "Новый опрос: \"%(object_name)s\" создан в %(team_name)s"
 
-#: .\templates\cosinnus_poll\notifications\poll_created.txt:1
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "Hi %(receiver_name)s,\n"
+#| "\n"
+#| "a new event \"%(object_name)s\" in %(team_name)s was created by %(sender_name)s. \n"
+#| "\n"
+#| "You can find it by following this link: %(object_url)s\n"
+#| "\n"
+#| "\n"
+#| "\n"
+#| "(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
+#| "\n"
+#| "Your %(site_name)s Team."
 msgid ""
 "Hi %(receiver_name)s,\n"
 "\n"
@@ -384,14 +441,29 @@ msgstr ""
 "\n"
 "Ваша команда %(site_name)s"
 
-#: .\templates\cosinnus_poll\notifications\poll_created_subject.txt:1
-#, python-format
-msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
-msgstr "Новый опрос: \"%(object_name)s\" создан в %(team_name)s"
-
 # checken, wie es auf RU aussieht
-#: .\templates\cosinnus_poll\notifications\tagged_poll_comment_posted.html:1
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "Hi, %(receiver_name)s!\n"
+#| "\n"
+#| "%(sender_name)s has posted a comment on an event you were tagged in, in %(team_name)s:\n"
+#| "\n"
+#| "\"%(comment_text)s\"\n"
+#| "\n"
+#| "\n"
+#| "on the event:\n"
+#| "\n"
+#| "\"%(event_title)s\"\n"
+#| "\n"
+#| "\n"
+#| "Follow this link to see the comment: \n"
+#| "%(object_url)s\n"
+#| "\n"
+#| "\n"
+#| "(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
+#| "\n"
+#| "Your %(site_name)s team.\n"
+#| "\n"
 msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
@@ -423,7 +495,7 @@ msgstr ""
 "\n"
 "к событию:\n"
 "\n"
-"\"%(poll_title)s\"\n"
+"\"%(event_title)s\"\n"
 "\n"
 "\n"
 "Вы можете найти его по этой ссылке: %(object_url)s\n"
@@ -434,14 +506,34 @@ msgstr ""
 "Ваша команда %(site_name)s\n"
 "\n"
 
-#: .\templates\cosinnus_poll\notifications\tagged_poll_comment_posted_subject.txt:1
-#, python-format
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a event you were tagged in %(team_name)s."
 msgid "%(sender_name)s commented on a poll you were tagged in %(team_name)s."
 msgstr "Пользователь %(sender_name)s прокомментировал опрос, в котором вы были отмечены, в %(team_name)s."
 
 # checken, wie es auf RU aussieht
-#: .\templates\cosinnus_poll\notifications\voted_poll_comment_posted.html:1
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "Hi, %(receiver_name)s!\n"
+#| "\n"
+#| "%(sender_name)s has posted a comment on an event poll you voted in in %(team_name)s:\n"
+#| "\n"
+#| "\"%(comment_text)s\"\n"
+#| "\n"
+#| "\n"
+#| "on the event poll:\n"
+#| "\n"
+#| "\"%(event_title)s\"\n"
+#| "\n"
+#| "\n"
+#| "Follow this link to see the comment: \n"
+#| "%(object_url)s\n"
+#| "\n"
+#| "\n"
+#| "(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
+#| "\n"
+#| "Your %(site_name)s team.\n"
+#| "\n"
 msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
@@ -473,7 +565,7 @@ msgstr ""
 "\n"
 "к опросу:\n"
 "\n"
-"\"%(poll_title)s\"\n"
+"\"%(event_title)s\"\n"
 "\n"
 "\n"
 "Вы можете найти его по этой ссылке: %(object_url)s\n"
@@ -484,250 +576,235 @@ msgstr ""
 "\n"
 "Ваша команда %(site_name)s\n"
 
-#: .\templates\cosinnus_poll\notifications\voted_poll_comment_posted_subject.txt:1
-#, python-format
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on an event poll you voted in in %(team_name)s."
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s."
 msgstr "Пользователь %(sender_name)s прокомментировал опрос, по которому вы проголосовали в %(team_name)s"
 
-#: .\templates\cosinnus_poll\poll_comments.html:95
 msgid "Write comment..."
 msgstr "Оставить комментарий…"
 
-#: .\templates\cosinnus_poll\poll_comments.html:108
 msgid "Post"
 msgstr "Написать…"
 
-#: .\templates\cosinnus_poll\poll_form.html:6 .\templates\cosinnus_poll\poll_form.html:17
 msgid "Add poll"
 msgstr "Добавить опрос"
 
-#: .\templates\cosinnus_poll\poll_form.html:48
+#, fuzzy
+#| msgid "Enter a title for the new event."
 msgid "Enter a title for the new poll."
 msgstr "Введите название нового опроса"
 
-#: .\templates\cosinnus_poll\poll_form.html:58
+#, fuzzy
+#| msgid "Enter a description for the event (optional)."
 msgid "Enter a description for the poll (optional)."
 msgstr "Введите описание опроса (необязательно)"
 
-#: .\templates\cosinnus_poll\poll_form.html:68
 msgid "Multiple Votes"
 msgstr "Несколько голосов"
 
-#: .\templates\cosinnus_poll\poll_form.html:68
 msgid "If disabled, users can only vote for one option"
 msgstr "Если отключено, то пользователь может голосовать только за один вариант ответа"
 
-#: .\templates\cosinnus_poll\poll_form.html:78
 msgid "In addition to \"Yes\" and \"No\""
 msgstr "В дополнение к \"Да\" и \"Нет\""
 
-#: .\templates\cosinnus_poll\poll_form.html:88
 msgid "Public voting"
 msgstr "Публичное голосование"
 
-#: .\templates\cosinnus_poll\poll_form.html:88
 msgid "Any logged in user who can see this poll can vote on it. If disabled, only group/project members can vote on it."
-msgstr "Любой зарегистрированный пользователь, который может видеть опрос, может в нём \"Проголосовать\". Если отключено, то \"голосовать могут только участники группы/проекта"
+msgstr "Любой зарегистрированный пользователь, который может видеть опрос, может в нём \"Проголосовать\". Если отключено, то \"голосовать могут только участники группы/проекта\""
 
-#: .\templates\cosinnus_poll\poll_form.html:101
 msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
 msgstr "Примечание: Вы не можете больше изменить параметры этого опроса, потому что \"кто-то в нём проголосовал или опрос был завершен"
 
-#: .\templates\cosinnus_poll\poll_form.html:129
 msgid "Remove"
 msgstr "Удалить"
 
-#: .\templates\cosinnus_poll\poll_form.html:132
 msgid "Edit Poll Option"
 msgstr "Изменить параметры опроса"
 
-#: .\templates\cosinnus_poll\poll_form.html:132
 msgid "Describe this option"
 msgstr "Опишите этот параметр"
 
-#: .\templates\cosinnus_poll\poll_form.html:179
 msgid "Add option"
 msgstr "Добавить параметр"
 
-#: .\templates\cosinnus_poll\poll_form.html:202 .\templates\cosinnus_poll\poll_list.html:48
 msgid "Create"
 msgstr "Создать"
 
-#: .\templates\cosinnus_poll\poll_form.html:204
 msgid "Save"
 msgstr "Сохранить"
 
-#: .\templates\cosinnus_poll\poll_list.html:10
+#, fuzzy
+#| msgid "Event Polls"
 msgid "Archived Polls"
 msgstr "Архив опросов"
 
-#: .\templates\cosinnus_poll\poll_list.html:32
+#, fuzzy
+#| msgid "Enter a title for the new event."
 msgid "Enter the title for a new poll."
 msgstr "Введите название нового опроса"
 
-#: .\templates\cosinnus_poll\poll_list.html:60
+#, fuzzy
+#| msgid "There are no open event polls."
 msgid "There are no archived polls."
 msgstr "Заархивированных опросов нет"
 
-#: .\templates\cosinnus_poll\poll_list.html:62
+#, fuzzy
+#| msgid "There are no open event polls."
 msgid "There are no running polls."
 msgstr "Текущих опросов нет"
 
-#: .\templates\cosinnus_poll\poll_list_standalone.html:23
+#, fuzzy
+#| msgid "There are no upcoming events"
 msgid "There are no upcoming polls"
 msgstr "Предстоящих опросов нет"
 
-#: .\templates\cosinnus_poll\poll_vote.html:5
 msgctxt "the_verb"
 msgid "Vote"
 msgstr "Голосовать"
 
-#: .\templates\cosinnus_poll\poll_vote.html:12
 #, python-format
 msgid "Vote for %(title)s"
 msgstr "Голосовать за %(title)s"
 
-#: .\templates\cosinnus_poll\poll_vote.html:35
+#, fuzzy
+#| msgid "This event has been canceled. Voting is closed."
 msgid "This poll has been completed. Voting is closed."
 msgstr "Этот опрос завершен. Голосование закрыто"
 
-#: .\templates\cosinnus_poll\poll_vote.html:38
 msgid "This is an archived poll."
 msgstr "Это заархивированный опрос"
 
-#: .\templates\cosinnus_poll\poll_vote.html:87 .\templates\cosinnus_poll\poll_vote.html:94
 msgid "Complete without winner"
 msgstr "Завершить без победителя"
 
-#: .\templates\cosinnus_poll\poll_vote.html:99
-#, python-format
+#, fuzzy, python-format
+#| msgid "Do you really want to delete event „%(title)s“?"
 msgid "Do you really want to complete poll \"%(title)s\" with no winning option?"
 msgstr "Вы действительно хотите удалить cобытие „%(title)s“?"
 
-#: .\templates\cosinnus_poll\poll_vote.html:100
 msgid "Complete poll without winner"
 msgstr "Опрос завершен без победителя"
 
-#: .\templates\cosinnus_poll\single_poll_detailed.html:41
 msgid "(No description set)"
 msgstr "(Описание отсутствует)"
 
-#: .\templates\cosinnus_poll\single_poll_detailed.html:57
 msgid "The Winner is"
 msgstr "Победитель"
 
-#: .\templates\cosinnus_poll\single_poll_detailed.html:60
 msgid "Available options were"
 msgstr "Возможные варианты"
 
-#: .\templates\cosinnus_poll\single_poll_detailed.html:80
+#, fuzzy
+#| msgid "There are no date suggestions for this event poll yet!"
 msgid "There are no options for this poll yet!"
 msgstr "Для этого опроса еще не заданы параметры"
 
-#: .\templates\cosinnus_poll\single_poll_option.html:14 .\templates\cosinnus_poll\single_poll_option.html:20 .\templates\cosinnus_poll\single_poll_option.html:26
-msgid "Votes"
-msgstr "Голосовать"
-
-#: .\templates\cosinnus_poll\single_poll_option.html:34
 msgid "Make winner and complete poll"
 msgstr "Выбрать победителем и завершить опрос"
 
-#: .\templates\cosinnus_poll\single_poll_option.html:68
-#, python-format
+#, fuzzy
+#| msgctxt "the subject"
+#| msgid "Votes"
+msgid "Votes"
+msgstr "Голосовать"
+
+#, fuzzy, python-format
+#| msgid "Do you really want to delete unscheduled event „%(title)s“?"
 msgid "Do you really want to complete the poll and select \"%(description)s\" as winner?"
 msgstr "Вы действительно хотите завершить опрос и выбрать \"%(description)s\" победителем?"
 
-#: .\templates\cosinnus_poll\single_poll_option.html:69
 msgid "Complete poll"
 msgstr "Завершить опрос"
 
-#: .\templates\cosinnus_poll\widgets\current.html:35
+#, fuzzy
+#| msgid "There are no past events."
 msgid "There are no polls yet"
 msgstr "Опросы ещё не созданы"
 
-#: .\views.py:105
-#, python-format
+#, fuzzy, python-format
+#| msgid "Event \"%(title)s\" was edited successfully."
 msgid "Poll \"%(title)s\" was edited successfully."
 msgstr "Опрос \"%(title)s\" был успешно отредактирован"
 
-#: .\views.py:106
-#, python-format
+#, fuzzy, python-format
+#| msgid "Event \"%(title)s\" could not be edited."
 msgid "Poll \"%(title)s\" could not be edited."
 msgstr "Невозможно отредактировать опрос \"%(title)s\""
 
-#: .\views.py:161
-#, python-format
+#, fuzzy, python-format
+#| msgid "Event \"%(title)s\" was added successfully."
 msgid "Poll \"%(title)s\" was added successfully."
 msgstr "Опрос \"%(title)s\" добавлен"
 
-#: .\views.py:162
-#, python-format
+#, fuzzy, python-format
+#| msgid "Event \"%(title)s\" could not be added."
 msgid "Poll \"%(title)s\" could not be added."
 msgstr "Невозможно добавить опрос \"%(title)s\" "
 
-#: .\views.py:172
+#, fuzzy
+#| msgid "You should define at least one date suggestion."
 msgid "You should define at least one poll option!"
 msgstr "Вы должны предложить как минимум один вариант"
 
-#: .\views.py:186
+#, fuzzy
+#| msgid "This is event is already scheduled. You cannot vote for it any more."
 msgid "This poll is archived and cannot be edited anymore!"
 msgstr "Опрос архивируется и больше не может быть отредактирован"
 
-#: .\views.py:217
-#, python-format
+#, fuzzy, python-format
+#| msgid "Event \"%(title)s\" was deleted successfully."
 msgid "Poll \"%(title)s\" was deleted successfully."
 msgstr "Опрос \"%(title)s\" удален."
 
-#: .\views.py:218
-#, python-format
+#, fuzzy, python-format
+#| msgid "Event \"%(title)s\" could not be deleted."
 msgid "Poll \"%(title)s\" could not be deleted."
 msgstr "Невозможно удалить опрос \"%(title)s\""
 
-#: .\views.py:229
 msgid "Your votes were saved successfully."
 msgstr "Ваше голосование сохранено"
 
-#: .\views.py:230
 msgid "Your votes could not be saved."
 msgstr "Невозможно сохранить результаты вашего голосования"
 
-#: .\views.py:254
+#, fuzzy
+#| msgid "This is event is already scheduled. You cannot vote for it any more."
 msgid "The voting phase for this poll is over. You cannot vote for it any more."
 msgstr "Фаза голосования для этого опроса завершена. Вы больше не можете голосовать"
 
-#: .\views.py:322
 msgid "In this poll you must vote for exactly one item!"
 msgstr "В этом опросе вы можете проголосовать только за один пункт"
 
-#: .\views.py:367
 msgid "The complete request can only be sent via POST!"
 msgstr "Полный запрос может быть отправлен только по почте!"
 
-#: .\views.py:376
 msgid "Invalid action for this poll. The request could not be completed!"
 msgstr "Недопустимое действие для этого опроса. Запрос не может быть завершен"
 
-#: .\views.py:380
 msgid "This action is not permitted for this poll at this stage!"
 msgstr "Это действие не разрешено для этого опроса на этой стадии"
 
-#: .\views.py:392
+#, fuzzy
+#| msgid "Your comment was deleted successfully."
 msgid "The poll was closed successfully."
 msgstr "Ваш опрос был успешно завершен"
 
-#: .\views.py:399
+#, fuzzy
+#| msgid "Your comment was deleted successfully."
 msgid "The poll was re-opened successfully."
 msgstr "Ваш опрос был успешно возобновлен"
 
-#: .\views.py:403
+#, fuzzy
+#| msgid "Your comment was added successfully."
 msgid "The poll was archived successfully."
 msgstr "Ваш опрос был успешно заархивирован"
 
-#: .\views.py:418
 msgid "Your comment was added successfully."
 msgstr "Ваш комментарий добавлен"
 
-#: .\views.py:458
 msgid "Your comment was deleted successfully."
 msgstr "Ваш комментарий удален"
 
