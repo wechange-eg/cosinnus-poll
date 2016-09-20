@@ -65,7 +65,7 @@ notifications = {
         
         'is_html': True,
         'snippet_type': 'poll',
-        'event_text': _("%(sender_name)s's completed the poll"),
+        'event_text': _("%(sender_name)s completed the poll"),
         'subject_text': _('Poll "%(object_name)s" was completed in %(team_name)s.'),
         'data_attributes': {
             'object_name': 'title', 
