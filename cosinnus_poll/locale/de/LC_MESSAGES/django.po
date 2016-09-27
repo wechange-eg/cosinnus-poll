@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-20 15:16+0200\n"
-"PO-Revision-Date: 2016-09-20 15:18+0200\n"
+"POT-Creation-Date: 2016-09-27 17:57+0200\n"
+"PO-Revision-Date: 2016-09-27 18:05+0200\n"
 "Last-Translator: Sebastian Henschel <sh@sinnwerkstatt.com>\n"
 "Language-Team: German <>\n"
 "MIME-Version: 1.0\n"
@@ -31,6 +31,10 @@ msgid "New poll by %(sender_name)s"
 msgstr "Neue Umfrage von %(sender_name)s"
 
 #, python-format
+msgid "%(sender_name)s created a new poll"
+msgstr "%(sender_name)s hat eine neue Umfrage erstellt"
+
+#, python-format
 msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
 msgstr "Neue Umfrage: \"%(object_name)s\" wurde in %(team_name)s erstellt."
 
@@ -40,6 +44,10 @@ msgstr "Eine Umfrage in der du abgestimmt hast wurde beendet"
 #, python-format
 msgid "%(sender_name)s completed the poll"
 msgstr "%(sender_name)s hat die Umfrage beendet"
+
+#, python-format
+msgid "%(sender_name)s completed a poll"
+msgstr "%(sender_name)s hat eine Umfrage beendet"
 
 #, python-format
 msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."

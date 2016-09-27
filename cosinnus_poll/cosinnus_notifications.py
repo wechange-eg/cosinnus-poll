@@ -49,6 +49,7 @@ notifications = {
         'is_html': True,
         'snippet_type': 'poll',
         'event_text': _('New poll by %(sender_name)s'),
+        'notification_text': _('%(sender_name)s created a new poll'),
         'subject_text': _('A new poll: "%(object_name)s" was created in %(team_name)s.'),
         'data_attributes': {
             'object_name': 'title', 
@@ -66,6 +67,7 @@ notifications = {
         'is_html': True,
         'snippet_type': 'poll',
         'event_text': _("%(sender_name)s completed the poll"),
+        'notification_text': _('%(sender_name)s completed a poll'),
         'subject_text': _('Poll "%(object_name)s" was completed in %(team_name)s.'),
         'data_attributes': {
             'object_name': 'title', 
@@ -83,6 +85,7 @@ notifications = {
         'is_html': True,
         'snippet_type': 'poll',
         'event_text': _('%(sender_name)s commented on your poll'),
+        'notification_text': _('%(sender_name)s commented on one of your polls'),
         'subject_text': _('%(sender_name)s commented on one of your polls'),
         'sub_event_text': _('%(sender_name)s'),
         'data_attributes': {

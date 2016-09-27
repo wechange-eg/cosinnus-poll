@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-20 15:16+0200\n"
+"POT-Creation-Date: 2016-09-27 17:57+0200\n"
 "PO-Revision-Date: 2015-11-11 10:39+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -37,6 +37,11 @@ msgid "New poll by %(sender_name)s"
 msgstr ""
 
 #, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your events in %(team_name)s."
+msgid "%(sender_name)s created a new poll"
+msgstr "%(sender_name)s прокоментував/-ла один з ваших заходів у %(team_name)s."
+
+#, fuzzy, python-format
 #| msgid "A new event poll: \"%(object_name)s\" was created in %(team_name)s."
 msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
 msgstr "Нове опитування щодо дати: «%(object_name)s» було створено у %(team_name)s."
@@ -47,6 +52,11 @@ msgstr ""
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on one of your events in %(team_name)s."
 msgid "%(sender_name)s completed the poll"
+msgstr "%(sender_name)s прокоментував/-ла один з ваших заходів у %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your events in %(team_name)s."
+msgid "%(sender_name)s completed a poll"
 msgstr "%(sender_name)s прокоментував/-ла один з ваших заходів у %(team_name)s."
 
 #, fuzzy, python-format
