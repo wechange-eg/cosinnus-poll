@@ -1,8 +1,8 @@
-{% load i18n static cosinnus_tags widget_tweaks %}
+{% load i18n static cosinnus_tags widget_tweaks thumbnail %}
 
 <div class="btn btn-emphasized w100 {% if poll.attached_image %}button-with-title-image{% endif %}">
     {% if poll.attached_image %}
-        <img src="{{ poll.attached_image.static_image_url }}" />
+        <img src="{% thumbnail poll.attached_image.file SETTINGS.COSINNUS_GROUP_WALLPAPER_MAXIMUM_SIZE_SCALE crop='smart' upscale='smart' %}" />
         <div></div> <!-- Gradient overlay -->
     {% endif %}
     <ul class="media-list">
