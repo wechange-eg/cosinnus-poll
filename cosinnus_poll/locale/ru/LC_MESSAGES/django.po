@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wechange RU\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-27 17:57+0200\n"
-"PO-Revision-Date: 2016-09-20 13:07+0200\n"
+"POT-Creation-Date: 2016-11-02 11:34+0100\n"
+"PO-Revision-Date: 2016-11-02 11:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -36,9 +36,9 @@ msgid "New poll by %(sender_name)s"
 msgstr ""
 
 #, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your events in %(team_name)s."
+#| msgid "A user created a new event poll"
 msgid "%(sender_name)s created a new poll"
-msgstr "Пользователь %(sender_name)s прокомментировал один из ваших опросов в %(team_name)s."
+msgstr "Пользователь создал новый опрос"
 
 #, fuzzy, python-format
 #| msgid "A new event poll: \"%(object_name)s\" was created in %(team_name)s."
@@ -46,37 +46,37 @@ msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
 msgstr "Новый опрос: \"%(object_name)s\" создан в %(team_name)s"
 
 msgid "A poll you voted on was completed"
-msgstr "Опрос, в котором вы принимали участие, был завершен"
+msgstr "Опрос, в котором Вы принимали участие, был завершен"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on one of your events in %(team_name)s."
 msgid "%(sender_name)s completed the poll"
-msgstr "Пользователь %(sender_name)s прокомментировал один из ваших опросов в %(team_name)s."
+msgstr "Пользователь %(sender_name)s прокомментировал один из Ваших опросов в %(team_name)s."
 
 #, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your events in %(team_name)s."
+#| msgid "Make winner and complete poll"
 msgid "%(sender_name)s completed a poll"
-msgstr "Пользователь %(sender_name)s прокомментировал один из ваших опросов в %(team_name)s."
+msgstr "Выбрать победителем и завершить опрос"
 
 #, fuzzy, python-format
 #| msgid "A new event poll: \"%(object_name)s\" was created in %(team_name)s."
 msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
-msgstr "Новый опрос: \"%(object_name)s\" создан в %(team_name)s"
+msgstr "Опрос: \"%(object_name)s\" завершён в %(team_name)s"
 
 #, fuzzy
 #| msgid "A user commented on one of your events"
 msgid "A user commented on one of your polls"
-msgstr "Пользователь прокомментировал ваш опрос"
+msgstr "Пользователь прокомментировал Ваш опрос"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on one of your events in %(team_name)s."
 msgid "%(sender_name)s commented on your poll"
-msgstr "Пользователь %(sender_name)s прокомментировал один из ваших опросов в %(team_name)s."
+msgstr "Пользователь %(sender_name)s прокомментировал один из Ваших опросов в %(team_name)s."
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on one of your events in %(team_name)s."
 msgid "%(sender_name)s commented on one of your polls"
-msgstr "Пользователь %(sender_name)s прокомментировал один из ваших опросов в %(team_name)s."
+msgstr "Пользователь %(sender_name)s прокомментировал один из Ваших опросов в %(team_name)s."
 
 #, python-format
 msgid "%(sender_name)s"
@@ -85,32 +85,32 @@ msgstr ""
 #, fuzzy
 #| msgid "A user commented on a event you were tagged in"
 msgid "A user commented on a poll you were tagged in"
-msgstr "Пользователь прокомментировал опрос, в котором вы отмечены"
+msgstr "Пользователь прокомментировал опрос, в котором Вы отмечены"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on a event you were tagged in %(team_name)s."
 msgid "%(sender_name)s commented on a poll you were tagged in"
-msgstr "Пользователь %(sender_name)s прокомментировал опрос, в котором вы были отмечены, в %(team_name)s."
+msgstr "Пользователь %(sender_name)s прокомментировал опрос, в котором Вы были отмечены, в %(team_name)s."
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on a event you were tagged in %(team_name)s."
 msgid "%(sender_name)s commented on a poll you were tagged in in %(team_name)s"
-msgstr "Пользователь %(sender_name)s прокомментировал опрос, в котором вы были отмечены, в %(team_name)s."
+msgstr "Пользователь %(sender_name)s прокомментировал опрос, в котором Вы были отмечены, в %(team_name)s."
 
 #, fuzzy
 #| msgid "A user commented on an event you voted in"
 msgid "A user commented on an poll you voted in"
-msgstr "Пользователь прокомментировал опрос, в голосовании по которому вы участвовали\""
+msgstr "Пользователь прокомментировал опрос, в голосовании по которому Вы участвовали\""
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on an event poll you voted in in %(team_name)s."
 msgid "%(sender_name)s commented on a poll you voted in"
-msgstr "Пользователь %(sender_name)s прокомментировал опрос, по которому вы проголосовали в %(team_name)s"
+msgstr "Пользователь %(sender_name)s прокомментировал опрос, по которому Вы проголосовали в %(team_name)s"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on an event poll you voted in in %(team_name)s."
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s"
-msgstr "Пользователь %(sender_name)s прокомментировал опрос, по которому вы проголосовали в %(team_name)s"
+msgstr "Пользователь %(sender_name)s прокомментировал опрос, по которому Вы проголосовали в %(team_name)s"
 
 #, fuzzy
 #| msgid "Event Polls"
@@ -248,7 +248,7 @@ msgid "Past Polls"
 msgstr "Последние опросы"
 
 msgid "by"
-msgstr ""
+msgstr "Создатель"
 
 msgid "Delete"
 msgstr "Удалить"
@@ -335,12 +335,12 @@ msgid ""
 msgstr ""
 "Здравствуйте, %(receiver_name)s!\n"
 "\n"
-"пользователь %(sender_name)s прокомментировал созданный вами опрос в группе %(team_name)s:\n"
+"пользователь %(sender_name)s прокомментировал созданный Вами опрос в группе %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
 "\n"
-"к вашему опросу:\n"
+"к Вашему опросу:\n"
 "\n"
 "\"%(event_title)s\"\n"
 "\n"
@@ -357,7 +357,7 @@ msgstr ""
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on one of your events in %(team_name)s."
 msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
-msgstr "Пользователь %(sender_name)s прокомментировал один из ваших опросов в %(team_name)s."
+msgstr "Пользователь %(sender_name)s прокомментировал один из Ваших опросов в %(team_name)s."
 
 #, fuzzy, python-format
 #| msgid "A new event poll: \"%(object_name)s\" was created in %(team_name)s."
@@ -365,8 +365,10 @@ msgid ""
 "Hi %(receiver_name)s,\n"
 "\n"
 "the poll \"%(object_name)s\", was completed in %(team_name)s by %(sender_name)s!\n"
-msgstr "Опрос: \"%(object_name)s\" завершен пользователем %(team_name)s"
+msgstr "Опрос: \"%(object_name)s\" завершён в %(team_name)s"
 
+#, fuzzy
+#| msgid "A new event poll: \"%(object_name)s\" was created in %(team_name)s."
 msgid "The winning option was:"
 msgstr "Победивший вариант"
 
@@ -411,7 +413,7 @@ msgstr ""
 #, fuzzy, python-format
 #| msgid "A new event poll: \"%(object_name)s\" was created in %(team_name)s."
 msgid "Poll: \"%(object_name)s\" was completed in %(team_name)s."
-msgstr "Новый опрос: \"%(object_name)s\" создан в %(team_name)s"
+msgstr "Опрос: \"%(object_name)s\" завершён в %(team_name)s"
 
 #, fuzzy, python-format
 #| msgid ""
@@ -498,7 +500,7 @@ msgid ""
 msgstr ""
 "Здравствуйте, %(receiver_name)s!\n"
 "\n"
-"Пользователь %(sender_name)s прокомментировал опрос, в котором вы были отмечены, в группе %(team_name)s:\n"
+"Пользователь %(sender_name)s прокомментировал опрос, в котором Вы были отмечены, в группе %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -519,7 +521,7 @@ msgstr ""
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on a event you were tagged in %(team_name)s."
 msgid "%(sender_name)s commented on a poll you were tagged in %(team_name)s."
-msgstr "Пользователь %(sender_name)s прокомментировал опрос, в котором вы были отмечены, в %(team_name)s."
+msgstr "Пользователь %(sender_name)s прокомментировал опрос, в котором Вы были отмечены, в %(team_name)s."
 
 # checken, wie es auf RU aussieht
 #, fuzzy, python-format
@@ -568,7 +570,7 @@ msgid ""
 msgstr ""
 "Здравствуйте, %(receiver_name)s!\n"
 "\n"
-"Пользователь %(sender_name)s прокомментировал опрос, по которому вы проголосовали в группе %(team_name)s:\n"
+"Пользователь %(sender_name)s прокомментировал опрос, по которому Вы проголосовали в группе %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -589,7 +591,7 @@ msgstr ""
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on an event poll you voted in in %(team_name)s."
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s."
-msgstr "Пользователь %(sender_name)s прокомментировал опрос, по которому вы проголосовали в %(team_name)s"
+msgstr "Пользователь %(sender_name)s прокомментировал опрос, по которому Вы проголосовали в %(team_name)s"
 
 msgid "Write comment..."
 msgstr "Оставить комментарий…"
@@ -693,7 +695,7 @@ msgstr "Завершить без победителя"
 #, fuzzy, python-format
 #| msgid "Do you really want to delete event „%(title)s“?"
 msgid "Do you really want to complete poll \"%(title)s\" with no winning option?"
-msgstr "Вы действительно хотите удалить cобытие „%(title)s“?"
+msgstr "Вы действительно хотите завершить опрос „%(title)s“ без выбора победителя?"
 
 msgid "Complete poll without winner"
 msgstr "Опрос завершен без победителя"
@@ -719,7 +721,7 @@ msgstr "Выбрать победителем и завершить опрос"
 #| msgctxt "the subject"
 #| msgid "Votes"
 msgid "Votes"
-msgstr "Голосовать"
+msgstr "Голоса"
 
 #, fuzzy, python-format
 #| msgid "Do you really want to delete unscheduled event „%(title)s“?"
@@ -778,7 +780,7 @@ msgid "Your votes were saved successfully."
 msgstr "Ваше голосование сохранено"
 
 msgid "Your votes could not be saved."
-msgstr "Невозможно сохранить результаты вашего голосования"
+msgstr "Невозможно сохранить результаты Вашего голосования"
 
 #, fuzzy
 #| msgid "This is event is already scheduled. You cannot vote for it any more."
@@ -786,7 +788,7 @@ msgid "The voting phase for this poll is over. You cannot vote for it any more."
 msgstr "Фаза голосования для этого опроса завершена. Вы больше не можете голосовать"
 
 msgid "In this poll you must vote for exactly one item!"
-msgstr "В этом опросе вы можете проголосовать только за один пункт"
+msgstr "В этом опросе Вы можете проголосовать только за один пункт"
 
 msgid "The complete request can only be sent via POST!"
 msgstr "Полный запрос может быть отправлен только по почте!"
@@ -829,10 +831,10 @@ msgstr "Ваш комментарий удален"
 #~ msgstr "Пользователь создал новое событие"
 
 #~ msgid "Upcoming Events"
-#~ msgstr "Предстоящие события"
+#~ msgstr "Текущие события"
 
 #~ msgid "No upcoming events"
-#~ msgstr "Нет предстоящих событий"
+#~ msgstr "Нет текущих событий"
 
 #~ msgid "Soonest Upcoming"
 #~ msgstr "Ближайшее событие"
@@ -876,7 +878,7 @@ msgstr "Ваш комментарий удален"
 #~ msgstr "В открытом доступе (на сайте)"
 
 #~ msgid "URL"
-#~ msgstr "URL"
+#~ msgstr "Ссылка"
 
 #~ msgid "Event"
 #~ msgstr "Cобытие"
@@ -958,7 +960,7 @@ msgstr "Ваш комментарий удален"
 #~ msgstr "Установить дату на %(suggestion)s"
 
 #~ msgid "When do you have time?"
-#~ msgstr "Когда у вас есть время?"
+#~ msgstr "Когда у Вас есть время?"
 
 #~ msgid "Delete unscheduled event"
 #~ msgstr "Удалить опрос дат"
@@ -985,7 +987,7 @@ msgstr "Ваш комментарий удален"
 #~ msgstr "Календарь"
 
 #~ msgid "Copy this iCal-link into your calendar application to import current events:"
-#~ msgstr "Скопируйте эту ссылку iCal в ваш календарь, чтобы импортировать текущие события:"
+#~ msgstr "Скопируйте эту ссылку iCal в Ваш календарь, чтобы импортировать текущие события:"
 
 #~ msgid "iCal Feed"
 #~ msgstr "Лента новостей iCal"
