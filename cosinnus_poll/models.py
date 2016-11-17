@@ -233,7 +233,7 @@ class Vote(models.Model):
         return self.option.poll.get_absolute_url()
     
     def get_label(self):
-        return force_text(self.VOTE_CHOICES[self.choice][1])
+        return force_text(dict(self.VOTE_CHOICES)[self.choice])
 
 
 @python_2_unicode_compatible
