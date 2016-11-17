@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 11:34+0100\n"
-"PO-Revision-Date: 2016-09-27 18:05+0200\n"
+"POT-Creation-Date: 2016-11-17 16:38+0100\n"
+"PO-Revision-Date: 2016-11-17 16:44+0100\n"
 "Last-Translator: Sebastian Henschel <sh@sinnwerkstatt.com>\n"
 "Language-Team: German <>\n"
 "MIME-Version: 1.0\n"
@@ -140,6 +140,12 @@ msgstr "Jeder kann abstimmen"
 
 msgid "If true, anyone who can see this poll can vote on it. If false, only group members can."
 msgstr "Wenn ja, darf jeder der die Umfrage sehen kann dafür abstimmen. Wenn nein können nur Gruppenmitglieder abstimmen."
+
+msgid "Show voters"
+msgstr "Abstimmer anzeigen"
+
+msgid "If true, display a list of which user voted for each option."
+msgstr "Wenn ausgewählt, zeigt an, welcher Benutzer wie für jede Option abgestimmt hat."
 
 msgid "Start"
 msgstr "Start"
@@ -488,6 +494,9 @@ msgstr "Öffentliches Abstimmen"
 
 msgid "Any logged in user who can see this poll can vote on it. If disabled, only group/project members can vote on it."
 msgstr "Jeder eingeloggte Benutzer, der die Umfrage sehen kann, kann in ihr Abstimmen. Wenn deaktiviert, können nur Gruppen/Projektmitglieder abstimmen."
+
+msgid "Show a list of users who voted what for each option."
+msgstr "Listet für jede Option auf, welcher Benutzer dafür gestimmt hat."
 
 msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
 msgstr "Hinweis: Du kannst die Daten für diese Umfrage nicht mehr bearbeiten, weil jemand bereits dafür abgestimmt hat!"

@@ -25,7 +25,7 @@ class _PollForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
 
     class Meta:
         model = Poll
-        fields = ('title', 'description', 'multiple_votes', 'can_vote_maybe', 'anyone_can_vote')
+        fields = ('title', 'description', 'multiple_votes', 'can_vote_maybe', 'anyone_can_vote', 'show_voters')
     
     def __init__(self, *args, **kwargs):
         super(_PollForm, self).__init__(*args, **kwargs)

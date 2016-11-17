@@ -82,3 +82,30 @@
     border-left: 1px solid #DDD;
 }
 
+
+.poll-voters-list {
+    display: inline-block;
+    white-space: normal;
+    margin-top: 2px;
+    float: right;
+}
+.voter-avatar-box {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin: 0 2px 5px 0;
+}
+.voter-avatar, .voter-avatar-vote {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+.voter-avatar-vote {
+    color: #FFF;    
+    font-size: 10px;
+    float: right;
+    text-align: center;
+    padding-top: 4px;
+    opacity: 0.85;
+}
+

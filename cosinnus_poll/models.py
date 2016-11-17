@@ -10,7 +10,7 @@ from django.db.models import Q
 from django.db.models.signals import post_delete, post_save
 from django.dispatch import receiver
 from django.utils import dateformat
-from django.utils.encoding import python_2_unicode_compatible
+from django.utils.encoding import python_2_unicode_compatible, force_text
 from django.utils.formats import date_format
 from django.utils.functional import cached_property
 from django.utils.timezone import localtime, now
@@ -63,6 +63,8 @@ class Poll(BaseTaggableObjectModel):
          help_text=_('Is the maybe option enabled? Ignored and defaulting to False if ``multiple_votes==False``'))
     anyone_can_vote = models.BooleanField(_('Anyone can vote'), default=False,
          help_text=_('If true, anyone who can see this poll can vote on it. If false, only group members can.'))
+    show_voters = models.BooleanField(_('Show voters'), default=False,
+         help_text=_('If true, display a list of which user voted for each option.'))
     
     closed_date = models.DateTimeField(
         _('Start'), default=None, blank=True, null=True, editable=True)
@@ -181,6 +183,10 @@ class Option(ThumbnailableImageMixin, models.Model):
     @cached_property
     def sorted_votes(self):
         return self.votes.order_by('voter__first_name', 'voter__last_name')
+    
+    @cached_property
+    def sorted_votes_by_choice(self):
+        return self.votes.order_by('-choice')
 
 @python_2_unicode_compatible
 class Vote(models.Model):
@@ -225,6 +231,9 @@ class Vote(models.Model):
 
     def get_absolute_url(self):
         return self.option.poll.get_absolute_url()
+    
+    def get_label(self):
+        return force_text(self.VOTE_CHOICES[self.choice][1])
 
 
 @python_2_unicode_compatible

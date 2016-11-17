@@ -3,7 +3,7 @@
 {# this expects {{ option }} in its context as parameter #}
 {# If we are in vote mode, we expect a ``option_formsets_dict`` context variable, which has a mapping of { option_id --> VoteForm } #}
 {% with form=option_formsets_dict|dict_lookup:option.id vote_counts=options_votes_dict|dict_lookup:option.id %}
-    <div class="btn btn-emphasized w100 large-space poll-option {% if mode == 'vote' %}{% if form.choice.value == 2 %}poll-option-yes{% elif form.choice.value == 1 %}poll-option-maybe{% else %}poll-option-no{% endif %}{% endif %}"
+    <div class="btn btn-emphasized w100 {% if not poll.show_voters %}large-space{% endif %} poll-option {% if mode == 'vote' %}{% if form.choice.value == 2 %}poll-option-yes{% elif form.choice.value == 1 %}poll-option-maybe{% else %}poll-option-no{% endif %}{% endif %}"
         {% if mode == 'vote' and form %}
             data-poll-option-vote-id="id_{{ form.choice.html_name }}" 
             data-poll-can-vote-maybe="{% if poll.can_vote_maybe %}1{% else %}0{% endif %}"
@@ -77,6 +77,13 @@
             </li>
         </ul>
     </div>
+    {% if poll.show_voters %}
+        <div class="poll-voters-list regular-space">
+            {% for vote in option.sorted_votes_by_choice %}
+                {% include 'cosinnus_poll/poll_vote_avatar.html' with vote=vote %}
+            {% endfor %}
+        </div>
+    {% endif %}
     
     {% if mode == 'vote' and user|has_write_access:poll %}
         {% captureas label %}{% blocktrans with description=option.description %}Do you really want to complete the poll and select "{{ description }}" as winner?{% endblocktrans %}{% endcaptureas %}
@@ -87,6 +94,7 @@
 
 {% endwith %}
 
+<div class="clearfix"></div>
 
             
 {% comment %}  
