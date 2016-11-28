@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 11:34+0100\n"
+"POT-Creation-Date: 2016-11-28 15:09+0100\n"
 "PO-Revision-Date: 2015-11-11 10:39+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -170,6 +170,12 @@ msgid "Anyone can vote"
 msgstr ""
 
 msgid "If true, anyone who can see this poll can vote on it. If false, only group members can."
+msgstr ""
+
+msgid "Show voters"
+msgstr ""
+
+msgid "If true, display a list of which user voted for each option."
 msgstr ""
 
 msgid "Start"
@@ -615,6 +621,9 @@ msgid "If disabled, users can only vote for one option"
 msgstr ""
 
 msgid "In addition to \"Yes\" and \"No\""
+msgstr ""
+
+msgid "Lists how every voter voted for each option."
 msgstr ""
 
 msgid "Public voting"
