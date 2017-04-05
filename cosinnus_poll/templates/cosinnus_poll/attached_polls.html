@@ -1,16 +1,29 @@
+{% load cosinnus_tags %}
+
 {% for poll in polls %}
     <div class="app-poll">
-        <div class="btn btn-emphasized w100 extra-indented" href="{{ poll.get_absolute_url }}">
+        <div class="btn btn-emphasized w100 {% if not no_indent %}extra-indented{% endif %}" href="{{ poll.get_absolute_url }}">
             <ul class="media-list fine-space">
                 <li class="media">
                     <a class="pull-left" href="#">
-                        <i class="fa fa-bar-chart"></i>
+                        {% if poll.state == 1 %} {# voting open #}
+                            <i class="fa fa-question-circle"></i>
+                          {% elif poll.state == 2 %} {# voting closed #}
+                              <i class="fa fa-bar-chart"></i>
+                          {% else %} {# archived #}
+                              <i class="fa fa-bar-chart"></i>
+                          {% endif %}
                     </a>
                     <div class="media-body no-vertical-padding ">
-                        <strong><a href="{{ poll.get_absolute_url }}" target="_blank">{{ poll.title|truncatechars:25 }}</a></strong>
-                        <div class="group-annotation">
-                            {% include 'cosinnus/group/group_label.html' with group=poll.group %}
-                        </div>
+                        <strong><a href="{{ poll.get_absolute_url }}">{{ poll.title|truncatechars:25 }}</a></strong>
+                        {% with creator=poll.creator %}
+                            <div class="group-annotation">
+                                <a href="{{ creator|profile_url }}">
+                                    <i class="fa fa-user"></i>
+                                    {{ creator|full_name }}
+                                </a> 
+                            </div>
+                        {% endwith %}
                     </div>
                 </li>
             </ul>

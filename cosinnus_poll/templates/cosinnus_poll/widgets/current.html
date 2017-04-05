@@ -1,29 +1,7 @@
 {% load i18n %}
 
 {% if polls %}
-    {% for poll in polls %}
-        <div type="button" href="{{ poll.get_absolute_url }}" class="btn btn-emphasized dashboard-appwidget-contentline">
-            <ul class="media-list fine-space">
-                <li class="media">
-                    <a class="pull-left" href="#">
-                        {% if poll.state == 1 %} {# voting open #}
-                            <i class="fa fa-question-circle"></i>
-                          {% elif poll.state == 2 %} {# voting closed #}
-                              <i class="fa fa-bar-chart"></i>
-                          {% else %} {# archived #}
-                              <i class="fa fa-bar-chart"></i>
-                          {% endif %}
-                    </a>
-                    <div class="media-body">
-                        <a href="{{ poll.get_absolute_url }}">{{ poll.title }}</a>
-                        <div class="group-annotation">
-                            {% include 'cosinnus/group/group_label.html' with group=poll.group %}
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div><!-- btn -->
-    {% endfor %}
+    {% include 'cosinnus_poll/attached_polls.html' with polls=polls no_indent=1 %}
 {% else %}
     <div type="button" class="btn btn-emphasized dashboard-appwidget-contentline fine-space">
         <ul class="media-list">
