@@ -8,16 +8,16 @@ from django.utils.encoding import force_text
 from django.utils.translation import ugettext_lazy as _
 
 from cosinnus.forms.group import GroupKwargModelFormMixin
-from cosinnus.forms.tagged import get_form
+from cosinnus.forms.tagged import get_form, BaseTaggableObjectForm
 from cosinnus.forms.user import UserKwargModelFormMixin
 from cosinnus.forms.widgets import DateTimeL10nPicker, SplitHiddenDateWidget
 
 from cosinnus_poll.models import Poll, Option, Vote, Comment
-from cosinnus.forms.attached_object import FormAttachable
+from cosinnus.forms.attached_object import FormAttachableMixin
 
 
 class _PollForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
-                 FormAttachable):
+                 FormAttachableMixin, BaseTaggableObjectForm):
     
     LOCKED_FIELDS_WHILE_ACTIVE_VOTES = ('multiple_votes', 'can_vote_maybe', 'anyone_can_vote')
     
