@@ -34,13 +34,13 @@
                 <i class="fa fa-pencil"></i>
             </a>
             <div class="media-body">
-                <p>
+                <div class="textfield">
                 {% if poll.description and poll.description|length > 0 %}
                     {{ poll.description|textfield }}
                 {% else %}
                     {% trans "(No description set)" %}
                 {% endif %}
-                </p>
+                </div>
             </div>
         </li>
     </ul>
