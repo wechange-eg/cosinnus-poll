@@ -57,7 +57,7 @@
         {# SimpleMDE Description Field (gets initialized in extrahead) #}                                   
         {% trans "Description and Infos" as description_label %}
         {% trans "Description" as description_placeholder %}
-        {% trans "Enter a description for the poll (optional)" as description_legend %}
+        {% trans "Enter a description for the poll" as description_legend %}
         {% include 'cosinnus/fields/default_field.html' with field=form.forms.obj.description legend=description_legend label=description_label placeholder=description_placeholder large_field=True %}
         
         
