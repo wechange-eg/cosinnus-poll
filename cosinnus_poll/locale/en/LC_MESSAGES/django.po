@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-28 15:09+0100\n"
+"POT-Creation-Date: 2018-01-10 17:58+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -213,6 +213,9 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
+msgid "Poll choice"
+msgstr ""
+
 msgid "Back to Polls"
 msgstr ""
 
@@ -395,7 +398,22 @@ msgstr ""
 msgid "Enter a title for the new poll."
 msgstr ""
 
-msgid "Enter a description for the poll (optional)."
+msgid "Description and Infos"
+msgstr ""
+
+msgid "Enter a description for the poll"
+msgstr ""
+
+msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
+msgstr ""
+
+msgid "Poll Choices"
+msgstr ""
+
+msgid "Remove choice"
+msgstr ""
+
+msgid "Add choice"
 msgstr ""
 
 msgid "Multiple Votes"
@@ -416,21 +434,6 @@ msgstr ""
 msgid "Any logged in user who can see this poll can vote on it. If disabled, only group/project members can vote on it."
 msgstr ""
 
-msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
-msgstr ""
-
-msgid "Remove"
-msgstr ""
-
-msgid "Edit Poll Option"
-msgstr ""
-
-msgid "Describe this option"
-msgstr ""
-
-msgid "Add option"
-msgstr ""
-
 msgid "Create"
 msgstr ""
 
@@ -440,7 +443,7 @@ msgstr ""
 msgid "Archived Polls"
 msgstr ""
 
-msgid "Enter the title for a new poll."
+msgid "Enter the title to create a new poll."
 msgstr ""
 
 msgid "There are no archived polls."

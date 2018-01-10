@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-28 15:09+0100\n"
-"PO-Revision-Date: 2017-07-03 14:27+0200\n"
+"POT-Creation-Date: 2018-01-10 17:58+0100\n"
+"PO-Revision-Date: 2018-01-10 17:58+0100\n"
 "Last-Translator: Sebastian Henschel <sh@sinnwerkstatt.com>\n"
 "Language-Team: German <>\n"
 "MIME-Version: 1.0\n"
@@ -212,6 +212,9 @@ msgstr "Kommentar"
 
 msgid "Comments"
 msgstr "Kommentare"
+
+msgid "Poll choice"
+msgstr "Umfrage-Wahlmöglichkeit"
 
 msgid "Back to Polls"
 msgstr "Zurück zu Umfragen"
@@ -477,8 +480,23 @@ msgstr "Umfrage hinzufügen"
 msgid "Enter a title for the new poll."
 msgstr "Gib einen Titel für die Umfrage an."
 
-msgid "Enter a description for the poll (optional)."
-msgstr "Gib eine Beschreibung für die Umfrage ein (optional)."
+msgid "Description and Infos"
+msgstr "Beschreibung und Infos"
+
+msgid "Enter a description for the poll"
+msgstr "Gib eine Beschreibung für die Umfrage ein"
+
+msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
+msgstr "Hinweis: Du kannst die Daten für diese Umfrage nicht mehr bearbeiten, weil jemand bereits dafür abgestimmt hat!"
+
+msgid "Poll Choices"
+msgstr "Umfrage-Wahlmöglichkeiten"
+
+msgid "Remove choice"
+msgstr "Wahlmöglichkeit entfernen"
+
+msgid "Add choice"
+msgstr "Wahlmöglichkeit hinzufügen"
 
 msgid "Multiple Votes"
 msgstr "Mehrere Stimmen"
@@ -498,21 +516,6 @@ msgstr "Öffentliches Abstimmen"
 msgid "Any logged in user who can see this poll can vote on it. If disabled, only group/project members can vote on it."
 msgstr "Jeder eingeloggte Benutzer, der die Umfrage sehen kann, kann in ihr Abstimmen. Wenn deaktiviert, können nur Gruppen/Projektmitglieder abstimmen."
 
-msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
-msgstr "Hinweis: Du kannst die Daten für diese Umfrage nicht mehr bearbeiten, weil jemand bereits dafür abgestimmt hat!"
-
-msgid "Remove"
-msgstr "Entfernen"
-
-msgid "Edit Poll Option"
-msgstr "Umfrage-Option bearbeiten"
-
-msgid "Describe this option"
-msgstr "Beschreibe diese Option"
-
-msgid "Add option"
-msgstr "Option  hinzufügen"
-
 msgid "Create"
 msgstr "Erstellen"
 
@@ -522,7 +525,7 @@ msgstr "Speichern"
 msgid "Archived Polls"
 msgstr "Archivierte Umfragen"
 
-msgid "Enter the title for a new poll."
+msgid "Enter the title to create a new poll."
 msgstr "Gib einen Titel für die Umfrage an."
 
 msgid "There are no archived polls."
@@ -651,6 +654,12 @@ msgstr "Dein Kommentar wurde erfolgreich hinzugefügt."
 
 msgid "Your comment was deleted successfully."
 msgstr "Dein Kommentar wurde erfolgreich gelöscht."
+
+#~ msgid "Edit Poll Option"
+#~ msgstr "Umfrage-Option bearbeiten"
+
+#~ msgid "Describe this option"
+#~ msgstr "Beschreibe diese Option"
 
 #~ msgid "Events"
 #~ msgstr "Veranstaltungen"

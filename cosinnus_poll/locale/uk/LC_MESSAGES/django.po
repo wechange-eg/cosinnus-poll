@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-28 15:09+0100\n"
+"POT-Creation-Date: 2018-01-10 17:58+0100\n"
 "PO-Revision-Date: 2017-09-07 16:18+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -214,6 +214,11 @@ msgstr "Коментар"
 
 msgid "Comments"
 msgstr "Коментарі"
+
+#, fuzzy
+#| msgid "Poll archived"
+msgid "Poll choice"
+msgstr "Опитування архівовано"
 
 msgid "Back to Polls"
 msgstr "Назад до опитування"
@@ -477,8 +482,33 @@ msgstr "Додати опитування"
 msgid "Enter a title for the new poll."
 msgstr "Введіть назву для нового опитування."
 
-msgid "Enter a description for the poll (optional)."
+#, fuzzy
+#| msgid "Description"
+msgid "Description and Infos"
+msgstr "Опис"
+
+#, fuzzy
+#| msgid "Enter a description for the poll (optional)."
+msgid "Enter a description for the poll"
 msgstr "Введіть опис опитування (додатково)."
+
+msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
+msgstr "Примітка: ви не можете змінювати опції в цьому опитуванні тому що хтось вже проголосував, або опитування завершено!"
+
+#, fuzzy
+#| msgid "Poll archived"
+msgid "Poll Choices"
+msgstr "Опитування архівовано"
+
+#, fuzzy
+#| msgid "Remove"
+msgid "Remove choice"
+msgstr "Видалити"
+
+#, fuzzy
+#| msgid "Add option"
+msgid "Add choice"
+msgstr "Додати опцію"
 
 msgid "Multiple Votes"
 msgstr "Багато варіантів опитування"
@@ -498,21 +528,6 @@ msgstr "Публічне голосування"
 msgid "Any logged in user who can see this poll can vote on it. If disabled, only group/project members can vote on it."
 msgstr "Кожен авторизований користува може бачити це опитування та брати в ньому участь. Якщо це прибрати, тільки члени спільноти/проекту зможуть брати участь. "
 
-msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
-msgstr "Примітка: ви не можете змінювати опції в цьому опитуванні тому що хтось вже проголосував, або опитування завершено!"
-
-msgid "Remove"
-msgstr "Видалити"
-
-msgid "Edit Poll Option"
-msgstr "Додати опцію в опитування"
-
-msgid "Describe this option"
-msgstr "Описати цю опцію"
-
-msgid "Add option"
-msgstr "Додати опцію"
-
 msgid "Create"
 msgstr "Створити"
 
@@ -522,7 +537,9 @@ msgstr "Зберегти"
 msgid "Archived Polls"
 msgstr "Архівовані опитування"
 
-msgid "Enter the title for a new poll."
+#, fuzzy
+#| msgid "Enter the title for a new poll."
+msgid "Enter the title to create a new poll."
 msgstr "Ввести назву для нового опитування."
 
 msgid "There are no archived polls."
@@ -651,6 +668,12 @@ msgstr "Ваш коментар успішно додано."
 
 msgid "Your comment was deleted successfully."
 msgstr "Ваш коментар успішно видалено."
+
+#~ msgid "Edit Poll Option"
+#~ msgstr "Додати опцію в опитування"
+
+#~ msgid "Describe this option"
+#~ msgstr "Описати цю опцію"
 
 #~ msgid "Events"
 #~ msgstr "Заходи"
