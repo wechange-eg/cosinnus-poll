@@ -34,7 +34,7 @@
 
 {% block content %}
 
-<form method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
+<form method="POST" action="" class="cosinnus-form form-horizontal" enctype="multipart/form-data">{% csrf_token %}
 	{{ form.forms.obj.non_field_errors }}
 	{{ form.forms.media_tag.non_field_errors }}
     {% for formset in inlines %}
