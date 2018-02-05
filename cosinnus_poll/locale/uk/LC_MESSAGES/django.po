@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-10 17:58+0100\n"
-"PO-Revision-Date: 2017-09-07 16:18+0200\n"
+"POT-Creation-Date: 2018-02-05 13:08+0100\n"
+"PO-Revision-Date: 2018-02-01 15:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "Language: uk_UA\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.6\n"
 
 msgid "Polls"
 msgstr "Опитування"
@@ -215,10 +215,8 @@ msgstr "Коментар"
 msgid "Comments"
 msgstr "Коментарі"
 
-#, fuzzy
-#| msgid "Poll archived"
 msgid "Poll choice"
-msgstr "Опитування архівовано"
+msgstr "Вибір опитування"
 
 msgid "Back to Polls"
 msgstr "Назад до опитування"
@@ -479,36 +477,29 @@ msgstr "Публікувати"
 msgid "Add poll"
 msgstr "Додати опитування"
 
+msgid "There was an error in one of the fields you entered. Please correct it before saving!"
+msgstr ""
+
 msgid "Enter a title for the new poll."
 msgstr "Введіть назву для нового опитування."
 
-#, fuzzy
-#| msgid "Description"
 msgid "Description and Infos"
-msgstr "Опис"
+msgstr "Опис та інформація"
 
-#, fuzzy
-#| msgid "Enter a description for the poll (optional)."
 msgid "Enter a description for the poll"
-msgstr "Введіть опис опитування (додатково)."
+msgstr "Введіть опис опитування"
 
 msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
 msgstr "Примітка: ви не можете змінювати опції в цьому опитуванні тому що хтось вже проголосував, або опитування завершено!"
 
-#, fuzzy
-#| msgid "Poll archived"
 msgid "Poll Choices"
-msgstr "Опитування архівовано"
+msgstr "Варіанти опитування"
 
-#, fuzzy
-#| msgid "Remove"
 msgid "Remove choice"
-msgstr "Видалити"
+msgstr "Видалити варіанти"
 
-#, fuzzy
-#| msgid "Add option"
 msgid "Add choice"
-msgstr "Додати опцію"
+msgstr "Додати варіант"
 
 msgid "Multiple Votes"
 msgstr "Багато варіантів опитування"
@@ -537,10 +528,8 @@ msgstr "Зберегти"
 msgid "Archived Polls"
 msgstr "Архівовані опитування"
 
-#, fuzzy
-#| msgid "Enter the title for a new poll."
 msgid "Enter the title to create a new poll."
-msgstr "Ввести назву для нового опитування."
+msgstr "Ввести назву, щоб створити нове опитування."
 
 msgid "There are no archived polls."
 msgstr "Немає архівованих опитувань."
