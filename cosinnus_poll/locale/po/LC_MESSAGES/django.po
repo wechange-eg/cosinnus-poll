@@ -575,11 +575,3 @@ msgstr ""
 
 msgid "Your comment was deleted successfully."
 msgstr ""
-
-#~ msgctxt "the_app"
-#~ msgid "event"
-#~ msgstr "Events"
-
-#, fuzzy
-#~ msgid "Past Events"
-#~ msgstr "%s - Events"

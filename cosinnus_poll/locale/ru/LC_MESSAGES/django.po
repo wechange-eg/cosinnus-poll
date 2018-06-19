@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wechange RU\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-05 13:08+0100\n"
-"PO-Revision-Date: 2018-02-01 00:25+0100\n"
+"POT-Creation-Date: 2018-06-19 14:36+0200\n"
+"PO-Revision-Date: 2018-06-17 23:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "Language: ru\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.6\n"
 
 msgid "Polls"
 msgstr "Опросы"
@@ -37,7 +37,7 @@ msgstr "%(sender_name)s создал(a) новый опрос"
 
 #, python-format
 msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
-msgstr "Новый опрос: \"%(object_name)s\" создан в %(team_name)s"
+msgstr "Новый опрос: \"%(object_name)s\" создан в %(team_name)s."
 
 msgid "A poll you voted on was completed"
 msgstr "Опрос, в котором Вы принимали участие, был завершен"
@@ -52,18 +52,18 @@ msgstr "%(sender_name)s завершил(а) опрос"
 
 #, python-format
 msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
-msgstr "Опрос: \"%(object_name)s\" завершён в %(team_name)s"
+msgstr "Опрос: \"%(object_name)s\" завершён в %(team_name)s."
 
 msgid "A user commented on one of your polls"
 msgstr "Пользователь прокомментировал один из Ваших опросов"
 
 #, python-format
 msgid "%(sender_name)s commented on your poll"
-msgstr "%(sender_name)s прокомментировал(a) Ваш опрос."
+msgstr "%(sender_name)s прокомментировал(a) Ваш опрос"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your polls"
-msgstr "%(sender_name)s прокомментировал(a) один из Ваших опросов."
+msgstr "%(sender_name)s прокомментировал(a) один из Ваших опросов"
 
 #, python-format
 msgid "%(sender_name)s"
@@ -74,18 +74,18 @@ msgstr "Пользователь прокомментировал опрос, в
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in"
-msgstr "%(sender_name)s прокомментировал(a) опрос, в котором Вы были отмечены."
+msgstr "%(sender_name)s прокомментировал(a) опрос, в котором Вы были отмечены"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in in %(team_name)s"
-msgstr "%(sender_name)s прокомментировал(a) опрос, в котором Вы были отмечены, в %(team_name)s."
+msgstr "%(sender_name)s прокомментировал(a) опрос, в котором Вы были отмечены, в %(team_name)s"
 
 msgid "A user commented on an poll you voted in"
 msgstr "Пользователь прокомментировал опрос, в голосовании по которому Вы участвовали"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in"
-msgstr "%(sender_name)s прокомментировал(a) опрос, по которому Вы проголосовали "
+msgstr "%(sender_name)s прокомментировал(a) опрос, по которому Вы проголосовали"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s"
@@ -131,7 +131,7 @@ msgid "Does this poll allow users to vote on multiple options or just decide for
 msgstr "Позволяет ли этот опрос выбирать пользователям несколько вариантов ответа или голосовать только за \"один\"?"
 
 msgid "\"Maybe\" option enabled"
-msgstr "\"Может быть\" допускается выбор\""
+msgstr "допускается вариант “Может быть\""
 
 msgid "Is the maybe option enabled? Ignored and defaulting to False if ``multiple_votes==False``"
 msgstr "Могут Пользователи \"Может быть\" выбрать? Будет проигнорировано и  квалифицированно как \"Ложь\", если выбрано ``multiple_votes==False``"
@@ -140,13 +140,13 @@ msgid "Anyone can vote"
 msgstr "Любой пользователь может проголосовать"
 
 msgid "If true, anyone who can see this poll can vote on it. If false, only group members can."
-msgstr "Если Да, любой пользователь может видеть опрос и принять в нём участие. Если Нет, принять участие в опросе могут только члены группы"
+msgstr "Если Да, любой пользователь может видеть опрос и принять в нём участие. Если Нет, принять участие в опросе могут только члены группы."
 
 msgid "Show voters"
 msgstr "Показать проголосовавших"
 
 msgid "If true, display a list of which user voted for each option."
-msgstr "If true, display a list of which user voted for each option."
+msgstr "Если да, отобразите список пользователей, проголосовавших за каждую опцию."
 
 msgid "Start"
 msgstr "Начало"
@@ -215,7 +215,7 @@ msgid "Comments"
 msgstr "Комментарии"
 
 msgid "Poll choice"
-msgstr "Выбор опроса"
+msgstr "Альтернативы в опросе"
 
 msgid "Back to Polls"
 msgstr "Назад к опросам"
@@ -324,7 +324,7 @@ msgid "The winning option was:"
 msgstr "Победивший вариант:"
 
 msgid "There was no winning option."
-msgstr "Победитель не был выявлен"
+msgstr "Победитель не был выявлен."
 
 #, python-format
 msgid ""
@@ -344,11 +344,11 @@ msgstr ""
 "\n"
 "(Перейдите по ссылке, чтобы изменить настройки уведомлений: %(notification_settings_url)s )\n"
 "\n"
-"Ваша команда %(site_name)s "
+"Ваша команда %(site_name)s."
 
 #, python-format
 msgid "Poll: \"%(object_name)s\" was completed in %(team_name)s."
-msgstr "Опрос: \"%(object_name)s\" завершён в %(team_name)s"
+msgstr "Опрос: \"%(object_name)s\" завершён в %(team_name)s."
 
 #, python-format
 msgid ""
@@ -374,7 +374,7 @@ msgstr ""
 "\n"
 "(перейдите по этой ссылке, чтобы изменить настройки уведомлений: %(notification_settings_url)s )\n"
 "\n"
-"Ваша команда %(site_name)s"
+"Ваша команда %(site_name)s."
 
 # checken, wie es auf RU aussieht
 #, python-format
@@ -474,13 +474,13 @@ msgstr ""
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s."
-msgstr "%(sender_name)s прокомментировал(a) опрос, по которому Вы проголосовали в %(team_name)s"
+msgstr "%(sender_name)s прокомментировал(a) опрос, по которому Вы проголосовали в %(team_name)s."
 
 msgid "Write comment..."
 msgstr "Оставить комментарий…"
 
 msgid "Post"
-msgstr "Написать…"
+msgstr "Написать"
 
 msgid "Add poll"
 msgstr "Добавить опрос"
@@ -489,25 +489,25 @@ msgid "There was an error in one of the fields you entered. Please correct it be
 msgstr ""
 
 msgid "Enter a title for the new poll."
-msgstr "Введите название нового опроса"
+msgstr "Введите название нового опроса."
 
 msgid "Description and Infos"
 msgstr "Описание и информация"
 
 msgid "Enter a description for the poll"
-msgstr "Укажите описание для опроса"
+msgstr "Введите описание опроса"
 
 msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
-msgstr "Примечание: Вы не можете больше изменить параметры этого опроса, потому что кто-то в нём проголосовал или опрос был завершен."
+msgstr "Примечание: Вы не можете больше изменить параметры этого опроса, потому что кто-то в нём проголосовал или опрос был завершен!"
 
 msgid "Poll Choices"
-msgstr "Выборы опроса"
+msgstr "Альтернативы в опросе"
 
 msgid "Remove choice"
-msgstr "Удалить выбор"
+msgstr "Удалить альтернативу"
 
 msgid "Add choice"
-msgstr "Добавить выбор"
+msgstr "Добавить альтернативу"
 
 msgid "Multiple Votes"
 msgstr "Несколько голосов"
@@ -519,7 +519,7 @@ msgid "In addition to \"Yes\" and \"No\""
 msgstr "В дополнение к \"Да\" и \"Нет\""
 
 msgid "Lists how every voter voted for each option."
-msgstr " Показать каждый параметр, по которому пользователь проголосовал."
+msgstr "Показать каждый параметр, по которому пользователь проголосовал."
 
 msgid "Public voting"
 msgstr "Публичное голосование"
@@ -537,13 +537,13 @@ msgid "Archived Polls"
 msgstr "Архив опросов"
 
 msgid "Enter the title to create a new poll."
-msgstr "Укажите название, чтобы создать новый опрос."
+msgstr "Введите название, чтобы создать новый опрос."
 
 msgid "There are no archived polls."
-msgstr "Заархивированных опросов нет"
+msgstr "Заархивированных опросов нет."
 
 msgid "There are no running polls."
-msgstr "Текущих опросов нет"
+msgstr "Текущих опросов нет."
 
 msgid "There are no upcoming polls"
 msgstr "Предстоящих опросов нет"
@@ -602,19 +602,19 @@ msgstr "Опросы ещё не созданы"
 
 #, python-format
 msgid "Poll \"%(title)s\" was edited successfully."
-msgstr "Опрос \"%(title)s\" был успешно отредактирован"
+msgstr "Опрос \"%(title)s\" был успешно отредактирован."
 
 #, python-format
 msgid "Poll \"%(title)s\" could not be edited."
-msgstr "Невозможно отредактировать опрос \"%(title)s\""
+msgstr "Невозможно отредактировать опрос \"%(title)s“."
 
 #, python-format
 msgid "Poll \"%(title)s\" was added successfully."
-msgstr "Опрос \"%(title)s\" добавлен"
+msgstr "Опрос \"%(title)s\" добавлен."
 
 #, python-format
 msgid "Poll \"%(title)s\" could not be added."
-msgstr "Невозможно добавить опрос \"%(title)s\" "
+msgstr "Невозможно добавить опрос \"%(title)s“."
 
 msgid "You should define at least one poll option!"
 msgstr "Вы должны предложить как минимум один вариант!"
@@ -628,13 +628,13 @@ msgstr "Опрос \"%(title)s\" удален."
 
 #, python-format
 msgid "Poll \"%(title)s\" could not be deleted."
-msgstr "Невозможно удалить опрос \"%(title)s\""
+msgstr "Невозможно удалить опрос \"%(title)s“."
 
 msgid "Your votes were saved successfully."
-msgstr "Ваше голосование сохранено"
+msgstr "Ваше голосование сохранено."
 
 msgid "Your votes could not be saved."
-msgstr "Невозможно сохранить результаты Вашего голосования"
+msgstr "Невозможно сохранить результаты Вашего голосования."
 
 msgid "The voting phase for this poll is over. You cannot vote for it any more."
 msgstr "Фаза голосования для этого опроса завершена. Вы больше не можете голосовать."
@@ -661,10 +661,10 @@ msgid "The poll was archived successfully."
 msgstr "Ваш опрос был успешно заархивирован."
 
 msgid "Your comment was added successfully."
-msgstr "Ваш комментарий добавлен"
+msgstr "Ваш комментарий добавлен."
 
 msgid "Your comment was deleted successfully."
-msgstr "Ваш комментарий удален"
+msgstr "Ваш комментарий удален."
 
 #~ msgid "Edit Poll Option"
 #~ msgstr "Изменить параметры опроса"
