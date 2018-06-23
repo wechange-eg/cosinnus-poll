@@ -8,257 +8,256 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-23 16:59+0200\n"
-"PO-Revision-Date: 2018-05-15 16:15+0200\n"
+"PO-Revision-Date: 2018-06-23 16:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr\n"
-"X-Generator: Poedit 2.0.5\n"
+"Language: pl\n"
+"X-Generator: Poedit 1.8.4\n"
 
 msgid "Polls"
-msgstr "Sondages"
+msgstr "Ankiety"
 
 msgctxt "the_app"
 msgid "poll"
-msgstr "sondage"
+msgstr "ankieta"
 
 msgid "A user created a new poll"
-msgstr "Un utilisateur a créé un nouveau sondage"
+msgstr "Użytkownik stworzył nową ankietę"
 
 #, python-format
 msgid "New poll by %(sender_name)s"
-msgstr "Nouveau sondage par %(sender_name)s"
+msgstr "Nowa ankieta utworzona przez %(sender_name)s"
 
 #, python-format
 msgid "%(sender_name)s created a new poll"
-msgstr "%(sender_name)s a créé un nouveau sondage"
+msgstr "%(sender_name)s stworzył/a nową ankietę"
 
 #, python-format
 msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
-msgstr "Un nouveau sondage : \"%(object_name)s\" a été créé dans %(team_name)s."
+msgstr "Nowa ankieta: \\’’%(object_name)s\\’’ została utworzona w %(team_name)s."
 
 msgid "A poll you voted on was completed"
-msgstr "Un sondage pour lequel tu as voté a été rempli"
+msgstr "Ankieta, w której głosowałeś/aś, została zakończona"
 
 #, python-format
 msgid "%(sender_name)s completed the poll"
-msgstr "%(sender_name)s a rempli le sondage"
+msgstr "%(sender_name)s ukończył/a ankietę"
 
 #, python-format
 msgid "%(sender_name)s completed a poll"
-msgstr "%(sender_name)s a rempli un sondage"
+msgstr "%(sender_name)s ukończył/a ankietę"
 
 #, python-format
 msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
-msgstr "Le sondage \"%(object_name)s\" a été rempli dans %(team_name)s."
+msgstr "Ankieta \\’’%(object_name)s\\’’ została ukończona w %(team_name)s."
 
 msgid "A user commented on one of your polls"
-msgstr "Un utilisateur a commenté l'une de tes sondages"
+msgstr "Użytkownik skomentował jedną z Twoich ankiet"
 
 #, python-format
 msgid "%(sender_name)s commented on your poll"
-msgstr "%(sender_name)s a commenté ton sondage"
+msgstr "%(sender_name)s skomentował/a Twoją ankietę"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your polls"
-msgstr "%(sender_name)s a commenté un de tes sondages"
+msgstr "%(sender_name)s skomentował/a jedną z Twoich ankiet"
 
 #, python-format
 msgid "%(sender_name)s"
 msgstr "%(sender_name)s"
 
 msgid "A user commented on a poll you were tagged in"
-msgstr "Un utilisateur a commenté un sondage sur lequel tu es tagué"
+msgstr "Użytkownik skomentował ankietę, w której zostałeś/aś oznaczony/a"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in"
-msgstr "%(sender_name)s a commenté un sondage sur lequel tu es tagué"
+msgstr "%(sender_name)s skomentował/a ankietę, w której zostałeś/aś oznaczony/a"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in in %(team_name)s"
-msgstr "%(sender_name)s a commenté un sondage sur lequel tu es tagué dans %(team_name)s"
+msgstr "%(sender_name)s skomentował/a ankietę, w której zostałeś/aś oznaczony/a w %(team_name)s"
 
 msgid "A user commented on an poll you voted in"
-msgstr "Un utilisateur a commenté un sondage à propos duquel tu as voté"
+msgstr "Użytkownik skomentował ankietę, w której głosowałeś/aś"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in"
-msgstr "%(sender_name)s a commenté un sondage pour lequel tu as voté"
+msgstr "%(sender_name)s skomentował/a ankietę, w której głosowałeś/aś"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s"
-msgstr "%(sender_name)s a commenté un sondage pour lequel tu as voté dans %(team_name)s"
+msgstr "%(sender_name)s skomentował/a ankietę, w której głosowałeś/aś w %(team_name)s"
 
 msgid "Current Polls"
-msgstr "Sondages actuels"
+msgstr "Aktywne ankiety"
 
 msgid "No current polls"
-msgstr "Pas de sondages actuels"
+msgstr "Brak aktywnych ankiet"
 
 msgid "Created By"
-msgstr "Créé par"
+msgstr "Utworzona przez"
 
 msgid "Newest Created"
-msgstr "Créé le plus récemment"
+msgstr "Najnowsza utworzona"
 
 msgid "Title"
-msgstr "Titre"
+msgstr "Tytuł"
 
 msgid "You must write a description for this poll option!"
-msgstr "Tu dois écrire une description pour cette option de sondage !"
+msgstr "Musisz dodać opis do tej odpowiedzi w ankiecie!"
 
 msgid "Voting open"
-msgstr "Vote ouvert"
+msgstr "Głosowanie otwarte"
 
 msgid "Voting closed"
-msgstr "Vote clos"
+msgstr "Głosowanie zamknięte"
 
 msgid "Poll archived"
-msgstr "Sondage archivé"
+msgstr "Ankieta zarchiwizowana"
 
 msgid "State"
-msgstr "Etat"
+msgstr "Stan"
 
 msgid "Description"
-msgstr "Description"
+msgstr "Opis"
 
 msgid "Multiple options votable"
-msgstr "Plusieurs réponses possibles"
+msgstr "Możliwość wybrania kilku odpowiedzi"
 
 msgid "Does this poll allow users to vote on multiple options or just decide for one?"
-msgstr "Ce sondage permet-il aux utilisateurs de voter pour de multiples options ou seulement d'en choisir une ?"
+msgstr "Czy ta ankieta pozwala użytkownikom na wybranie kilku odpowiedzi, czy tylko jednej?"
 
 msgid "\"Maybe\" option enabled"
-msgstr "Option \"Peut-être\" activée"
+msgstr "Dodanie opcji \\’’Może\\’’"
 
 msgid "Is the maybe option enabled? Ignored and defaulting to False if ``multiple_votes==False``"
-msgstr "L'option \"peut-être\" est-elle activée ? Ignorer et mettre Faux par défaut si ``votes_multiples==Faux``"
+msgstr "Czy opcja „może” jest aktywna? Zignorowana i ustawiona jako „False”, jeśli ``multiple_votes==False``"
 
 msgid "Anyone can vote"
-msgstr "Tout le monde peut voter"
+msgstr "Każdy może głosować"
 
 msgid "If true, anyone who can see this poll can vote on it. If false, only group members can."
-msgstr "Si vrai, n'importe qui voyant ce sondage peut vote. Si faux, uniquement les membres du groupe le peuvent."
+msgstr "Jeśli tak, każdy kto widzi tę ankietę może zagłosować. Jeśli nie, głosować mogą tylko członkowie grupy."
 
 msgid "Show voters"
-msgstr "Afficher les votants"
+msgstr "Pokaż głosujących"
 
 msgid "If true, display a list of which user voted for each option."
-msgstr "Si vrai, afficher une liste décrivant quel utilisateur a voté pour chaque option."
+msgstr "Jeśli tak, wyświetlona będzie lista, pokazująca kto wybrał jaką odpowiedź."
 
 msgid "Start"
-msgstr "Début"
+msgstr "Start"
 
 msgid "Winning Option"
-msgstr "Option gagnante"
+msgstr "Zwycięska odpowiedź"
 
 msgid "Poll"
-msgstr "Sondage"
+msgstr "Ankieta"
 
 #, python-format
 msgid "Poll: %(poll)s (%(state)s)"
-msgstr "Sondage : %(poll)s (%(state)s)"
+msgstr "Ankieta: %(poll)s (%(state)s)"
 
 msgid "Image"
-msgstr "Image"
+msgstr "Obraz"
 
 msgctxt "the subject"
 msgid "Votes"
-msgstr "Votes"
+msgstr "Głosy"
 
 msgid "Poll Option"
-msgstr "Option du sondage"
+msgstr "Odpowiedź ankiety"
 
 msgid "Poll Options"
-msgstr "Options du sondage"
+msgstr "Odpowiedzi ankiety"
 
 msgid "Yes"
-msgstr "Oui"
+msgstr "Tak"
 
 msgid "Maybe"
-msgstr "Peut-être"
+msgstr "Może"
 
 msgid "No"
-msgstr "Non"
+msgstr "Nie"
 
 msgid "Option"
-msgstr "Option"
+msgstr "Odpowiedź"
 
 msgid "Voter"
-msgstr "Votant"
+msgstr "Głosujący"
 
 msgid "Vote"
-msgstr "Vote"
+msgstr "Głos"
 
 msgctxt "the subject"
 msgid "Vote"
-msgstr "Vote"
+msgstr "Głos"
 
 msgid "Creator"
-msgstr "Créateur"
+msgstr "Twórca"
 
 msgid "Created"
-msgstr "Créé"
+msgstr "Stworzono"
 
 msgid "Last modified"
-msgstr "Modifié pour la dernière fois"
+msgstr "Data ost. modyfikacji"
 
 msgid "Text"
-msgstr "Texte"
+msgstr "Treść"
 
 msgid "Comment"
-msgstr "Commentaire"
+msgstr "Komentarz"
 
 msgid "Comments"
-msgstr "Commentaires"
+msgstr "Komentarze"
 
 msgid "Poll choice"
-msgstr "Choix du sondage"
+msgstr "Odpowiedź ankiety"
 
 msgid "Back to Polls"
-msgstr "Retour aux sondages"
+msgstr "Powrót do Ankiet"
 
 msgid "Past Polls"
-msgstr "Sondages passés"
+msgstr "Poprzednie Ankiety"
 
 msgid "by"
-msgstr "par"
+msgstr "wg"
 
 msgid "Delete"
-msgstr "Supprimer"
+msgstr "Usuń"
 
 msgid "Edit"
-msgstr "Modifier"
+msgstr "Edytuj"
 
 msgid "Re-open"
-msgstr "Rouvrir"
+msgstr "Otwórz ponownie"
 
 msgid "Archive"
-msgstr "Archiver"
+msgstr "Archiwum"
 
 #, python-format
 msgid "Do you really want to delete poll „%(title)s“?"
-msgstr "Souhaites-tu vraiment supprimer le sondage „%(title)s“ ?"
+msgstr "Czy na pewno chcesz usunąć ankietę „%(title)s“?"
 
 msgid "Delete poll"
-msgstr "Supprimer le sondage"
+msgstr "Usuń ankietę"
 
 #, python-format
 msgid "Do you really want to re-open poll „%(title)s“?"
-msgstr "Souhaites-tu vraiment rouvrir le sondage „%(title)s“ ?"
+msgstr "Czy na pewno chcesz otworzyć ponownie ankietę „%(title)s“?"
 
 msgid "Re-open poll"
-msgstr "Rouvrir le sondage"
+msgstr "Otwórz ponownie ankietę"
 
 #, python-format
 msgid "Do you really want to archive poll „%(title)s“?"
-msgstr "Souhaites-tu vraiment archiver le sondage „%(title)s“ ?"
+msgstr "Czy na pewno chcesz zarchiwizować ankietę „%(title)s“?"
 
 msgid "Archive poll"
-msgstr "Sondage archivé"
+msgstr "Zarchiwizuj ankietę"
 
 #, python-format
 msgid ""
@@ -283,29 +282,30 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Salut %(receiver_name)s!\n"
+"Cześć, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s a posté un commentaire sur un sondage que tu as créé dans %(team_name)s :\n"
+"%(sender_name)s dodał/a komentarz do ankiety, którą utworzyłeś/aś w zespole %(team_name)s:\n"
 "\n"
-"\"%(comment_text)s\"\n"
-"\n"
-"\n"
-"sur ton sondage :\n"
-"\n"
-"\"%(poll_title)s\"\n"
+"\\’’%(comment_text)s\\’’\n"
 "\n"
 "\n"
-"Suis ce lien pour voir le commentaire: \n"
+"w ankiecie:\n"
+"\n"
+"\\’’%(poll_title)s\\’’\n"
+"\n"
+"\n"
+"Kliknij tutaj, aby zobaczyć komentarz:\n"
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Suis ce lien pour modifier tes préférences de notification : %(notification_settings_url)s )\n"
+"(Kliknij tutaj, aby edytować swoje ustawienia powiadomień: %(notification_settings_url)s )\n"
 "\n"
-"L'équipe %(site_name)s.\n"
+"Twój Zespół %(site_name)s.\n"
+"\n"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
-msgstr "%(sender_name)s a commenté un de tes sondages dans %(team_name)s."
+msgstr "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
 
 #, python-format
 msgid ""
@@ -313,15 +313,15 @@ msgid ""
 "\n"
 "the poll \"%(object_name)s\", was completed in %(team_name)s by %(sender_name)s!\n"
 msgstr ""
-"Salut %(receiver_name)s,\n"
+"Cześć %(receiver_name)s,\n"
 "\n"
-"le sondage \"%(object_name)s\" a été rempli dans %(team_name)s par %(sender_name)s!\n"
+"ankieta \\’’%(object_name)s została ukończona w zespole %(team_name)s przez %(sender_name)s!\n"
 
 msgid "The winning option was:"
-msgstr "L'option gagnante est :"
+msgstr "Zwycięską odpowiedzią było:"
 
 msgid "There was no winning option."
-msgstr "Il n'y avait aucune option gagnante."
+msgstr "Nie było zwycięskiej odpowiedzi."
 
 #, python-format
 msgid ""
@@ -335,17 +335,18 @@ msgid ""
 "Your %(site_name)s Team."
 msgstr ""
 "\n"
-"Tu peux trouver le sondage en suivant ce lien : %(object_url)s\n"
+"Dostępna jest pod następującym adresem:\n"
+"%(object_url)s\n"
 "\n"
 "\n"
 "\n"
-"(Suis ce lien pour modifier tes préférences de notification : %(notification_settings_url)s )\n"
+"(Kliknij tutaj, aby edytować swoje ustawienia powiadomień: %(notification_settings_url)s )\n"
 "\n"
-"L'équipe%(site_name)s."
+"Twój Zespół %(site_name)s."
 
 #, python-format
 msgid "Poll: \"%(object_name)s\" was completed in %(team_name)s."
-msgstr "Le sondage \"%(object_name)s\" a été rempli dans %(team_name)s."
+msgstr "Nowa ankieta: \"%(object_name)s\" została utworzona w zespole %(team_name)s."
 
 #, python-format
 msgid ""
@@ -361,17 +362,18 @@ msgid ""
 "\n"
 "Your %(site_name)s Team."
 msgstr ""
-"Salut %(receiver_name)s,\n"
+"Cześć %(receiver_name)s,\n"
 "\n"
-"un nouveau sondage \"%(object_name)s\" dans %(team_name)s a été créé par %(sender_name)s. \n"
+"nowa ankieta \"%(object_name)s\\” została utworzona w zespole %(team_name)s przez %(sender_name)s. \n"
 "\n"
-"Tu peux le trouver en suivant le lien suivant : %(object_url)s\n"
+"Dostępna jest pod następującym adresem:\n"
+"%(object_url)s\n"
 "\n"
 "\n"
 "\n"
-"(Suis ce lien pour modifier tes préférences de notification : %(notification_settings_url)s )\n"
+"(Kliknij tutaj, aby edytować swoje ustawienia powiadomień: %(notification_settings_url)s )\n"
 "\n"
-"L'équipe %(site_name)s."
+"Twój Zespół %(site_name)s."
 
 #, python-format
 msgid ""
@@ -396,29 +398,29 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Salut %(receiver_name)s!\n"
+"Cześć, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s a posté un commentaire sur un sondage dans lequel tu es identifié, dans %(team_name)s :\n"
+"%(sender_name)s dodał/a komentarz do ankiety, w której zostałeś/aś oznaczony/a w zespole %(team_name)s:\n"
 "\n"
-"\"%(comment_text)s\"\n"
+"\\’’%(comment_text)s\\’’\n"
+"\n"
+"w ankiecie:\n"
+"\n"
+"\\’’%(poll_title)s\\’’\n"
 "\n"
 "\n"
-"sur le sondage :\n"
-"\n"
-"\"%(poll_title)s\"\n"
-"\n"
-"\n"
-"Suis ce lien pour voir le commentaire: \n"
+"Kliknij tutaj, aby zobaczyć komentarz:\n"
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Suis ce lien pour modifier tes préférences de notification : %(notification_settings_url)s )\n"
+"(Kliknij tutaj, aby edytować swoje ustawienia powiadomień: %(notification_settings_url)s )\n"
 "\n"
-"L'équipe %(site_name)s.\n"
+"Twój Zespół %(site_name)s.\n"
+"\n"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in %(team_name)s."
-msgstr "%(sender_name)s a commenté un sondage sur lequel tu es identifié dans %(team_name)s."
+msgstr "%(sender_name)s skomentował/a ankietę, w której zostałeś/aś oznaczony/a w zespole %(team_name)s."
 
 #, python-format
 msgid ""
@@ -443,217 +445,216 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Salut %(receiver_name)s!\n"
+"Cześć, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s a posté un commentaire sur un sondage pour lequel tu as voté dans %(team_name)s :\n"
+"%(sender_name)s dodał/a komentarz do ankiety, w której zagłosowałeś/aś w zespole %(team_name)s:\n"
 "\n"
-"\"%(comment_text)s\"\n"
+"\\’’%(comment_text)s\\’’\n"
+"\n"
+"w ankiecie:\n"
+"\n"
+"\\’’%(poll_title)s\\’’\n"
 "\n"
 "\n"
-"sur le sondage :\n"
-"\n"
-"\"%(poll_title)s\"\n"
-"\n"
-"\n"
-"Suis ce lien pour voir le commentaire: \n"
+"Kliknij tutaj, aby zobaczyć komentarz:\n"
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Suis ce lien pour modifier tes préférences de notification : %(notification_settings_url)s )\n"
+"(Kliknij tutaj, aby edytować swoje ustawienia powiadomień: %(notification_settings_url)s )\n"
 "\n"
-"L'équipe %(site_name)s.\n"
+"Twój Zespół %(site_name)s.\n"
 "\n"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s."
-msgstr "%(sender_name)s a commenté un sondage pour lequel tu as voté dans %(team_name)s."
+msgstr "%(sender_name)s skomentował/a ankietę, w której zagłosowałeś/aś w zespole %(team_name)s."
 
 msgid "Write comment..."
-msgstr "Ecrire un commentaire..."
+msgstr "Dodaj komentarz..."
 
 msgid "Post"
-msgstr "Post"
+msgstr "Opublikuj"
 
 msgid "Add poll"
-msgstr "Ajouter un sondage"
+msgstr "Dodaj ankietę"
 
 msgid "There was an error in one of the fields you entered. Please correct it before saving!"
-msgstr ""
+msgstr "W jednym z wypełnionych pól jest błąd. Popraw go przed zapisaniem!"
 
 msgid "Enter a title for the new poll."
-msgstr "Entrer un titre pour le nouveau sondage."
+msgstr "Wpisz tytuł nowej ankiety"
 
 msgid "Description and Infos"
-msgstr "Description et informations"
+msgstr "Opis i informacje"
 
 msgid "Enter a description for the poll"
-msgstr "Saisir une description pour le sondage"
+msgstr "Dodaj opis ankiety"
 
 msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
-msgstr "Note : tu ne peux pas modifier les options pour ce sondage car quelqu'un a déjà voté ou le sondage a été rempli !"
+msgstr "Uwaga: nie możesz edytować odpowiedzi tej ankiety, ponieważ ktoś już zagłosował lub ankieta została zakończona!"
 
 msgid "Poll Choices"
-msgstr "Choix du sondage"
+msgstr "Odpowiedzi Ankiety"
 
 msgid "Remove choice"
-msgstr "Enlever choix"
+msgstr "Usuń odpowiedź"
 
 msgid "Add choice"
-msgstr "Ajouter choix"
+msgstr "Dodaj odpowiedź"
 
 msgid "Multiple Votes"
-msgstr "Votes multiples"
+msgstr "Możliwość wybrania kilku odpowiedzi"
 
 msgid "If disabled, users can only vote for one option"
-msgstr "Si désactivé, les utilisateurs ne peuvent voter que pour une option"
+msgstr "Jeśli wyłączona, użytkownicy będą mogli zagłosować tylko na jedną odpowiedź"
 
 msgid "In addition to \"Yes\" and \"No\""
-msgstr "En plus de \"Oui\" et \"Non\""
+msgstr "Poza \\’’Tak\\’’ i \\’’Nie\\’’"
 
 msgid "Lists how every voter voted for each option."
-msgstr "Liste comment chaque votant a voté pour chaque option."
+msgstr "Lista pokazująca odpowiedzi każdego głosującego."
 
 msgid "Public voting"
-msgstr "Vote public"
+msgstr "Głosowanie publiczne"
 
 msgid "Any logged in user who can see this poll can vote on it. If disabled, only group/project members can vote on it."
-msgstr "Tous les utilisateurs connectés peuvent voir ce sondage et voter. Si désactivé, seulement les membres du projet / groupe pourront voter."
+msgstr "Każdy zalogowany użytkownik, który widzi tę ankietę, może w niej zagłosować. Jeśli wyłączone, tylko członkowie grupy/projektu mogą zagłosować."
 
 msgid "Create"
-msgstr "Créer"
+msgstr "Stwórz"
 
 msgid "Save"
-msgstr "Enregistrer"
+msgstr "Zapisz"
 
 msgid "Archived Polls"
-msgstr "Sondages archivés"
+msgstr "Zarchiwizowane Ankiety"
 
 msgid "Enter the title to create a new poll."
-msgstr "Saisir un titre pour créer un nouveau sondage."
+msgstr "Wpisz tytuł, aby utworzyć nową ankietę"
 
 msgid "There are no archived polls."
-msgstr "Il n'y a pas de sondages archivés."
+msgstr "Nie ma zarchiwizowanych ankiet."
 
 msgid "There are no running polls."
-msgstr "Il n'y a pas de sondages en cours."
+msgstr "Nie ma aktywnych ankiet."
 
 msgid "There are no upcoming polls"
-msgstr "Il n'y a pas de sondages à venir"
+msgstr "Nie ma zbliżających się ankiet."
 
 msgctxt "the_verb"
 msgid "Vote"
-msgstr "Voter"
+msgstr "Głos"
 
 #, python-format
 msgid "Vote for %(title)s"
-msgstr "Voter pour %(title)s"
+msgstr "Zagłosuj na %(title)s"
 
 msgid "This poll has been completed. Voting is closed."
-msgstr "Ce sondage a été rempli. Le vote est clos."
+msgstr "Ta ankieta zakończyła się. Głosowanie zamknięte."
 
 msgid "This is an archived poll."
-msgstr "Ceci est un sondage archivé."
+msgstr "To jest zarchiwizowana ankieta."
 
 msgid "Complete without winner"
-msgstr "Remplir sans option gagnante"
+msgstr "Zakończ bez zwycięzcy"
 
 #, python-format
 msgid "Do you really want to complete poll \"%(title)s\" with no winning option?"
-msgstr "Souhaites-tu vraiment remplir le sondage\"%(title)s\" sans choisir d'option gagnante ?"
+msgstr "Czy na pewni chcesz zakończyć ankietę \"%(title)s\" bez zwycięskiej odpowiedzi?"
 
 msgid "Complete poll without winner"
-msgstr "Remplir le sondage sans option gagnante"
+msgstr "Zakończ ankietę bez zwycięzcy"
 
 msgid "(No description set)"
-msgstr "(Pas de descriptions définie)"
+msgstr "(Nie ustawiono opisu)"
 
 msgid "The Winner is"
-msgstr "Le gagnant est"
+msgstr "Zwycięzcą jest"
 
 msgid "Available options were"
-msgstr "Les options possibles étaient"
+msgstr "Możliwymi odpowiedziami były"
 
 msgid "There are no options for this poll yet!"
-msgstr "Il n'y a pas encore d'options pour ce sondage !"
+msgstr "Nie ma jeszcze odpowiedzi w tej ankiecie!"
 
 msgid "Make winner and complete poll"
-msgstr "Choisis un gagnant et remplis le sondage"
+msgstr "Ustal zwycięzcę i zakończ ankietę"
 
 msgid "Votes"
-msgstr "Votes"
+msgstr "Głosy"
 
 #, python-format
 msgid "Do you really want to complete the poll and select \"%(description)s\" as winner?"
-msgstr "Souhaites-tu vraiment remplir le sondage et choisir \"%(description)s\" comme gagnant ?"
+msgstr "Czy na pewno chcesz zakończyć ankietę i wyznaczyć \"%(description)s\" jako zwycięzcę?"
 
 msgid "Complete poll"
-msgstr "Remplir le sondage"
+msgstr "Zakończ ankietę"
 
 msgid "There are no polls yet"
-msgstr "Il n'y a pas encore de sondages"
+msgstr "Nie ma jeszcze ankiet"
 
 #, python-format
 msgid "Poll \"%(title)s\" was edited successfully."
-msgstr "Le sondage \"%(title)s\" a été modifié."
+msgstr "Ankieta \"%(title)s\\” edytowana pomyślnie."
 
 #, python-format
 msgid "Poll \"%(title)s\" could not be edited."
-msgstr "Le sondage \"%(title)s\" n'a pas pu être modifié."
+msgstr "Ankieta \"%(title)s\\” nie mogła zostać edytowana."
 
 #, python-format
 msgid "Poll \"%(title)s\" was added successfully."
-msgstr "Le sondage \"%(title)s\" a été ajouté."
+msgstr "Ankieta \"%(title)s\\” dodana pomyślnie."
 
 #, python-format
 msgid "Poll \"%(title)s\" could not be added."
-msgstr "Le sondage \"%(title)s\" n'a pas pu être ajouté."
+msgstr "Ankieta \"%(title)s\\” nie mogła zostać dodana."
 
 msgid "You should define at least one poll option!"
-msgstr "Tu devrais définir au moins une option de sondage !"
+msgstr "Musisz określić przynajmniej jedną odpowiedź ankiety!"
 
 msgid "This poll is archived and cannot be edited anymore!"
-msgstr "Ce sondage est archivé et ne peut plus être modifié !"
+msgstr "Ta ankieta jest zarchiwizowana i nie może być edytowana!"
 
 #, python-format
 msgid "Poll \"%(title)s\" was deleted successfully."
-msgstr "Le sondage \"%(title)s\" a été supprimé."
+msgstr "Ankieta \"%(title)s\" usunięta pomyślnie."
 
 #, python-format
 msgid "Poll \"%(title)s\" could not be deleted."
-msgstr "Le sondage \"%(title)s\" n'a pas pu être supprimé."
+msgstr "Ankieta \"%(title)s\" nie mogła zostać usunięta."
 
 msgid "Your votes were saved successfully."
-msgstr "Tes votes ont été enregistrés."
+msgstr "Twoje głosy zostały pomyślnie zapisane."
 
 msgid "Your votes could not be saved."
-msgstr "Tes votes n'ont pas pu être enregistrés."
+msgstr "Twoje głosy nie mogły zostać zapisane."
 
 msgid "The voting phase for this poll is over. You cannot vote for it any more."
-msgstr "Le vote pour ce sondage est clos. Tu ne peux plus voter."
+msgstr "Faza głosowania tej ankiety zakończyła się. Nie możesz już głosować."
 
 msgid "In this poll you must vote for exactly one item!"
-msgstr "Dans ce sondage, tu dois voter pour une seule option !"
+msgstr "W tej ankiecie możesz zagłosować tylko na jedną odpowiedź!"
 
 msgid "The complete request can only be sent via POST!"
-msgstr "La requête complète ne peut être envoyée que par un POST !"
+msgstr "Pełne żądanie można wysłać tylko POCZTĄ!"
 
 msgid "Invalid action for this poll. The request could not be completed!"
-msgstr "Action invalide pour ce sondage. La demande n'a pas pu être complétée !"
+msgstr "Nieprawidłowa czynność dla tej ankiety. Żądanie nie mogło zostać spełnione!"
 
 msgid "This action is not permitted for this poll at this stage!"
-msgstr "Cette action n'est pas permise à ce stade pour ce sondage !"
+msgstr "To działanie na tym etapie nie jest zabronione dla tej ankiety!"
 
 msgid "The poll was closed successfully."
-msgstr "Le sondage a été fermé."
+msgstr "Ankieta zamknięta pomyślnie."
 
 msgid "The poll was re-opened successfully."
-msgstr "Le sondage a été rouvert."
+msgstr "Ankieta otwarta ponownie pomyślnie."
 
 msgid "The poll was archived successfully."
-msgstr "Le sondage a été archivé."
+msgstr "Ankieta zarchiwizowana pomyślnie."
 
 msgid "Your comment was added successfully."
-msgstr "Ton commentaire a été ajouté."
+msgstr "Komentarz dodany pomyślnie."
 
 msgid "Your comment was deleted successfully."
-msgstr "Ton commentaire a été supprimé."
+msgstr "Komentarz usunięty pomyślnie."
