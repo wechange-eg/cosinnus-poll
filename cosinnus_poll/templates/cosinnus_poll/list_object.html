@@ -20,7 +20,16 @@
                 </a>
                 <div class="media-body">
                     {% with creator=poll.creator %}
-                        <span class="annotation">{% trans "by" %} <a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a></span>
+                        <span class="annotation">{% trans "by" %} 
+                            <a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a>
+                            {% if poll.created %}
+                                &nbsp;&nbsp;
+                                <span title="{% trans "Created" %}">
+                                    <i class="fa fa-pencil"></i>
+                                    <span class="moment-data-date" data-date="{{ poll.created|date:'c' }}"></span>
+                                </span>
+                            {% endif %}
+                        </span>
                     {% endwith %}
                     <a href="{{ poll.get_absolute_url }}">
                         {{ poll.title }}
