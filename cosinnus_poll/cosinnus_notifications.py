@@ -45,6 +45,7 @@ notifications = {
         'subject_template': 'cosinnus_poll/notifications/poll_created_subject.txt',
         'signals': [poll_created],
         'default': True,
+        'moderatable_content': True,
         
         'is_html': True,
         'snippet_type': 'poll',
@@ -81,6 +82,7 @@ notifications = {
         'subject_template': 'cosinnus_poll/notifications/poll_comment_posted_subject.txt',
         'signals': [poll_comment_posted],
         'default': True,
+        'moderatable_content': True,
         
         'is_html': True,
         'snippet_type': 'poll',
