@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-22 13:19+0200\n"
-"PO-Revision-Date: 2018-06-23 16:54+0200\n"
+"POT-Creation-Date: 2018-09-18 22:51+0200\n"
+"PO-Revision-Date: 2018-08-31 14:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 2.0.4\n"
 
 msgid "Polls"
 msgstr "Ankiety"
@@ -25,7 +25,7 @@ msgid "poll"
 msgstr "ankieta"
 
 msgid "A user created a new poll"
-msgstr "Użytkownik stworzył nową ankietę"
+msgstr "Użytkownik utworzył nową ankietę"
 
 #, python-format
 msgid "New poll by %(sender_name)s"
@@ -33,11 +33,11 @@ msgstr "Nowa ankieta utworzona przez %(sender_name)s"
 
 #, python-format
 msgid "%(sender_name)s created a new poll"
-msgstr "%(sender_name)s stworzył/a nową ankietę"
+msgstr "%(sender_name)s utworzył/a nową ankietę"
 
 #, python-format
 msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
-msgstr "Nowa ankieta: \\’’%(object_name)s\\’’ została utworzona w %(team_name)s."
+msgstr "Nowa ankieta: \"%(object_name)s\" została utworzona w %(team_name)s."
 
 msgid "A poll you voted on was completed"
 msgstr "Ankieta, w której głosowałeś/aś, została zakończona"
@@ -52,7 +52,7 @@ msgstr "%(sender_name)s ukończył/a ankietę"
 
 #, python-format
 msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
-msgstr "Ankieta \\’’%(object_name)s\\’’ została ukończona w %(team_name)s."
+msgstr "Ankieta \"%(object_name)s\" została ukończona w %(team_name)s."
 
 msgid "A user commented on one of your polls"
 msgstr "Użytkownik skomentował jedną z Twoich ankiet"
@@ -92,16 +92,16 @@ msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s"
 msgstr "%(sender_name)s skomentował/a ankietę, w której głosowałeś/aś w %(team_name)s"
 
 msgid "Current Polls"
-msgstr "Aktywne ankiety"
+msgstr "Aktywne Ankiety"
 
 msgid "No current polls"
 msgstr "Brak aktywnych ankiet"
 
 msgid "Created By"
-msgstr "Utworzona przez"
+msgstr "Utworzona Przez"
 
 msgid "Newest Created"
-msgstr "Najnowsza utworzona"
+msgstr "Najnowsza Utworzona"
 
 msgid "Title"
 msgstr "Tytuł"
@@ -131,7 +131,7 @@ msgid "Does this poll allow users to vote on multiple options or just decide for
 msgstr "Czy ta ankieta pozwala użytkownikom na wybranie kilku odpowiedzi, czy tylko jednej?"
 
 msgid "\"Maybe\" option enabled"
-msgstr "Dodanie opcji \\’’Może\\’’"
+msgstr "Dodanie opcji \"Może\""
 
 msgid "Is the maybe option enabled? Ignored and defaulting to False if ``multiple_votes==False``"
 msgstr "Czy opcja „może” jest aktywna? Zignorowana i ustawiona jako „False”, jeśli ``multiple_votes==False``"
@@ -152,7 +152,7 @@ msgid "Start"
 msgstr "Start"
 
 msgid "Winning Option"
-msgstr "Zwycięska odpowiedź"
+msgstr "Zwycięska Odpowiedź"
 
 msgid "Poll"
 msgstr "Ankieta"
@@ -169,10 +169,10 @@ msgid "Votes"
 msgstr "Głosy"
 
 msgid "Poll Option"
-msgstr "Odpowiedź ankiety"
+msgstr "Odpowiedź Ankiety"
 
 msgid "Poll Options"
-msgstr "Odpowiedzi ankiety"
+msgstr "Odpowiedzi Ankiety"
 
 msgid "Yes"
 msgstr "Tak"
@@ -224,7 +224,7 @@ msgid "Past Polls"
 msgstr "Poprzednie Ankiety"
 
 msgid "by"
-msgstr "wg"
+msgstr "przez"
 
 msgid "Delete"
 msgstr "Usuń"
@@ -236,7 +236,7 @@ msgid "Re-open"
 msgstr "Otwórz ponownie"
 
 msgid "Archive"
-msgstr "Archiwum"
+msgstr "Archiwizuj"
 
 #, python-format
 msgid "Do you really want to delete poll „%(title)s“?"
@@ -282,16 +282,16 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Cześć, %(receiver_name)s!\n"
+"Cześć %(receiver_name)s!\n"
 "\n"
 "%(sender_name)s dodał/a komentarz do ankiety, którą utworzyłeś/aś w zespole %(team_name)s:\n"
 "\n"
-"\\’’%(comment_text)s\\’’\n"
+"\"%(comment_text)s\"\n"
 "\n"
 "\n"
 "w ankiecie:\n"
 "\n"
-"\\’’%(poll_title)s\\’’\n"
+"\"%(poll_title)s\"\n"
 "\n"
 "\n"
 "Kliknij tutaj, aby zobaczyć komentarz:\n"
@@ -315,7 +315,7 @@ msgid ""
 msgstr ""
 "Cześć %(receiver_name)s,\n"
 "\n"
-"ankieta \\’’%(object_name)s została ukończona w zespole %(team_name)s przez %(sender_name)s!\n"
+"ankieta \"%(object_name)s została ukończona w zespole %(team_name)s przez %(sender_name)s!\n"
 
 msgid "The winning option was:"
 msgstr "Zwycięską odpowiedzią było:"
@@ -364,7 +364,7 @@ msgid ""
 msgstr ""
 "Cześć %(receiver_name)s,\n"
 "\n"
-"nowa ankieta \"%(object_name)s\\” została utworzona w zespole %(team_name)s przez %(sender_name)s. \n"
+"nowa ankieta \"%(object_name)s\" została utworzona w zespole %(team_name)s przez %(sender_name)s. \n"
 "\n"
 "Dostępna jest pod następującym adresem:\n"
 "%(object_url)s\n"
@@ -398,15 +398,15 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Cześć, %(receiver_name)s!\n"
+"Cześć %(receiver_name)s!\n"
 "\n"
 "%(sender_name)s dodał/a komentarz do ankiety, w której zostałeś/aś oznaczony/a w zespole %(team_name)s:\n"
 "\n"
-"\\’’%(comment_text)s\\’’\n"
+"\"%(comment_text)s\"\n"
 "\n"
 "w ankiecie:\n"
 "\n"
-"\\’’%(poll_title)s\\’’\n"
+"\"%(poll_title)s\"\n"
 "\n"
 "\n"
 "Kliknij tutaj, aby zobaczyć komentarz:\n"
@@ -445,15 +445,15 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Cześć, %(receiver_name)s!\n"
+"Cześć %(receiver_name)s!\n"
 "\n"
 "%(sender_name)s dodał/a komentarz do ankiety, w której zagłosowałeś/aś w zespole %(team_name)s:\n"
 "\n"
-"\\’’%(comment_text)s\\’’\n"
+"\"%(comment_text)s\"\n"
 "\n"
 "w ankiecie:\n"
 "\n"
-"\\’’%(poll_title)s\\’’\n"
+"\"%(poll_title)s\"\n"
 "\n"
 "\n"
 "Kliknij tutaj, aby zobaczyć komentarz:\n"
@@ -482,10 +482,10 @@ msgid "There was an error in one of the fields you entered. Please correct it be
 msgstr "W jednym z wypełnionych pól jest błąd. Popraw go przed zapisaniem!"
 
 msgid "Enter a title for the new poll."
-msgstr "Wpisz tytuł nowej ankiety"
+msgstr "Wpisz tytuł nowej ankiety."
 
 msgid "Description and Infos"
-msgstr "Opis i informacje"
+msgstr "Opis i Informacje"
 
 msgid "Enter a description for the poll"
 msgstr "Dodaj opis ankiety"
@@ -509,7 +509,7 @@ msgid "If disabled, users can only vote for one option"
 msgstr "Jeśli wyłączona, użytkownicy będą mogli zagłosować tylko na jedną odpowiedź"
 
 msgid "In addition to \"Yes\" and \"No\""
-msgstr "Poza \\’’Tak\\’’ i \\’’Nie\\’’"
+msgstr "Poza \"Tak\" i \"Nie\""
 
 msgid "Lists how every voter voted for each option."
 msgstr "Lista pokazująca odpowiedzi każdego głosującego."
@@ -521,7 +521,7 @@ msgid "Any logged in user who can see this poll can vote on it. If disabled, onl
 msgstr "Każdy zalogowany użytkownik, który widzi tę ankietę, może w niej zagłosować. Jeśli wyłączone, tylko członkowie grupy/projektu mogą zagłosować."
 
 msgid "Create"
-msgstr "Stwórz"
+msgstr "Utwórz"
 
 msgid "Save"
 msgstr "Zapisz"
@@ -530,7 +530,7 @@ msgid "Archived Polls"
 msgstr "Zarchiwizowane Ankiety"
 
 msgid "Enter the title to create a new poll."
-msgstr "Wpisz tytuł, aby utworzyć nową ankietę"
+msgstr "Wpisz tytuł, aby utworzyć nową ankietę."
 
 msgid "There are no archived polls."
 msgstr "Nie ma zarchiwizowanych ankiet."
@@ -595,19 +595,19 @@ msgstr "Nie ma jeszcze ankiet"
 
 #, python-format
 msgid "Poll \"%(title)s\" was edited successfully."
-msgstr "Ankieta \"%(title)s\\” edytowana pomyślnie."
+msgstr "Ankieta \"%(title)s\" zedytowana pomyślnie."
 
 #, python-format
 msgid "Poll \"%(title)s\" could not be edited."
-msgstr "Ankieta \"%(title)s\\” nie mogła zostać edytowana."
+msgstr "Ankieta \"%(title)s\" nie mogła zostać zedytowana."
 
 #, python-format
 msgid "Poll \"%(title)s\" was added successfully."
-msgstr "Ankieta \"%(title)s\\” dodana pomyślnie."
+msgstr "Ankieta \"%(title)s\" dodana pomyślnie."
 
 #, python-format
 msgid "Poll \"%(title)s\" could not be added."
-msgstr "Ankieta \"%(title)s\\” nie mogła zostać dodana."
+msgstr "Ankieta \"%(title)s\" nie mogła zostać dodana."
 
 msgid "You should define at least one poll option!"
 msgstr "Musisz określić przynajmniej jedną odpowiedź ankiety!"
@@ -642,7 +642,7 @@ msgid "Invalid action for this poll. The request could not be completed!"
 msgstr "Nieprawidłowa czynność dla tej ankiety. Żądanie nie mogło zostać spełnione!"
 
 msgid "This action is not permitted for this poll at this stage!"
-msgstr "To działanie na tym etapie nie jest zabronione dla tej ankiety!"
+msgstr "To działanie na tym etapie jest zabronione dla tej ankiety!"
 
 msgid "The poll was closed successfully."
 msgstr "Ankieta zamknięta pomyślnie."
