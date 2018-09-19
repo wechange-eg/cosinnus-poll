@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from builtins import str
+from builtins import object
 from os.path import join
 import datetime
 
@@ -165,7 +167,7 @@ class Option(ThumbnailableImageMixin, models.Model):
     count = models.PositiveIntegerField(
         pgettext_lazy('the subject', 'Votes'), default=0, editable=False)
 
-    class Meta:
+    class Meta(object):
         ordering = ['poll', '-count']
         verbose_name = _('Poll Option')
         verbose_name_plural = _('Poll Options')
@@ -218,7 +220,7 @@ class Vote(models.Model):
     choice = models.PositiveSmallIntegerField(_('Vote'), blank=False, null=False,
         default=VOTE_NO, choices=VOTE_CHOICES)
     
-    class Meta:
+    class Meta(object):
         unique_together = ('option', 'voter')
         verbose_name = pgettext_lazy('the subject', 'Vote')
         verbose_name_plural = pgettext_lazy('the subject', 'Votes')
@@ -244,7 +246,7 @@ class Comment(models.Model):
     poll = models.ForeignKey(Poll, related_name='comments')
     text = models.TextField(_('Text'))
 
-    class Meta:
+    class Meta(object):
         ordering = ['created_on']
         verbose_name = _('Comment')
         verbose_name_plural = _('Comments')

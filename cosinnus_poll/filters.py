@@ -3,6 +3,7 @@ Created on 05.08.2014
 
 @author: Sascha
 '''
+from builtins import object
 from django.utils.translation import ugettext_lazy as _
 
 from cosinnus.views.mixins.filters import CosinnusFilterSet
@@ -13,7 +14,7 @@ from cosinnus_poll.models import Poll
 class PollFilter(CosinnusFilterSet):
     creator = AllObjectsFilter(label=_('Created By'), widget=SelectCreatorWidget)
     
-    class Meta:
+    class Meta(object):
         model = Poll
         fields = ['creator']
         order_by = (

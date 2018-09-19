@@ -318,11 +318,11 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
             if option:
                 option_choices[option] = choice
         
-        if not self.object.multiple_votes and not len([True for choice in option_choices.values() if choice == Vote.VOTE_YES]) == 1:
+        if not self.object.multiple_votes and not len([True for choice in list(option_choices.values()) if choice == Vote.VOTE_YES]) == 1:
             messages.error(self.request, _('In this poll you must vote for exactly one item!'))
             raise Redirect()
         
-        for option, choice in option_choices.items():
+        for option, choice in list(option_choices.items()):
             if not self.object.can_vote_maybe and choice == Vote.VOTE_MAYBE:
                 choice = Vote.VOTE_NO
             vote, _created = Vote.objects.get_or_create(option_id=option, voter=self.request.user)

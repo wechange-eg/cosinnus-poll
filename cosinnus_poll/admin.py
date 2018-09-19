@@ -22,7 +22,7 @@ class OptionAdmin(admin.ModelAdmin):
         if obj is None:
             # we create a new option and the user should be able to select
             # an poll.
-            return filter(lambda x: x != 'poll', self.readonly_fields)
+            return [x for x in self.readonly_fields if x != 'poll']
         return super(OptionAdmin, self).get_readonly_fields(request, obj)
 
 

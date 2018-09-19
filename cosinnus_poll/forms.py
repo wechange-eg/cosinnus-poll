@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from builtins import object
 from django import forms
 from django.forms.widgets import HiddenInput, RadioSelect,\
     SplitHiddenDateTimeWidget
@@ -23,7 +24,7 @@ class _PollForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
     
     url = forms.URLField(widget=forms.TextInput, required=False)
 
-    class Meta:
+    class Meta(object):
         model = Poll
         fields = ('title', 'description', 'multiple_votes', 'can_vote_maybe', 'anyone_can_vote', 'show_voters')
     
@@ -45,7 +46,7 @@ PollForm = get_form(_PollForm)
 
 class OptionForm(forms.ModelForm):
 
-    class Meta:
+    class Meta(object):
         model = Option
         fields = ('description',)# 'image',) # Images are disabled for now
     
@@ -82,14 +83,14 @@ class VoteForm(forms.Form):
     
 class PollNoFieldForm(forms.ModelForm):
 
-    class Meta:
+    class Meta(object):
         model = Poll
         fields = ()
         
         
 class CommentForm(forms.ModelForm):
 
-    class Meta:
+    class Meta(object):
         model = Comment
         fields = ('text',)
 
