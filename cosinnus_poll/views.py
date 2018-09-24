@@ -17,7 +17,6 @@ from extra_views import (CreateWithInlinesView, FormSetView, InlineFormSet,
 
 from django_ical.views import ICalFeed
 
-from cosinnus.views.export import CSVExportView
 from cosinnus.views.mixins.group import (RequireReadMixin, RequireWriteMixin,
     GroupFormKwargsMixin, FilterGroupMixin)
 from cosinnus.views.mixins.user import UserFormKwargsMixin
