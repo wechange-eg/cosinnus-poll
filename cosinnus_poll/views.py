@@ -36,7 +36,8 @@ from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user,\
     check_object_read_access, check_ug_membership
 from cosinnus.core.decorators.views import require_read_access,\
     require_user_token_access
-from django.contrib.sites.models import Site, get_current_site
+from django.contrib.sites.models import Site
+from django.contrib.sites.shortcuts import get_current_site
 from annoying.functions import get_object_or_None
 from cosinnus.templatetags.cosinnus_tags import has_write_access
 from annoying.exceptions import Redirect

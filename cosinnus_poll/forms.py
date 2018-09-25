@@ -11,7 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 from cosinnus.forms.group import GroupKwargModelFormMixin
 from cosinnus.forms.tagged import get_form, BaseTaggableObjectForm
 from cosinnus.forms.user import UserKwargModelFormMixin
-from cosinnus.forms.widgets import DateTimeL10nPicker, SplitHiddenDateWidget
+from cosinnus.forms.widgets import DateTimeL10nPicker
 
 from cosinnus_poll.models import Poll, Option, Vote, Comment
 from cosinnus.forms.attached_object import FormAttachableMixin
