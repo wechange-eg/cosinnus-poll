@@ -15,12 +15,9 @@
                 <a class="pull-right fadedown-clickarea" href="#">
                     <i class="fa fa-chevron-down"></i>
                 </a>
-                <a class="pull-right" href="{{ poll.get_absolute_url }}">
-                    <i class="fa fa-chain"></i>
-                </a>
                 <div class="media-body">
                     {% with creator=poll.creator %}
-                        <span class="annotation">{% trans "by" %} 
+                        <span class="annotation mobile-hidden">{% trans "by" %} 
                             <a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a>
                             {% if poll.created %}
                                 &nbsp;&nbsp;
