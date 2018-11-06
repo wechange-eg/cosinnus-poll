@@ -3,7 +3,7 @@
     <div class="btn btn-emphasized w100" href="{{ poll.get_absolute_url }}">
         <ul class="media-list">
             <li class="media">
-                <a class="pull-left square-date-icon" href="#">
+                <span class="pull-left square-date-icon">
                       {% if poll.state == 1 %} {# voting open #}
                         <i class="fa fa-question-circle"></i>
                       {% elif poll.state == 2 %} {# voting closed #}
@@ -11,7 +11,7 @@
                       {% else %} {# archived #}
                           <i class="fa fa-bar-chart"></i>
                       {% endif %}
-                </a>
+                </span>
                 <a class="pull-right fadedown-clickarea" href="#">
                     <i class="fa fa-chevron-down"></i>
                 </a>
