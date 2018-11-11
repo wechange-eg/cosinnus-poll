@@ -20,6 +20,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='vote',
             name='option',
-            field=models.ForeignKey(related_name='votes', verbose_name='Option', to='cosinnus_poll.Option'),
+            field=models.ForeignKey(related_name='votes', verbose_name='Option', to='cosinnus_poll.Option', on_delete=models.CASCADE),
         ),
     ]

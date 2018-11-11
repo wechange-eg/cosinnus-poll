@@ -61,8 +61,8 @@ class Migration(migrations.Migration):
                 ('anyone_can_vote', models.BooleanField(default=False, help_text='If true, anyone who can see this poll can vote on it. If false, only group members can.', verbose_name='Anyone can vote')),
                 ('closed_date', models.DateTimeField(default=None, null=True, verbose_name='Start', blank=True)),
                 ('attached_objects', models.ManyToManyField(to='cosinnus.AttachedObject', null=True, blank=True)),
-                ('creator', models.ForeignKey(related_name='cosinnus_poll_poll_set', verbose_name='Creator', to=settings.AUTH_USER_MODEL, null=True)),
-                ('group', models.ForeignKey(related_name='cosinnus_poll_poll_set', verbose_name='Team', to=settings.COSINNUS_GROUP_OBJECT_MODEL)),
+                ('creator', models.ForeignKey(related_name='cosinnus_poll_poll_set', verbose_name='Creator', to=settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)),
+                ('group', models.ForeignKey(related_name='cosinnus_poll_poll_set', verbose_name='Team', to=settings.COSINNUS_GROUP_OBJECT_MODEL, on_delete=models.CASCADE)),
                 ('media_tag', models.OneToOneField(null=True, on_delete=django.db.models.deletion.SET_NULL, blank=True, to=settings.COSINNUS_TAG_OBJECT_MODEL)),
                 ('winning_option', models.ForeignKey(related_name='selected_name', on_delete=django.db.models.deletion.SET_NULL, verbose_name='Winning Option', blank=True, to='cosinnus_poll.Option', null=True)),
             ],
@@ -78,8 +78,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('choice', models.PositiveSmallIntegerField(default=0, verbose_name='Vote', choices=[(2, 'Yes'), (1, 'Maybe'), (0, 'No')])),
-                ('option', models.ForeignKey(related_name='options', verbose_name='Option', to='cosinnus_poll.Option')),
-                ('voter', models.ForeignKey(related_name='poll_votes', verbose_name='Voter', to=settings.AUTH_USER_MODEL)),
+                ('option', models.ForeignKey(related_name='options', verbose_name='Option', to='cosinnus_poll.Option', on_delete=models.CASCADE)),
+                ('voter', models.ForeignKey(related_name='poll_votes', verbose_name='Voter', to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)),
             ],
             options={
                 'verbose_name': 'Vote',
@@ -89,12 +89,12 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='option',
             name='poll',
-            field=models.ForeignKey(related_name='options', verbose_name='Poll', to='cosinnus_poll.Poll'),
+            field=models.ForeignKey(related_name='options', verbose_name='Poll', to='cosinnus_poll.Poll', on_delete=models.CASCADE),
         ),
         migrations.AddField(
             model_name='comment',
             name='poll',
-            field=models.ForeignKey(related_name='comments', to='cosinnus_poll.Poll'),
+            field=models.ForeignKey(related_name='comments', to='cosinnus_poll.Poll', on_delete=models.CASCADE),
         ),
         migrations.AlterUniqueTogether(
             name='vote',
