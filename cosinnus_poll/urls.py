@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.conf.urls import url
 from cosinnus_poll import views
 
+app_name = 'poll'
+
 cosinnus_group_patterns = [
     url(r'^$', views.index_view, name='index'),
     url(r'^list/$', views.poll_list_view, name='list', kwargs={'poll_view': 'current'}),
