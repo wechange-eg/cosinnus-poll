@@ -242,7 +242,7 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
         self.object = self.get_object()
         poll = self.object
         self.mode = 'view'
-        if poll.state == Poll.STATE_VOTING_OPEN and request.user.is_authenticated():
+        if poll.state == Poll.STATE_VOTING_OPEN and request.user.is_authenticated:
             if check_object_read_access(poll, request.user) and (poll.anyone_can_vote or check_ug_membership(request.user, self.group)):
                 self.mode = 'vote'
         try:
@@ -287,7 +287,7 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
         
         for option in self.options:
             vote = None
-            if self.request.user.is_authenticated():
+            if self.request.user.is_authenticated:
                 try:
                     vote = option.votes.filter(voter=self.request.user).get()
                 except Vote.DoesNotExist:
