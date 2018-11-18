@@ -303,12 +303,12 @@ def post_vote_save(sender, **kwargs):
 
 def current_poll_filter(queryset):
     """ Filters a queryset of polls for polls are open or closed (but not archived). """
-    return queryset.exclude(state=Poll.STATE_ARCHIVED).order_by('state', '-closed_date')
+    return queryset.exclude(state=Poll.STATE_ARCHIVED)
 
 def past_poll_filter(queryset):
     """ Filters a queryset of polls for polls that began before today, 
     or have an end date before today. """
-    return queryset.filter(state=Poll.STATE_ARCHIVED).order_by('-closed_date')
+    return queryset.filter(state=Poll.STATE_ARCHIVED)
 
 
 import django
