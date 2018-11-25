@@ -41,6 +41,7 @@ from annoying.functions import get_object_or_None
 from cosinnus.templatetags.cosinnus_tags import has_write_access
 from annoying.exceptions import Redirect
 from django import forms
+from cosinnus.views.common import DeleteElementView
 
 
 class PollIndexView(RequireReadMixin, RedirectView):
@@ -508,3 +509,8 @@ class CommentUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateView):
 
 comment_update = CommentUpdateView.as_view()
 
+
+class PollDeleteElementView(DeleteElementView):
+    model = Poll
+
+delete_element_view = PollDeleteElementView.as_view()

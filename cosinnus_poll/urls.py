@@ -9,6 +9,7 @@ cosinnus_group_patterns = patterns('cosinnus_poll.views',
 
     url(r'^list/$', 'poll_list_view', name='list', kwargs={'poll_view': 'current'}),
     url(r'^list/past/$', 'poll_list_view', name='list_past', kwargs={'poll_view': 'past'}),
+    url(r'^list/delete_element/$', 'delete_element_view', name='delete-element'),
     url(r'^add/$', 'poll_add_view',  {'form_view': 'add'},  name='add'),
     url(r'^(?P<slug>[^/]+)/$', 'poll_vote_view', {'form_view': 'edit'},  name='detail'),
     url(r'^(?P<slug>[^/]+)/edit/$', 'poll_edit_view', {'form_view': 'edit'}, name='edit'),
