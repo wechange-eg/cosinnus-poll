@@ -41,7 +41,7 @@ from annoying.functions import get_object_or_None
 from cosinnus.templatetags.cosinnus_tags import has_write_access
 from annoying.exceptions import Redirect
 from django import forms
-from cosinnus.views.common import DeleteElementView
+from cosinnus.views.common import DeleteElementView, apply_likefollow_object
 
 
 class PollIndexView(RequireReadMixin, RedirectView):
@@ -165,7 +165,9 @@ class PollAddView(PollFormMixin, AttachableViewMixin, CreateWithInlinesView):
         form.instance.creator = self.request.user
         form.instance.state = Poll.STATE_VOTING_OPEN  # be explicit
         ret = super(PollAddView, self).forms_valid(form, inlines)
-
+        # creator follows their own poll
+        apply_likefollow_object(form.instance, self.request.user, follow=True)
+    
         # Check for non or a single option and set it and inform the user
         num_options = self.object.options.count()
         if num_options == 0:
