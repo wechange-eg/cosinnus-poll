@@ -29,7 +29,7 @@ from cosinnus_poll import cosinnus_notifications
 from django.contrib.auth import get_user_model
 from cosinnus.utils.files import _get_avatar_filename
 from cosinnus.models.mixins.images import ThumbnailableImageMixin
-from cosinnus.models.tagged import LikableObjectMixin
+from cosinnus.models.tagged import LikeableObjectMixin
 
 
 def get_poll_image_filename(instance, filename):
@@ -37,7 +37,7 @@ def get_poll_image_filename(instance, filename):
 
 
 @python_2_unicode_compatible
-class Poll(LikableObjectMixin, BaseTaggableObjectModel):
+class Poll(LikeableObjectMixin, BaseTaggableObjectModel):
 
     SORT_FIELDS_ALIASES = [
         ('title', 'title'),

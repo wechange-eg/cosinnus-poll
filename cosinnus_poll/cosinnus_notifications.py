@@ -57,6 +57,7 @@ notifications = {
             'object_url': 'get_absolute_url', 
             'object_text': 'description',
         },
+        'show_follow_button': True,
     }, 
     'poll_completed': {
         'label': _('A poll you voted on was completed'), 
