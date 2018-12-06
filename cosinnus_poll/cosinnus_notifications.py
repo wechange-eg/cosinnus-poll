@@ -162,6 +162,7 @@ notifications = {
             'object_url': 'get_absolute_url', 
             'object_text': 'description',
         },
+        'show_follow_button': True,
     }, 
     'following_poll_changed': {
         'label': _('A user updated a poll you are following'), 
