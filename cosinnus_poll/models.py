@@ -30,6 +30,7 @@ from django.contrib.auth import get_user_model
 from cosinnus.utils.files import _get_avatar_filename
 from cosinnus.models.mixins.images import ThumbnailableImageMixin
 from cosinnus.models.tagged import LikeableObjectMixin
+from uuid import uuid1
 
 
 def get_poll_image_filename(instance, filename):
@@ -105,8 +106,12 @@ class Poll(LikeableObjectMixin, BaseTaggableObjectModel):
         created = bool(self.pk) == False
         super(Poll, self).save(*args, **kwargs)
 
+        session_id = uuid1().int
         if created:
-            cosinnus_notifications.poll_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
+            group_followers_except_creator_ids = [pk for pk in self.group.get_followed_user_ids() if not pk in [self.creator_id]]
+            group_followers_except_creator = get_user_model().objects.filter(id__in=group_followers_except_creator_ids)
+            cosinnus_notifications.followed_group_poll_created.send(sender=self, user=self.creator, obj=self, audience=group_followers_except_creator, session_id=session_id)
+            cosinnus_notifications.poll_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk), session_id=session_id, end_session=True)
         if not created and self.__state == Poll.STATE_VOTING_OPEN and self.state == Poll.STATE_CLOSED:
             # poll went from open to closed, so maybe send a notification for poll closed?
             # send signal only for voters as audience!
@@ -114,13 +119,22 @@ class Poll(LikeableObjectMixin, BaseTaggableObjectModel):
             if self.creator.id in voter_ids:
                 voter_ids.remove(self.creator.id)
             voters = get_user_model().objects.filter(id__in=voter_ids)
-            cosinnus_notifications.poll_completed.send(sender=self, user=self.creator, obj=self, audience=voters)
+            cosinnus_notifications.poll_completed.send(sender=self, user=self.creator, obj=self, audience=voters, session_id=session_id)
+            # message following users
+            followers_except_creator = [pk for pk in self.get_followed_user_ids() if not pk in [self.creator_id]]
+            cosinnus_notifications.following_poll_completed.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=followers_except_creator), session_id=session_id, end_session=True)
+            
         self.__state = self.state
 
     def get_absolute_url(self):
         kwargs = {'group': self.group, 'slug': self.slug}
         return group_aware_reverse('cosinnus:poll:detail', kwargs=kwargs)
-
+    
+    def get_options_hash(self):
+        """ Returns a hashable string containing all suggestions with their time.
+            Useful to compare equality of suggestions for two doodles. """
+        return ','.join(list(self.options.all().values_list('description', flat=True)))
+    
     def set_winning_option(self, winning_option=None):
         if winning_option is None:
             # No option selected or remove selection
@@ -270,19 +284,29 @@ class Comment(models.Model):
     def save(self, *args, **kwargs):
         created = bool(self.pk) == False
         super(Comment, self).save(*args, **kwargs)
+        session_id = uuid1().int
         if created:
             # comment was created, message poll creator
             if not self.poll.creator == self.creator:
-                cosinnus_notifications.poll_comment_posted.send(sender=self, user=self.creator, obj=self, audience=[self.poll.creator])
+                cosinnus_notifications.poll_comment_posted.send(sender=self, user=self.creator, obj=self, audience=[self.poll.creator], session_id=session_id)
+                
+            # message all followers of the poll
+            followers_except_creator = [pk for pk in self.poll.get_followed_user_ids() if not pk in [self.creator_id, self.poll.creator_id]]
+            cosinnus_notifications.following_poll_comment_posted.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=followers_except_creator), session_id=session_id)
+                
             # message votees (except comment creator and poll creator) if voting is still open
             votees_except_creator = [pk for pk in self.poll.get_voters_pks() if not pk in [self.creator_id, self.poll.creator_id]]
             if votees_except_creator and self.poll.state == Poll.STATE_VOTING_OPEN:
-                cosinnus_notifications.voted_poll_comment_posted.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=votees_except_creator))
+                cosinnus_notifications.voted_poll_comment_posted.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=votees_except_creator), session_id=session_id)
             # message all taggees (except comment creator)
             if self.poll.media_tag and self.poll.media_tag.persons:
                 tagged_users_without_self = self.poll.media_tag.persons.exclude(id=self.creator.id)
                 if len(tagged_users_without_self) > 0:
-                    cosinnus_notifications.tagged_poll_comment_posted.send(sender=self, user=self.creator, obj=self, audience=list(tagged_users_without_self))
+                    cosinnus_notifications.tagged_poll_comment_posted.send(sender=self, user=self.creator, obj=self, audience=list(tagged_users_without_self), session_id=session_id)
+    
+            # end notification session        
+            cosinnus_notifications.tagged_poll_comment_posted.send(sender=self, user=self.creator, obj=self, audience=[], session_id=session_id, end_session=True)
+    
     
     @property
     def group(self):

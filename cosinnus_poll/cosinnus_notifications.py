@@ -15,6 +15,10 @@ poll_completed = dispatch.Signal(providing_args=["user", "obj", "audience"])
 poll_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
 tagged_poll_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
 voted_poll_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
+followed_group_poll_created = dispatch.Signal(providing_args=["user", "obj", "audience"])
+following_poll_changed = dispatch.Signal(providing_args=["user", "obj", "audience"])
+following_poll_completed = dispatch.Signal(providing_args=["user", "obj", "audience"])
+following_poll_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
 
 
 """ Notification definitions.
@@ -64,6 +68,7 @@ notifications = {
         'mail_template': 'cosinnus_poll/notifications/poll_completed.txt',
         'subject_template': 'cosinnus_poll/notifications/poll_completed_subject.txt',
         'signals': [poll_completed],
+        'supercedes_notifications': ['following_poll_completed'],
         'default': True,
         
         'is_html': True,
@@ -139,4 +144,81 @@ notifications = {
             'sub_object_text': 'text',
         },
     },  
+    'followed_group_poll_created': {
+        'label': _('A user created a new poll in a team you are following'), 
+        'signals': [followed_group_poll_created],
+        'multi_preference_set': 'MULTI_followed_object_notification',
+        'supercedes_notifications': ['poll_created'],
+        'requires_object_state_check': 'group.is_user_following',
+        'hidden': True,
+        
+        'is_html': True,
+        'snippet_type': 'poll',
+        'event_text': _('New poll by %(sender_name)s in %(team_name)s (which you follow)'),
+        'notification_text': _('%(sender_name)s created a new poll in %(team_name)s (which you follow)'),
+        'subject_text': _('A new poll: "%(object_name)s" was created in %(team_name)s (which you follow).'),
+        'data_attributes': {
+            'object_name': 'title', 
+            'object_url': 'get_absolute_url', 
+            'object_text': 'description',
+        },
+    }, 
+    'following_poll_changed': {
+        'label': _('A user updated a poll you are following'), 
+        'signals': [following_poll_changed],
+        'multi_preference_set': 'MULTI_followed_object_notification',
+        'requires_object_state_check': 'is_user_following',
+        'hidden': True,
+        
+        'is_html': True,
+        'snippet_type': 'poll',
+        'event_text': _('%(sender_name)s updated a poll you are following'),
+        'notification_text': _('%(sender_name)s updated a poll you are following'),
+        'subject_text': _('A poll you are following: "%(object_name)s" was updated in %(team_name)s.'),
+        'data_attributes': {
+            'object_name': 'title', 
+            'object_url': 'get_absolute_url', 
+            'object_text': 'description',
+        },
+    }, 
+    'following_poll_completed': {
+        'label': _('A poll you are following was completed'), 
+        'signals': [following_poll_completed],
+        'multi_preference_set': 'MULTI_followed_object_notification',
+        'requires_object_state_check': 'is_user_following',
+        'hidden': True,
+        
+        'is_html': True,
+        'snippet_type': 'poll',
+        'event_text': _("%(sender_name)s completed the poll you are following"),
+        'notification_text': _('%(sender_name)s completed a poll you are following'),
+        'subject_text': _('Poll "%(object_name)s" you are following was completed in %(team_name)s.'),
+        'data_attributes': {
+            'object_name': 'title', 
+            'object_url': 'get_absolute_url', 
+            'object_text': 'description',
+        },
+    },  
+    'following_poll_comment_posted': {
+        'label': _('A user commented on one a poll you are following'), 
+        'signals': [following_poll_comment_posted],
+        'multi_preference_set': 'MULTI_followed_object_notification',
+        'supercedes_notifications': ['poll_comment_posted', 'tagged_poll_comment_posted', 'voted_poll_comment_posted'],
+        'requires_object_state_check': 'poll.is_user_following',
+        'hidden': True,
+        
+        'is_html': True,
+        'snippet_type': 'poll',
+        'event_text': _('%(sender_name)s commented on a poll you are following'),
+        'notification_text': _('%(sender_name)s commented on a poll you are following'),
+        'subject_text': _('%(sender_name)s commented on a poll you are following'),
+        'sub_event_text': _('%(sender_name)s'),
+        'data_attributes': {
+            'object_name': 'poll.title', 
+            'object_url': 'get_absolute_url', 
+            'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
+            'sub_object_text': 'text',
+        },
+    },    
 }
