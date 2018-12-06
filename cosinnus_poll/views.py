@@ -41,7 +41,10 @@ from annoying.functions import get_object_or_None
 from cosinnus.templatetags.cosinnus_tags import has_write_access
 from annoying.exceptions import Redirect
 from django import forms
-from cosinnus.views.common import DeleteElementView
+from cosinnus.views.common import DeleteElementView, apply_likefollow_object
+from cosinnus.views.mixins.tagged import EditViewWatchChangesMixin
+from cosinnus_poll import cosinnus_notifications
+from django.contrib.auth import get_user_model
 
 
 class PollIndexView(RequireReadMixin, RedirectView):
@@ -165,7 +168,9 @@ class PollAddView(PollFormMixin, AttachableViewMixin, CreateWithInlinesView):
         form.instance.creator = self.request.user
         form.instance.state = Poll.STATE_VOTING_OPEN  # be explicit
         ret = super(PollAddView, self).forms_valid(form, inlines)
-
+        # creator follows their own poll
+        apply_likefollow_object(form.instance, self.request.user, follow=True)
+    
         # Check for non or a single option and set it and inform the user
         num_options = self.object.options.count()
         if num_options == 0:
@@ -177,7 +182,9 @@ poll_add_view = PollAddView.as_view()
 class NoLongerEditableException(Exception):
     pass
 
-class PollEditView(PollFormMixin, AttachableViewMixin, UpdateWithInlinesView):
+class PollEditView(EditViewWatchChangesMixin, PollFormMixin, AttachableViewMixin, UpdateWithInlinesView):
+    
+    changed_attr_watchlist = ['title', 'description', 'get_attached_objects_hash', 'get_options_hash']
     
     def dispatch(self, request, *args, **kwargs):
         try:
@@ -210,6 +217,11 @@ class PollEditView(PollFormMixin, AttachableViewMixin, UpdateWithInlinesView):
 
         return super(PollEditView, self).forms_valid(form, inlines)
 
+    def on_save_changed_attrs(self, obj, changed_attr_dict):
+        # send out a notification to all followers for the change
+        followers_except_creator = [pk for pk in obj.get_followed_user_ids() if not pk in [obj.creator_id]]
+        cosinnus_notifications.following_poll_changed.send(sender=self, user=obj.creator, obj=obj, audience=get_user_model().objects.filter(id__in=followers_except_creator))
+        
 poll_edit_view = PollEditView.as_view()
 
 
