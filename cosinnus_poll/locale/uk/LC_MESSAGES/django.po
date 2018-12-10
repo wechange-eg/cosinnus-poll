@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-18 22:51+0200\n"
+"POT-Creation-Date: 2018-12-10 12:53+0100\n"
 "PO-Revision-Date: 2018-06-17 22:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -91,6 +91,71 @@ msgstr "%(sender_name)s прокоментував/-ла опитування, �
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s"
 msgstr "%(sender_name)s прокоментував/-ла опитування, в якому Ви взяли участь в %(team_name)s"
+
+#, fuzzy
+#| msgid "A user created a new poll"
+msgid "A user created a new poll in a team you are following"
+msgstr "Користувач/-ка створив/-ла нове опитування щодо дати"
+
+#, fuzzy, python-format
+#| msgid "New poll by %(sender_name)s"
+msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
+msgstr "Нове опитування щодо дати від %(sender_name)s"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+msgid "%(sender_name)s created a new poll in %(team_name)s (which you follow)"
+msgstr "%(sender_name)s прокоментував/-ла одне з Ваших опитувань у %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
+msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
+msgstr "Нове опитування щодо дати: «%(object_name)s» було створено у %(team_name)s."
+
+#, fuzzy
+#| msgid "A user commented on an poll you voted in"
+msgid "A user updated a poll you are following"
+msgstr "Користувач/-ка прокоментував/-ла опитування щодо дати, в якому Ви взяли участь"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a poll you voted in"
+msgid "%(sender_name)s updated a poll you are following"
+msgstr "%(sender_name)s прокоментував/-ла опитування, в якому Ви взяли участь"
+
+#, fuzzy, python-format
+#| msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
+msgid "A poll you are following: \"%(object_name)s\" was updated in %(team_name)s."
+msgstr "Нове опитування щодо дати: «%(object_name)s» було створено у %(team_name)s."
+
+#, fuzzy
+#| msgid "A poll you voted on was completed"
+msgid "A poll you are following was completed"
+msgstr "Опитування, в якому Ви взяли участь, завершене"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s completed the poll"
+msgid "%(sender_name)s completed the poll you are following"
+msgstr "%(sender_name)s завершив опитування"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a poll you voted in"
+msgid "%(sender_name)s completed a poll you are following"
+msgstr "%(sender_name)s прокоментував/-ла опитування, в якому Ви взяли участь"
+
+#, fuzzy, python-format
+#| msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
+msgid "Poll \"%(object_name)s\" you are following was completed in %(team_name)s."
+msgstr "Нове опитування щодо дати: «%(object_name)s» було завершено у %(team_name)s."
+
+#, fuzzy
+#| msgid "A user commented on one of your polls"
+msgid "A user commented on one a poll you are following"
+msgstr "Користувач прокоментував/-ла одне з ваших опитувань"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a poll you voted in"
+msgid "%(sender_name)s commented on a poll you are following"
+msgstr "%(sender_name)s прокоментував/-ла опитування, в якому Ви взяли участь"
 
 msgid "Current Polls"
 msgstr "Поточні опитування"
