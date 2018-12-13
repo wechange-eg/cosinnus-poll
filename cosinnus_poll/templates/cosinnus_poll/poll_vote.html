@@ -181,6 +181,11 @@
         
     </div> <!-- buttons and content box -->
     
+    <div class="white-content">
+        {% include 'cosinnus/common/likefollow/follow_button.html' with object=poll %}
+        {% include 'cosinnus/common/likefollow/confirm_likefollow_modal.html' with object=poll %}
+    </div>
+    
     {% include 'cosinnus_poll/poll_comments.html' with poll=poll full_view="True" no_indent="True" comments_expanded="True" %}
     
         

@@ -10,6 +10,7 @@ cosinnus_group_patterns = [
     url(r'^$', views.index_view, name='index'),
     url(r'^list/$', views.poll_list_view, name='list', kwargs={'poll_view': 'current'}),
     url(r'^list/past/$', views.poll_list_view, name='list_past', kwargs={'poll_view': 'past'}),
+    url(r'^list/delete_element/$', views.delete_element_view, name='delete-element'),
     url(r'^add/$', views.poll_add_view,  {'form_view': 'add'},  name='add'),
     url(r'^(?P<slug>[^/]+)/$', views.poll_vote_view, {'form_view': 'edit'},  name='detail'),
     url(r'^(?P<slug>[^/]+)/edit/$', views.poll_edit_view, {'form_view': 'edit'}, name='edit'),

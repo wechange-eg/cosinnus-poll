@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-18 22:51+0200\n"
+"POT-Creation-Date: 2018-12-10 12:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,6 +88,54 @@ msgstr ""
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s"
+msgstr ""
+
+msgid "A user created a new poll in a team you are following"
+msgstr ""
+
+#, python-format
+msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s created a new poll in %(team_name)s (which you follow)"
+msgstr ""
+
+#, python-format
+msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
+msgstr ""
+
+msgid "A user updated a poll you are following"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s updated a poll you are following"
+msgstr ""
+
+#, python-format
+msgid "A poll you are following: \"%(object_name)s\" was updated in %(team_name)s."
+msgstr ""
+
+msgid "A poll you are following was completed"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s completed the poll you are following"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s completed a poll you are following"
+msgstr ""
+
+#, python-format
+msgid "Poll \"%(object_name)s\" you are following was completed in %(team_name)s."
+msgstr ""
+
+msgid "A user commented on one a poll you are following"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s commented on a poll you are following"
 msgstr ""
 
 msgid "Current Polls"
