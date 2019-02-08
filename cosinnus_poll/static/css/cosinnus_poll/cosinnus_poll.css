@@ -51,21 +51,22 @@
     position: relative;
     cursor: pointer;
 }
-
 .vote-count {
     width: auto !important;
     min-width: 60px !important;
     padding: 0 6px;
     font-size: 12px !important;
+    line-height: 20px;
 }
 .vote-count-divider {
     display: inline-block;
     position: relative;
-    float: right;
     border-left: 1px solid #CCC;
     width: 0;
     height: 24px;
-    top: 8px;
+}
+.divided-vote-count {
+    border-left: 1px solid #CCC;
 }
 
 .app-poll .btn-emphasized:hover .media > .pull-right {
@@ -88,7 +89,19 @@
     white-space: normal;
     margin-top: 2px;
     float: right;
+    clear: both;
 }
+
+.vote-controls-wrapper {
+    color: #FFF;    
+	padding: 0px 5px;
+	float: right;
+	clear: both;
+	
+    border-top: 1px solid #CCC;
+}
+
+
 .voter-avatar-box {
     display: inline-block;
     width: 40px;

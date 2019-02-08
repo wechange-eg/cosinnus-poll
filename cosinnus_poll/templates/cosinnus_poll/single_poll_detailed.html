@@ -50,15 +50,11 @@
 {# announce winning option #}
 {% if poll.state != 1 %}
     {% if poll.winning_option %}
-        <div class="large-space">
-            <h2>{% trans "The Winner is" %}:</h2>
-            {% include 'cosinnus_poll/single_poll_option.html' with option=poll.winning_option %}
-        </div>
-        <h2>{% trans "Available options were" %}:</h2>
+        <legend>{% trans "The Winner is" %}:</legend>
+        {% include 'cosinnus_poll/single_poll_option.html' with option=poll.winning_option %}
+        <legend>{% trans "Available options were" %}:</legend>
     {% else %}
-        <div>
-            <h2>{% trans "There was no winning option." %}</h2>
-        </div>
+        <legend>{% trans "There was no winning option." %}</legend>
     {% endif %}
 {% endif %}
 
