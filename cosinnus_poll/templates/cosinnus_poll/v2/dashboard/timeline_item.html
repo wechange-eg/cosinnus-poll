@@ -1,7 +1,26 @@
+{% extends 'cosinnus/v2/dashboard/timeline_item_base.html' %}
 {% load i18n cosinnus_tags %}
 
-<div class="timeline-item timeline-item-poll">
-	Timeline Item: Poll.
-	<br/>
-	{{ item.title }}
-</div>
+{% block container_class %}timeline-item-poll{% endblock %}
+
+{% block creation_label %}{% trans "has created a poll" %}{% endblock %}
+
+{% block icon %}fa-bar-chart{% endblock %}
+
+{% block title %}{{ item.title }}{% endblock %}
+
+{% block body %}
+	{{ item.description|textfield }}
+{% endblock %}
+
+{% block action_buttons %}
+	{% include 'cosinnus/v2/dashboard/timeline_button_follow.html' with item=item %}
+{% endblock %}
+
+{% comment %}  
+{% block comments %}
+	{% include 'cosinnus/v2/dashboard/timeline_item_comments.html' with item=item %}
+{% endblock %}
+{% endcomment %}
+
+
