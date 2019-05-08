@@ -85,7 +85,7 @@ class Poll(LikeableObjectMixin, BaseTaggableObjectModel):
     
     objects = PollManager()
     
-    timeline_template = 'cosinnus_poll/v2/timeline_item.html'
+    timeline_template = 'cosinnus_poll/v2/dashboard/timeline_item.html'
 
     class Meta(BaseTaggableObjectModel.Meta):
         ordering = ['-created', '-closed_date']
