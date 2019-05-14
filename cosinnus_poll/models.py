@@ -161,6 +161,9 @@ class Poll(LikeableObjectMixin, BaseTaggableObjectModel):
             Returns an empty list if nobody has voted on the poll. """
         return self.options.all().values_list('votes__voter__id', flat=True).distinct()
 
+    def get_comment_post_url(self):
+        return group_aware_reverse('cosinnus:poll:comment', kwargs={'group': self.group, 'poll_slug': self.slug})
+    
 
 @python_2_unicode_compatible
 class Option(ThumbnailableImageMixin, models.Model):

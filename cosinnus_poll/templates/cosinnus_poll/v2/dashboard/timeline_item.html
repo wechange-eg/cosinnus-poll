@@ -3,7 +3,7 @@
 
 {% block container_class %}timeline-item-poll{% endblock %}
 
-{% block creation_label %}{% trans "has created a poll" %}{% endblock %}
+{% block creation_label %}{% trans "created a poll" %}{% endblock %}
 
 {% block icon %}fa-bar-chart{% endblock %}
 
@@ -16,11 +16,4 @@
 {% block action_buttons %}
 	{% include 'cosinnus/v2/dashboard/timeline_button_follow.html' with item=item %}
 {% endblock %}
-
-{% comment %}  
-{% block comments %}
-	{% include 'cosinnus/v2/dashboard/timeline_item_comments.html' with item=item %}
-{% endblock %}
-{% endcomment %}
-
 
