@@ -132,6 +132,14 @@ class Poll(LikeableObjectMixin, BaseTaggableObjectModel):
         kwargs = {'group': self.group, 'slug': self.slug}
         return group_aware_reverse('cosinnus:poll:detail', kwargs=kwargs)
     
+    def get_edit_url(self):
+        kwargs = {'group': self.group, 'slug': self.slug}
+        return group_aware_reverse('cosinnus:poll:edit', kwargs=kwargs)
+    
+    def get_delete_url(self):
+        kwargs = {'group': self.group, 'slug': self.slug}
+        return group_aware_reverse('cosinnus:poll:delete', kwargs=kwargs)
+    
     def get_options_hash(self):
         """ Returns a hashable string containing all suggestions with their time.
             Useful to compare equality of suggestions for two doodles. """
@@ -281,6 +289,12 @@ class Comment(models.Model):
         if self.pk:
             return '%s#comment-%d' % (self.poll.get_absolute_url(), self.pk)
         return self.poll.get_absolute_url()
+        
+    def get_edit_url(self):
+        return group_aware_reverse('cosinnus:poll:comment-update', kwargs={'group': self.poll.group, 'pk': self.pk})
+
+    def get_delete_url(self):
+        return group_aware_reverse('cosinnus:poll:comment-delete', kwargs={'group': self.poll.group, 'pk': self.pk})
     
     def is_user_following(self, user):
         """ Delegates to parent object """
