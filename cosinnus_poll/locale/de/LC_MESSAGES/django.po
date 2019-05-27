@@ -5,16 +5,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 12:53+0100\n"
-"PO-Revision-Date: 2018-01-10 17:58+0100\n"
+"POT-Creation-Date: 2019-05-27 16:46+0200\n"
+"PO-Revision-Date: 2019-05-27 16:49+0100\n"
 "Last-Translator: Sebastian Henschel <sh@sinnwerkstatt.com>\n"
 "Language-Team: German <>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.5.4\n"
 
 msgid "Polls"
 msgstr "Umfragen"
@@ -77,7 +77,9 @@ msgstr "%(sender_name)s hat eine Umfrage kommentiert in der du getaggt bist"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in in %(team_name)s"
-msgstr "%(sender_name)s hat eine Umfrage kommentiert in der du getaggt bist in %(team_name)s"
+msgstr ""
+"%(sender_name)s hat eine Umfrage kommentiert in der du getaggt bist in "
+"%(team_name)s"
 
 msgid "A user commented on an poll you voted in"
 msgstr "Ein Mitglied hat eine Umfrage kommentiert in der du abgestimmt hast"
@@ -88,7 +90,9 @@ msgstr "%(sender_name)s hat eine Umfrage kommentiert in der du abgestimmt hast"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s"
-msgstr "%(sender_name)s hat eine Umfrage kommentiert in der du abgestimmt hast in %(team_name)s"
+msgstr ""
+"%(sender_name)s hat eine Umfrage kommentiert in der du abgestimmt hast in "
+"%(team_name)s"
 
 #, fuzzy
 #| msgid "A user created a new poll"
@@ -107,7 +111,9 @@ msgstr "%(sender_name)s hat eine deiner Umfragen kommentiert in %(team_name)s."
 
 #, fuzzy, python-format
 #| msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
-msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
+msgid ""
+"A new poll: \"%(object_name)s\" was created in %(team_name)s (which you "
+"follow)."
 msgstr "Neue Umfrage: \"%(object_name)s\" wurde in %(team_name)s erstellt."
 
 #, fuzzy
@@ -122,7 +128,8 @@ msgstr "%(sender_name)s hat eine Umfrage kommentiert in der du abgestimmt hast"
 
 #, fuzzy, python-format
 #| msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
-msgid "A poll you are following: \"%(object_name)s\" was updated in %(team_name)s."
+msgid ""
+"A poll you are following: \"%(object_name)s\" was updated in %(team_name)s."
 msgstr "Neue Umfrage: \"%(object_name)s\" wurde in %(team_name)s erstellt."
 
 #, fuzzy
@@ -142,7 +149,8 @@ msgstr "%(sender_name)s hat eine Umfrage kommentiert in der du abgestimmt hast"
 
 #, fuzzy, python-format
 #| msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
-msgid "Poll \"%(object_name)s\" you are following was completed in %(team_name)s."
+msgid ""
+"Poll \"%(object_name)s\" you are following was completed in %(team_name)s."
 msgstr "Umfrage: \"%(object_name)s\" wurde beendet in %(team_name)s."
 
 #, fuzzy
@@ -191,26 +199,40 @@ msgstr "Beschreibung"
 msgid "Multiple options votable"
 msgstr "Mehrere Optionen stimmbar"
 
-msgid "Does this poll allow users to vote on multiple options or just decide for one?"
-msgstr "Können Benutzer in dieser Umfrage für mehrere Optionen abstimmen oder sich nur für eine entscheiden?"
+msgid ""
+"Does this poll allow users to vote on multiple options or just decide for "
+"one?"
+msgstr ""
+"Können Benutzer in dieser Umfrage für mehrere Optionen abstimmen oder sich "
+"nur für eine entscheiden?"
 
 msgid "\"Maybe\" option enabled"
 msgstr "\"Vielleicht\"-Auswahl erlaubt"
 
-msgid "Is the maybe option enabled? Ignored and defaulting to False if ``multiple_votes==False``"
-msgstr "Dürfen Benutzer \"Vielleicht\" auswählen? Wird ignoriert und als False behandelt wenn ``multiple_votes==False``"
+msgid ""
+"Is the maybe option enabled? Ignored and defaulting to False if "
+"``multiple_votes==False``"
+msgstr ""
+"Dürfen Benutzer \"Vielleicht\" auswählen? Wird ignoriert und als False "
+"behandelt wenn ``multiple_votes==False``"
 
 msgid "Anyone can vote"
 msgstr "Jeder kann abstimmen"
 
-msgid "If true, anyone who can see this poll can vote on it. If false, only group members can."
-msgstr "Wenn ja, darf jeder der die Umfrage sehen kann dafür abstimmen. Wenn nein können nur Gruppenmitglieder abstimmen."
+msgid ""
+"If true, anyone who can see this poll can vote on it. If false, only group "
+"members can."
+msgstr ""
+"Wenn ja, darf jeder der die Umfrage sehen kann dafür abstimmen. Wenn nein "
+"können nur Gruppenmitglieder abstimmen."
 
 msgid "Show voters"
 msgstr "Abstimmer anzeigen"
 
 msgid "If true, display a list of which user voted for each option."
-msgstr "Wenn ausgewählt, zeigt an, welcher Benutzer wie für jede Option abgestimmt hat."
+msgstr ""
+"Wenn ausgewählt, zeigt an, welcher Benutzer wie für jede Option abgestimmt "
+"hat."
 
 msgid "Start"
 msgstr "Start"
@@ -327,7 +349,8 @@ msgstr "Umfrage archivieren"
 msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s has posted a comment on a poll you created in %(team_name)s:\n"
+"%(sender_name)s has posted a comment on a poll you created in "
+"%(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -341,14 +364,16 @@ msgid ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: "
+"%(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
 "Hi, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s hat einen Kommentar auf eine deiner Umfragen  in der Gruppe %(team_name)s geschrieben:\n"
+"%(sender_name)s hat einen Kommentar auf eine deiner Umfragen  in der Gruppe "
+"%(team_name)s geschrieben:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -362,7 +387,8 @@ msgstr ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Folge diesem Link um deine Benachrichtigungseinstellungen zu ändern: %(notification_settings_url)s )\n"
+"(Folge diesem Link um deine Benachrichtigungseinstellungen zu ändern: "
+"%(notification_settings_url)s )\n"
 "\n"
 "Dein %(site_name)s team.\n"
 "\n"
@@ -375,11 +401,13 @@ msgstr "%(sender_name)s hat eine deiner Umfragen kommentiert in %(team_name)s."
 msgid ""
 "Hi %(receiver_name)s,\n"
 "\n"
-"the poll \"%(object_name)s\", was completed in %(team_name)s by %(sender_name)s!\n"
+"the poll \"%(object_name)s\", was completed in %(team_name)s by "
+"%(sender_name)s!\n"
 msgstr ""
 "Hi, %(receiver_name)s,\n"
 "\n"
-"die Umfrage: \"%(object_name)s\" wurde abgeschlossen von %(sender_name)s in %(team_name)s erstellt!\n"
+"die Umfrage: \"%(object_name)s\" wurde abgeschlossen von %(sender_name)s in "
+"%(team_name)s erstellt!\n"
 
 msgid "The winning option was:"
 msgstr "Die Sieger-Option war:"
@@ -394,7 +422,8 @@ msgid ""
 "\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: "
+"%(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s Team."
 msgstr ""
@@ -403,7 +432,8 @@ msgstr ""
 "\n"
 "\n"
 "\n"
-"(Folge diesem Link um deine Benachrichtigungseinstellungen zu ändern: %(notification_settings_url)s )\n"
+"(Folge diesem Link um deine Benachrichtigungseinstellungen zu ändern: "
+"%(notification_settings_url)s )\n"
 "\n"
 "Dein %(site_name)s Team."
 
@@ -415,25 +445,29 @@ msgstr "Umfrage: \"%(object_name)s\" wurde beendet in %(team_name)s."
 msgid ""
 "Hi %(receiver_name)s,\n"
 "\n"
-"a new poll \"%(object_name)s\", was created in %(team_name)s by %(sender_name)s. \n"
+"a new poll \"%(object_name)s\", was created in %(team_name)s by "
+"%(sender_name)s. \n"
 "\n"
 "You can find it by following this link: %(object_url)s\n"
 "\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: "
+"%(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s Team."
 msgstr ""
 "Hi %(receiver_name)s,\n"
 "\n"
-"eine neue Umfrage \"%(object_name)s\" wurde in %(team_name)s von %(sender_name)s erstellt. \n"
+"eine neue Umfrage \"%(object_name)s\" wurde in %(team_name)s von "
+"%(sender_name)s erstellt. \n"
 "\n"
 "Du kannst sie finden indem du folgenden Link aufrufst: %(object_url)s\n"
 "\n"
 "\n"
 "\n"
-"(Folge diesem Link um deine Benachrichtigungseinstellungen zu ändern: %(notification_settings_url)s )\n"
+"(Folge diesem Link um deine Benachrichtigungseinstellungen zu ändern: "
+"%(notification_settings_url)s )\n"
 "\n"
 "Dein %(site_name)s Team."
 
@@ -441,7 +475,8 @@ msgstr ""
 msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s has posted a comment on a poll you were tagged in, in %(team_name)s:\n"
+"%(sender_name)s has posted a comment on a poll you were tagged in, in "
+"%(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -455,14 +490,16 @@ msgid ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: "
+"%(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
 "Hi, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s hat einen Kommentar zu einer Umfrage, in der du markiert bist, in der Gruppe %(team_name)s geschrieben:\n"
+"%(sender_name)s hat einen Kommentar zu einer Umfrage, in der du markiert "
+"bist, in der Gruppe %(team_name)s geschrieben:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -476,20 +513,24 @@ msgstr ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Folge diesem Link um deine Benachrichtigungseinstellungen zu ändern: %(notification_settings_url)s )\n"
+"(Folge diesem Link um deine Benachrichtigungseinstellungen zu ändern: "
+"%(notification_settings_url)s )\n"
 "\n"
 "Dein %(site_name)s team.\n"
 "\n"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in %(team_name)s."
-msgstr "%(sender_name)s hat eine Umfrage kommentiert in der du getaggt bist in %(team_name)s."
+msgstr ""
+"%(sender_name)s hat eine Umfrage kommentiert in der du getaggt bist in "
+"%(team_name)s."
 
 #, python-format
 msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s has posted a comment on a poll you voted in in %(team_name)s:\n"
+"%(sender_name)s has posted a comment on a poll you voted in in "
+"%(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -503,14 +544,16 @@ msgid ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: "
+"%(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
 "Hi, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s hat einen Kommentar zu einer Umfrage, in der du abgestimmt hast, in der Gruppe %(team_name)s geschrieben:\n"
+"%(sender_name)s hat einen Kommentar zu einer Umfrage, in der du abgestimmt "
+"hast, in der Gruppe %(team_name)s geschrieben:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -524,14 +567,17 @@ msgstr ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Folge diesem Link um deine Benachrichtigungseinstellungen zu ändern: %(notification_settings_url)s )\n"
+"(Folge diesem Link um deine Benachrichtigungseinstellungen zu ändern: "
+"%(notification_settings_url)s )\n"
 "\n"
 "Dein %(site_name)s team.\n"
 "\n"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s."
-msgstr "%(sender_name)s hat eine Umfrage kommentiert in der du abgestimmt hast in %(team_name)s."
+msgstr ""
+"%(sender_name)s hat eine Umfrage kommentiert in der du abgestimmt hast in "
+"%(team_name)s."
 
 msgid "Write comment..."
 msgstr "Kommentar schreiben..."
@@ -542,7 +588,9 @@ msgstr "Posten"
 msgid "Add poll"
 msgstr "Umfrage hinzufügen"
 
-msgid "There was an error in one of the fields you entered. Please correct it before saving!"
+msgid ""
+"There was an error in one of the fields you entered. Please correct it "
+"before saving!"
 msgstr ""
 
 msgid "Enter a title for the new poll."
@@ -554,8 +602,12 @@ msgstr "Beschreibung und Infos"
 msgid "Enter a description for the poll"
 msgstr "Gib eine Beschreibung für die Umfrage ein"
 
-msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
-msgstr "Hinweis: Du kannst die Daten für diese Umfrage nicht mehr bearbeiten, weil jemand bereits dafür abgestimmt hat!"
+msgid ""
+"Note: You cannot edit the options for this poll because someone has already "
+"cast their vote or the poll has been completed!"
+msgstr ""
+"Hinweis: Du kannst die Daten für diese Umfrage nicht mehr bearbeiten, weil "
+"jemand bereits dafür abgestimmt hat!"
 
 msgid "Poll Choices"
 msgstr "Umfrage-Wahlmöglichkeiten"
@@ -581,8 +633,12 @@ msgstr "Listet für jede Option auf, welcher Benutzer dafür abgestimmt hat."
 msgid "Public voting"
 msgstr "Öffentliches Abstimmen"
 
-msgid "Any logged in user who can see this poll can vote on it. If disabled, only group/project members can vote on it."
-msgstr "Jeder eingeloggte Benutzer, der die Umfrage sehen kann, kann in ihr Abstimmen. Wenn deaktiviert, können nur Gruppen/Projektmitglieder abstimmen."
+msgid ""
+"Any logged in user who can see this poll can vote on it. If disabled, only "
+"group/project members can vote on it."
+msgstr ""
+"Jeder eingeloggte Benutzer, der die Umfrage sehen kann, kann in ihr "
+"Abstimmen. Wenn deaktiviert, können nur Gruppen/Projektmitglieder abstimmen."
 
 msgid "Create"
 msgstr "Erstellen"
@@ -623,7 +679,8 @@ msgid "Complete without winner"
 msgstr "Ohne Sieger beenden"
 
 #, python-format
-msgid "Do you really want to complete poll \"%(title)s\" with no winning option?"
+msgid ""
+"Do you really want to complete poll \"%(title)s\" with no winning option?"
 msgstr "Möchtest du Umfrage „%(title)s“ wirklich ohne Sieger-Option beenden?"
 
 msgid "Complete poll without winner"
@@ -648,11 +705,22 @@ msgid "Votes"
 msgstr "Stimmen"
 
 #, python-format
-msgid "Do you really want to complete the poll and select \"%(description)s\" as winner?"
-msgstr "Möchtest du wirklich die Umfrage beenden und \"%(description)s\" als Sieger auswählen?"
+msgid ""
+"Do you really want to complete the poll and select \"%(description)s\" as "
+"winner?"
+msgstr ""
+"Möchtest du wirklich die Umfrage beenden und \"%(description)s\" als Sieger "
+"auswählen?"
 
 msgid "Complete poll"
 msgstr "Umfrage beenden"
+
+#| msgid "A user created a new poll"
+msgctxt ""
+"This appears next to new items in the timeline, as in '<Jane> created a new "
+"item'"
+msgid "created a poll"
+msgstr "hat eine Umfrage erstellt"
 
 msgid "There are no polls yet"
 msgstr "Es gibt noch keine Umfragen."
@@ -693,8 +761,11 @@ msgstr "Ihre Abstimmung wurde erfolgreich gespeichert."
 msgid "Your votes could not be saved."
 msgstr "Ihre Abstimmung konnte nicht gespeichert werden."
 
-msgid "The voting phase for this poll is over. You cannot vote for it any more."
-msgstr "Die Abstimmung für diese Umfrage ist bereits geschlossen. Du kannst deine Sitmme nicht mehr abgeben."
+msgid ""
+"The voting phase for this poll is over. You cannot vote for it any more."
+msgstr ""
+"Die Abstimmung für diese Umfrage ist bereits geschlossen. Du kannst deine "
+"Sitmme nicht mehr abgeben."
 
 msgid "In this poll you must vote for exactly one item!"
 msgstr "In dieser Umfrage musst du für exakt eine Option stimmen!"
@@ -731,344 +802,3 @@ msgstr "Dein Kommentar wurde erfolgreich gelöscht."
 
 #~ msgid "Events"
 #~ msgstr "Veranstaltungen"
-
-# The Cosinnus App Name
-#~ msgctxt "the_app"
-#~ msgid "event"
-#~ msgstr "Veranstaltungen"
-
-#~ msgid "A user created a new event"
-#~ msgstr "Ein Mitglied hat eine neue Veranstaltung eingetragen"
-
-#~ msgid "Upcoming Events"
-#~ msgstr "Aktuelle Veranstaltungen"
-
-#~ msgid "No upcoming events"
-#~ msgstr "Keine aktuellen Veranstaltungen"
-
-#~ msgid "Soonest Upcoming"
-#~ msgstr "Bald stattfindend"
-
-#~ msgid "Scheduled"
-#~ msgstr "Geplant"
-
-#~ msgid "Canceled"
-#~ msgstr "Abgebrochen"
-
-#~ msgid "End"
-#~ msgstr "Ende"
-
-#~ msgid "Note"
-#~ msgstr "Beschreibung"
-
-#~ msgid "Event date"
-#~ msgstr "Veranstaltungsdatum"
-
-#~ msgid "Location"
-#~ msgstr "Ort"
-
-#~ msgid "Street"
-#~ msgstr "Straße"
-
-#~ msgid "ZIP code"
-#~ msgstr "PLZ"
-
-#~ msgid "City"
-#~ msgstr "Stadt"
-
-#~ msgid "Is public (on website)"
-#~ msgstr "Öffentlich anzeigen"
-
-#~ msgid "URL"
-#~ msgstr "URL"
-
-#~ msgid "Event"
-#~ msgstr "Veranstaltung"
-
-#~ msgid "%(event)s (%(date)s - %(end)s)"
-#~ msgstr "%(event)s (%(date)s - %(end)s)"
-
-#~ msgid "%(event)s (%(from)s - %(to)s)"
-#~ msgstr "%(event)s (%(from)s - %(to)s)"
-
-#~ msgid "%(event)s (pending)"
-#~ msgstr "%(event)s (Termin in der Schwebe)"
-
-#~ msgid "Suggestion"
-#~ msgstr "Terminvorschlag"
-
-#~ msgid "Suggestions"
-#~ msgstr "Terminvorschläge"
-
-#~ msgctxt "time"
-#~ msgid "all day"
-#~ msgstr "ganztägig"
-
-#~ msgctxt "time"
-#~ msgid "at"
-#~ msgstr "um"
-
-#~ msgctxt "time"
-#~ msgid "o'clock"
-#~ msgstr "Uhr"
-
-#~ msgctxt "time"
-#~ msgid "from"
-#~ msgstr "von"
-
-#~ msgctxt "time"
-#~ msgid "until"
-#~ msgstr "bis"
-
-#~ msgid "Add unscheduled event"
-#~ msgstr "Terminvorschlag hinzufügen"
-
-#~ msgid "Enter a title for the new event to be scheduled."
-#~ msgstr "Gib einen Titel für den Terminvorschlag an."
-
-#~ msgid "Time"
-#~ msgstr "Uhrzeit"
-
-#~ msgid "Please select the available days in the calendar."
-#~ msgstr "Bitte wähle vorgeschlagene Tage im Kalender aus."
-
-#~ msgid "You can select the same day more than once."
-#~ msgstr "Du kannst auch einen Tag mehrfach auswählen."
-
-#~ msgid "Time: e.g. 10 or 10:30."
-#~ msgstr "Uhrzeit z.B.: 10 oder 10:30."
-
-#~ msgid "External Link for the event (optional)."
-#~ msgstr "Externer Link zur Veranstaltung (optional)."
-
-#~ msgid "Location (optional)."
-#~ msgstr "Ort (optional)."
-
-#~ msgid "Schedule an event"
-#~ msgstr "Termin finden"
-
-#~ msgid "This event has already been scheduled. Voting is closed."
-#~ msgstr "Die Terminfindung für diese Veranstaltung ist bereits beendet. Die Abstimmung ist geschlossen."
-
-#~ msgid "Nobody has voted for this event poll yet."
-#~ msgstr "Es hat noch niemand für diese Terminfindung abgestimmt."
-
-#~ msgid "Create an event from one of the suggestions"
-#~ msgstr "Veranstaltung für einen der Termine erstellen."
-
-#~ msgid "Set the date to %(suggestion)s."
-#~ msgstr "Den Termin auf %(suggestion)s festlegen."
-
-#~ msgid "When do you have time?"
-#~ msgstr "Wann hast du Zeit"
-
-#~ msgid "Delete unscheduled event"
-#~ msgstr "Terminfindung löschen"
-
-#~ msgid "Add event"
-#~ msgstr "Veranstaltung hinzufügen"
-
-#~ msgid "From"
-#~ msgstr "Von"
-
-#~ msgid "Date"
-#~ msgstr "Datum"
-
-#~ msgid "Start date."
-#~ msgstr "Startdatum"
-
-#~ msgid "Until"
-#~ msgstr "Bis"
-
-#~ msgid "End date."
-#~ msgstr "Enddatum"
-
-#~ msgid "Kalender"
-#~ msgstr "Calendar"
-
-#~ msgid "Copy this iCal-link into your calendar application to import current events:"
-#~ msgstr "Dieser iCal-Link kann für Terminkalender genutzt werden um aktuelle Veranstaltungen zu importieren und anzuzeigen:"
-
-#~ msgid "iCal Feed"
-#~ msgstr "iCal Feed"
-
-#~ msgid "Enter the title for a new event or select a day in the Calendar."
-#~ msgstr "Gib den Titel für eine neue Veranstaltung ein oder klicke auf einen Tag im Kalender."
-
-#~ msgid "Export event feed"
-#~ msgstr "Feed für Veranstaltungen"
-
-#~ msgid "Create Event"
-#~ msgstr "Veranstaltung anlegen"
-
-#~ msgid "Would you like to create an event"
-#~ msgstr "Möchtest du eine Veranstaltung anlegen"
-
-#~ msgid "on"
-#~ msgstr "am"
-
-#~ msgid "from"
-#~ msgstr "von"
-
-#~ msgid "until"
-#~ msgstr "bis"
-
-#~ msgid "Cancel"
-#~ msgstr "Abbrechen"
-
-#~ msgid "Planned Events"
-#~ msgstr "Geplante Veranstaltungen"
-
-#~ msgid "Past Events"
-#~ msgstr "Vergangene Veranstaltungen"
-
-#~ msgid "There are no current or future events."
-#~ msgstr "Es sind keine aktuellen oder zukünftigen Veranstaltungen geplant."
-
-#~ msgid "Return to Event Polls"
-#~ msgstr "Zurück zu Terminvorschläge"
-
-#~ msgid "Calendar"
-#~ msgstr "Kalender"
-
-#~ msgid "List"
-#~ msgstr "Liste"
-
-#~ msgid "Delete event"
-#~ msgstr "Veranstaltung Löschen"
-
-#~ msgid ""
-#~ "Hi %(receiver_name)s,\n"
-#~ "\n"
-#~ "a new event \"%(object_name)s\", on %(event_date)s, was announced in %(team_name)s by %(sender_name)s. \n"
-#~ "\n"
-#~ "You can find it by following this link: %(object_url)s\n"
-#~ "\n"
-#~ "\n"
-#~ "\n"
-#~ "(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
-#~ "\n"
-#~ "Your %(site_name)s Team."
-#~ msgstr ""
-#~ "Hi %(receiver_name)s,\n"
-#~ "\n"
-#~ "eine neue Veranstaltung \"%(object_name)s\", am %(event_date)s, wurde in %(team_name)s von %(sender_name)s eingetragen. \n"
-#~ "\n"
-#~ "Du kannst sie finden indem du folgenden Link aufrufst: %(object_url)s\n"
-#~ "\n"
-#~ "\n"
-#~ "\n"
-#~ "(Folge diesem Link um deine Benachrichtigungseinstellungen zu ändern: %(notification_settings_url)s )\n"
-#~ "\n"
-#~ "Dein %(site_name)s Team."
-
-#~ msgid "A new event: \"%(object_name)s\" was announced in %(team_name)s."
-#~ msgstr "Neue Veranstaltung: \"%(object_name)s\" wurde in %(team_name)s eingetragen."
-
-#~ msgid "Delete Event"
-#~ msgstr "Veranstaltung Löschen"
-
-#~ msgid "(Canceled!)"
-#~ msgstr "(Abgesagt!)"
-
-#~ msgid "More"
-#~ msgstr "Mehr"
-
-#~ msgid "Upcoming events"
-#~ msgstr "Aktuelle Veranstaltungen"
-
-#~ msgid "Unscheduled event \"%(title)s\" was edited successfully."
-#~ msgstr "Der Terminvorschlag \"%(title)s\" wurde erfolgreich bearbeitet."
-
-#~ msgid "Unscheduled event \"%(title)s\" could not be edited."
-#~ msgstr "Der Terminvorschlag \"%(title)s\" konnte nicht bearbeitet werden."
-
-#~ msgid "Unscheduled event \"%(title)s\" was added successfully."
-#~ msgstr "Der Terminvorschlag \"%(title)s\" wurde erfolgreich hinzugefügt."
-
-#~ msgid "Unscheduled event \"%(title)s\" could not be added."
-#~ msgstr "Der Terminvorschlag \"%(title)s\" konnte nicht hinzugefügt werden."
-
-#~ msgid "Unscheduled event \"%(title)s\" was deleted successfully."
-#~ msgstr "Der Terminvorschlag \"%(title)s\" wurde erfolgreich gelöscht."
-
-#~ msgid "Unscheduled event \"%(title)s\" could not be deleted."
-#~ msgstr "Der Terminvorschlag \"%(title)s\" konnte nicht gelöscht werden."
-
-#~ msgid "Event cannot be completed: No date was supplied."
-#~ msgstr "Die Terminfindung konnte nicht abgeschlossen werden: Es wurde kein Zieldatum übermittelt."
-
-#~ msgid "The event was created successfully at the specified date."
-#~ msgstr "Die Veranstaltung wurde erfolgreich an dem angegebenen Termin erstellt."
-
-#~ msgid "Upcoming events in"
-#~ msgstr "Aktuelle Veranstaltungen in"
-
-#~ msgid "%s - Events"
-#~ msgstr "%s - Veranstaltungen"
-
-#~ msgid "Upcoming events in %s."
-#~ msgstr "Aktuelle Veranstaltungen in %s"
-
-#~ msgid "There are no events to be scheduled."
-#~ msgstr "Es gibt keine aktuellen Terminvorschläge."
-
-#~ msgid "Event löschen"
-#~ msgstr "Veranstaltung löschen"
-
-#~ msgid "There are no upcoming events posts yet"
-#~ msgstr "Es gibt keine anstehenden Veranstaltungen."
-
-#~ msgid "Are you sure to remove this event with all its suggestions and votes?"
-#~ msgstr "Sind Sie sicher, dass Sie diese Veranstaltung mit den dazugehörigen Vorschlägen und Abstimmungen löschen möchten?"
-
-#~ msgid "Created by"
-#~ msgstr "Erstellt durch"
-
-#~ msgctxt "the verb"
-#~ msgid "Vote"
-#~ msgstr "Abstimmen"
-
-#~ msgid "Add"
-#~ msgstr "Hinzufügen"
-
-#~ msgctxt "sinn"
-#~ msgid "Save"
-#~ msgstr "Speichern"
-
-#~ msgid "No tags available."
-#~ msgstr "Keine Schlagwörter vorhanden."
-
-#~ msgctxt "the verb"
-#~ msgid "Export"
-#~ msgstr "Exportieren"
-
-#~ msgid "Future events"
-#~ msgstr "Aktuelle Veranstaltungen"
-
-#~ msgid "Tags"
-#~ msgstr "Schlagwörter"
-
-#~ msgid "Show"
-#~ msgstr "Anzeigen"
-
-#~ msgid "Widget title"
-#~ msgstr "Widget-Titel"
-
-#~ msgid "Widget Icon (FA)"
-#~ msgstr "Widget-Icon (fa)"
-
-#~ msgid "Link label"
-#~ msgstr "Widget-Button-Titel"
-
-#~ msgid "Automatically selected the only given date suggestion as event date."
-#~ msgstr "Es wurde automatisch der einzig eingetragene Terminvorschlag als Veranstaltungsdatum gewählt."
-
-#~ msgid "Event does not exist or you are not allowed to modify it."
-#~ msgstr "Entweder existiert diese Veranstaltung nicht oder Ihnen fehlen die Rechte um die Veranstaltung zu bearbeiten."
-
-#~ msgid "attached__cosinnus_event__Event"
-#~ msgstr "Angehängte Veranstaltungen"
-
-#~ msgid "Template was called but no events are passed to be shown."
-#~ msgstr "Das Template wurde gerufen, aber keine Veranstaltungen wurden übergeben."
