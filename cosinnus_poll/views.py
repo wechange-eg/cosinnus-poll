@@ -345,6 +345,8 @@ class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
             
         
         ret = super(PollVoteView, self).formset_valid(formset)
+        self.object.update_last_action(now(), self.request.user, save=True)
+        
         messages.success(self.request, self.message_success )
         return ret
     
@@ -435,7 +437,9 @@ class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
         form.instance.creator = self.request.user
         form.instance.poll = self.poll
         messages.success(self.request, self.message_success)
-        return super(CommentCreateView, self).form_valid(form)
+        ret = super(CommentCreateView, self).form_valid(form)
+        self.poll.update_last_action(now(), self.request.user, save=True)
+        return ret
 
     def get_context_data(self, **kwargs):
         context = super(CommentCreateView, self).get_context_data(**kwargs)
