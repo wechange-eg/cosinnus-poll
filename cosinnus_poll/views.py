@@ -43,7 +43,8 @@ from cosinnus.templatetags.cosinnus_tags import has_write_access
 from annoying.exceptions import Redirect
 from django import forms
 from cosinnus.views.common import DeleteElementView, apply_likefollow_object
-from cosinnus.views.mixins.tagged import EditViewWatchChangesMixin
+from cosinnus.views.mixins.tagged import EditViewWatchChangesMixin,\
+    RecordLastVisitedMixin
 from cosinnus_poll import cosinnus_notifications
 from django.contrib.auth import get_user_model
 
@@ -237,7 +238,7 @@ class PollDeleteView(PollFormMixin, DeleteView):
 poll_delete_view = PollDeleteView.as_view()
 
 
-class PollVoteView(RequireReadMixin, FilterGroupMixin, SingleObjectMixin,
+class PollVoteView(RequireReadMixin, RecordLastVisitedMixin, FilterGroupMixin, SingleObjectMixin,
         FormSetView):
 
     message_success = _('Your votes were saved successfully.')
