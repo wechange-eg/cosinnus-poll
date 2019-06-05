@@ -47,6 +47,8 @@ from cosinnus.views.mixins.tagged import EditViewWatchChangesMixin,\
     RecordLastVisitedMixin
 from cosinnus_poll import cosinnus_notifications
 from django.contrib.auth import get_user_model
+from ajax_forms.ajax_forms import AjaxFormsCommentCreateViewMixin,\
+    AjaxFormsDeleteViewMixin
 
 
 class PollIndexView(RequireReadMixin, RedirectView):
@@ -425,7 +427,8 @@ poll_complete_view = PollCompleteView.as_view()
 
 
 
-class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
+class CommentCreateView(RequireWriteMixin, FilterGroupMixin, AjaxFormsCommentCreateViewMixin,
+        CreateView):
 
     form_class = CommentForm
     group_field = 'poll__group'
@@ -468,7 +471,7 @@ class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
 comment_create = CommentCreateView.as_view()
 
 
-class CommentDeleteView(RequireWriteMixin, FilterGroupMixin, DeleteView):
+class CommentDeleteView(RequireWriteMixin, FilterGroupMixin, AjaxFormsDeleteViewMixin, DeleteView):
 
     group_field = 'poll__group'
     model = Comment
