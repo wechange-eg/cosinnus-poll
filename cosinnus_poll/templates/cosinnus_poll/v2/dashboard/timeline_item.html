@@ -3,7 +3,13 @@
 
 {% block container_class %}timeline-item-poll{% endblock %}
 
-{% block creation_label %}{% trans "created a poll" context "This appears next to new items in the timeline, as in '<Jane> created a new item'" %}{% endblock %}
+{% block creation_label %}
+	{% if item.creator == user %}
+		{% trans "You created a poll" %}
+	{% else %}
+		{% trans "created a poll" context "This appears next to new items in the timeline, as in '<Jane> created a new item'" %}
+	{% endif %}
+{% endblock %}
 
 {% block icon %}fa-bar-chart{% endblock %}
 

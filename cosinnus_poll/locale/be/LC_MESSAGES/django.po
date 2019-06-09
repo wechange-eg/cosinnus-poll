@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-27 16:46+0200\n"
+"POT-Creation-Date: 2019-06-09 12:59+0200\n"
 "PO-Revision-Date: 2019-05-06 16:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -635,6 +635,11 @@ msgstr "Вы сапраўды хочаце завяршыць апытанне �
 
 msgid "Complete poll"
 msgstr "Завяршыць апытанне"
+
+#, fuzzy
+#| msgid "A user created a new poll"
+msgid "You created a poll"
+msgstr "Карыстальнік(-ца) стварыў(-ла) новае апытанне"
 
 #, fuzzy
 #| msgid "A user created a new poll"
