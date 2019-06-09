@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-09 12:59+0200\n"
-"PO-Revision-Date: 2019-05-06 16:54+0100\n"
+"POT-Creation-Date: 2019-06-09 13:20+0200\n"
+"PO-Revision-Date: 2019-06-09 13:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: be\n"
@@ -147,7 +147,7 @@ msgid "No current polls"
 msgstr "Няма бягучых апытанняў"
 
 msgid "Created By"
-msgstr "Створана карыстальнікам(-цай)"
+msgstr "Створаныя карыстальнікам(-цай)"
 
 msgid "Newest Created"
 msgstr "Найноўшыя створаныя"
@@ -273,7 +273,7 @@ msgid "Past Polls"
 msgstr "Мінулыя апытанні"
 
 msgid "by"
-msgstr "ад"
+msgstr "Стваральнік(-ца):"
 
 msgid "Delete"
 msgstr "Выдаліць"
@@ -593,7 +593,7 @@ msgstr "Галасаваць"
 
 #, python-format
 msgid "Vote for %(title)s"
-msgstr "Галасаваць за %(title)s"
+msgstr "Галасаванне за %(title)s"
 
 msgid "This poll has been completed. Voting is closed."
 msgstr "Гэта апытанне завяршылася. Галасаванне закрыта."
