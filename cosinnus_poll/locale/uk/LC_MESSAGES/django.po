@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:30+0200\n"
-"PO-Revision-Date: 2018-12-12 14:07+0100\n"
+"POT-Creation-Date: 2019-07-03 17:47+0200\n"
+"PO-Revision-Date: 2019-07-02 14:11+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk_UA\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 2.0.6\n"
 
 msgid "Polls"
 msgstr "Опитування"
@@ -526,7 +526,7 @@ msgid "Add poll"
 msgstr "Додати опитування"
 
 msgid "There was an error in one of the fields you entered. Please correct it before saving!"
-msgstr ""
+msgstr "В одному з заповнених полів сталася помилка. Будь ласка, виправ її перед збереженням!"
 
 msgid "Enter a title for the new poll."
 msgstr "Введіть назву для нового опитування."
@@ -637,16 +637,12 @@ msgstr "Ви дійсно бажаєте завершити це опитува�
 msgid "Complete poll"
 msgstr "Завершити опитування"
 
-#, fuzzy
-#| msgid "A user created a new poll"
 msgid "You created a poll"
-msgstr "Користувач/-ка створив/-ла нове опитування щодо дати"
+msgstr "Ти створи(ла)в опитування"
 
-#, fuzzy
-#| msgid "A user created a new poll"
 msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "created a poll"
-msgstr "Користувач/-ка створив/-ла нове опитування щодо дати"
+msgstr "Створено опитування"
 
 msgid "There are no polls yet"
 msgstr "Поки немає опитувань"

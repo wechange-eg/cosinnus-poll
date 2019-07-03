@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wechange RU\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-28 16:30+0200\n"
-"PO-Revision-Date: 2018-12-11 19:34+0100\n"
+"POT-Creation-Date: 2019-07-03 17:47+0200\n"
+"PO-Revision-Date: 2019-07-03 17:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 1.5.4\n"
 
 msgid "Polls"
 msgstr "Опросы"
@@ -645,16 +645,12 @@ msgstr "Вы действительно хотите завершить опро
 msgid "Complete poll"
 msgstr "Завершить опрос"
 
-#, fuzzy
-#| msgid "A user created a new poll"
 msgid "You created a poll"
-msgstr "Пользователь создал новый опрос"
+msgstr "Ты создал(а) новый опрос"
 
-#, fuzzy
-#| msgid "A user created a new poll"
 msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "created a poll"
-msgstr "Пользователь создал новый опрос"
+msgstr "Созданный опрос"
 
 msgid "There are no polls yet"
 msgstr "Опросы ещё не созданы"
@@ -749,272 +745,3 @@ msgstr "Ваш комментарий удален."
 
 #~ msgid "Soonest Upcoming"
 #~ msgstr "Ближайшее событие"
-
-# ???
-#~ msgid "Scheduled"
-#~ msgstr "Запланировано"
-
-#~ msgid "Canceled"
-#~ msgstr "Отменено"
-
-#~ msgid "End"
-#~ msgstr "Конец"
-
-# ???
-#~ msgid "Note"
-#~ msgstr "Описание"
-
-#~ msgid "Event date"
-#~ msgstr "Дата события"
-
-#~ msgid "Location"
-#~ msgstr "Место"
-
-#~ msgid "Latitude"
-#~ msgstr "Широта"
-
-#~ msgid "Longitude"
-#~ msgstr "Долгота"
-
-#~ msgid "Street"
-#~ msgstr "Улица"
-
-#~ msgid "ZIP code"
-#~ msgstr "Почтовый индекс"
-
-#~ msgid "City"
-#~ msgstr "Город"
-
-#~ msgid "Is public (on website)"
-#~ msgstr "В открытом доступе (на сайте)"
-
-#~ msgid "URL"
-#~ msgstr "Ссылка"
-
-#~ msgid "Event"
-#~ msgstr "Cобытие"
-
-#~ msgid "%(event)s (%(date)s - %(end)s)"
-#~ msgstr "%(event)s (%(date)s - %(end)s)"
-
-#~ msgid "%(event)s (%(from)s - %(to)s)"
-#~ msgstr "%(event)s (%(from)s - %(to)s)"
-
-#~ msgid "%(event)s (pending)"
-#~ msgstr "%(event)s (дата в процессе обработки)"
-
-#~ msgid "Suggestion"
-#~ msgstr "Предложение даты"
-
-#~ msgid "Suggestions"
-#~ msgstr "Предложения даты"
-
-#~ msgctxt "time"
-#~ msgid "all day"
-#~ msgstr "весь день"
-
-#~ msgctxt "time"
-#~ msgid "at"
-#~ msgstr "в"
-
-# ???
-#~ msgctxt "time"
-#~ msgid "o'clock"
-#~ msgstr "час/-а/-ов"
-
-#~ msgctxt "time"
-#~ msgid "from"
-#~ msgstr "с"
-
-#~ msgctxt "time"
-#~ msgid "until"
-#~ msgstr "по"
-
-#~ msgid "Add unscheduled event"
-#~ msgstr "Добавить предложение по дате"
-
-#~ msgid "Enter a title for the new event to be scheduled."
-#~ msgstr "Введите название нового запланированного события"
-
-#~ msgid "Time"
-#~ msgstr "Время"
-
-#~ msgid "Please select the available days in the calendar."
-#~ msgstr "Пожалуйста, предложите подходящие дни с помощью календаря"
-
-#~ msgid "You can select the same day more than once."
-#~ msgstr "Вы можете выбрать один и тот же день несколько раз"
-
-#~ msgid "Time: e.g. 10 or 10:30."
-#~ msgstr "Время, например, 10 или 10:30"
-
-#~ msgid "External Link for the event (optional)."
-#~ msgstr "Внешняя ссылка на cобытие (необязательно)"
-
-#~ msgid "Location (optional)."
-#~ msgstr "Место (необязательно)"
-
-#~ msgid "Schedule an event"
-#~ msgstr "Запланировать событие"
-
-#~ msgid "This event has already been scheduled. Voting is closed."
-#~ msgstr "Это событие уже запланировано. Голосование закрыто"
-
-#~ msgid "Nobody has voted for this event poll yet."
-#~ msgstr "По этим датам еще никто не проголосовал"
-
-#~ msgid "Create an event from one of the suggestions"
-#~ msgstr "Создать событие из предложенных"
-
-# ???
-#~ msgid "Set the date to %(suggestion)s."
-#~ msgstr "Установить дату на %(suggestion)s"
-
-#~ msgid "When do you have time?"
-#~ msgstr "Когда у Вас есть время?"
-
-#~ msgid "Delete unscheduled event"
-#~ msgstr "Удалить опрос дат"
-
-#~ msgid "Add event"
-#~ msgstr "Добавить событие"
-
-#~ msgid "From"
-#~ msgstr "С"
-
-#~ msgid "Date"
-#~ msgstr "Дата"
-
-#~ msgid "Start date."
-#~ msgstr "Дата начала"
-
-#~ msgid "Until"
-#~ msgstr "До"
-
-#~ msgid "End date."
-#~ msgstr "Дата завершения"
-
-#~ msgid "Kalender"
-#~ msgstr "Календарь"
-
-#~ msgid "Copy this iCal-link into your calendar application to import current events:"
-#~ msgstr "Скопируйте эту ссылку iCal в Ваш календарь, чтобы импортировать текущие события:"
-
-#~ msgid "iCal Feed"
-#~ msgstr "Лента новостей iCal"
-
-#~ msgid "Enter the title for a new event or select a day in the Calendar."
-#~ msgstr "Введите название нового события или выберите день в календаре"
-
-#~ msgid "Export event feed"
-#~ msgstr "Экспортировать ленту новостей события"
-
-#~ msgid "Create Event"
-#~ msgstr "Создать событие"
-
-#~ msgid "Would you like to create an event"
-#~ msgstr "Вы хотите создать событие"
-
-#~ msgid "on"
-#~ msgstr "в"
-
-#~ msgid "from"
-#~ msgstr "с"
-
-#~ msgid "until"
-#~ msgstr "по"
-
-#~ msgid "Cancel"
-#~ msgstr "Отменить"
-
-#~ msgid "OK"
-#~ msgstr "ОК"
-
-#~ msgid "Planned Events"
-#~ msgstr "Запланированные события"
-
-#~ msgid "Past Events"
-#~ msgstr "Прошлые события"
-
-#~ msgid "There are no current or future events."
-#~ msgstr "Текущих или будущих событий нет"
-
-#~ msgid "Return to Event Polls"
-#~ msgstr "Вернуться к опросу дат"
-
-#~ msgid "Calendar"
-#~ msgstr "Календарь"
-
-#~ msgid "List"
-#~ msgstr "Список"
-
-#~ msgid "Delete event"
-#~ msgstr "Удалить cобытие"
-
-#~ msgid ""
-#~ "Hi %(receiver_name)s,\n"
-#~ "\n"
-#~ "a new event \"%(object_name)s\", on %(event_date)s, was announced in %(team_name)s by %(sender_name)s. \n"
-#~ "\n"
-#~ "You can find it by following this link: %(object_url)s\n"
-#~ "\n"
-#~ "\n"
-#~ "\n"
-#~ "(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
-#~ "\n"
-#~ "Your %(site_name)s Team."
-#~ msgstr ""
-#~ "Здравствуйте, %(receiver_name)s,\n"
-#~ "\n"
-#~ "\n"
-#~ "новое событие \"%(object_name)s\", которое состоится %(event_date)s, было размещено в %(team_name)s пользователем %(sender_name)s. \n"
-#~ "\n"
-#~ "Вы можете найти его по этой ссылке: %(object_url)s\n"
-#~ "\n"
-#~ "\n"
-#~ "\n"
-#~ "(Перейдите по этой ссылке, чтобы изменить настройки уведомлений: %(notification_settings_url)s )\n"
-#~ "\n"
-#~ "Ваша команда %(site_name)s"
-
-#~ msgid "A new event: \"%(object_name)s\" was announced in %(team_name)s."
-#~ msgstr "Новое событие: \"%(object_name)s\" было опубликовано в %(team_name)s"
-
-#~ msgid "Delete Event"
-#~ msgstr "Удалить событие"
-
-#~ msgid "(Canceled!)"
-#~ msgstr "(Отменено!)"
-
-#~ msgid "More"
-#~ msgstr "Больше"
-
-#~ msgid "Upcoming events"
-#~ msgstr "Предстоящие события"
-
-#~ msgid "Unscheduled event \"%(title)s\" was edited successfully."
-#~ msgstr "Предложение даты \"%(title)s\" отредактировано"
-
-#~ msgid "Unscheduled event \"%(title)s\" could not be edited."
-#~ msgstr "Невозможно отредактировать предложение даты \"%(title)s\""
-
-#~ msgid "Unscheduled event \"%(title)s\" was added successfully."
-#~ msgstr "Предложение по дате \"%(title)s\" добавлено"
-
-#~ msgid "Unscheduled event \"%(title)s\" could not be added."
-#~ msgstr "Невозможно добавить предложение по дате \"%(title)s\""
-
-#~ msgid "Unscheduled event \"%(title)s\" was deleted successfully."
-#~ msgstr "Предложение по дате \"%(title)s\" удалено"
-
-#~ msgid "Unscheduled event \"%(title)s\" could not be deleted."
-#~ msgstr "Невозможно удалить предложение по дате \"%(title)s\""
-
-#~ msgid "Event cannot be completed: No date was supplied."
-#~ msgstr "Невозможно внести событие. Отсутствует дата"
-
-#~ msgid "The event was created successfully at the specified date."
-#~ msgstr "Событие создано и привязано к указанной дате"
-
-#~ msgid "Upcoming events in"
-#~ msgstr "Ближайшие события в"
