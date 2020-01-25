@@ -104,6 +104,10 @@ class Poll(LikeableObjectMixin, BaseTaggableObjectModel):
         readable = _('Poll: %(poll)s (%(state)s)') % {'poll': self.title, 'state': state_verbose}
         return readable
     
+    def get_icon(self):
+        """ Returns the font-awesome icon specific to this object type """
+        return 'fa-bar-chart'
+    
     def save(self, *args, **kwargs):
         created = bool(self.pk) == False
         super(Poll, self).save(*args, **kwargs)
