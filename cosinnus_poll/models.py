@@ -288,6 +288,20 @@ class Comment(models.Model):
             'poll': self.poll.title,
             'creator': self.creator.get_full_name(),
         }
+    
+    def get_icon(self):
+        """ Returns the font-awesome icon specific to this object type """
+        return 'fa-comment'
+    
+    @property
+    def parent(self):
+        """ Returns the parent object of this comment """
+        return self.poll
+    
+    def get_notification_hash_id(self):
+        """ Overrides the item hashing for notification alert hashing, so that
+            he parent item is considered as "the same" item, instead of this comment """
+        return self.parent.id
 
     def get_absolute_url(self):
         if self.pk:
