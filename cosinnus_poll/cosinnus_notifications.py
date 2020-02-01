@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 import django.dispatch as dispatch
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, ngettext_lazy as n_
 
 """ Cosinnus:Notifications configuration etherpad. 
     See http://git.sinnwerkstatt.com/cosinnus/cosinnus-core/wikis/cosinnus-notifications-guidelines.
@@ -51,6 +51,10 @@ notifications = {
         'default': True,
         'moderatable_content': True,
         
+        'alert_text': _('%(sender_name)s created the poll %(object_name)s'),
+        'alert_text_multi': _('%(sender_name)s created %(count)d polls'),
+        'alert_multi_type': 2,
+        
         'is_html': True,
         'snippet_type': 'poll',
         'event_text': _('New poll by %(sender_name)s'),
@@ -71,6 +75,10 @@ notifications = {
         'supercedes_notifications': ['following_poll_completed'],
         'default': True,
         
+        'alert_text': _('%(sender_name)s completed the poll %(object_name)s you voted on'),
+        'alert_text_multi': _('%(sender_name)s completed %(count)d polls you voted on'),
+        'alert_multi_type': 2,
+        
         'is_html': True,
         'snippet_type': 'poll',
         'event_text': _("%(sender_name)s completed the poll"),
@@ -90,6 +98,11 @@ notifications = {
         'default': True,
         'moderatable_content': True,
         
+        'alert_text': _('%(sender_name)s commented on your poll %(object_name)s'),
+        'alert_text_multi': n_('%(sender_name)s and %(count_minus_one)d other commented on your poll %(object_name)s',
+                               '%(sender_name)s and %(count_minus_one)d others commented on your poll %(object_name)s', 'count_minus_one'),
+        'alert_multi_type': 1,
+        
         'is_html': True,
         'snippet_type': 'poll',
         'event_text': _('%(sender_name)s commented on your poll'),
@@ -100,6 +113,7 @@ notifications = {
             'object_name': 'poll.title', 
             'object_url': 'get_absolute_url', 
             'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'alert_image_url': 'get_icon',
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
@@ -111,6 +125,12 @@ notifications = {
         'signals': [tagged_poll_comment_posted],
         'default': True,
         
+        'alert_text': _('%(sender_name)s commented on the poll %(object_name)s'),
+        'alert_text_multi': n_('%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s',
+                               '%(sender_name)s and %(count_minus_one)d others commented on the poll %(object_name)s', 'count_minus_one'),
+        'alert_multi_type': 1,
+        'alert_reason': _('You were tagged in this poll'),
+        
         'is_html': True,
         'snippet_type': 'poll',
         'event_text': _('%(sender_name)s commented on a poll you were tagged in'),
@@ -120,6 +140,7 @@ notifications = {
             'object_name': 'poll.title', 
             'object_url': 'get_absolute_url', 
             'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'alert_image_url': 'get_icon',
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
@@ -131,6 +152,12 @@ notifications = {
         'signals': [voted_poll_comment_posted],
         'default': True,
         
+        'alert_text': _('%(sender_name)s commented on the poll %(object_name)s'),
+        'alert_text_multi': n_('%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s',
+                               '%(sender_name)s and %(count_minus_one)d others commented on the poll %(object_name)s', 'count_minus_one'),
+        'alert_multi_type': 1,
+        'alert_reason': _('You voted on this poll'),
+        
         'is_html': True,
         'snippet_type': 'poll',
         'event_text': _('%(sender_name)s commented on a poll you voted in'),
@@ -140,6 +167,7 @@ notifications = {
             'object_name': 'poll.title', 
             'object_url': 'get_absolute_url', 
             'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'alert_image_url': 'get_icon',
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
@@ -151,6 +179,10 @@ notifications = {
         'supercedes_notifications': ['poll_created'],
         'requires_object_state_check': 'group.is_user_following',
         'hidden': True,
+        
+        'alert_text': _('%(sender_name)s created the poll %(object_name)s'),
+        'alert_text_multi': _('%(sender_name)s created %(count)d polls'),
+        'alert_multi_type': 2,
         
         'is_html': True,
         'snippet_type': 'poll',
@@ -171,6 +203,10 @@ notifications = {
         'requires_object_state_check': 'is_user_following',
         'hidden': True,
         
+        'alert_text': _('%(sender_name)s updated the poll %(object_name)s'),
+        'alert_multi_type': 1,
+        'alert_reason': _('You are following this poll'),
+        
         'is_html': True,
         'snippet_type': 'poll',
         'event_text': _('%(sender_name)s updated a poll you are following'),
@@ -188,6 +224,11 @@ notifications = {
         'multi_preference_set': 'MULTI_followed_object_notification',
         'requires_object_state_check': 'is_user_following',
         'hidden': True,
+        
+        'alert_text': _('%(sender_name)s completed the poll %(object_name)s'),
+        'alert_text_multi': _('%(sender_name)s completed %(count)d polls'),
+        'alert_multi_type': 2,
+        'alert_reason': _('You are following this poll'),
         
         'is_html': True,
         'snippet_type': 'poll',
@@ -208,6 +249,12 @@ notifications = {
         'requires_object_state_check': 'poll.is_user_following',
         'hidden': True,
         
+        'alert_text': _('%(sender_name)s commented on the poll %(object_name)s'),
+        'alert_text_multi': n_('%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s',
+                               '%(sender_name)s and %(count_minus_one)d others commented on the poll %(object_name)s', 'count_minus_one'),
+        'alert_multi_type': 1,
+        'alert_reason': _('You are following this poll'),
+        
         'is_html': True,
         'snippet_type': 'poll',
         'event_text': _('%(sender_name)s commented on a poll you are following'),
@@ -218,6 +265,7 @@ notifications = {
             'object_name': 'poll.title', 
             'object_url': 'get_absolute_url', 
             'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'alert_image_url': 'get_icon',
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
