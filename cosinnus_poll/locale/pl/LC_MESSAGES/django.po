@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-14 19:31+0100\n"
+"POT-Creation-Date: 2020-02-02 16:09+0100\n"
 "PO-Revision-Date: 2018-08-31 14:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -27,6 +27,16 @@ msgstr "ankieta"
 msgid "A user created a new poll"
 msgstr "Użytkownik utworzył nową ankietę"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new poll"
+msgid "%(sender_name)s created the poll %(object_name)s"
+msgstr "%(sender_name)s utworzył/a nową ankietę"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new poll"
+msgid "%(sender_name)s created %(count)d polls"
+msgstr "%(sender_name)s utworzył/a nową ankietę"
+
 #, python-format
 msgid "New poll by %(sender_name)s"
 msgstr "Nowa ankieta utworzona przez %(sender_name)s"
@@ -41,6 +51,16 @@ msgstr "Nowa ankieta: \"%(object_name)s\" została utworzona w %(team_name)s."
 
 msgid "A poll you voted on was completed"
 msgstr "Ankieta, w której głosowałeś/aś, została zakończona"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s completed the poll"
+msgid "%(sender_name)s completed the poll %(object_name)s you voted on"
+msgstr "%(sender_name)s ukończył/a ankietę"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a poll you voted in"
+msgid "%(sender_name)s completed %(count)d polls you voted on"
+msgstr "%(sender_name)s skomentował/a ankietę, w której głosowałeś/aś"
 
 #, python-format
 msgid "%(sender_name)s completed the poll"
@@ -57,6 +77,18 @@ msgstr "Ankieta \"%(object_name)s\" została ukończona w %(team_name)s."
 msgid "A user commented on one of your polls"
 msgstr "Użytkownik skomentował jedną z Twoich ankiet"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+msgid "%(sender_name)s commented on your poll %(object_name)s"
+msgstr "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your poll %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your poll %(object_name)s"
+msgstr[0] "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
+msgstr[1] "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
+
 #, python-format
 msgid "%(sender_name)s commented on your poll"
 msgstr "%(sender_name)s skomentował/a Twoją ankietę"
@@ -72,6 +104,23 @@ msgstr "%(sender_name)s"
 msgid "A user commented on a poll you were tagged in"
 msgstr "Użytkownik skomentował ankietę, w której zostałeś/aś oznaczony/a"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+msgid "%(sender_name)s commented on the poll %(object_name)s"
+msgstr "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the poll %(object_name)s"
+msgstr[0] "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
+msgstr[1] "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
+
+#, fuzzy
+#| msgid "A user created a new poll"
+msgid "You were tagged in this poll"
+msgstr "Użytkownik utworzył nową ankietę"
+
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in"
 msgstr "%(sender_name)s skomentował/a ankietę, w której zostałeś/aś oznaczony/a"
@@ -82,6 +131,11 @@ msgstr "%(sender_name)s skomentował/a ankietę, w której zostałeś/aś oznacz
 
 msgid "A user commented on an poll you voted in"
 msgstr "Użytkownik skomentował ankietę, w której głosowałeś/aś"
+
+#, fuzzy
+#| msgid "A user created a new poll"
+msgid "You voted on this poll"
+msgstr "Użytkownik utworzył nową ankietę"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in"
@@ -117,6 +171,16 @@ msgid "A user updated a poll you are following"
 msgstr "Użytkownik skomentował ankietę, w której głosowałeś/aś"
 
 #, fuzzy, python-format
+#| msgid "%(sender_name)s completed the poll"
+msgid "%(sender_name)s updated the poll %(object_name)s"
+msgstr "%(sender_name)s ukończył/a ankietę"
+
+#, fuzzy
+#| msgid "A poll you voted on was completed"
+msgid "You are following this poll"
+msgstr "Ankieta, w której głosowałeś/aś, została zakończona"
+
+#, fuzzy, python-format
 #| msgid "%(sender_name)s commented on a poll you voted in"
 msgid "%(sender_name)s updated a poll you are following"
 msgstr "%(sender_name)s skomentował/a ankietę, w której głosowałeś/aś"
@@ -130,6 +194,16 @@ msgstr "Nowa ankieta: \"%(object_name)s\" została utworzona w %(team_name)s."
 #| msgid "A poll you voted on was completed"
 msgid "A poll you are following was completed"
 msgstr "Ankieta, w której głosowałeś/aś, została zakończona"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s completed the poll"
+msgid "%(sender_name)s completed the poll %(object_name)s"
+msgstr "%(sender_name)s ukończył/a ankietę"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s completed the poll"
+msgid "%(sender_name)s completed %(count)d polls"
+msgstr "%(sender_name)s ukończył/a ankietę"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s completed the poll"

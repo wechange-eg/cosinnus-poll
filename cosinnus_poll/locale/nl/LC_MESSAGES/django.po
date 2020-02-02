@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-14 19:31+0100\n"
+"POT-Creation-Date: 2020-02-02 16:09+0100\n"
 "PO-Revision-Date: 2019-09-22 18:57+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -28,6 +28,16 @@ msgstr "poll"
 msgid "A user created a new poll"
 msgstr "Een gebruiker heeft een nieuwe poll aangemaakt"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new poll"
+msgid "%(sender_name)s created the poll %(object_name)s"
+msgstr "%(sender_name)s heeft een nieuwe poll aangemaakt"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new poll"
+msgid "%(sender_name)s created %(count)d polls"
+msgstr "%(sender_name)s heeft een nieuwe poll aangemaakt"
+
 #, python-format
 msgid "New poll by %(sender_name)s"
 msgstr "Nieuwe poll door %(sender_name)s"
@@ -42,6 +52,16 @@ msgstr "Een nieuwe poll: “%(object_name)s” is aangemaakt in %(team_name)s."
 
 msgid "A poll you voted on was completed"
 msgstr "Een poll waarop u heeft gestemd, is voltooid"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s completed the poll you are following"
+msgid "%(sender_name)s completed the poll %(object_name)s you voted on"
+msgstr "%(sender_name)s heeft de poll die u volgt voltooid"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a poll you voted in"
+msgid "%(sender_name)s completed %(count)d polls you voted on"
+msgstr "%(sender_name)s heeft gereageerd op een poll waarop u heeft gestemd"
 
 #, python-format
 msgid "%(sender_name)s completed the poll"
@@ -58,6 +78,18 @@ msgstr "Poll “%(object_name)s” is voltooid in %(team_name)s."
 msgid "A user commented on one of your polls"
 msgstr "Een gebruiker heeft op één van uw polls gereageerd"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+msgid "%(sender_name)s commented on your poll %(object_name)s"
+msgstr "%(sender_name)s heeft gereageerd op één van uw polls in %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your poll %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your poll %(object_name)s"
+msgstr[0] "%(sender_name)s heeft gereageerd op één van uw polls in %(team_name)s."
+msgstr[1] "%(sender_name)s heeft gereageerd op één van uw polls in %(team_name)s."
+
 #, python-format
 msgid "%(sender_name)s commented on your poll"
 msgstr "%(sender_name)s heeft op uw poll gereageerd"
@@ -73,6 +105,23 @@ msgstr "%(sender_name)s"
 msgid "A user commented on a poll you were tagged in"
 msgstr "Een gebruiker heeft gereageerd op een poll waarin u bent getagd"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+msgid "%(sender_name)s commented on the poll %(object_name)s"
+msgstr "%(sender_name)s heeft gereageerd op één van uw polls in %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the poll %(object_name)s"
+msgstr[0] "%(sender_name)s heeft gereageerd op één van uw polls in %(team_name)s."
+msgstr[1] "%(sender_name)s heeft gereageerd op één van uw polls in %(team_name)s."
+
+#, fuzzy
+#| msgid "You created a poll"
+msgid "You were tagged in this poll"
+msgstr "U heeft een poll aangemaakt"
+
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in"
 msgstr "%(sender_name)s heeft gereageerd op een poll waarin u bent getagd"
@@ -83,6 +132,11 @@ msgstr "%(sender_name)s heeft gereageerd op een poll waarin u bent getagd in %(t
 
 msgid "A user commented on an poll you voted in"
 msgstr "Een gebruiker heeft gereageerd op een poll waarop u heeft gestemd"
+
+#, fuzzy
+#| msgid "You created a poll"
+msgid "You voted on this poll"
+msgstr "U heeft een poll aangemaakt"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in"
@@ -110,6 +164,16 @@ msgstr "Een nieuwe poll: “%(object_name)s” is aangemaakt in %(team_name)s (d
 msgid "A user updated a poll you are following"
 msgstr "Een gebruiker heeft een poll die u volgt bijgewerkt"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s completed the poll"
+msgid "%(sender_name)s updated the poll %(object_name)s"
+msgstr "%(sender_name)s heeft de poll voltooid"
+
+#, fuzzy
+#| msgid "A poll you are following was completed"
+msgid "You are following this poll"
+msgstr "Een poll die u volgt is voltooid"
+
 #, python-format
 msgid "%(sender_name)s updated a poll you are following"
 msgstr "%(sender_name)s heeft een poll die u volgt bijgewerkt"
@@ -120,6 +184,16 @@ msgstr "Een poll die u volgt: ”%(object_name)s” is bijgewerkt in %(team_name
 
 msgid "A poll you are following was completed"
 msgstr "Een poll die u volgt is voltooid"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s completed the poll"
+msgid "%(sender_name)s completed the poll %(object_name)s"
+msgstr "%(sender_name)s heeft de poll voltooid"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s completed the poll"
+msgid "%(sender_name)s completed %(count)d polls"
+msgstr "%(sender_name)s heeft de poll voltooid"
 
 #, python-format
 msgid "%(sender_name)s completed the poll you are following"

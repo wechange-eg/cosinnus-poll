@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-14 19:31+0100\n"
+"POT-Creation-Date: 2020-02-02 16:09+0100\n"
 "PO-Revision-Date: 2019-05-08 01:09+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -28,6 +28,16 @@ msgstr "апытанне"
 msgid "A user created a new poll"
 msgstr "Карыстальнік(-ца) стварыў(-ла) новае апытанне"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new poll"
+msgid "%(sender_name)s created the poll %(object_name)s"
+msgstr "%(sender_name)s стварыў(-ла) новае апытанне"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new poll"
+msgid "%(sender_name)s created %(count)d polls"
+msgstr "%(sender_name)s стварыў(-ла) новае апытанне"
+
 #, python-format
 msgid "New poll by %(sender_name)s"
 msgstr "Новае апытанне ад %(sender_name)s"
@@ -42,6 +52,16 @@ msgstr "Новае апытанне: \"%(object_name)s\" створана ў %(t
 
 msgid "A poll you voted on was completed"
 msgstr "Апытанне, у якім Вы ўдзельнічалі, завяршылася"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s completed the poll you are following"
+msgid "%(sender_name)s completed the poll %(object_name)s you voted on"
+msgstr "%(sender_name)s завяршыў(-ла) апытанне, за якім Вы сочыце"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on a poll you voted in"
+msgid "%(sender_name)s completed %(count)d polls you voted on"
+msgstr "%(sender_name)s пракаментаваў(-ла) апытанне, у якім Вы ўдзельнічалі"
 
 #, python-format
 msgid "%(sender_name)s completed the poll"
@@ -58,6 +78,20 @@ msgstr "Апытанне \"%(object_name)s\" было завершана ў %(te
 msgid "A user commented on one of your polls"
 msgstr "Карыстальнік(-ца) пракаментаваў(-ла) адно з Вашых апытанняў"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+msgid "%(sender_name)s commented on your poll %(object_name)s"
+msgstr "%(sender_name)s пракаментаваў(-ла) адно з Вашых апытанняў у %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your poll %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your poll %(object_name)s"
+msgstr[0] "%(sender_name)s пракаментаваў(-ла) адно з Вашых апытанняў у %(team_name)s."
+msgstr[1] "%(sender_name)s пракаментаваў(-ла) адно з Вашых апытанняў у %(team_name)s."
+msgstr[2] "%(sender_name)s пракаментаваў(-ла) адно з Вашых апытанняў у %(team_name)s."
+msgstr[3] "%(sender_name)s пракаментаваў(-ла) адно з Вашых апытанняў у %(team_name)s."
+
 #, python-format
 msgid "%(sender_name)s commented on your poll"
 msgstr "%(sender_name)s пракаментаваў(-ла) Ваша апытанне"
@@ -73,6 +107,25 @@ msgstr "%(sender_name)s"
 msgid "A user commented on a poll you were tagged in"
 msgstr "Карыстальнік(-ца) пракаментаваў(-ла) апытанне, у якім Вы былі пазначаны"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+msgid "%(sender_name)s commented on the poll %(object_name)s"
+msgstr "%(sender_name)s пракаментаваў(-ла) адно з Вашых апытанняў у %(team_name)s."
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the poll %(object_name)s"
+msgstr[0] "%(sender_name)s пракаментаваў(-ла) адно з Вашых апытанняў у %(team_name)s."
+msgstr[1] "%(sender_name)s пракаментаваў(-ла) адно з Вашых апытанняў у %(team_name)s."
+msgstr[2] "%(sender_name)s пракаментаваў(-ла) адно з Вашых апытанняў у %(team_name)s."
+msgstr[3] "%(sender_name)s пракаментаваў(-ла) адно з Вашых апытанняў у %(team_name)s."
+
+#, fuzzy
+#| msgid "A user created a new poll"
+msgid "You were tagged in this poll"
+msgstr "Карыстальнік(-ца) стварыў(-ла) новае апытанне"
+
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in"
 msgstr "%(sender_name)s пракаментаваў(-ла) апытанне, у якім Вы былі пазначаны"
@@ -83,6 +136,11 @@ msgstr "%(sender_name)s пракаментаваў(-ла) апытанне, у �
 
 msgid "A user commented on an poll you voted in"
 msgstr "Карыстальнік(-ца) пракаментаваў(-ла) апытанне, у якім Вы ўдзельнічалі"
+
+#, fuzzy
+#| msgid "A user created a new poll"
+msgid "You voted on this poll"
+msgstr "Карыстальнік(-ца) стварыў(-ла) новае апытанне"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in"
@@ -110,6 +168,16 @@ msgstr "Новае апытанне: \"%(object_name)s\" створана ў %(t
 msgid "A user updated a poll you are following"
 msgstr "Карыстальнік(-ца) абнавіў(-ла) апытанне, за якім Вы сочыце"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s completed the poll"
+msgid "%(sender_name)s updated the poll %(object_name)s"
+msgstr "%(sender_name)s завяршыў(-ла) гэта апытанне"
+
+#, fuzzy
+#| msgid "A poll you are following was completed"
+msgid "You are following this poll"
+msgstr "Апытанне, за якім Вы сочыце, завяршылася"
+
 #, python-format
 msgid "%(sender_name)s updated a poll you are following"
 msgstr "%(sender_name)s абнавіў(-ла) апытанне, за якім Вы сочыце"
@@ -120,6 +188,16 @@ msgstr "Апытанне, за якім Вы сочыце: \"%(object_name)s\" �
 
 msgid "A poll you are following was completed"
 msgstr "Апытанне, за якім Вы сочыце, завяршылася"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s completed the poll"
+msgid "%(sender_name)s completed the poll %(object_name)s"
+msgstr "%(sender_name)s завяршыў(-ла) гэта апытанне"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s completed the poll"
+msgid "%(sender_name)s completed %(count)d polls"
+msgstr "%(sender_name)s завяршыў(-ла) гэта апытанне"
 
 #, python-format
 msgid "%(sender_name)s completed the poll you are following"

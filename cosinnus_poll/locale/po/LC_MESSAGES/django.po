@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-14 19:31+0100\n"
+"POT-Creation-Date: 2020-02-02 16:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,6 +28,14 @@ msgid "A user created a new poll"
 msgstr ""
 
 #, python-format
+msgid "%(sender_name)s created the poll %(object_name)s"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s created %(count)d polls"
+msgstr ""
+
+#, python-format
 msgid "New poll by %(sender_name)s"
 msgstr ""
 
@@ -40,6 +48,14 @@ msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
 msgstr ""
 
 msgid "A poll you voted on was completed"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s completed the poll %(object_name)s you voted on"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s completed %(count)d polls you voted on"
 msgstr ""
 
 #, python-format
@@ -58,6 +74,16 @@ msgid "A user commented on one of your polls"
 msgstr ""
 
 #, python-format
+msgid "%(sender_name)s commented on your poll %(object_name)s"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your poll %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your poll %(object_name)s"
+msgstr[0] ""
+msgstr[1] ""
+
+#, python-format
 msgid "%(sender_name)s commented on your poll"
 msgstr ""
 
@@ -73,6 +99,19 @@ msgid "A user commented on a poll you were tagged in"
 msgstr ""
 
 #, python-format
+msgid "%(sender_name)s commented on the poll %(object_name)s"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the poll %(object_name)s"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "You were tagged in this poll"
+msgstr ""
+
+#, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in"
 msgstr ""
 
@@ -81,6 +120,9 @@ msgid "%(sender_name)s commented on a poll you were tagged in in %(team_name)s"
 msgstr ""
 
 msgid "A user commented on an poll you voted in"
+msgstr ""
+
+msgid "You voted on this poll"
 msgstr ""
 
 #, python-format
@@ -110,6 +152,13 @@ msgid "A user updated a poll you are following"
 msgstr ""
 
 #, python-format
+msgid "%(sender_name)s updated the poll %(object_name)s"
+msgstr ""
+
+msgid "You are following this poll"
+msgstr ""
+
+#, python-format
 msgid "%(sender_name)s updated a poll you are following"
 msgstr ""
 
@@ -118,6 +167,14 @@ msgid "A poll you are following: \"%(object_name)s\" was updated in %(team_name)
 msgstr ""
 
 msgid "A poll you are following was completed"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s completed the poll %(object_name)s"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s completed %(count)d polls"
 msgstr ""
 
 #, python-format
