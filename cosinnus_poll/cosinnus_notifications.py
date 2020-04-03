@@ -56,9 +56,7 @@ notifications = {
         'alert_multi_type': 2,
         
         'is_html': True,
-        'snippet_type': 'poll',
-        'event_text': _('New poll by %(sender_name)s'),
-        'notification_text': _('%(sender_name)s created a new poll'),
+        'event_text': _('%(sender_name)s created a new poll'),
         'subject_text': _('A new poll: "%(object_name)s" was created in %(team_name)s.'),
         'data_attributes': {
             'object_name': 'title', 
@@ -80,9 +78,7 @@ notifications = {
         'alert_multi_type': 2,
         
         'is_html': True,
-        'snippet_type': 'poll',
         'event_text': _("%(sender_name)s completed the poll"),
-        'notification_text': _('%(sender_name)s completed a poll'),
         'subject_text': _('Poll "%(object_name)s" was completed in %(team_name)s.'),
         'data_attributes': {
             'object_name': 'title', 
@@ -104,18 +100,18 @@ notifications = {
         'alert_multi_type': 1,
         
         'is_html': True,
-        'snippet_type': 'poll',
         'event_text': _('%(sender_name)s commented on your poll'),
-        'notification_text': _('%(sender_name)s commented on one of your polls'),
         'subject_text': _('%(sender_name)s commented on one of your polls'),
-        'sub_event_text': _('%(sender_name)s'),
+        'display_object_name': False,
         'data_attributes': {
             'object_name': 'poll.title', 
+            'object_text': 'text',
             'object_url': 'get_absolute_url', 
             'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
-            'sub_object_text': 'text',
+            'sub_object_name': 'poll.title', 
+            'sub_object_text': 'poll.description',
+            'sub_object_icon': 'poll.get_icon',
         },
     },    
     'tagged_poll_comment_posted': {
@@ -132,17 +128,18 @@ notifications = {
         'alert_reason': _('You were tagged in this poll'),
         
         'is_html': True,
-        'snippet_type': 'poll',
         'event_text': _('%(sender_name)s commented on a poll you were tagged in'),
         'subject_text': _('%(sender_name)s commented on a poll you were tagged in in %(team_name)s'),
-        'sub_event_text': _('%(sender_name)s'),
+        'display_object_name': False,
         'data_attributes': {
             'object_name': 'poll.title', 
+            'object_text': 'text',
             'object_url': 'get_absolute_url', 
             'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
-            'sub_object_text': 'text',
+            'sub_object_name': 'poll.title', 
+            'sub_object_text': 'poll.description',
+            'sub_object_icon': 'poll.get_icon',
         },
     },  
     'voted_poll_comment_posted': {
@@ -159,17 +156,18 @@ notifications = {
         'alert_reason': _('You voted on this poll'),
         
         'is_html': True,
-        'snippet_type': 'poll',
         'event_text': _('%(sender_name)s commented on a poll you voted in'),
         'subject_text': _('%(sender_name)s commented on a poll you voted in in %(team_name)s'),
-        'sub_event_text': _('%(sender_name)s'),
+        'display_object_name': False,
         'data_attributes': {
             'object_name': 'poll.title', 
+            'object_text': 'text',
             'object_url': 'get_absolute_url', 
             'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
-            'sub_object_text': 'text',
+            'sub_object_name': 'poll.title', 
+            'sub_object_text': 'poll.description',
+            'sub_object_icon': 'poll.get_icon',
         },
     },  
     'followed_group_poll_created': {
@@ -185,9 +183,7 @@ notifications = {
         'alert_multi_type': 2,
         
         'is_html': True,
-        'snippet_type': 'poll',
-        'event_text': _('New poll by %(sender_name)s in %(team_name)s (which you follow)'),
-        'notification_text': _('%(sender_name)s created a new poll in %(team_name)s (which you follow)'),
+        'event_text': _('%(sender_name)s created a new poll in %(team_name)s (which you follow)'),
         'subject_text': _('A new poll: "%(object_name)s" was created in %(team_name)s (which you follow).'),
         'data_attributes': {
             'object_name': 'title', 
@@ -208,9 +204,7 @@ notifications = {
         'alert_reason': _('You are following this poll'),
         
         'is_html': True,
-        'snippet_type': 'poll',
         'event_text': _('%(sender_name)s updated a poll you are following'),
-        'notification_text': _('%(sender_name)s updated a poll you are following'),
         'subject_text': _('A poll you are following: "%(object_name)s" was updated in %(team_name)s.'),
         'data_attributes': {
             'object_name': 'title', 
@@ -231,9 +225,7 @@ notifications = {
         'alert_reason': _('You are following this poll'),
         
         'is_html': True,
-        'snippet_type': 'poll',
         'event_text': _("%(sender_name)s completed the poll you are following"),
-        'notification_text': _('%(sender_name)s completed a poll you are following'),
         'subject_text': _('Poll "%(object_name)s" you are following was completed in %(team_name)s.'),
         'data_attributes': {
             'object_name': 'title', 
@@ -256,18 +248,18 @@ notifications = {
         'alert_reason': _('You are following this poll'),
         
         'is_html': True,
-        'snippet_type': 'poll',
         'event_text': _('%(sender_name)s commented on a poll you are following'),
-        'notification_text': _('%(sender_name)s commented on a poll you are following'),
         'subject_text': _('%(sender_name)s commented on a poll you are following'),
-        'sub_event_text': _('%(sender_name)s'),
+        'display_object_name': False,
         'data_attributes': {
             'object_name': 'poll.title', 
+            'object_text': 'text',
             'object_url': 'get_absolute_url', 
             'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
-            'sub_object_text': 'text',
+            'sub_object_name': 'poll.title', 
+            'sub_object_text': 'poll.description',
+            'sub_object_icon': 'poll.get_icon',
         },
     },    
 }
