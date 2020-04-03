@@ -327,14 +327,15 @@ class Comment(models.Model):
             if not self.poll.creator == self.creator:
                 cosinnus_notifications.poll_comment_posted.send(sender=self, user=self.creator, obj=self, audience=[self.poll.creator], session_id=session_id)
                 
-            # message all followers of the poll
-            followers_except_creator = [pk for pk in self.poll.get_followed_user_ids() if not pk in [self.creator_id, self.poll.creator_id]]
-            cosinnus_notifications.following_poll_comment_posted.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=followers_except_creator), session_id=session_id)
-                
             # message votees (except comment creator and poll creator) if voting is still open
             votees_except_creator = [pk for pk in self.poll.get_voters_pks() if not pk in [self.creator_id, self.poll.creator_id]]
             if votees_except_creator and self.poll.state == Poll.STATE_VOTING_OPEN:
                 cosinnus_notifications.voted_poll_comment_posted.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=votees_except_creator), session_id=session_id)
+                
+            # message all followers of the poll
+            followers_except_creator = [pk for pk in self.poll.get_followed_user_ids() if not pk in [self.creator_id, self.poll.creator_id]]
+            cosinnus_notifications.following_poll_comment_posted.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=followers_except_creator), session_id=session_id)
+                
             # message all taggees (except comment creator)
             if self.poll.media_tag and self.poll.media_tag.persons:
                 tagged_users_without_self = self.poll.media_tag.persons.exclude(id=self.creator.id)
