@@ -8,398 +8,381 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-22 13:06+0200\n"
-"PO-Revision-Date: 2020-04-06 11:16+0200\n"
+"PO-Revision-Date: 2019-11-13 22:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: pl\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"X-Generator: Poedit 2.0.7\n"
 
 msgid "Polls"
-msgstr "Ankiety"
+msgstr "Sondaje"
 
 msgctxt "the_app"
 msgid "poll"
-msgstr "ankieta"
+msgstr "sondaj"
 
 msgid "A user created a new poll"
-msgstr "Użytkownik utworzył nową ankietę"
+msgstr "Un utilizator a creat un nou sondaj"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s created a new poll"
 msgid "%(sender_name)s created the poll %(object_name)s"
-msgstr "%(sender_name)s utworzył/a nową ankietę"
+msgstr "%(sender_name)s a creat un nou sondaj"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s created a new poll"
 msgid "%(sender_name)s created %(count)d polls"
-msgstr "%(sender_name)s utworzył/a nową ankietę"
+msgstr "%(sender_name)s a creat un nou sondaj"
 
 #, python-format
 msgid "New poll by %(sender_name)s"
-msgstr "Nowa ankieta utworzona przez %(sender_name)s"
+msgstr "Nou sondaj de %(sender_name)s"
 
 #, python-format
 msgid "%(sender_name)s created a new poll"
-msgstr "%(sender_name)s utworzył/a nową ankietę"
+msgstr "%(sender_name)s a creat un nou sondaj"
 
 #, python-format
 msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
-msgstr "Nowa ankieta: \"%(object_name)s\" została utworzona w %(team_name)s."
+msgstr "Un nou sondaj: ”%(object_name)s” a fost creat în %(team_name)s."
 
 msgid "A poll you voted on was completed"
-msgstr "Ankieta, w której głosowałeś/aś, została zakończona"
+msgstr "S-a finalizat un sondaj pentru care ați votat"
 
 #, fuzzy, python-format
-#| msgid "%(sender_name)s completed the poll"
+#| msgid "%(sender_name)s completed the poll you are following"
 msgid "%(sender_name)s completed the poll %(object_name)s you voted on"
-msgstr "%(sender_name)s ukończył/a ankietę"
+msgstr "%(sender_name)s a completat sondajul pe care îl urmărești"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on a poll you voted in"
 msgid "%(sender_name)s completed %(count)d polls you voted on"
-msgstr "%(sender_name)s skomentował/a ankietę, w której głosowałeś/aś"
+msgstr "%(sender_name)s a comentat un sondaj în care ați votat"
 
 #, python-format
 msgid "%(sender_name)s completed the poll"
-msgstr "%(sender_name)s ukończył/a ankietę"
+msgstr "%(sender_name)s a completat sondajul"
 
 #, python-format
 msgid "%(sender_name)s completed a poll"
-msgstr "%(sender_name)s ukończył/a ankietę"
+msgstr "%(sender_name)s a completat un sondaj"
 
 #, python-format
 msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
-msgstr "Ankieta \"%(object_name)s\" została ukończona w %(team_name)s."
+msgstr "Sondaj ”%(object_name)s” a fost completat în %(team_name)s."
 
 msgid "A user commented on one of your polls"
-msgstr "Użytkownik skomentował jedną z Twoich ankiet"
+msgstr "Un utilizator a comentat unul dintre sondajele voastre"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
 msgid "%(sender_name)s commented on your poll %(object_name)s"
-msgstr "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
+msgstr "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your poll %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your poll %(object_name)s"
-msgstr[0] "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
-msgstr[1] "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
-msgstr[2] ""
+msgstr[0] "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
+msgstr[1] "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
+msgstr[2] "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
 
 #, python-format
 msgid "%(sender_name)s commented on your poll"
-msgstr "%(sender_name)s skomentował/a Twoją ankietę"
+msgstr "%(sender_name)s a comentat sondajele vostre"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your polls"
-msgstr "%(sender_name)s skomentował/a jedną z Twoich ankiet"
+msgstr "%(sender_name)s a comentat unul dintre sondajele voastre"
 
 #, python-format
 msgid "%(sender_name)s"
 msgstr "%(sender_name)s"
 
 msgid "A user commented on a poll you were tagged in"
-msgstr "Użytkownik skomentował ankietę, w której zostałeś/aś oznaczony/a"
+msgstr "Un utilizator a comentat un sondaj în care ați fost etichetat"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
 msgid "%(sender_name)s commented on the poll %(object_name)s"
-msgstr "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
+msgstr "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the poll %(object_name)s"
-msgstr[0] "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
-msgstr[1] "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
-msgstr[2] ""
+msgstr[0] "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
+msgstr[1] "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
+msgstr[2] "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
 
 #, fuzzy
-#| msgid "A user created a new poll"
+#| msgid "You created a poll"
 msgid "You were tagged in this poll"
-msgstr "Użytkownik utworzył nową ankietę"
+msgstr "Ai creat un sondaj"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in"
-msgstr "%(sender_name)s skomentował/a ankietę, w której zostałeś/aś oznaczony/a"
+msgstr "%(sender_name)s a comentat un sondaj în care ați fost etichetat"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in in %(team_name)s"
-msgstr "%(sender_name)s skomentował/a ankietę, w której zostałeś/aś oznaczony/a w %(team_name)s"
+msgstr "%(sender_name)s a comentat un sondaj în care ați fost etichetat %(team_name)s"
 
 msgid "A user commented on an poll you voted in"
-msgstr "Użytkownik skomentował ankietę, w której głosowałeś/aś"
+msgstr "Un utilizator a comentat un sondaj în care ați votat"
 
 #, fuzzy
-#| msgid "A user created a new poll"
+#| msgid "You created a poll"
 msgid "You voted on this poll"
-msgstr "Użytkownik utworzył nową ankietę"
+msgstr "Ai creat un sondaj"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in"
-msgstr "%(sender_name)s skomentował/a ankietę, w której głosowałeś/aś"
+msgstr "%(sender_name)s a comentat un sondaj în care ați votat"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s"
-msgstr "%(sender_name)s skomentował/a ankietę, w której głosowałeś/aś w %(team_name)s"
+msgstr "%(sender_name)s a comentat un sondaj în care ați votat în %(team_name)s"
 
-#, fuzzy
-#| msgid "A user created a new poll"
 msgid "A user created a new poll in a team you are following"
-msgstr "Użytkownik utworzył nową ankietę"
+msgstr "Un utilizator a creat un nou sondaj într-o echipă pe care o urmărești"
 
-#, fuzzy, python-format
-#| msgid "New poll by %(sender_name)s"
+#, python-format
 msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Nowa ankieta utworzona przez %(sender_name)s"
+msgstr "Nou sondaj de %(sender_name)s în %(team_name)s (pe care le urmezi)"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s created a new poll in %(team_name)s (which you follow)"
-msgstr "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
+msgstr "%(sender_name)s a creat un nou sondaj în %(team_name)s (pe care le urmezi)"
 
-#, fuzzy, python-format
-#| msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
+#, python-format
 msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
-msgstr "Nowa ankieta: \"%(object_name)s\" została utworzona w %(team_name)s."
+msgstr "Un nou sondaj: ”%(object_name)s a fost creat în %(team_name)s (pe ccare le urmezi)."
 
-#, fuzzy
-#| msgid "A user commented on an poll you voted in"
 msgid "A user updated a poll you are following"
-msgstr "Użytkownik skomentował ankietę, w której głosowałeś/aś"
+msgstr "Un utilizator a actualizat un sondaj pe care îl urmărești"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s completed the poll"
 msgid "%(sender_name)s updated the poll %(object_name)s"
-msgstr "%(sender_name)s ukończył/a ankietę"
+msgstr "%(sender_name)s a completat sondajul"
 
 #, fuzzy
-#| msgid "A poll you voted on was completed"
+#| msgid "A poll you are following was completed"
 msgid "You are following this poll"
-msgstr "Ankieta, w której głosowałeś/aś, została zakończona"
+msgstr "S-a finalizat un sondaj pe care îl urmărești"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on a poll you voted in"
+#, python-format
 msgid "%(sender_name)s updated a poll you are following"
-msgstr "%(sender_name)s skomentował/a ankietę, w której głosowałeś/aś"
+msgstr "%(sender_name)s a actualizat un sondaj pe care îl urmărești"
 
-#, fuzzy, python-format
-#| msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
+#, python-format
 msgid "A poll you are following: \"%(object_name)s\" was updated in %(team_name)s."
-msgstr "Nowa ankieta: \"%(object_name)s\" została utworzona w %(team_name)s."
+msgstr "Un sondaj pe care îl urmărești: ”%(object_name)s” a fost actualizat în %(team_name)s."
 
-#, fuzzy
-#| msgid "A poll you voted on was completed"
 msgid "A poll you are following was completed"
-msgstr "Ankieta, w której głosowałeś/aś, została zakończona"
+msgstr "S-a finalizat un sondaj pe care îl urmărești"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s completed the poll"
 msgid "%(sender_name)s completed the poll %(object_name)s"
-msgstr "%(sender_name)s ukończył/a ankietę"
+msgstr "%(sender_name)s a completat sondajul"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s completed the poll"
 msgid "%(sender_name)s completed %(count)d polls"
-msgstr "%(sender_name)s ukończył/a ankietę"
+msgstr "%(sender_name)s a completat sondajul"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s completed the poll"
+#, python-format
 msgid "%(sender_name)s completed the poll you are following"
-msgstr "%(sender_name)s ukończył/a ankietę"
+msgstr "%(sender_name)s a completat sondajul pe care îl urmărești"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on a poll you voted in"
+#, python-format
 msgid "%(sender_name)s completed a poll you are following"
-msgstr "%(sender_name)s skomentował/a ankietę, w której głosowałeś/aś"
+msgstr "%(sender_name)s a completat un sondaj pe care îl urmărești"
 
-#, fuzzy, python-format
-#| msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
+#, python-format
 msgid "Poll \"%(object_name)s\" you are following was completed in %(team_name)s."
-msgstr "Ankieta \"%(object_name)s\" została ukończona w %(team_name)s."
+msgstr "Sondaj ”%(object_name)s” urmează să fie finalizată în %(team_name)s."
 
-#, fuzzy
-#| msgid "A user commented on one of your polls"
 msgid "A user commented on one a poll you are following"
-msgstr "Użytkownik skomentował jedną z Twoich ankiet"
+msgstr "Un utilizator a comentat un sondaj pe care îl urmărești"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on a poll you voted in"
+#, python-format
 msgid "%(sender_name)s commented on a poll you are following"
-msgstr "%(sender_name)s skomentował/a ankietę, w której głosowałeś/aś"
+msgstr "%(sender_name)s  a comentat sondajul pe care-l urmărești"
 
 msgid "Current Polls"
-msgstr "Aktywne Ankiety"
+msgstr "Sondaje Actuale"
 
 msgid "No current polls"
-msgstr "Brak aktywnych ankiet"
+msgstr "Nu există sondaje actuale"
 
 msgid "Created By"
-msgstr "Utworzona Przez"
+msgstr "Creat de"
 
 msgid "Newest Created"
-msgstr "Najnowsza Utworzona"
+msgstr "Cel mai nou creat"
 
 msgid "Title"
-msgstr "Tytuł"
+msgstr "Titlu"
 
 msgid "You must write a description for this poll option!"
-msgstr "Musisz dodać opis do tej odpowiedzi w ankiecie!"
+msgstr "Trebuie să scrieți o descriere pentru această opțiune de sondaj!"
 
 msgid "Voting open"
-msgstr "Głosowanie otwarte"
+msgstr "Votare deschisă"
 
 msgid "Voting closed"
-msgstr "Głosowanie zamknięte"
+msgstr "Votare închisă"
 
 msgid "Poll archived"
-msgstr "Ankieta zarchiwizowana"
+msgstr "Sondaj arhivat"
 
 msgid "State"
-msgstr "Stan"
+msgstr "Stat"
 
 msgid "Description"
-msgstr "Opis"
+msgstr "Descriere"
 
 msgid "Multiple options votable"
-msgstr "Możliwość wybrania kilku odpowiedzi"
+msgstr "Opțiuni multiple eligibile"
 
 msgid "Does this poll allow users to vote on multiple options or just decide for one?"
-msgstr "Czy ta ankieta pozwala użytkownikom na wybranie kilku odpowiedzi, czy tylko jednej?"
+msgstr "Acest sondaj permite utilizatorilor să voteze mai multe opțiuni sau să decidă doar una?"
 
 msgid "\"Maybe\" option enabled"
-msgstr "Dodanie opcji \"Może\""
+msgstr "”Poate” opțiune activată"
 
 msgid "Is the maybe option enabled? Ignored and defaulting to False if ``multiple_votes==False``"
-msgstr "Czy opcja „może” jest aktywna? Zignorowana i ustawiona jako „False”, jeśli ``multiple_votes==False``"
+msgstr "Opțiunea este activată? Ignorat și implicit pe False dacă ”voturile multiple==False"
 
 msgid "Anyone can vote"
-msgstr "Każdy może głosować"
+msgstr "Oricine poate vota"
 
 msgid "If true, anyone who can see this poll can vote on it. If false, only group members can."
-msgstr "Jeśli tak, każdy kto widzi tę ankietę może zagłosować. Jeśli nie, głosować mogą tylko członkowie grupy."
+msgstr "Dacă este adevărat, oricine poate vedea și vota acest sondaj. Dacă este fals, numai membrii grupul pot."
 
 msgid "Show voters"
-msgstr "Pokaż głosujących"
+msgstr "Arată alegătorilor"
 
 msgid "If true, display a list of which user voted for each option."
-msgstr "Jeśli tak, wyświetlona będzie lista, pokazująca kto wybrał jaką odpowiedź."
+msgstr "Dacă este adevărat, afișează o listă cu care utilizatorul a votat pentru fiecare opțiune."
 
 msgid "Start"
 msgstr "Start"
 
 msgid "Winning Option"
-msgstr "Zwycięska Odpowiedź"
+msgstr "Opțiune Câștigătoare"
 
 msgid "Poll"
-msgstr "Ankieta"
+msgstr "Sondaj"
 
 #, python-format
 msgid "Poll: %(poll)s (%(state)s)"
-msgstr "Ankieta: %(poll)s (%(state)s)"
+msgstr "Sondaj: %(poll)s (%(state)s"
 
 msgid "Image"
-msgstr "Obraz"
+msgstr "Imagine"
 
 msgctxt "the subject"
 msgid "Votes"
-msgstr "Głosy"
+msgstr "Voturi"
 
 msgid "Poll Option"
-msgstr "Odpowiedź Ankiety"
+msgstr "Opțiune de votare"
 
 msgid "Poll Options"
-msgstr "Odpowiedzi Ankiety"
+msgstr "Opțiuni de sondaj"
 
 msgid "Yes"
-msgstr "Tak"
+msgstr "Da"
 
 msgid "Maybe"
-msgstr "Może"
+msgstr "Poate"
 
 msgid "No"
-msgstr "Nie"
+msgstr "Nu"
 
 msgid "Option"
-msgstr "Odpowiedź"
+msgstr "Opțiuni"
 
 msgid "Voter"
-msgstr "Głosujący"
+msgstr "Alegător"
 
 msgid "Vote"
-msgstr "Głos"
+msgstr "Vot"
 
 msgctxt "the subject"
 msgid "Vote"
-msgstr "Głos"
+msgstr "Vot"
 
 msgid "Creator"
-msgstr "Twórca"
+msgstr "Creator"
 
 msgid "Created"
-msgstr "Stworzono"
+msgstr "Creată"
 
 msgid "Last modified"
-msgstr "Data ost. modyfikacji"
+msgstr "Modificat ultima dată"
 
 msgid "Text"
-msgstr "Treść"
+msgstr "Text"
 
 msgid "Comment"
-msgstr "Komentarz"
+msgstr "Comentariu"
 
 msgid "Comments"
-msgstr "Komentarze"
+msgstr "Comentarii"
 
 msgid "Poll choice"
-msgstr "Odpowiedź ankiety"
+msgstr "Alegerea sondajului"
 
 msgid "Back to Polls"
-msgstr "Powrót do Ankiet"
+msgstr "Înapoi la sondaj"
 
 msgid "Past Polls"
-msgstr "Poprzednie Ankiety"
+msgstr "Sondaje din trecut"
 
 msgid "by"
-msgstr "przez"
+msgstr "de"
 
 msgid "Delete"
-msgstr "Usuń"
+msgstr "Șterge"
 
 msgid "Edit"
-msgstr "Edytuj"
+msgstr "Editați"
 
 msgid "Re-open"
-msgstr "Otwórz ponownie"
+msgstr "Redeschide"
 
 msgid "Archive"
-msgstr "Archiwizuj"
+msgstr "Arhivă"
 
 #, python-format
 msgid "Do you really want to delete poll „%(title)s“?"
-msgstr "Czy na pewno chcesz usunąć ankietę „%(title)s“?"
+msgstr "Vrei cu adevărat să ștergi sondajul ”%(title)s”?"
 
 msgid "Delete poll"
-msgstr "Usuń ankietę"
+msgstr "Ștergeți sondajul"
 
 #, python-format
 msgid "Do you really want to re-open poll „%(title)s“?"
-msgstr "Czy na pewno chcesz otworzyć ponownie ankietę „%(title)s“?"
+msgstr "Doriți cu adevărat să redeschideți sondajul ”%(title)s”?"
 
 msgid "Re-open poll"
-msgstr "Otwórz ponownie ankietę"
+msgstr "Redeschideți sondajul"
 
 #, python-format
 msgid "Do you really want to archive poll „%(title)s“?"
-msgstr "Czy na pewno chcesz zarchiwizować ankietę „%(title)s“?"
+msgstr "Chiar vrei să arhivezi sondajele ”%(title)s”?"
 
 msgid "Archive poll"
-msgstr "Zarchiwizuj ankietę"
+msgstr "Sondaj de arhivă"
 
 #, python-format
 msgid ""
@@ -424,30 +407,30 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Cześć %(receiver_name)s!\n"
+"Salut, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s dodał/a komentarz do ankiety, którą utworzyłeś/aś w zespole %(team_name)s:\n"
+"%(sender_name)s a postat un comentariu la un sondaj pe care l-ați creat %(team_name)s:\n"
 "\n"
-"\"%(comment_text)s\"\n"
-"\n"
-"\n"
-"w ankiecie:\n"
-"\n"
-"\"%(poll_title)s\"\n"
+"”%(comment_text)s”\n"
 "\n"
 "\n"
-"Kliknij tutaj, aby zobaczyć komentarz:\n"
+"pe sondajul tău:\n"
+"\n"
+"”%(poll_title)s”\n"
+"\n"
+"\n"
+"Urmați această legătură pentru a vedea comentariul:\n"
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Kliknij tutaj, aby edytować swoje ustawienia powiadomień: %(notification_settings_url)s )\n"
+"(Urmați această legătură pentru a modifica preferințele de notificare: %(notification_settings_url)s )\n"
 "\n"
-"Twój Zespół %(site_name)s.\n"
+"A ta %(site_name)s echipă.\n"
 "\n"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
-msgstr "%(sender_name)s skomentował/a ankietę utworzoną przez Ciebie w zespole %(team_name)s."
+msgstr "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
 
 #, python-format
 msgid ""
@@ -455,15 +438,16 @@ msgid ""
 "\n"
 "the poll \"%(object_name)s\", was completed in %(team_name)s by %(sender_name)s!\n"
 msgstr ""
-"Cześć %(receiver_name)s,\n"
+"Salut %(receiver_name)s,\n"
 "\n"
-"ankieta \"%(object_name)s została ukończona w zespole %(team_name)s przez %(sender_name)s!\n"
+"sondajul ”%(object_name)s”, a fost completat în %(team_name)s de %(sender_name)s!\n"
+"\n"
 
 msgid "The winning option was:"
-msgstr "Zwycięską odpowiedzią było:"
+msgstr "Opțiunile câștigătoare au fost:"
 
 msgid "There was no winning option."
-msgstr "Nie było zwycięskiej odpowiedzi."
+msgstr "Nu a existat nici o opțiune câștigătoare."
 
 #, python-format
 msgid ""
@@ -477,18 +461,17 @@ msgid ""
 "Your %(site_name)s Team."
 msgstr ""
 "\n"
-"Dostępna jest pod następującym adresem:\n"
-"%(object_url)s\n"
+"Puteți găsi sondajul urmând această legătură: %(object_url)s\n"
 "\n"
 "\n"
 "\n"
-"(Kliknij tutaj, aby edytować swoje ustawienia powiadomień: %(notification_settings_url)s )\n"
+"(Urmați această legătură pentru a modifica preferințele de notificare: %(notification_settings_url)s )\n"
 "\n"
-"Twój Zespół %(site_name)s."
+"A ta %(site_name)s Echipă."
 
 #, python-format
 msgid "Poll: \"%(object_name)s\" was completed in %(team_name)s."
-msgstr "Nowa ankieta: \"%(object_name)s\" została utworzona w zespole %(team_name)s."
+msgstr "Sondaj: ”%(object_name)s” a fost completat în %(team_name)s."
 
 #, python-format
 msgid ""
@@ -504,18 +487,17 @@ msgid ""
 "\n"
 "Your %(site_name)s Team."
 msgstr ""
-"Cześć %(receiver_name)s,\n"
+"Salut %(receiver_name)s,\n"
 "\n"
-"nowa ankieta \"%(object_name)s\" została utworzona w zespole %(team_name)s przez %(sender_name)s. \n"
+"un nou sondaj ”%(object_name)s”, a fost creat în %(team_name)s de %(sender_name)s. \n"
 "\n"
-"Dostępna jest pod następującym adresem:\n"
-"%(object_url)s\n"
-"\n"
+"Îl puteți găsi urmând această legătură: %(object_url)s\n"
 "\n"
 "\n"
-"(Kliknij tutaj, aby edytować swoje ustawienia powiadomień: %(notification_settings_url)s )\n"
 "\n"
-"Twój Zespół %(site_name)s."
+"(Urmați această legătură pentru a modifica preferințele de notificare: %(notification_settings_url)s )\n"
+"\n"
+"A ta %(site_name)s Echipă."
 
 #, python-format
 msgid ""
@@ -540,29 +522,28 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Cześć %(receiver_name)s!\n"
+"Salut, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s dodał/a komentarz do ankiety, w której zostałeś/aś oznaczony/a w zespole %(team_name)s:\n"
+"%(sender_name)s a postat un comentariu la un sondaj în care ați fost etichetat în %(team_name)s:\n"
 "\n"
-"\"%(comment_text)s\"\n"
-"\n"
-"w ankiecie:\n"
-"\n"
-"\"%(poll_title)s\"\n"
+"”%(comment_text)s”\n"
 "\n"
 "\n"
-"Kliknij tutaj, aby zobaczyć komentarz:\n"
+"”%(poll_title)s”\n"
+"\n"
+"\n"
+"Urmați această legătură pentru a vedea comentariul: \n"
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Kliknij tutaj, aby edytować swoje ustawienia powiadomień: %(notification_settings_url)s )\n"
+"(Urmați această legătură pentru a modifica preferințele de notificare: %(notification_settings_url)s )\n"
 "\n"
-"Twój Zespół %(site_name)s.\n"
+"A ta %(site_name)s echipă.\n"
 "\n"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in %(team_name)s."
-msgstr "%(sender_name)s skomentował/a ankietę, w której zostałeś/aś oznaczony/a w zespole %(team_name)s."
+msgstr "%(sender_name)s  a comentat un sondaj în care ați fost etichetat în %(team_name)s."
 
 #, python-format
 msgid ""
@@ -587,227 +568,224 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
-"Cześć %(receiver_name)s!\n"
+"Salut, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s dodał/a komentarz do ankiety, w której zagłosowałeś/aś w zespole %(team_name)s:\n"
+"%(sender_name)s a postat un comentariu la un sondaj în care ați votat în%(team_name)s:\n"
 "\n"
-"\"%(comment_text)s\"\n"
-"\n"
-"w ankiecie:\n"
-"\n"
-"\"%(poll_title)s\"\n"
+"”%(comment_text)s”\n"
 "\n"
 "\n"
-"Kliknij tutaj, aby zobaczyć komentarz:\n"
+"pe acest sondaj:\n"
+"\n"
+"”%(poll_title)s”\n"
+"\n"
+"\n"
+"Urmați această legătură pentru a vedea comentariul: \n"
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Kliknij tutaj, aby edytować swoje ustawienia powiadomień: %(notification_settings_url)s )\n"
+"(Urmați această legătură pentru a modifica preferințele de notificare: %(notification_settings_url)s )\n"
 "\n"
-"Twój Zespół %(site_name)s.\n"
+"A ta %(site_name)s echipă.\n"
 "\n"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s."
-msgstr "%(sender_name)s skomentował/a ankietę, w której zagłosowałeś/aś w zespole %(team_name)s."
+msgstr "%(sender_name)s a comentat un sondaj în care ați votat în %(team_name)s."
 
 msgid "Write comment..."
-msgstr "Dodaj komentarz..."
+msgstr "Scrie comentariu..."
 
 msgid "Post"
-msgstr "Opublikuj"
+msgstr "Post"
 
 msgid "Add poll"
-msgstr "Dodaj ankietę"
+msgstr "Adăugați sondaj"
 
 msgid "There was an error in one of the fields you entered. Please correct it before saving!"
-msgstr "W jednym z wypełnionych pól jest błąd. Popraw go przed zapisaniem!"
+msgstr "A existat o eroare într-unul din câmpurile pe care le-ați introdus. Corectați-o înainte de a salva!"
 
 msgid "Enter a title for the new poll."
-msgstr "Wpisz tytuł nowej ankiety."
+msgstr "Introduceți un titlu pentru noul sondaj."
 
 msgid "Description and Infos"
-msgstr "Opis i Informacje"
+msgstr "Descriere și Informații"
 
 msgid "Enter a description for the poll"
-msgstr "Dodaj opis ankiety"
+msgstr "Introduceți o descriere pentru sondaj"
 
 msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
-msgstr "Uwaga: nie możesz edytować odpowiedzi tej ankiety, ponieważ ktoś już zagłosował lub ankieta została zakończona!"
+msgstr "Notă: Nu puteți modifica opțiunile pentru acest sondaj, deoarece cineva a votat deja sau s-a finalizat sondajul!"
 
 msgid "Poll Choices"
-msgstr "Odpowiedzi Ankiety"
+msgstr "Alegerea Sondajelor"
 
 msgid "Remove choice"
-msgstr "Usuń odpowiedź"
+msgstr "Elimina alegerea"
 
 msgid "Add choice"
-msgstr "Dodaj odpowiedź"
+msgstr "Adăugați alegerea"
 
 msgid "Multiple Votes"
-msgstr "Możliwość wybrania kilku odpowiedzi"
+msgstr "Voturi Multiple"
 
 msgid "If disabled, users can only vote for one option"
-msgstr "Jeśli wyłączona, użytkownicy będą mogli zagłosować tylko na jedną odpowiedź"
+msgstr "Dacă, utilizatorii cu dizabilități pot vota doar pentru o singură opțiune"
 
 msgid "In addition to \"Yes\" and \"No\""
-msgstr "Poza \"Tak\" i \"Nie\""
+msgstr "Pe lângă ”Da” și ”Nu”"
 
 msgid "Lists how every voter voted for each option."
-msgstr "Lista pokazująca odpowiedzi każdego głosującego."
+msgstr "Listează modul în care fiecare alegător a votat pentru fiecare opțiune."
 
 msgid "Public voting"
-msgstr "Głosowanie publiczne"
+msgstr "Votare publică"
 
 msgid "Any logged in user who can see this poll can vote on it. If disabled, only group/project members can vote on it."
-msgstr "Każdy zalogowany użytkownik, który widzi tę ankietę, może w niej zagłosować. Jeśli funkcja jest wyłączona, tylko członkowie grupy/projektu mogą zagłosować."
+msgstr "Orice utilizator conectat care poate vedea acest sondaj îl poate vota. Dacă sunt dezactivați, numai membrii grupului/proiectului pot vota."
 
 msgid "Create"
-msgstr "Utwórz"
+msgstr "Crea"
 
 msgid "Save"
-msgstr "Zapisz"
+msgstr "Salvați"
 
 msgid "Archived Polls"
-msgstr "Zarchiwizowane Ankiety"
+msgstr "Sondajele arhivate"
 
 msgid "Enter the title to create a new poll."
-msgstr "Wpisz tytuł, aby utworzyć nową ankietę."
+msgstr "Introduceți titlu pentru a crea un nou sondaj."
 
 msgid "There are no archived polls."
-msgstr "Nie ma zarchiwizowanych ankiet."
+msgstr "Nu există sondaje arhivate."
 
 msgid "There are no running polls."
-msgstr "Nie ma aktywnych ankiet."
+msgstr "Nu există funcționarea sondajelor."
 
 msgid "There are no upcoming polls"
-msgstr "Nie ma zbliżających się ankiet."
+msgstr "Nu există sondajele viitoare"
 
 msgctxt "the_verb"
 msgid "Vote"
-msgstr "Głos"
+msgstr "Vota"
 
 #, python-format
 msgid "Vote for %(title)s"
-msgstr "Zagłosuj na %(title)s"
+msgstr "Vot pentru %(title)s"
 
 msgid "This poll has been completed. Voting is closed."
-msgstr "Ta ankieta zakończyła się. Głosowanie zamknięte."
+msgstr "Sondajul a fost finalizat. Votarea este închisă."
 
 msgid "This is an archived poll."
-msgstr "To jest zarchiwizowana ankieta."
+msgstr "Acesta este un sondaj arhivat."
 
 msgid "Complete without winner"
-msgstr "Zakończ bez zwycięzcy"
+msgstr "Completează fără câștigător"
 
 #, python-format
 msgid "Do you really want to complete poll \"%(title)s\" with no winning option?"
-msgstr "Czy na pewni chcesz zakończyć ankietę \"%(title)s\" bez zwycięskiej odpowiedzi?"
+msgstr "Vrei într-adevăr să completezi sondajul ”%(title)s” fără opțiune câștigătoare?"
 
 msgid "Complete poll without winner"
-msgstr "Zakończ ankietę bez zwycięzcy"
+msgstr "Sondajul complet fără câștigător"
 
 msgid "(No description set)"
-msgstr "(Nie ustawiono opisu)"
+msgstr "(Fără set de descriere)"
 
 msgid "The Winner is"
-msgstr "Zwycięzcą jest"
+msgstr "Câștigătorul este"
 
 msgid "Available options were"
-msgstr "Możliwymi odpowiedziami były"
+msgstr "Opțiunile disponibile au fost"
 
 msgid "There are no options for this poll yet!"
-msgstr "Nie ma jeszcze odpowiedzi w tej ankiecie!"
+msgstr "Nu există încă opțiuni pentru acest sondaj!"
 
 msgid "Make winner and complete poll"
-msgstr "Ustal zwycięzcę i zakończ ankietę"
+msgstr "Faceți câștigătorul și completați sondajele"
 
 msgid "Votes"
-msgstr "Głosy"
+msgstr "Voturi"
 
 #, python-format
 msgid "Do you really want to complete the poll and select \"%(description)s\" as winner?"
-msgstr "Czy na pewno chcesz zakończyć ankietę i wyznaczyć \"%(description)s\" jako zwycięzcę?"
+msgstr "Vrei într-adevăr să completezi sondajul și să selectezi ”%(description)s” ca câștigător?"
 
 msgid "Complete poll"
-msgstr "Zakończ ankietę"
+msgstr "Sondaj complet"
 
-#, fuzzy
-#| msgid "A user created a new poll"
 msgid "You created a poll"
-msgstr "Użytkownik utworzył nową ankietę"
+msgstr "Ai creat un sondaj"
 
-#, fuzzy
-#| msgid "A user created a new poll"
 msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "created a poll"
-msgstr "Użytkownik utworzył nową ankietę"
+msgstr "creat un sondaj"
 
 msgid "There are no polls yet"
-msgstr "Nie ma jeszcze ankiet"
+msgstr "Încă nu există sondaje"
 
 #, python-format
 msgid "Poll \"%(title)s\" was edited successfully."
-msgstr "Ankieta \"%(title)s\" zedytowana pomyślnie."
+msgstr "Sondaj ”%(title)s” a fost editat cu succes."
 
 #, python-format
 msgid "Poll \"%(title)s\" could not be edited."
-msgstr "Ankieta \"%(title)s\" nie mogła zostać zedytowana."
+msgstr "Sondaj ”%(title)s” nu a putut fi editat."
 
 #, python-format
 msgid "Poll \"%(title)s\" was added successfully."
-msgstr "Ankieta \"%(title)s\" dodana pomyślnie."
+msgstr "Sondaj ”%(title)s” a fost adăugat cu succes."
 
 #, python-format
 msgid "Poll \"%(title)s\" could not be added."
-msgstr "Ankieta \"%(title)s\" nie mogła zostać dodana."
+msgstr "Sondaj ”%(title)s” nu a putut fi adăugat."
 
 msgid "You should define at least one poll option!"
-msgstr "Musisz określić przynajmniej jedną odpowiedź ankiety!"
+msgstr "Ar trebui să definiți cel puțin o opțiune de sondaj!"
 
 msgid "This poll is archived and cannot be edited anymore!"
-msgstr "Ta ankieta jest zarchiwizowana i nie może być edytowana!"
+msgstr "Acest sondaj este arhivat și nu mai poate fi editat!"
 
 #, python-format
 msgid "Poll \"%(title)s\" was deleted successfully."
-msgstr "Ankieta \"%(title)s\" usunięta pomyślnie."
+msgstr "Sondaj ”%(title)s” a fost șters cu succes."
 
 #, python-format
 msgid "Poll \"%(title)s\" could not be deleted."
-msgstr "Ankieta \"%(title)s\" nie mogła zostać usunięta."
+msgstr "Sondaj ”%(title)s” nu a putut fi șters."
 
 msgid "Your votes were saved successfully."
-msgstr "Twoje głosy zostały pomyślnie zapisane."
+msgstr "Voturile dvs. au fost salvate cu succes."
 
 msgid "Your votes could not be saved."
-msgstr "Twoje głosy nie mogły zostać zapisane."
+msgstr "Voturile dvs. nu au putut fi salvate."
 
 msgid "The voting phase for this poll is over. You cannot vote for it any more."
-msgstr "Faza głosowania tej ankiety zakończyła się. Nie możesz już głosować."
+msgstr "Faza de votare pentru acest sondaj sa încheiat. Nu o mai puteți vota."
 
 msgid "In this poll you must vote for exactly one item!"
-msgstr "W tej ankiecie możesz zagłosować tylko na jedną odpowiedź!"
+msgstr "În acest sondaj trebuie să votezi exact un articol!"
 
 msgid "The complete request can only be sent via POST!"
-msgstr "Pełne żądanie można wysłać tylko POCZTĄ!"
+msgstr "Cererea completă poate fi trimisă doar prin POȘTĂ!"
 
 msgid "Invalid action for this poll. The request could not be completed!"
-msgstr "Nieprawidłowa czynność dla tej ankiety. Żądanie nie mogło zostać spełnione!"
+msgstr "Acțiune nevalidă pentru acest sondaj. Cererea nu a putut fi finalizată!"
 
 msgid "This action is not permitted for this poll at this stage!"
-msgstr "To działanie na tym etapie jest zabronione dla tej ankiety!"
+msgstr "Această acțiune nu este permisă pentru acest sondaj în această etapă!"
 
 msgid "The poll was closed successfully."
-msgstr "Ankieta zamknięta pomyślnie."
+msgstr "Sondajul a fost închis cu succes."
 
 msgid "The poll was re-opened successfully."
-msgstr "Ankieta otwarta ponownie pomyślnie."
+msgstr "Sondajul a fost redeschis cu succes."
 
 msgid "The poll was archived successfully."
-msgstr "Ankieta zarchiwizowana pomyślnie."
+msgstr "Sondajul a fost arhivat cu succes."
 
 msgid "Your comment was added successfully."
-msgstr "Komentarz dodany pomyślnie."
+msgstr "Comentariul dvs. a fost adăugat cu succes."
 
 msgid "Your comment was deleted successfully."
-msgstr "Komentarz usunięty pomyślnie."
+msgstr "Comentariul dvs. a fost șters cu succes."
