@@ -15,7 +15,7 @@
                           {% endif %}
                     </a>
                     <div class="media-body no-vertical-padding ">
-                        <strong><a href="{{ poll.get_absolute_url }}">{{ poll.title|truncatechars:25 }}</a></strong>
+                        <strong><a href="{{ poll.get_absolute_url }}">{{ poll.title }}</a></strong>
                         {% with creator=poll.creator %}
                             <div class="group-annotation">
                                 <a href="{{ creator|profile_url }}">
