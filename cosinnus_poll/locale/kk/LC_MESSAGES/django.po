@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-23 12:30+0100\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2020-04-14 13:19+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.3\n"
 
 msgid "Polls"
@@ -35,10 +35,6 @@ msgstr "%(sender_name)s %(object_name)s ішінде жаңа сауалнама
 #, python-format
 msgid "%(sender_name)s created %(count)d polls"
 msgstr "%(sender_name)s %(count)d polls жасады"
-
-#, python-format
-msgid "New poll by %(sender_name)s"
-msgstr "%(sender_name)s жасаған жаңа сауалнама"
 
 #, python-format
 msgid "%(sender_name)s created a new poll"
@@ -61,10 +57,6 @@ msgstr "%(sender_name)s сіз дауыс берген %(count)d polls сауа�
 
 #, python-format
 msgid "%(sender_name)s completed the poll"
-msgstr "%(sender_name)s сауалнаманы аяқтады"
-
-#, python-format
-msgid "%(sender_name)s completed a poll"
 msgstr "%(sender_name)s сауалнаманы аяқтады"
 
 #, python-format
@@ -91,10 +83,6 @@ msgstr "%(sender_name)s сіздің сауалнамаға пікір қалд�
 #, python-format
 msgid "%(sender_name)s commented on one of your polls"
 msgstr "%(sender_name)s сіздің сауалнамаға пікір қалдырды"
-
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
 
 msgid "A user commented on a poll you were tagged in"
 msgstr "Пайдаланушы сіз белгіленген сауалнамалардың біріне комментарий қалдырды"
@@ -138,10 +126,6 @@ msgid "A user created a new poll in a team you are following"
 msgstr "Пайдаланушы сіз бақылайтын топта жаңа сауалнама жасады"
 
 #, python-format
-msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "%(sender_name)s %(team_name) s ішінде (сіз бақылап отырған) жаңа сауалнама"
-
-#, python-format
 msgid "%(sender_name)s created a new poll in %(team_name)s (which you follow)"
 msgstr "%(sender_name)s %(team_name) s ішінде (сіз бақылап отырған) жаңа сауалнама жасады"
 
@@ -180,10 +164,6 @@ msgstr "%(sender_name)s %(count)d polls сауалнамасын аяқтады"
 
 #, python-format
 msgid "%(sender_name)s completed the poll you are following"
-msgstr "Сіз бақылап жатқан сауалнаманы %(sender_name)s аяқтады"
-
-#, python-format
-msgid "%(sender_name)s completed a poll you are following"
 msgstr "Сіз бақылап жатқан сауалнаманы %(sender_name)s аяқтады"
 
 #, python-format
@@ -771,3 +751,18 @@ msgstr "Сіздің пікіріңіз сәтті қосылды."
 
 msgid "Your comment was deleted successfully."
 msgstr "Пікіріңіз сәтті жойылды."
+
+#~ msgid "New poll by %(sender_name)s"
+#~ msgstr "%(sender_name)s жасаған жаңа сауалнама"
+
+#~ msgid "%(sender_name)s completed a poll"
+#~ msgstr "%(sender_name)s сауалнаманы аяқтады"
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "%(sender_name)s %(team_name) s ішінде (сіз бақылап отырған) жаңа сауалнама"
+
+#~ msgid "%(sender_name)s completed a poll you are following"
+#~ msgstr "Сіз бақылап жатқан сауалнаманы %(sender_name)s аяқтады"

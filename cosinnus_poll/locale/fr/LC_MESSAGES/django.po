@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 13:06+0200\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2018-09-14 18:35+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -39,10 +39,6 @@ msgid "%(sender_name)s created %(count)d polls"
 msgstr "%(sender_name)s a créé un nouveau sondage"
 
 #, python-format
-msgid "New poll by %(sender_name)s"
-msgstr "Nouveau sondage par %(sender_name)s"
-
-#, python-format
 msgid "%(sender_name)s created a new poll"
 msgstr "%(sender_name)s a créé un nouveau sondage"
 
@@ -66,10 +62,6 @@ msgstr "%(sender_name)s a commenté un sondage pour lequel tu as voté"
 #, python-format
 msgid "%(sender_name)s completed the poll"
 msgstr "%(sender_name)s a rempli le sondage"
-
-#, python-format
-msgid "%(sender_name)s completed a poll"
-msgstr "%(sender_name)s a rempli un sondage"
 
 #, python-format
 msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
@@ -97,10 +89,6 @@ msgstr "%(sender_name)s a commenté ton sondage"
 #, python-format
 msgid "%(sender_name)s commented on one of your polls"
 msgstr "%(sender_name)s a commenté un de tes sondages"
-
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
 
 msgid "A user commented on a poll you were tagged in"
 msgstr "Un utilisateur a commenté un sondage sur lequel tu es tagué"
@@ -150,11 +138,6 @@ msgstr "%(sender_name)s a commenté un sondage pour lequel tu as voté dans %(te
 #| msgid "A user created a new poll"
 msgid "A user created a new poll in a team you are following"
 msgstr "Un utilisateur a créé un nouveau sondage"
-
-#, fuzzy, python-format
-#| msgid "New poll by %(sender_name)s"
-msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Nouveau sondage par %(sender_name)s"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
@@ -210,11 +193,6 @@ msgstr "%(sender_name)s a rempli le sondage"
 #| msgid "%(sender_name)s completed the poll"
 msgid "%(sender_name)s completed the poll you are following"
 msgstr "%(sender_name)s a rempli le sondage"
-
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on a poll you voted in"
-msgid "%(sender_name)s completed a poll you are following"
-msgstr "%(sender_name)s a commenté un sondage pour lequel tu as voté"
 
 #, fuzzy, python-format
 #| msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
@@ -807,3 +785,22 @@ msgstr "Ton commentaire a été ajouté."
 
 msgid "Your comment was deleted successfully."
 msgstr "Ton commentaire a été supprimé."
+
+#~ msgid "New poll by %(sender_name)s"
+#~ msgstr "Nouveau sondage par %(sender_name)s"
+
+#~ msgid "%(sender_name)s completed a poll"
+#~ msgstr "%(sender_name)s a rempli un sondage"
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#, fuzzy
+#~| msgid "New poll by %(sender_name)s"
+#~ msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Nouveau sondage par %(sender_name)s"
+
+#, fuzzy
+#~| msgid "%(sender_name)s commented on a poll you voted in"
+#~ msgid "%(sender_name)s completed a poll you are following"
+#~ msgstr "%(sender_name)s a commenté un sondage pour lequel tu as voté"

@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-23 12:30+0100\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2020-04-01 11:46+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.3\n"
 
 msgid "Polls"
@@ -35,10 +35,6 @@ msgstr "%(sender_name)s -ը ստեղծել է %(object_name)s հարցումը"
 #, python-format
 msgid "%(sender_name)s created %(count)d polls"
 msgstr "%(sender_name)s -ը ստեղծել է %(count)d հարցում"
-
-#, python-format
-msgid "New poll by %(sender_name)s"
-msgstr "Նոր հարցում %(sender_name)s -ից"
 
 #, python-format
 msgid "%(sender_name)s created a new poll"
@@ -64,10 +60,6 @@ msgid "%(sender_name)s completed the poll"
 msgstr "%(sender_name)s -ը լրացրել է հարցումը"
 
 #, python-format
-msgid "%(sender_name)s completed a poll"
-msgstr "%(sender_name)s -ը լրացրել է հարցում"
-
-#, python-format
 msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
 msgstr "\"%(object_name)s\" հարցումը ավարտվել է %(team_name)s -ում."
 
@@ -91,10 +83,6 @@ msgstr "%(sender_name)s -ը մեկնաբանել է ձեր հարցումը"
 #, python-format
 msgid "%(sender_name)s commented on one of your polls"
 msgstr "%(sender_name)s -ը մեկնաբանել է ձեր հարցումներից մեկը"
-
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
 
 msgid "A user commented on a poll you were tagged in"
 msgstr "Օգտատերը մեկնաբանել է այն հարցումը, որում դուք նշված եք"
@@ -138,10 +126,6 @@ msgid "A user created a new poll in a team you are following"
 msgstr "Օգտատերը նոր հարցում է ստեղծել թիմում, որին դուք հետևում եք"
 
 #, python-format
-msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Նոր հարցում %(sender_name)s -ից %(team_name)s -ում, որին դուք հետևում եք"
-
-#, python-format
 msgid "%(sender_name)s created a new poll in %(team_name)s (which you follow)"
 msgstr "%(sender_name)s-ը ստեղծել է նոր հարցում %(team_name)s -ում, որին դուք հետևում եք"
 
@@ -181,10 +165,6 @@ msgstr "%(sender_name)s -ը ավարտել է %(count)d հարցում"
 #, python-format
 msgid "%(sender_name)s completed the poll you are following"
 msgstr "%(sender_name)s -ը ավարտել է հարցումը, որին հետևում եք"
-
-#, python-format
-msgid "%(sender_name)s completed a poll you are following"
-msgstr "%(sender_name)s -ը ավարտել է հարցում, որին հետևում եք"
 
 #, python-format
 msgid "Poll \"%(object_name)s\" you are following was completed in %(team_name)s."
@@ -771,3 +751,18 @@ msgstr "Ձեր մեկնաբանությունը հաջողությամբ ավե�
 
 msgid "Your comment was deleted successfully."
 msgstr "Ձեր մեկնաբանությունը հաջողությամբ ջնջվել է."
+
+#~ msgid "New poll by %(sender_name)s"
+#~ msgstr "Նոր հարցում %(sender_name)s -ից"
+
+#~ msgid "%(sender_name)s completed a poll"
+#~ msgstr "%(sender_name)s -ը լրացրել է հարցում"
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Նոր հարցում %(sender_name)s -ից %(team_name)s -ում, որին դուք հետևում եք"
+
+#~ msgid "%(sender_name)s completed a poll you are following"
+#~ msgstr "%(sender_name)s -ը ավարտել է հարցում, որին հետևում եք"

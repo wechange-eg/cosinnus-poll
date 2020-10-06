@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 13:06+0200\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,10 +37,6 @@ msgid "%(sender_name)s created %(count)d polls"
 msgstr ""
 
 #, python-format
-msgid "New poll by %(sender_name)s"
-msgstr ""
-
-#, python-format
 msgid "%(sender_name)s created a new poll"
 msgstr ""
 
@@ -61,10 +57,6 @@ msgstr ""
 
 #, python-format
 msgid "%(sender_name)s completed the poll"
-msgstr ""
-
-#, python-format
-msgid "%(sender_name)s completed a poll"
 msgstr ""
 
 #, python-format
@@ -90,10 +82,6 @@ msgstr ""
 
 #, python-format
 msgid "%(sender_name)s commented on one of your polls"
-msgstr ""
-
-#, python-format
-msgid "%(sender_name)s"
 msgstr ""
 
 msgid "A user commented on a poll you were tagged in"
@@ -138,10 +126,6 @@ msgid "A user created a new poll in a team you are following"
 msgstr ""
 
 #, python-format
-msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr ""
-
-#, python-format
 msgid "%(sender_name)s created a new poll in %(team_name)s (which you follow)"
 msgstr ""
 
@@ -180,10 +164,6 @@ msgstr ""
 
 #, python-format
 msgid "%(sender_name)s completed the poll you are following"
-msgstr ""
-
-#, python-format
-msgid "%(sender_name)s completed a poll you are following"
 msgstr ""
 
 #, python-format

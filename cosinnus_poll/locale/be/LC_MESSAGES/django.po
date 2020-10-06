@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 13:06+0200\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2019-05-08 01:09+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -39,10 +39,6 @@ msgid "%(sender_name)s created %(count)d polls"
 msgstr "%(sender_name)s стварыў(-ла) новае апытанне"
 
 #, python-format
-msgid "New poll by %(sender_name)s"
-msgstr "Новае апытанне ад %(sender_name)s"
-
-#, python-format
 msgid "%(sender_name)s created a new poll"
 msgstr "%(sender_name)s стварыў(-ла) новае апытанне"
 
@@ -66,10 +62,6 @@ msgstr "%(sender_name)s пракаментаваў(-ла) апытанне, у �
 #, python-format
 msgid "%(sender_name)s completed the poll"
 msgstr "%(sender_name)s завяршыў(-ла) гэта апытанне"
-
-#, python-format
-msgid "%(sender_name)s completed a poll"
-msgstr "%(sender_name)s завяршыў(-ла) апытанне"
 
 #, python-format
 msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
@@ -99,10 +91,6 @@ msgstr "%(sender_name)s пракаментаваў(-ла) Ваша апытан�
 #, python-format
 msgid "%(sender_name)s commented on one of your polls"
 msgstr "%(sender_name)s пракаментаваў(-ла) адно з Вашых апытанняў"
-
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
 
 msgid "A user commented on a poll you were tagged in"
 msgstr "Карыстальнік(-ца) пракаментаваў(-ла) апытанне, у якім Вы былі пазначаны"
@@ -154,10 +142,6 @@ msgid "A user created a new poll in a team you are following"
 msgstr "Карыстальнік(-ца) стварыў(-ла) новае апытанне ў камандзе, за якой вы сочыце"
 
 #, python-format
-msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Новае апытанне ад %(sender_name)s у %(team_name)s (за якой вы сочыце)"
-
-#, python-format
 msgid "%(sender_name)s created a new poll in %(team_name)s (which you follow)"
 msgstr "%(sender_name)s стварыў(-ла) новае апытанне ў %(team_name)s (за якой вы сочыце)"
 
@@ -201,10 +185,6 @@ msgstr "%(sender_name)s завяршыў(-ла) гэта апытанне"
 
 #, python-format
 msgid "%(sender_name)s completed the poll you are following"
-msgstr "%(sender_name)s завяршыў(-ла) апытанне, за якім Вы сочыце"
-
-#, python-format
-msgid "%(sender_name)s completed a poll you are following"
 msgstr "%(sender_name)s завяршыў(-ла) апытанне, за якім Вы сочыце"
 
 #, python-format
@@ -793,3 +773,18 @@ msgstr "Ваш каментар паспяхова дададзены."
 
 msgid "Your comment was deleted successfully."
 msgstr "Ваш каментар паспяхова выдалены."
+
+#~ msgid "New poll by %(sender_name)s"
+#~ msgstr "Новае апытанне ад %(sender_name)s"
+
+#~ msgid "%(sender_name)s completed a poll"
+#~ msgstr "%(sender_name)s завяршыў(-ла) апытанне"
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Новае апытанне ад %(sender_name)s у %(team_name)s (за якой вы сочыце)"
+
+#~ msgid "%(sender_name)s completed a poll you are following"
+#~ msgstr "%(sender_name)s завяршыў(-ла) апытанне, за якім Вы сочыце"

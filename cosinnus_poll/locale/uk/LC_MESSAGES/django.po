@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 13:06+0200\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2019-07-02 14:11+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -39,10 +39,6 @@ msgid "%(sender_name)s created %(count)d polls"
 msgstr "%(sender_name)s створив нове опитування"
 
 #, python-format
-msgid "New poll by %(sender_name)s"
-msgstr "Нове опитування щодо дати від %(sender_name)s"
-
-#, python-format
 msgid "%(sender_name)s created a new poll"
 msgstr "%(sender_name)s створив нове опитування"
 
@@ -65,10 +61,6 @@ msgstr "%(sender_name)s прокоментував/-ла опитування, �
 
 #, python-format
 msgid "%(sender_name)s completed the poll"
-msgstr "%(sender_name)s завершив опитування"
-
-#, python-format
-msgid "%(sender_name)s completed a poll"
 msgstr "%(sender_name)s завершив опитування"
 
 #, python-format
@@ -98,10 +90,6 @@ msgstr "%(sender_name)s прокоментував/-ла Ваше опитува
 #, python-format
 msgid "%(sender_name)s commented on one of your polls"
 msgstr "%(sender_name)s прокоментував/-ла один з ваших опитувань"
-
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
 
 msgid "A user commented on a poll you were tagged in"
 msgstr "Користувач/-ка прокоментував/-ла опитування, у якому ви позначені"
@@ -152,10 +140,6 @@ msgid "A user created a new poll in a team you are following"
 msgstr "Користувач/-ка створив/-ла нове опитування в команді, за якою Ви слідкуєте"
 
 #, python-format
-msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Нове опитування від %(sender_name)s в %(team_name)s (за якою Ви слідкуєте)"
-
-#, python-format
 msgid "%(sender_name)s created a new poll in %(team_name)s (which you follow)"
 msgstr "%(sender_name)s створив/-ла нове опитувань у %(team_name)s (за якою Ви стежите)"
 
@@ -200,10 +184,6 @@ msgstr "%(sender_name)s завершив опитування"
 #, python-format
 msgid "%(sender_name)s completed the poll you are following"
 msgstr "%(sender_name)s завершив опитування, за яким Ви стежите"
-
-#, python-format
-msgid "%(sender_name)s completed a poll you are following"
-msgstr "%(sender_name)s завершив/-ла опитування, за яким Ви стежите"
 
 #, python-format
 msgid "Poll \"%(object_name)s\" you are following was completed in %(team_name)s."
@@ -788,6 +768,21 @@ msgstr "Ваш коментар успішно додано."
 
 msgid "Your comment was deleted successfully."
 msgstr "Ваш коментар успішно видалено."
+
+#~ msgid "New poll by %(sender_name)s"
+#~ msgstr "Нове опитування щодо дати від %(sender_name)s"
+
+#~ msgid "%(sender_name)s completed a poll"
+#~ msgstr "%(sender_name)s завершив опитування"
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Нове опитування від %(sender_name)s в %(team_name)s (за якою Ви слідкуєте)"
+
+#~ msgid "%(sender_name)s completed a poll you are following"
+#~ msgstr "%(sender_name)s завершив/-ла опитування, за яким Ви стежите"
 
 #~ msgid "Edit Poll Option"
 #~ msgstr "Додати опцію в опитування"
