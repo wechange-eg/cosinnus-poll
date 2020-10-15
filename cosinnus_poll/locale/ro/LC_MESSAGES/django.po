@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 16:06+0200\n"
-"PO-Revision-Date: 2019-11-13 22:00+0200\n"
+"PO-Revision-Date: 2020-10-11 23:47+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 2.2.4\n"
 
 msgid "Polls"
 msgstr "Sondaje"
@@ -28,15 +28,13 @@ msgstr "sondaj"
 msgid "A user created a new poll"
 msgstr "Un utilizator a creat un nou sondaj"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s created a new poll"
+#, python-format
 msgid "%(sender_name)s created the poll %(object_name)s"
-msgstr "%(sender_name)s a creat un nou sondaj"
+msgstr "%(sender_name)s a creat sondajul %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s created a new poll"
+#, python-format
 msgid "%(sender_name)s created %(count)d polls"
-msgstr "%(sender_name)s a creat un nou sondaj"
+msgstr "%(sender_name)s a creat %(count)d sondajul"
 
 #, python-format
 msgid "%(sender_name)s created a new poll"
@@ -49,15 +47,13 @@ msgstr "Un nou sondaj: ”%(object_name)s” a fost creat în %(team_name)s."
 msgid "A poll you voted on was completed"
 msgstr "S-a finalizat un sondaj pentru care ați votat"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s completed the poll you are following"
+#, python-format
 msgid "%(sender_name)s completed the poll %(object_name)s you voted on"
-msgstr "%(sender_name)s a completat sondajul pe care îl urmărești"
+msgstr "%(sender_name)s a finalizat sondajul %(object_name)s ai votat"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on a poll you voted in"
+#, python-format
 msgid "%(sender_name)s completed %(count)d polls you voted on"
-msgstr "%(sender_name)s a comentat un sondaj în care ați votat"
+msgstr "%(sender_name)s a finalizat %(count)d sondajele pe care le-ați votat"
 
 #, python-format
 msgid "%(sender_name)s completed the poll"
@@ -70,18 +66,16 @@ msgstr "Sondaj ”%(object_name)s” a fost completat în %(team_name)s."
 msgid "A user commented on one of your polls"
 msgstr "Un utilizator a comentat unul dintre sondajele voastre"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on your poll %(object_name)s"
-msgstr "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
+msgstr "%(sender_name)s a comentat sondajul dvs., %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your poll %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your poll %(object_name)s"
-msgstr[0] "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
-msgstr[1] "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
-msgstr[2] "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
+msgstr[0] "%(sender_name)s și %(count_minus_one)d altul a comentat sondajul dvs., %(object_name)s"
+msgstr[1] "%(sender_name)s și %(count_minus_one)d alții au comentat sondajul dvs., %(object_name)s"
+msgstr[2] "%(sender_name)s și %(count_minus_one)d alții au comentat sondajul dvs., %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on your poll"
@@ -94,23 +88,19 @@ msgstr "%(sender_name)s a comentat unul dintre sondajele voastre"
 msgid "A user commented on a poll you were tagged in"
 msgstr "Un utilizator a comentat un sondaj în care ați fost etichetat"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on the poll %(object_name)s"
-msgstr "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
+msgstr "%(sender_name)s a comentat sondajul %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the poll %(object_name)s"
-msgstr[0] "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
-msgstr[1] "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
-msgstr[2] "%(sender_name)s a comentat unul dintre sondajele dvs. din %(team_name)s."
+msgstr[0] "%(sender_name)s și %(count_minus_one)d altul a comentat la sondaj %(object_name)s"
+msgstr[1] "%(sender_name)s și %(count_minus_one)d alții au comentat sondajul %(object_name)s"
+msgstr[2] "%(sender_name)s și %(count_minus_one)d alții au comentat sondajul %(object_name)s"
 
-#, fuzzy
-#| msgid "You created a poll"
 msgid "You were tagged in this poll"
-msgstr "Ai creat un sondaj"
+msgstr "Ați fost etichetat în acest sondaj"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in"
@@ -123,10 +113,8 @@ msgstr "%(sender_name)s a comentat un sondaj în care ați fost etichetat %(team
 msgid "A user commented on an poll you voted in"
 msgstr "Un utilizator a comentat un sondaj în care ați votat"
 
-#, fuzzy
-#| msgid "You created a poll"
 msgid "You voted on this poll"
-msgstr "Ai creat un sondaj"
+msgstr "Ați votat acest sondaj"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in"
@@ -150,15 +138,12 @@ msgstr "Un nou sondaj: ”%(object_name)s a fost creat în %(team_name)s (pe cca
 msgid "A user updated a poll you are following"
 msgstr "Un utilizator a actualizat un sondaj pe care îl urmărești"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s completed the poll"
+#, python-format
 msgid "%(sender_name)s updated the poll %(object_name)s"
-msgstr "%(sender_name)s a completat sondajul"
+msgstr "%(sender_name)s a actualizat sondajul %(object_name)s"
 
-#, fuzzy
-#| msgid "A poll you are following was completed"
 msgid "You are following this poll"
-msgstr "S-a finalizat un sondaj pe care îl urmărești"
+msgstr "Urmărești acest sondaj"
 
 #, python-format
 msgid "%(sender_name)s updated a poll you are following"
@@ -171,15 +156,13 @@ msgstr "Un sondaj pe care îl urmărești: ”%(object_name)s” a fost actualiz
 msgid "A poll you are following was completed"
 msgstr "S-a finalizat un sondaj pe care îl urmărești"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s completed the poll"
+#, python-format
 msgid "%(sender_name)s completed the poll %(object_name)s"
-msgstr "%(sender_name)s a completat sondajul"
+msgstr "%(sender_name)s a finalizat sondajul %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s completed the poll"
+#, python-format
 msgid "%(sender_name)s completed %(count)d polls"
-msgstr "%(sender_name)s a completat sondajul"
+msgstr "%(sender_name)s a finalizat %(count)d sondajul"
 
 #, python-format
 msgid "%(sender_name)s completed the poll you are following"

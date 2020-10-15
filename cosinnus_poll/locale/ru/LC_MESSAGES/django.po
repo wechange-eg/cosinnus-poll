@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: wechange RU\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 16:06+0200\n"
-"PO-Revision-Date: 2019-07-03 17:40+0100\n"
+"PO-Revision-Date: 2020-10-11 19:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -15,27 +15,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 2.4.1\n"
 
 msgid "Polls"
 msgstr "Опросы"
 
 msgctxt "the_app"
 msgid "poll"
-msgstr "Опрос"
+msgstr "опрос"
 
 msgid "A user created a new poll"
 msgstr "Пользователь создал новый опрос"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s created a new poll"
+#, python-format
 msgid "%(sender_name)s created the poll %(object_name)s"
-msgstr "%(sender_name)s создал(a) новый опрос"
+msgstr "%(sender_name)s создал(a) опрос %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s created a new poll"
+#, python-format
 msgid "%(sender_name)s created %(count)d polls"
-msgstr "%(sender_name)s создал(a) новый опрос"
+msgstr "%(sender_name)s создал(a) %(count)d опросов"
 
 #, python-format
 msgid "%(sender_name)s created a new poll"
@@ -48,15 +46,13 @@ msgstr "Новый опрос: \"%(object_name)s\" создан в %(team_name)s
 msgid "A poll you voted on was completed"
 msgstr "Опрос, в котором Вы принимали участие, был завершен"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s completed the poll you are following"
+#, python-format
 msgid "%(sender_name)s completed the poll %(object_name)s you voted on"
-msgstr "%(sender_name)s завершил(а) опрос, за которым Вы следите"
+msgstr "%(sender_name)s завершил(а) опрос %(object_name)s, в котором Вы проголосовали"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on a poll you voted in"
+#, python-format
 msgid "%(sender_name)s completed %(count)d polls you voted on"
-msgstr "%(sender_name)s прокомментировал(a) опрос, по которому Вы проголосовали"
+msgstr "%(sender_name)s завершил(a) опрос %(count)d, в котором Вы проголосовали"
 
 #, python-format
 msgid "%(sender_name)s completed the poll"
@@ -69,18 +65,16 @@ msgstr "Опрос: \"%(object_name)s\" завершён в %(team_name)s."
 msgid "A user commented on one of your polls"
 msgstr "Пользователь прокомментировал один из Ваших опросов"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on your poll %(object_name)s"
-msgstr "%(sender_name)s прокомментировал(a) один из Ваших опросов в %(team_name)s."
+msgstr "%(sender_name)s прокомментировал(a) один из Ваших опросов %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your poll %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your poll %(object_name)s"
-msgstr[0] "%(sender_name)s прокомментировал(a) один из Ваших опросов в %(team_name)s."
-msgstr[1] "%(sender_name)s прокомментировал(a) один из Ваших опросов в %(team_name)s."
-msgstr[2] "%(sender_name)s прокомментировал(a) один из Ваших опросов в %(team_name)s."
+msgstr[0] "%(sender_name)s и %(count_minus_one)d прокомментировал(a) один из Ваших опросов %(object_name)s"
+msgstr[1] "%(sender_name)s и %(count_minus_one)d прокомментировали один из Ваших опросов %(object_name)s"
+msgstr[2] "%(sender_name)s и %(count_minus_one)d прокомментировали один из Ваших опросов %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on your poll"
@@ -93,23 +87,19 @@ msgstr "%(sender_name)s прокомментировал(a) один из Ваш
 msgid "A user commented on a poll you were tagged in"
 msgstr "Пользователь прокомментировал опрос, в котором Вы отмечены"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on the poll %(object_name)s"
-msgstr "%(sender_name)s прокомментировал(a) один из Ваших опросов в %(team_name)s."
+msgstr "%(sender_name)s прокомментировал(a) опрос %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the poll %(object_name)s"
-msgstr[0] "%(sender_name)s прокомментировал(a) один из Ваших опросов в %(team_name)s."
-msgstr[1] "%(sender_name)s прокомментировал(a) один из Ваших опросов в %(team_name)s."
-msgstr[2] "%(sender_name)s прокомментировал(a) один из Ваших опросов в %(team_name)s."
+msgstr[0] "%(sender_name)s и %(count_minus_one)d прокомментировал(a) опрос %(object_name)s"
+msgstr[1] "%(sender_name)s и %(count_minus_one)d прокомментировали опрос %(object_name)s"
+msgstr[2] "%(sender_name)s и %(count_minus_one)d прокомментировали опрос %(object_name)s"
 
-#, fuzzy
-#| msgid "You created a poll"
 msgid "You were tagged in this poll"
-msgstr "Ты создал(а) новый опрос"
+msgstr "Вы были отмечены в этом опросе"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in"
@@ -122,10 +112,8 @@ msgstr "%(sender_name)s прокомментировал(a) опрос, в ко�
 msgid "A user commented on an poll you voted in"
 msgstr "Пользователь прокомментировал опрос, в голосовании по которому Вы участвовали"
 
-#, fuzzy
-#| msgid "You created a poll"
 msgid "You voted on this poll"
-msgstr "Ты создал(а) новый опрос"
+msgstr "Вы проголосовали в этом опросе"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in"
@@ -149,15 +137,12 @@ msgstr "Новый опрос: \"%(object_name)s\" был создан в %(team
 msgid "A user updated a poll you are following"
 msgstr "Пользователь обновил опрос, за которым Вы следите"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s completed the poll"
+#, python-format
 msgid "%(sender_name)s updated the poll %(object_name)s"
-msgstr "%(sender_name)s завершил(а) опрос"
+msgstr "%(sender_name)s обновил опрос %(object_name)s"
 
-#, fuzzy
-#| msgid "A poll you are following was completed"
 msgid "You are following this poll"
-msgstr "Опрос, за которым Вы следите, был завершен"
+msgstr "Вы следите за этим опросом"
 
 #, python-format
 msgid "%(sender_name)s updated a poll you are following"
@@ -170,15 +155,13 @@ msgstr "Опрос, за которым Вы следите: \"%(object_name)s\"
 msgid "A poll you are following was completed"
 msgstr "Опрос, за которым Вы следите, был завершен"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s completed the poll"
+#, python-format
 msgid "%(sender_name)s completed the poll %(object_name)s"
-msgstr "%(sender_name)s завершил(а) опрос"
+msgstr "%(sender_name)s завершил(а) опрос %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s completed the poll"
+#, python-format
 msgid "%(sender_name)s completed %(count)d polls"
-msgstr "%(sender_name)s завершил(а) опрос"
+msgstr "%(sender_name)s завершил(а) %(count)d опросов"
 
 #, python-format
 msgid "%(sender_name)s completed the poll you are following"
@@ -328,7 +311,7 @@ msgid "Past Polls"
 msgstr "Последние опросы"
 
 msgid "by"
-msgstr "Создатель"
+msgstr "создатель"
 
 msgid "Delete"
 msgstr "Удалить"
@@ -706,7 +689,7 @@ msgstr "Ты создал(а) новый опрос"
 
 msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "created a poll"
-msgstr "Созданный опрос"
+msgstr "созданный опрос"
 
 msgid "There are no polls yet"
 msgstr "Опросы ещё не созданы"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-06 16:06+0200\n"
-"PO-Revision-Date: 2019-07-02 14:11+0200\n"
+"PO-Revision-Date: 2020-10-13 20:33+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk_UA\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.4.1\n"
 
 msgid "Polls"
 msgstr "Опитування"
@@ -28,15 +28,13 @@ msgstr "опитування"
 msgid "A user created a new poll"
 msgstr "Користувач/-ка створив/-ла нове опитування щодо дати"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s created a new poll"
+#, python-format
 msgid "%(sender_name)s created the poll %(object_name)s"
-msgstr "%(sender_name)s створив нове опитування"
+msgstr "%(sender_name)s створив(-ла) опитування %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s created a new poll"
+#, python-format
 msgid "%(sender_name)s created %(count)d polls"
-msgstr "%(sender_name)s створив нове опитування"
+msgstr "%(sender_name)s створив(-ла) %(count)d опитувань"
 
 #, python-format
 msgid "%(sender_name)s created a new poll"
@@ -49,15 +47,13 @@ msgstr "Нове опитування щодо дати: «%(object_name)s» б�
 msgid "A poll you voted on was completed"
 msgstr "Опитування, в якому Ви взяли участь, завершене"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s completed the poll you are following"
+#, python-format
 msgid "%(sender_name)s completed the poll %(object_name)s you voted on"
-msgstr "%(sender_name)s завершив опитування, за яким Ви стежите"
+msgstr "%(sender_name)s завершив опитування %(object_name)s, за яким Ви стежите"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on a poll you voted in"
+#, python-format
 msgid "%(sender_name)s completed %(count)d polls you voted on"
-msgstr "%(sender_name)s прокоментував/-ла опитування, в якому Ви взяли участь"
+msgstr "%(sender_name)s завершив %(count)d опитувань, в яких Ви взяли участь"
 
 #, python-format
 msgid "%(sender_name)s completed the poll"
@@ -70,18 +66,16 @@ msgstr "Нове опитування щодо дати: «%(object_name)s» б�
 msgid "A user commented on one of your polls"
 msgstr "Користувач прокоментував/-ла одне з ваших опитувань"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on your poll %(object_name)s"
-msgstr "%(sender_name)s прокоментував/-ла одне з Ваших опитувань у %(team_name)s."
+msgstr "%(sender_name)s прокоментував(-ла) ваше опитування %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your poll %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your poll %(object_name)s"
-msgstr[0] "%(sender_name)s прокоментував/-ла одне з Ваших опитувань у %(team_name)s."
-msgstr[1] "%(sender_name)s прокоментував/-ла одне з Ваших опитувань у %(team_name)s."
-msgstr[2] "%(sender_name)s прокоментував/-ла одне з Ваших опитувань у %(team_name)s."
+msgstr[0] "%(sender_name)s і %(count_minus_one)d інший(-а) прокоментували Ваше опитування %(object_name)s"
+msgstr[1] "%(sender_name)s і %(count_minus_one)d інших прокоментували Ваше опитування %(object_name)s"
+msgstr[2] "%(sender_name)s і %(count_minus_one)d інших прокоментували Ваше опитування %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on your poll"
@@ -94,23 +88,19 @@ msgstr "%(sender_name)s прокоментував/-ла один з ваших 
 msgid "A user commented on a poll you were tagged in"
 msgstr "Користувач/-ка прокоментував/-ла опитування, у якому ви позначені"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s commented on the poll %(object_name)s"
-msgstr "%(sender_name)s прокоментував/-ла одне з Ваших опитувань у %(team_name)s."
+msgstr "%(sender_name)s прокоментував(-ла) опитування %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
+#, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the poll %(object_name)s"
-msgstr[0] "%(sender_name)s прокоментував/-ла одне з Ваших опитувань у %(team_name)s."
-msgstr[1] "%(sender_name)s прокоментував/-ла одне з Ваших опитувань у %(team_name)s."
-msgstr[2] "%(sender_name)s прокоментував/-ла одне з Ваших опитувань у %(team_name)s."
+msgstr[0] "%(sender_name)s і %(count_minus_one)d інший(-а) прокоментували опитування %(object_name)s"
+msgstr[1] "%(sender_name)s і %(count_minus_one)d інших прокоментували опитування %(object_name)s"
+msgstr[2] "%(sender_name)s і %(count_minus_one)d інших прокоментували опитування %(object_name)s"
 
-#, fuzzy
-#| msgid "You created a poll"
 msgid "You were tagged in this poll"
-msgstr "Ти створи(ла)в опитування"
+msgstr "Вас відмітили в цьому опитуванні"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in"
@@ -123,10 +113,8 @@ msgstr "%(sender_name)s прокоментував/-ла опитування, �
 msgid "A user commented on an poll you voted in"
 msgstr "Користувач/-ка прокоментував/-ла опитування щодо дати, в якому Ви взяли участь"
 
-#, fuzzy
-#| msgid "You created a poll"
 msgid "You voted on this poll"
-msgstr "Ти створи(ла)в опитування"
+msgstr "Ви взяли участь у цьому опитуванні"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in"
@@ -150,15 +138,12 @@ msgstr "Нове опитування: «%(object_name)s» було створе
 msgid "A user updated a poll you are following"
 msgstr "Користувач/-ка оновив/-ла опитування, яке Ви відстежуєте"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s completed the poll"
+#, python-format
 msgid "%(sender_name)s updated the poll %(object_name)s"
-msgstr "%(sender_name)s завершив опитування"
+msgstr "%(sender_name)s оновив опитування %(object_name)s"
 
-#, fuzzy
-#| msgid "A poll you are following was completed"
 msgid "You are following this poll"
-msgstr "Опитування, за яким Ви стежите, завершене"
+msgstr "Ви стежите за цим опитуванням"
 
 #, python-format
 msgid "%(sender_name)s updated a poll you are following"
@@ -171,15 +156,13 @@ msgstr "Опитування, за яким ви стежите: «%(object_name
 msgid "A poll you are following was completed"
 msgstr "Опитування, за яким Ви стежите, завершене"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s completed the poll"
+#, python-format
 msgid "%(sender_name)s completed the poll %(object_name)s"
-msgstr "%(sender_name)s завершив опитування"
+msgstr "%(sender_name)s завершив опитування %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s completed the poll"
+#, python-format
 msgid "%(sender_name)s completed %(count)d polls"
-msgstr "%(sender_name)s завершив опитування"
+msgstr "%(sender_name)s завершив %(count)d опитувань"
 
 #, python-format
 msgid "%(sender_name)s completed the poll you are following"
@@ -292,7 +275,7 @@ msgid "Option"
 msgstr "Опція"
 
 msgid "Voter"
-msgstr "Голосуючий/-ча"
+msgstr "Учасник(-ця) опитування"
 
 msgid "Vote"
 msgstr "Голосувати"
@@ -329,7 +312,7 @@ msgid "Past Polls"
 msgstr "Опитування що минули"
 
 msgid "by"
-msgstr "Автор"
+msgstr "автор"
 
 msgid "Delete"
 msgstr "Видалити"
@@ -345,14 +328,14 @@ msgstr "Архівувати"
 
 #, python-format
 msgid "Do you really want to delete poll „%(title)s“?"
-msgstr "Ви дійсно бажаєте видалити опитування «%(title)s»?"
+msgstr "Ви справді бажаєте видалити опитування «%(title)s»?"
 
 msgid "Delete poll"
 msgstr "Видалити опитування"
 
 #, python-format
 msgid "Do you really want to re-open poll „%(title)s“?"
-msgstr "Ви дійсно бажаєте знову активувати «%(title)s»?"
+msgstr "Ви справді бажаєте знову активувати «%(title)s»?"
 
 msgid "Re-open poll"
 msgstr "Знову активувати опитування"
@@ -663,7 +646,7 @@ msgstr "Завершити без переможця"
 
 #, python-format
 msgid "Do you really want to complete poll \"%(title)s\" with no winning option?"
-msgstr "Ви дійсно бажаєте закінчити опитування «%(title)s» без переможця?"
+msgstr "Ви справді бажаєте закінчити опитування «%(title)s» без переможця?"
 
 msgid "Complete poll without winner"
 msgstr "Завершити опитування без переможця"
@@ -688,7 +671,7 @@ msgstr "Голоси"
 
 #, python-format
 msgid "Do you really want to complete the poll and select \"%(description)s\" as winner?"
-msgstr "Ви дійсно бажаєте завершити це опитування щодо дати та призначити \"%(description)s\" переможцем?"
+msgstr "Ви справді бажаєте завершити це опитування щодо дати та призначити \"%(description)s\" переможцем?"
 
 msgid "Complete poll"
 msgstr "Завершити опитування"
@@ -698,7 +681,7 @@ msgstr "Ти створи(ла)в опитування"
 
 msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "created a poll"
-msgstr "Створено опитування"
+msgstr "створено опитування"
 
 msgid "There are no polls yet"
 msgstr "Поки немає опитувань"
