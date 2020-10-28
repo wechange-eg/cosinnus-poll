@@ -20,6 +20,7 @@
 {% endblock %}
 
 {% block action_buttons %}
+	{% include 'cosinnus/v2/dashboard/timeline_button_star.html' with item=item %}
 	{% include 'cosinnus/v2/dashboard/timeline_button_follow.html' with item=item %}
 {% endblock %}
 {% block delete_button_frame %}{% endblock %}

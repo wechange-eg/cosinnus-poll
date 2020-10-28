@@ -34,7 +34,7 @@
                         </span>
                     {% endwith %}
                     <a href="{{ poll.get_absolute_url }}">
-                        {% include 'cosinnus/common/likefollow/following_title_indicator.html' with object=poll %}
+                        {% include 'cosinnus/common/likefollowstar/following_title_indicator.html' with object=poll %}
                         {{ poll.title }}
                     </a>
                 </div>
