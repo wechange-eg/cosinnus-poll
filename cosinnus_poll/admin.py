@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.contrib import admin
 
 from cosinnus_poll.models import Poll, Option, Vote
-from cosinnus.admin import BaseTaggableAdminMixin
+from cosinnus.admin import BaseTaggableAdmin
 
 
 class VoteInlineAdmin(admin.TabularInline):
@@ -34,11 +34,11 @@ class OptionInlineAdmin(admin.TabularInline):
     readonly_fields = ('count',)
 
 
-class PollAdmin(BaseTaggableAdminMixin, admin.ModelAdmin):
-    inlines = BaseTaggableAdminMixin.inlines + [OptionInlineAdmin,]
-    list_display = BaseTaggableAdminMixin.list_display + ['state',]
-    list_filter = BaseTaggableAdminMixin.list_filter + ['state', ]
-    search_fields = BaseTaggableAdminMixin.search_fields + ['']
+class PollAdmin(BaseTaggableAdmin):
+    inlines = BaseTaggableAdmin.inlines + [OptionInlineAdmin,]
+    list_display = BaseTaggableAdmin.list_display + ['state',]
+    list_filter = BaseTaggableAdmin.list_filter + ['state', ]
+    search_fields = BaseTaggableAdmin.search_fields + ['']
 
 
 admin.site.register(Poll, PollAdmin)
