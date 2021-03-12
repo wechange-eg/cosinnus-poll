@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-23 18:24+0100\n"
-"PO-Revision-Date: 2020-09-29 18:04+0100\n"
+"POT-Creation-Date: 2021-03-12 17:55+0100\n"
+"PO-Revision-Date: 2021-03-09 00:02+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 2.4.2\n"
 
 msgid "Polls"
 msgstr "סקרים"
@@ -26,19 +26,19 @@ msgid "poll"
 msgstr "סקר"
 
 msgid "A user created a new poll"
-msgstr "משתמש יצר סקר חדש"
+msgstr "משתמש יצר/ה סקר חדש"
 
 #, python-format
 msgid "%(sender_name)s created the poll %(object_name)s"
-msgstr "%(sender_name)s יצר את הסקר %(object_name)s"
+msgstr "%(sender_name)s יצר/ה את הסקר %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s created %(count)d polls"
-msgstr "%(sender_name)s יצר %(count)d סקרים"
+msgstr "%(sender_name)s יצר/ה %(count)d סקרים"
 
 #, python-format
 msgid "%(sender_name)s created a new poll"
-msgstr "%(sender_name)s יצר סקר חדש"
+msgstr "%(sender_name)s יצר/ה סקר חדש"
 
 #, python-format
 msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
@@ -49,15 +49,15 @@ msgstr "סקר שהצבעתם בו הושלם"
 
 #, python-format
 msgid "%(sender_name)s completed the poll %(object_name)s you voted on"
-msgstr "%(sender_name)s השלימ'ה את הסקר שהצבעתם בו %(object_name)s"
+msgstr "%(sender_name)s השלימ/ה את הסקר שהצבעתם בו %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s completed %(count)d polls you voted on"
-msgstr "%(sender_name)s השלימ'ה %(count)d סקרים שהצבעת בהם"
+msgstr "%(sender_name)s השלימ/ה %(count)d סקרים שהצבעת בהם"
 
 #, python-format
 msgid "%(sender_name)s completed the poll"
-msgstr "%(sender_name)s השלימ'ה את הסקר"
+msgstr "%(sender_name)s השלימ/ה את הסקר"
 
 #, python-format
 msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
@@ -68,7 +68,7 @@ msgstr "משתמש הגיב על אחד מהסקרים שלך"
 
 #, python-format
 msgid "%(sender_name)s commented on your poll %(object_name)s"
-msgstr "%(sender_name)s הגיב'ה על הסקר שלך %(object_name)s"
+msgstr "%(sender_name)s הגיב/ה על הסקר שלך %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your poll %(object_name)s"
@@ -78,18 +78,18 @@ msgstr[1] "%(sender_name)s ו-%(count_minus_one)d אחרים הגיבו על ה�
 
 #, python-format
 msgid "%(sender_name)s commented on your poll"
-msgstr "%(sender_name)s הגיב'ה על הסקר שלך"
+msgstr "%(sender_name)s הגיב/ה על הסקר שלך"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your polls"
-msgstr "%(sender_name)s הגיב'ה על אחד הסקרים שלך"
+msgstr "%(sender_name)s הגיב/ה על אחד הסקרים שלך"
 
 msgid "A user commented on a poll you were tagged in"
 msgstr "משתמש הגיב על סקר שתויגת בו"
 
 #, python-format
 msgid "%(sender_name)s commented on the poll %(object_name)s"
-msgstr "%(sender_name)s הגיב'ה על הסקר %(object_name)s"
+msgstr "%(sender_name)s הגיב/ה על הסקר %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s"
@@ -102,11 +102,11 @@ msgstr "תויגתם בסקר זה"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in"
-msgstr "%(sender_name)s הגיב'ה על סקר שתויגת בו"
+msgstr "%(sender_name)s הגיב/ה על סקר שתויגת בו"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in in %(team_name)s"
-msgstr "%(sender_name)s הגיב'ה על סקר שתויגתם בו ב-%(team_name)s"
+msgstr "%(sender_name)s הגיב/ה על סקר שתויגתם בו ב-%(team_name)s"
 
 msgid "A user commented on an poll you voted in"
 msgstr "משתמש הגיב בסקר שהצבעת בו"
@@ -116,55 +116,55 @@ msgstr "הצבעתם בסקר זה"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in"
-msgstr "%(sender_name)s הגיב'ה בסקר שהצבעתם בו"
+msgstr "%(sender_name)s הגיב/ה בסקר שהצבעתם בו"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s"
-msgstr "%(sender_name)s הגיב'ה על סקר שהצבעתם בו ב-%(team_name)s"
+msgstr "%(sender_name)s הגיב/ה על סקר שהצבעתם בו ב-%(team_name)s"
 
 msgid "A user created a new poll in a team you are following"
 msgstr "משתמש יצר סקר חדש בצוות שאתם עוקבים"
 
 #, python-format
 msgid "%(sender_name)s created a new poll in %(team_name)s (which you follow)"
-msgstr "%(sender_name)s יצר'ה סקר חדש ב-%(team_name)s (שאתם עוקבים)"
+msgstr "%(sender_name)s יצר/ה סקר חדש ב-%(team_name)s (שאתם עוקבים אחריו)"
 
 #, python-format
 msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
-msgstr "סקר חדש: \"%(object_name)s\" נוצר ב-%(team_name)s (שאתם עוקבים)"
+msgstr "סקר חדש: \"%(object_name)s\" נוצר ב-%(team_name)s (שאתם עוקבים אחריו)"
 
 msgid "A user updated a poll you are following"
 msgstr "משתמש עידכן סקר שאתם עוקבים"
 
 #, python-format
 msgid "%(sender_name)s updated the poll %(object_name)s"
-msgstr "%(sender_name)s עדכנ'ה את הסקר %(object_name)s"
+msgstr "%(sender_name)s עדכנ/ה את הסקר %(object_name)s"
 
 msgid "You are following this poll"
-msgstr "אתם עוקבים סקר זה"
+msgstr "אתם עוקבים אחר סקר זה"
 
 #, python-format
 msgid "%(sender_name)s updated a poll you are following"
-msgstr "%(sender_name)s עדכנ'ה סקר שאתם עוקבים בו"
+msgstr "%(sender_name)s עדכנ/ה סקר שאתם עוקבים בו"
 
 #, python-format
 msgid "A poll you are following: \"%(object_name)s\" was updated in %(team_name)s."
-msgstr "הסקר שאתם עוקבים בו: \"%(object_name)s\" עודכן ב-%(team_name)s."
+msgstr "הסקר שאתם עוקבים אחריו: \"%(object_name)s\" עודכן ב-%(team_name)s."
 
 msgid "A poll you are following was completed"
 msgstr "סקר שאתם עוקבים הושלם"
 
 #, python-format
 msgid "%(sender_name)s completed the poll %(object_name)s"
-msgstr "%(sender_name)s השלימ'ה את הסקר %(object_name)s"
+msgstr "%(sender_name)s השלימ/ה את הסקר %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s completed %(count)d polls"
-msgstr "%(sender_name)s השלימ'ה %(count)d סקרים"
+msgstr "%(sender_name)s השלימ/ה %(count)d סקרים"
 
 #, python-format
 msgid "%(sender_name)s completed the poll you are following"
-msgstr "%(sender_name)s השלימ'ה את הסקר שאתם עוקבים"
+msgstr "%(sender_name)s השלימ/ה את הסקר שאתם עוקבים אחריו"
 
 #, python-format
 msgid "Poll \"%(object_name)s\" you are following was completed in %(team_name)s."
@@ -175,7 +175,7 @@ msgstr "משתמש הגיב על סקר שאתם עוקבים"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you are following"
-msgstr "%(sender_name)s הגיב'ה על סקר שאתה עוקבים"
+msgstr "%(sender_name)s הגיב/ה על סקר שאתה עוקבים"
 
 msgid "Current Polls"
 msgstr "סקרים נוכחיים"
@@ -217,10 +217,10 @@ msgid "Does this poll allow users to vote on multiple options or just decide for
 msgstr "האם סקר זה מאפשר למשתמשים להצביע על אפשרויות מרובות או פשוט להחליט על אחת?"
 
 msgid "\"Maybe\" option enabled"
-msgstr "אפשרות \"אולי\" זמינה"
+msgstr "האפשרות \"אולי\" זמינה"
 
 msgid "Is the maybe option enabled? Ignored and defaulting to False if ``multiple_votes==False``"
-msgstr ""
+msgstr "האם האפשרות 'אולי' זמינה? התעלם והחל ברירת מחדל אם ``multiple_votes==False`` ההצבעה כוזבת"
 
 msgid "Anyone can vote"
 msgstr "כל אחד יכול להצביע"
@@ -273,17 +273,17 @@ msgid "Option"
 msgstr "אפשרות"
 
 msgid "Voter"
-msgstr "מצביע'ה"
+msgstr "מצביע/ה"
 
 msgid "Vote"
-msgstr "הצבע'י"
+msgstr "הצבע/י"
 
 msgctxt "the subject"
 msgid "Vote"
 msgstr "הצבעה"
 
 msgid "Creator"
-msgstr "יוצר'ת"
+msgstr "יוצר/ת"
 
 msgid "Created"
 msgstr "נוצר"
@@ -390,7 +390,7 @@ msgstr ""
 
 #, python-format
 msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
-msgstr "%(sender_name)s הגיב'ה על אחד מהסקרים שלך ב-%(team_name)s."
+msgstr "%(sender_name)s הגיב/ה על אחד מהסקרים שלך ב-%(team_name)s."
 
 #, python-format
 msgid ""
@@ -483,7 +483,7 @@ msgid ""
 msgstr ""
 "היי,  %(receiver_name)s! \n"
 "\n"
-"%(sender_name)s הגיב'ה על הסקר שתויגת בו, ב-%(team_name)s:\n"
+"%(sender_name)s הגיב/ה על הסקר שתויגת בו, ב-%(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -503,7 +503,7 @@ msgstr ""
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in %(team_name)s."
-msgstr "%(sender_name)s הגיב'ה על סקר שתויגתם בו ב-%(team_name)s."
+msgstr "%(sender_name)s הגיב/ה על סקר שתויגתם בו ב-%(team_name)s."
 
 #, python-format
 msgid ""
@@ -530,7 +530,7 @@ msgid ""
 msgstr ""
 "היי, %(receiver_name)s! \n"
 "\n"
-"%(sender_name)s הגיב'ה על הסקר שהצבעת בו ב-%(team_name)s:\n"
+"%(sender_name)s הגיב/ה על הסקר שהצבעת בו ב-%(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\" \n"
 "\n"
@@ -549,10 +549,10 @@ msgstr ""
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s."
-msgstr "%(sender_name)s הגיב'ה על סקר שהצבעתם בו ב-%(team_name)s."
+msgstr "%(sender_name)s הגיב/ה על סקר שהצבעתם בו ב-%(team_name)s."
 
 msgid "Write comment..."
-msgstr "כתבו תגובה..."
+msgstr "כתוב תגובה..."
 
 msgid "Post"
 msgstr "פרסם"
@@ -618,7 +618,7 @@ msgid "There are no archived polls."
 msgstr "אין סקרים בארכיון."
 
 msgid "There are no running polls."
-msgstr "אין סקרים רצים."
+msgstr "אין סקרים שמתקיימים כעת."
 
 msgid "There are no upcoming polls"
 msgstr "אין סקרים קרובים"
@@ -677,7 +677,7 @@ msgstr "יצרתם סקר"
 
 msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "created a poll"
-msgstr "יצר'ה"
+msgstr "יצר/ה"
 
 msgid "There are no polls yet"
 msgstr "אין סקרים עדיין"
