@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 17:55+0100\n"
+"POT-Creation-Date: 2021-02-23 18:24+0100\n"
 "PO-Revision-Date: 2020-07-03 16:06+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -73,9 +73,9 @@ msgstr "%(sender_name)s skomentował/a Twoją ankietę %(object_name)s"
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your poll %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your poll %(object_name)s"
-msgstr[0] "%(sender_name)s i %(count_minus_one)d skomentował/a Twoją ankietę %(object_name)s"
-msgstr[1] "%(sender_name)s i %(count_minus_one)d skomentowali Twoją ankietę %(object_name)s"
-msgstr[2] "%(sender_name)s i %(count_minus_one)d skomentowali Twoją ankietę %(object_name)s"
+msgstr[0] "%(sender_name)s i inny/-a %(count_minus_one)d skomentował/-a Twoją ankietę %(object_name)s"
+msgstr[1] "%(sender_name)s i inni/-e %(count_minus_one)d skomentowali/-ły Twoją ankietę %(object_name)s"
+msgstr[2] "%(sender_name)s i inni/-e %(count_minus_one)d skomentowali/-ły Twoją ankietę %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on your poll"
@@ -95,9 +95,9 @@ msgstr "%(sender_name)s skomentował/a ankietę %(object_name)s"
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the poll %(object_name)s"
-msgstr[0] "%(sender_name)s i %(count_minus_one)d skomentował/a Twoją ankietę %(object_name)s"
-msgstr[1] "%(sender_name)s i %(count_minus_one)d skomentowali Twoją ankietę %(object_name)s"
-msgstr[2] "%(sender_name)s i %(count_minus_one)d skomentowali Twoją ankietę %(object_name)s"
+msgstr[0] "%(sender_name)s i %(count_minus_one)d skomentował/a ankietę %(object_name)s"
+msgstr[1] "%(sender_name)s i inni/-e %(count_minus_one)d skomentowali/-ły ankietę %(object_name)s"
+msgstr[2] "%(sender_name)s i inni/-e %(count_minus_one)d skomentowali/-ły ankietę %(object_name)s"
 
 msgid "You were tagged in this poll"
 msgstr "Zostałeś/aś oznaczony/a w tej ankiecie"
@@ -186,10 +186,10 @@ msgid "No current polls"
 msgstr "Brak aktywnych ankiet"
 
 msgid "Created By"
-msgstr "Utworzona Przez"
+msgstr "Utworzone Przez"
 
 msgid "Newest Created"
-msgstr "Najnowsza Utworzona"
+msgstr "Ostatnio Utworzone"
 
 msgid "Title"
 msgstr "Tytuł"
@@ -213,7 +213,7 @@ msgid "Description"
 msgstr "Opis"
 
 msgid "Multiple options votable"
-msgstr "Możliwość wybrania kilku odpowiedzi"
+msgstr "Możliwość wybrania kilku opcji"
 
 msgid "Does this poll allow users to vote on multiple options or just decide for one?"
 msgstr "Czy ta ankieta pozwala użytkownikom na wybranie kilku odpowiedzi, czy tylko jednej?"
@@ -257,10 +257,10 @@ msgid "Votes"
 msgstr "Głosy"
 
 msgid "Poll Option"
-msgstr "Odpowiedź Ankiety"
+msgstr "Opcja Ankiety"
 
 msgid "Poll Options"
-msgstr "Odpowiedzi Ankiety"
+msgstr "Opcje Ankiety"
 
 msgid "Yes"
 msgstr "Tak"
@@ -272,7 +272,7 @@ msgid "No"
 msgstr "Nie"
 
 msgid "Option"
-msgstr "Odpowiedź"
+msgstr "Opcja"
 
 msgid "Voter"
 msgstr "Głosujący"
@@ -288,13 +288,13 @@ msgid "Creator"
 msgstr "Twórca"
 
 msgid "Created"
-msgstr "Stworzono"
+msgstr "Utworzył/-a"
 
 msgid "Last modified"
-msgstr "Data ost. modyfikacji"
+msgstr "Data ostatniej modyfikacji"
 
 msgid "Text"
-msgstr "Treść"
+msgstr "Tekst"
 
 msgid "Comment"
 msgstr "Komentarz"
@@ -558,7 +558,7 @@ msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s."
 msgstr "%(sender_name)s skomentował/a ankietę, w której zagłosowałeś/aś w zespole %(team_name)s."
 
 msgid "Write comment..."
-msgstr "Dodaj komentarz..."
+msgstr "Napisz komentarz..."
 
 msgid "Post"
 msgstr "Opublikuj"
@@ -591,7 +591,7 @@ msgid "Add choice"
 msgstr "Dodaj odpowiedź"
 
 msgid "Multiple Votes"
-msgstr "Możliwość wybrania kilku odpowiedzi"
+msgstr "Odpowiedzi wielowariantowe"
 
 msgid "If disabled, users can only vote for one option"
 msgstr "Jeśli wyłączona, użytkownicy będą mogli zagłosować tylko na jedną odpowiedź"
@@ -654,7 +654,7 @@ msgid "Complete poll without winner"
 msgstr "Zakończ ankietę bez zwycięzcy"
 
 msgid "(No description set)"
-msgstr "(Nie ustawiono opisu)"
+msgstr "(Brak ustawienia opisu)"
 
 msgid "The Winner is"
 msgstr "Zwycięzcą jest"
@@ -731,7 +731,7 @@ msgid "In this poll you must vote for exactly one item!"
 msgstr "W tej ankiecie możesz zagłosować tylko na jedną odpowiedź!"
 
 msgid "The complete request can only be sent via POST!"
-msgstr "Pełne żądanie można wysłać tylko POCZTĄ!"
+msgstr "Kompletne żądanie można wysłać tylko POCZTĄ!"
 
 msgid "Invalid action for this poll. The request could not be completed!"
 msgstr "Nieprawidłowa czynność dla tej ankiety. Żądanie nie mogło zostać spełnione!"
@@ -749,10 +749,10 @@ msgid "The poll was archived successfully."
 msgstr "Ankieta zarchiwizowana pomyślnie."
 
 msgid "Your comment was added successfully."
-msgstr "Komentarz dodany pomyślnie."
+msgstr "Twój komentarz został dodany pomyślnie."
 
 msgid "Your comment was deleted successfully."
-msgstr "Komentarz usunięty pomyślnie."
+msgstr "Twój komentarz został usunięty pomyślnie."
 
 #~ msgid "New poll by %(sender_name)s"
 #~ msgstr "Nowa ankieta utworzona przez %(sender_name)s"
