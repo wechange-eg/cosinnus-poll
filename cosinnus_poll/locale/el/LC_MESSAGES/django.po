@@ -3,347 +3,347 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-22 12:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2021-03-30 19:20+0200\n"
+"PO-Revision-Date: 2021-04-26 15:09+0300\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.2\n"
 
 msgid "Polls"
-msgstr ""
+msgstr "Δημοσκοπήσεις"
 
 msgctxt "the_app"
 msgid "poll"
-msgstr ""
+msgstr "δημοσκόπηση"
 
 msgid "A user created a new poll"
-msgstr ""
+msgstr "Ένας χρήστης δημιούργησε μια νέα δημοσκόπηση"
 
 #, python-format
 msgid "%(sender_name)s created the poll %(object_name)s"
-msgstr ""
+msgstr "Ο/η %(sender_name)s δημιούργησε τη δημοσκόπηση %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s created %(count)d polls"
-msgstr ""
+msgstr "Ο/η %(sender_name)s δημιούργησε %(count)d δημοσκοπήσεις"
 
 #, python-format
 msgid "%(sender_name)s created a new poll"
-msgstr ""
+msgstr "Ο/η %(sender_name)s δημιούργησε μια νέα δημοσκόπηση"
 
 #, python-format
 msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
-msgstr ""
+msgstr "Μια νέα δημοσκόπηση: \"%(object_name)s\" δημιουργήθηκε σε %(team_name)s."
 
 msgid "A poll you voted on was completed"
-msgstr ""
+msgstr "Μια δημοσκόπηση στην οποία ψηφίσατε ολοκληρώθηκε"
 
 #, python-format
 msgid "%(sender_name)s completed the poll %(object_name)s you voted on"
-msgstr ""
+msgstr "Ο/η %(sender_name)s ολοκλήρωσε τη δημοσκόπηση %(object_name)s στην οποία ψηφίσατε"
 
 #, python-format
 msgid "%(sender_name)s completed %(count)d polls you voted on"
-msgstr ""
+msgstr "Ο/η %(sender_name)s ολοκλήρωσε %(count)d δημοσκοπήσεις στις οποίες ψηφίσατε"
 
 #, python-format
 msgid "%(sender_name)s completed the poll"
-msgstr ""
+msgstr "Ο/η %(sender_name)s ολοκλήρωσε τη δημοσκόπηση"
 
 #, python-format
 msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
-msgstr ""
+msgstr "Η δημοσκόπηση \"%(object_name)s\" ολοκληρώθηκε σε %(team_name)s."
 
 msgid "A user commented on one of your polls"
-msgstr ""
+msgstr "Ένας χρήστης σχολίασε μία από τις δημοσκοπήσεις σας"
 
 #, python-format
 msgid "%(sender_name)s commented on your poll %(object_name)s"
-msgstr ""
+msgstr "Ο/η %(sender_name)s σχολίασε τη δημοσκόπησή σας %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your poll %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your poll %(object_name)s"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ο/η %(sender_name)s και %(count_minus_one)d άλλος σχολίασε τη δημοσκόπησή σας %(object_name)s"
+msgstr[1] "Ο/η %(sender_name)s και %(count_minus_one)d άλλοι σχολίασαν τη δημοσκόπησή σας %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on your poll"
-msgstr ""
+msgstr "Ο/η %(sender_name)s σχολίασε τη δημοσκόπησή σας"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your polls"
-msgstr ""
+msgstr "Ο/η %(sender_name)s σχολίασε μία από τις δημοσκοπήσεις σας"
 
 msgid "A user commented on a poll you were tagged in"
-msgstr ""
+msgstr "Ένας χρήστης σχολίασε μια δημοσκόπηση στην οποία προστεθήκατε με ετικέτα"
 
 #, python-format
 msgid "%(sender_name)s commented on the poll %(object_name)s"
-msgstr ""
+msgstr "Ο/η %(sender_name)s σχολίασε τη δημοσκόπηση %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the poll %(object_name)s"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ο/η %(sender_name)s και %(count_minus_one)d άλλος σχολίασε τη δημοσκόπηση %(object_name)s"
+msgstr[1] "Ο/η %(sender_name)s και %(count_minus_one)d άλλοι σχολίασαν τη δημοσκόπηση %(object_name)s"
 
 msgid "You were tagged in this poll"
-msgstr ""
+msgstr "Προστεθήκατε με ετικέτα σε αυτή τη δημοσκόπηση"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in"
-msgstr ""
+msgstr "Ο/η %(sender_name)s σχολίασε μια δημοσκόπηση στην οποία προστεθήκατε με ετικέτα"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in in %(team_name)s"
-msgstr ""
+msgstr "Ο/η %(sender_name)s σχολίασε μια δημοσίευση στην οποία προστεθήκατε με ετικέτα σε %(team_name)s"
 
 msgid "A user commented on an poll you voted in"
-msgstr ""
+msgstr "Ένας χρήστης σχολίασε μια δημοσκόπηση στην οποία ψηφίσατε"
 
 msgid "You voted on this poll"
-msgstr ""
+msgstr "Ψηφίσατε στη συγκεκριμένη δημοσκόπηση"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in"
-msgstr ""
+msgstr "Ο/η %(sender_name)s σχολίασε μια δημοσκόπηση στην οποία εσείς ψηφίσατε"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s"
-msgstr ""
+msgstr "Ο/η %(sender_name)s σχολίασε μια δημοσκόπηση στην οποία εσείς ψηφίσατε σε %(team_name)s"
 
 msgid "A user created a new poll in a team you are following"
-msgstr ""
+msgstr "Ένας χρήστης δημιούργησε μια νέα δημοσκόπηση σε μια ομάδα που ακολουθείτε"
 
 #, python-format
 msgid "%(sender_name)s created a new poll in %(team_name)s (which you follow)"
-msgstr ""
+msgstr "Ο/η %(sender_name)s δημιούργησε μια νέα δημοσκόπηση σε %(team_name)s (που ακολουθείτε)"
 
 #, python-format
 msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
-msgstr ""
+msgstr "Μια νέα δημοσκόπηση; \"%(object_name)s\" δημιουργήθηκε σε %(team_name)s (που ακολουθείτε)."
 
 msgid "A user updated a poll you are following"
-msgstr ""
+msgstr "Ένας χρήστης ενημέρωσε μια δημοσκόπηση που ακολουθείτε"
 
 #, python-format
 msgid "%(sender_name)s updated the poll %(object_name)s"
-msgstr ""
+msgstr "Ο/η %(sender_name)s ενημέρωσε τη δημοσκόπηση %(object_name)s"
 
 msgid "You are following this poll"
-msgstr ""
+msgstr "Ακολουθείτε αυτή τη δημοσκόπηση"
 
 #, python-format
 msgid "%(sender_name)s updated a poll you are following"
-msgstr ""
+msgstr "Ο/η %(sender_name)s ενημέρωσε μια δημοσκόπηση που ακολουθείτε"
 
 #, python-format
 msgid "A poll you are following: \"%(object_name)s\" was updated in %(team_name)s."
-msgstr ""
+msgstr "Μια δημοσκόπηση που ακολουθείτε: \"%(object_name)s\" ενημερώθηκε σε %(team_name)s."
 
 msgid "A poll you are following was completed"
-msgstr ""
+msgstr "Μια δημοσκόπηση που ακολουθείτε ολοκληρώθηκε"
 
 #, python-format
 msgid "%(sender_name)s completed the poll %(object_name)s"
-msgstr ""
+msgstr "Ο/η %(sender_name)s ολοκλήρωσε τη δημοσκόπηση %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s completed %(count)d polls"
-msgstr ""
+msgstr "Ο/η %(sender_name)s ολοκλήρωσε %(count)d δημοσκοπήσεις"
 
 #, python-format
 msgid "%(sender_name)s completed the poll you are following"
-msgstr ""
+msgstr "Ο/η %(sender_name)s ολοκλήρωσε τη δημοσκόπηση που ακολουθείτε"
 
 #, python-format
 msgid "Poll \"%(object_name)s\" you are following was completed in %(team_name)s."
-msgstr ""
+msgstr "Η δημοσκόπηση \"%(object_name)s\" που ακολουθείτε ολοκληρώθηκε σε %(team_name)s."
 
 msgid "A user commented on one a poll you are following"
-msgstr ""
+msgstr "Ένας χρήστης σχολίασε μια δημοσκόπηση που ακολουθείτε"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you are following"
-msgstr ""
+msgstr "Ο/η %(sender_name)s σχολίασε μια δημοσκόπηση που ακολουθείτε"
 
 msgid "Current Polls"
-msgstr ""
+msgstr "Τρέχουσες Δημοσκοπήσεις"
 
 msgid "No current polls"
-msgstr ""
+msgstr "Καμία τρέχουσα δημοσκόπηση"
 
 msgid "Created By"
-msgstr ""
+msgstr "Δημιουργήθηκε Από"
 
 msgid "Newest Created"
-msgstr ""
+msgstr "Πιο Πρόσφατη Δημιουργία"
 
 msgid "Title"
-msgstr ""
+msgstr "Τίτλος"
 
 msgid "You must write a description for this poll option!"
-msgstr ""
+msgstr "Πρέπει να γράψετε μια περιγραφή για αυτή την επιλογή δημοσκόπησης!"
 
 msgid "Voting open"
-msgstr ""
+msgstr "Η ψηφοφορία είναι ανοιχτή"
 
 msgid "Voting closed"
-msgstr ""
+msgstr "Η ψηφοφορία έκλεισε"
 
 msgid "Poll archived"
-msgstr ""
+msgstr "Η δημοσκόπηση αρχειοθετήθηκε"
 
 msgid "State"
-msgstr ""
+msgstr "Κατάσταση"
 
 msgid "Description"
-msgstr ""
+msgstr "Περιγραφή"
 
 msgid "Multiple options votable"
-msgstr ""
+msgstr "Μπορούν να ψηφιστούν πολλές επιλογές"
 
 msgid "Does this poll allow users to vote on multiple options or just decide for one?"
-msgstr ""
+msgstr "Αυτή η δημοσκόπηση επιτρέπει τους χρήστες να ψηφίζουν με πολλές επιλογές ή απλώς να αποφασίζουν για μία;"
 
 msgid "\"Maybe\" option enabled"
-msgstr ""
+msgstr "Η επιλογή \"Ίσως\" ενεργοποιήθηκε"
 
 msgid "Is the maybe option enabled? Ignored and defaulting to False if ``multiple_votes==False``"
-msgstr ""
+msgstr "Έχει ενεργοποιηθεί η επιλογή \"ίσως\"; Παραβλέπεται και αντιμετωπίζεται ως Ψευδής εάν `multiple_votes==False``"
 
 msgid "Anyone can vote"
-msgstr ""
+msgstr "Μπορεί να ψηφίσει οποιοσδήποτε"
 
 msgid "If true, anyone who can see this poll can vote on it. If false, only group members can."
-msgstr ""
+msgstr "Εάν ισχύει, όποιος μπορεί να δει αυτή τη δημοσκόπηση μπορεί να ψηφίσει. Εάν δεν ισχύει, μόνο τα μέλη της ομάδας μπορούν."
 
 msgid "Show voters"
-msgstr ""
+msgstr "Εμφάνιση ψηφοφόρων"
 
 msgid "If true, display a list of which user voted for each option."
-msgstr ""
+msgstr "Εάν ισχύει, εμφανίστε ένα κατάλογο με τους χρήστες που ψήφισαν κάθε επιλογή."
 
 msgid "Start"
-msgstr ""
+msgstr "Έναρξη"
 
 msgid "Winning Option"
-msgstr ""
+msgstr "Επικρατούσα Επιλογή"
 
 msgid "Poll"
-msgstr ""
+msgstr "Δημοσκόπηση"
 
 #, python-format
 msgid "Poll: %(poll)s (%(state)s)"
-msgstr ""
+msgstr "Δημοσκόπηση: %(poll)s (%(state)s)"
 
 msgid "Image"
-msgstr ""
+msgstr "Εικόνα"
 
 msgctxt "the subject"
 msgid "Votes"
-msgstr ""
+msgstr "Ψήφοι"
 
 msgid "Poll Option"
-msgstr ""
+msgstr "Επιλογή Δημοσκόπησης"
 
 msgid "Poll Options"
-msgstr ""
+msgstr "Επιλογές Δημοσκόπησης"
 
 msgid "Yes"
-msgstr ""
+msgstr "Ναι"
 
 msgid "Maybe"
-msgstr ""
+msgstr "Ίσως"
 
 msgid "No"
-msgstr ""
+msgstr "Όχι"
 
 msgid "Option"
-msgstr ""
+msgstr "Επιλογή"
 
 msgid "Voter"
-msgstr ""
+msgstr "Ψηφοφόρος"
 
 msgid "Vote"
-msgstr ""
+msgstr "Ψηφίζω"
 
 msgctxt "the subject"
 msgid "Vote"
-msgstr ""
+msgstr "Ψήφος"
 
 msgid "Creator"
-msgstr ""
+msgstr "Δημιουργός"
 
 msgid "Created"
-msgstr ""
+msgstr "Δημιουργήθηκε"
 
 msgid "Last modified"
-msgstr ""
+msgstr "Τελευταία τροποποίηση"
 
 msgid "Text"
-msgstr ""
+msgstr "Κείμενο"
 
 msgid "Comment"
-msgstr ""
+msgstr "Σχόλιο"
 
 msgid "Comments"
-msgstr ""
+msgstr "Σχόλια"
 
 msgid "Poll choice"
-msgstr ""
+msgstr "Επιλογή Δημοσκόπησης"
 
 msgid "Back to Polls"
-msgstr ""
+msgstr "Πίσω στις Δημοσκοπήσεις"
 
 msgid "Past Polls"
-msgstr ""
+msgstr "Παλαιότερες Δημοσκοπήσεις"
 
 msgid "by"
-msgstr ""
+msgstr "από"
 
 msgid "Delete"
-msgstr ""
+msgstr "Διαγραφή"
 
 msgid "Edit"
-msgstr ""
+msgstr "Επεξεργασία"
 
 msgid "Re-open"
-msgstr ""
+msgstr "Εκ νέου άνοιγμα"
 
 msgid "Archive"
-msgstr ""
+msgstr "Αρχείο"
 
 #, python-format
 msgid "Do you really want to delete poll „%(title)s“?"
-msgstr ""
+msgstr "Είστε βέβαιοι ότι θέλετε να διαγράψετε τη δημοσκόπηση \"%(title)s\";"
 
 msgid "Delete poll"
-msgstr ""
+msgstr "Διαγραφή δημοσκόπησης"
 
 #, python-format
 msgid "Do you really want to re-open poll „%(title)s“?"
-msgstr ""
+msgstr "Είστε βέβαιοι ότι θέλετε να ξανανοίξετε τη δημοσκόπηση \"%(title)s\";"
 
 msgid "Re-open poll"
-msgstr ""
+msgstr "Εκ νέου άνοιγμα δημοσκόπησης"
 
 #, python-format
 msgid "Do you really want to archive poll „%(title)s“?"
-msgstr ""
+msgstr "Είστε βέβαιοι ότι θέλετε να αρχειοθετήσετε τη δημοσκόπηση \"%(title)s\";"
 
 msgid "Archive poll"
-msgstr ""
+msgstr "Αρχειοθέτηση δημοσκόπησης"
 
 #, python-format
 msgid ""
@@ -368,10 +368,30 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
+"Γεια, %(receiver_name)s!\n"
+"\n"
+"ο/η %(sender_name)s ανάρτησε ένα σχόλιο σε μια δημοσκόπηση που δημιουργήσατε σε %(team_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"στη δημοσκόπησή σας:\n"
+"\n"
+"\"%(poll_title)s\"\n"
+"\n"
+"\n"
+"Ακολουθήστε αυτό το σύνδεσμο για να δείτε το σχόλιο: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Ακολουθήστε αυτό τον σύνδεσμο για να επεξεργαστείτε τις προτιμήσεις ειδοποίησης: %(notification_settings_url)s )\n"
+"\n"
+"Η ομάδα %(site_name)s.\n"
+"\n"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
-msgstr ""
+msgstr "Ο/η %(sender_name)s σχολίασε μία από τις δημοσκοπήσεις σας %(team_name)s."
 
 #, python-format
 msgid ""
@@ -379,12 +399,15 @@ msgid ""
 "\n"
 "the poll \"%(object_name)s\", was completed in %(team_name)s by %(sender_name)s!\n"
 msgstr ""
+"Γεια %(receiver_name)s,\n"
+"\n"
+"η δημοσκόπηση\"%(object_name)s\", ολοκληρώθηκε σε %(team_name)s από %(sender_name)s!\n"
 
 msgid "The winning option was:"
-msgstr ""
+msgstr "Η επικρατούσα επιλογή ήταν:"
 
 msgid "There was no winning option."
-msgstr ""
+msgstr "Δεν υπήρχε επικρατούσα επιλογή."
 
 #, python-format
 msgid ""
@@ -397,10 +420,18 @@ msgid ""
 "\n"
 "Your %(site_name)s Team."
 msgstr ""
+"\n"
+"Μπορείτε να βρείτε τη δημοσκόπηση ακολουθώντας αυτό τον σύνδεσμο %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(Ακολουθήστε αυτό το σύνδεσμο για να επεξεργαστείτε τις προτιμήσεις ειδοποίησής: %(notification_settings_url)s )\n"
+"\n"
+"Η Ομάδα %(site_name)s."
 
 #, python-format
 msgid "Poll: \"%(object_name)s\" was completed in %(team_name)s."
-msgstr ""
+msgstr "Δημοσκόπηση: \"%(object_name)s\" ολοκληρώθηκε σε %(team_name)s."
 
 #, python-format
 msgid ""
@@ -416,6 +447,17 @@ msgid ""
 "\n"
 "Your %(site_name)s Team."
 msgstr ""
+"Γεια %(receiver_name)s,\n"
+"\n"
+"μια νέα δημοσκόπηση\"%(object_name)s\" δημιουργήθηκε σε %(team_name)s από %(sender_name)s. \n"
+"\n"
+"Μπορείτε να την βρείτε ακολουθώντας τον συγκεκριμένο σύνδεσμο: %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(Ακολουθείστε τον σύνδεσμο αυτό για να επεξεργαστείτε τις προτιμήσεις ειδοποίησης: %(notification_settings_url)s )\n"
+"\n"
+"Η Ομάδα %(site_name)s."
 
 #, python-format
 msgid ""
@@ -440,10 +482,30 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
+"Γεια, %(receiver_name)s!\n"
+"\n"
+"ο/η %(sender_name)s έχει αναρτήσει ένα σχόλιο στη δημοσκόπηση που προστεθήκατε με ετικέτα, σε %(team_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"στη δημοσκόπηση:\n"
+"\n"
+"\"%(poll_title)s\"\n"
+"\n"
+"\n"
+"Ακολουθήστε αυτό τον σύνδεσμο για να δείτε το σχόλιο: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Ακολουθήστε αυτό τον σύνδεσμο για να επεξεργαστείτε τις προτιμήσεις ειδοποίησης: %(notification_settings_url)s )\n"
+"\n"
+"Η ομάδα %(site_name)s.\n"
+"\n"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in %(team_name)s."
-msgstr ""
+msgstr "Ο/η %(sender_name)s σχολίασε μια δημοσίευση στην οποία προστεθήκατε με ετικέτα σε %(team_name)s."
 
 #, python-format
 msgid ""
@@ -468,204 +530,224 @@ msgid ""
 "Your %(site_name)s team.\n"
 "\n"
 msgstr ""
+"Γεια, %(receiver_name)s!\n"
+"\n"
+"ο/η %(sender_name)s έχει αναρτήσει ένα σχόλιο για τη δημοσίευση που ψηφίσατε σε %(team_name)s:\n"
+"\n"
+"\"%(comment_text)s\"\n"
+"\n"
+"\n"
+"στη δημοσκόπηση:\n"
+"\n"
+"\"%(poll_title)s\"\n"
+"\n"
+"\n"
+"Ακολουθήστε αυτό τον σύνδεσμο για να δείτε το σχόλιο: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Ακολουθήστε αυτό τον σύνδεσμο για να επεξεργαστείτε τις προτιμήσεις ειδοποίησης: %(notification_settings_url)s )\n"
+"\n"
+"Η ομάδα %(site_name)s.\n"
+"\n"
 
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s."
-msgstr ""
+msgstr "Ο/η %(sender_name)s σχολίασε μια δημοσκόπηση που ψηφίσατε σε %(team_name)s."
 
 msgid "Write comment..."
-msgstr ""
+msgstr "Σύνταξη σχολίου..."
 
 msgid "Post"
-msgstr ""
+msgstr "Ανάρτηση"
 
 msgid "Add poll"
-msgstr ""
+msgstr "Προσθήκη δημοσκόπησης"
 
 msgid "There was an error in one of the fields you entered. Please correct it before saving!"
-msgstr ""
+msgstr "Υπήρξε σφάλμα σε ένα από τα πεδία που εισήλθατε. Παρακαλούμε διορθώστε το πριν από την αποθήκευση!"
 
 msgid "Enter a title for the new poll."
-msgstr ""
+msgstr "Εισάγετε τίτλο για τη νέα δημοσκόπηση."
 
 msgid "Description and Infos"
-msgstr ""
+msgstr "Περιγραφή και Πληροφορίες"
 
 msgid "Enter a description for the poll"
-msgstr ""
+msgstr "Εισάγετε περιγραφή για τη δημοσκόπηση"
 
 msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
-msgstr ""
+msgstr "Σημείωση: Δεν μπορείτε να επεξεργαστείτε τις επιλογές για αυτή τη δημοσκόπηση επειδή κάποιος έχει ήδη ψηφίσει ή η δημοσκόπηση έχει ολοκληρωθεί!"
 
 msgid "Poll Choices"
-msgstr ""
+msgstr "Επιλογές Δημοσκόπησης"
 
 msgid "Remove choice"
-msgstr ""
+msgstr "Αφαίρεσης επιλογής"
 
 msgid "Add choice"
-msgstr ""
+msgstr "Προσθήκη επιλογής"
 
 msgid "Multiple Votes"
-msgstr ""
+msgstr "Πολλαπλές Ψήφοι"
 
 msgid "If disabled, users can only vote for one option"
-msgstr ""
+msgstr "Εάν έχει απενεργοποιηθεί, οι χρήστες μπορούν μόνο να ψηφίσουν για μία επιλογή"
 
 msgid "In addition to \"Yes\" and \"No\""
-msgstr ""
+msgstr "Εκτός από \"Ναι\" και \"Όχι\"."
 
 msgid "Lists how every voter voted for each option."
-msgstr ""
+msgstr "Κατάλογοι με τον τρόπο που ψήφισε κάθε ψηφοφόρος για κάθε επιλογή."
 
 msgid "Public voting"
-msgstr ""
+msgstr "Δημόσια ψηφοφορία"
 
 msgid "Any logged in user who can see this poll can vote on it. If disabled, only group/project members can vote on it."
-msgstr ""
+msgstr "Όποιος συνδεδεμένος χρήστης μπορεί να δει αυτή τη δημοσκόπηση μπορεί να ψηφίσει. Εάν έχει απενεργοποιηθεί, μπορούν να ψηφίσουν μόνο τα μέλη της ομάδας/του έργου."
 
 msgid "Create"
-msgstr ""
+msgstr "Δημιουργία"
 
 msgid "Save"
-msgstr ""
+msgstr "Αποθήκευση"
 
 msgid "Archived Polls"
-msgstr ""
+msgstr "Αρχειοθετημένες Δημοσκοπήσεις"
 
 msgid "Enter the title to create a new poll."
-msgstr ""
+msgstr "Εισάγετε τίτλο για να δημιουργήσετε μια νέα δημοσκόπηση."
 
 msgid "There are no archived polls."
-msgstr ""
+msgstr "Δεν υπάρχουν αρχειοθετημένες δημοσκοπήσεις."
 
 msgid "There are no running polls."
-msgstr ""
+msgstr "Δεν υπάρχουν ανοιχτές δημοσκοπήσεις."
 
 msgid "There are no upcoming polls"
-msgstr ""
+msgstr "Δεν υπάρχουν προσεχείς δημοσκοπήσεις"
 
 msgctxt "the_verb"
 msgid "Vote"
-msgstr ""
+msgstr "Ψηφίζω"
 
 #, python-format
 msgid "Vote for %(title)s"
-msgstr ""
+msgstr "Ψηφίστε για %(title)s"
 
 msgid "This poll has been completed. Voting is closed."
-msgstr ""
+msgstr "Αυτή η δημοσκόπηση έχει ολοκληρωθεί. Η ψηφοφορία έχει κλείσει."
 
 msgid "This is an archived poll."
-msgstr ""
+msgstr "Αυτή είναι μια αρχειοθετημένη δημοσκόπηση."
 
 msgid "Complete without winner"
-msgstr ""
+msgstr "Ολοκληρώστε χωρίς νικητή"
 
 #, python-format
 msgid "Do you really want to complete poll \"%(title)s\" with no winning option?"
-msgstr ""
+msgstr "Είστε βέβαιοι ότι θέλετε να ολοκληρώσετε τη δημοσκόπηση \"%(title)s\" χωρίς επικρατούσα επιλογή;"
 
 msgid "Complete poll without winner"
-msgstr ""
+msgstr "Ολοκληρώστε τη δημοσκόπηση χωρίς νικητή"
 
 msgid "(No description set)"
-msgstr ""
+msgstr "(Δεν έχει τοποθετηθεί περιγραφή)"
 
 msgid "The Winner is"
-msgstr ""
+msgstr "Ο Νικητής είναι"
 
 msgid "Available options were"
-msgstr ""
+msgstr "Οι διαθέσιμες επιλογές ήταν"
 
 msgid "There are no options for this poll yet!"
-msgstr ""
+msgstr "Δεν υπάρχουν επιλογές για αυτή τη δημοσκόπηση ακόμη!"
 
 msgid "Make winner and complete poll"
-msgstr ""
+msgstr "Ανακοίνωση νικητή και ολοκλήρωση δημοσκόπησης"
 
 msgid "Votes"
-msgstr ""
+msgstr "Ψήφοι"
 
 #, python-format
 msgid "Do you really want to complete the poll and select \"%(description)s\" as winner?"
-msgstr ""
+msgstr "Είστε βέβαιοι ότι θέλετε να ολοκληρώσετε τη δημοσκόπηση και να επιλέξετε \"%(description)s\" ως νικητή;"
 
 msgid "Complete poll"
-msgstr ""
+msgstr "Ολοκλήρωση δημοσκόπησης"
 
 msgid "You created a poll"
-msgstr ""
+msgstr "Δημιουργήσατε μια δημοσκόπηση"
 
 msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "created a poll"
-msgstr ""
+msgstr "δημιούργησε μια δημοσκόπηση"
 
 msgid "There are no polls yet"
-msgstr ""
+msgstr "Δεν υπάρχουν ακόμη δημοσκοπήσεις"
 
 #, python-format
 msgid "Poll \"%(title)s\" was edited successfully."
-msgstr ""
+msgstr "Η δημοσκόπηση \"%(title)s\" υποβλήθηκε σε επεξεργασία με επιτυχία."
 
 #, python-format
 msgid "Poll \"%(title)s\" could not be edited."
-msgstr ""
+msgstr "Δεν ήταν δυνατή η επεξεργασία της δημοσκόπησης \"%(title)s\"."
 
 #, python-format
 msgid "Poll \"%(title)s\" was added successfully."
-msgstr ""
+msgstr "Η δημοσκόπηση \"%(title)s\" προστέθηκε με επιτυχία."
 
 #, python-format
 msgid "Poll \"%(title)s\" could not be added."
-msgstr ""
+msgstr "Δεν ήταν δυνατή η προσθήκη της δημοσκόπησης \"%(title)s\"."
 
 msgid "You should define at least one poll option!"
-msgstr ""
+msgstr "Θα πρέπει να ορίσετε τουλάχιστον μία επιλογή δημοσκόπησης!"
 
 msgid "This poll is archived and cannot be edited anymore!"
-msgstr ""
+msgstr "Η δημοσκόπηση αρχειοθετήθηκε και δεν μπορεί να υποβληθεί σε επεξεργασία πλέον!"
 
 #, python-format
 msgid "Poll \"%(title)s\" was deleted successfully."
-msgstr ""
+msgstr "Η δημοσκόπηση \"%(title)s\" έχει διαγραφεί με επιτυχία."
 
 #, python-format
 msgid "Poll \"%(title)s\" could not be deleted."
-msgstr ""
+msgstr "Δεν ήταν δυνατή η διαγραφή της δημοσκόπησης \"%(title)s\"."
 
 msgid "Your votes were saved successfully."
-msgstr ""
+msgstr "Οι ψήφοι σας αποθηκεύτηκαν με επιτυχία."
 
 msgid "Your votes could not be saved."
-msgstr ""
+msgstr "Οι ψήφοι σας δεν μπόρεσαν να αποθηκευτούν."
 
 msgid "The voting phase for this poll is over. You cannot vote for it any more."
-msgstr ""
+msgstr "Η φάση της ψηφοφορίας για αυτή τη δημοσκόπηση έχει ολοκληρωθεί. Δεν μπορείτε πλέον να ψηφίσετε γι' αυτήν."
 
 msgid "In this poll you must vote for exactly one item!"
-msgstr ""
+msgstr "Σε αυτή τη δημοσκόπηση πρέπει να ψηφίσετε ακριβώς για ένα στοιχείο!"
 
 msgid "The complete request can only be sent via POST!"
-msgstr ""
+msgstr "Το πλήρες αίτημα μπορεί να σταλεί μόνο μέσω ΑΝΑΡΤΗΣΗΣ!"
 
 msgid "Invalid action for this poll. The request could not be completed!"
-msgstr ""
+msgstr "Μη έγκυρη ενέργεια για αυτή την δημοσκόπηση. Το αίτημα δεν μπόρεσε να ολοκληρωθεί!"
 
 msgid "This action is not permitted for this poll at this stage!"
-msgstr ""
+msgstr "Αυτή η ενέργεια δεν επιτρέπεται για αυτή τη δημοσκόπηση σε αυτό το στάδιο!"
 
 msgid "The poll was closed successfully."
-msgstr ""
+msgstr "Η δημοσκόπηση έκλεισε με επιτυχία."
 
 msgid "The poll was re-opened successfully."
-msgstr ""
+msgstr "Η δημοσκόπηση ξανάνοιξε με επιτυχία."
 
 msgid "The poll was archived successfully."
-msgstr ""
+msgstr "Η δημοσκόπηση αρχειοθετήθηκε με επιτυχία."
 
 msgid "Your comment was added successfully."
-msgstr ""
+msgstr "Το σχόλιό σας προστέθηκε με επιτυχία."
 
 msgid "Your comment was deleted successfully."
-msgstr ""
+msgstr "Το σχόλιό σας διαγράφηκε με επιτυχία."
