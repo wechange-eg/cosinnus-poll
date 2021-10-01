@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-14 15:23+0200\n"
-"PO-Revision-Date: 2020-02-02 16:40+0100\n"
+"POT-Creation-Date: 2021-10-01 15:06+0200\n"
+"PO-Revision-Date: 2021-10-01 15:10+0200\n"
 "Last-Translator: Sebastian Henschel <sh@sinnwerkstatt.com>\n"
 "Language-Team: German <>\n"
 "Language: de\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 3.0\n"
 
 msgid "Polls"
 msgstr "Umfragen"
@@ -405,7 +405,7 @@ msgid "The winning option was:"
 msgstr "Die Sieger-Option war:"
 
 msgid "There was no winning option."
-msgstr "Es gab keine Sieger-Option"
+msgstr "Es gab keine Sieger-Option."
 
 #, python-format
 msgid ""
@@ -623,7 +623,7 @@ msgid "There are no running polls."
 msgstr "Es gibt keine aktuellen Umfragen."
 
 msgid "There are no upcoming polls"
-msgstr "Es gibt keine aktuellen Umfragen."
+msgstr "Es gibt keine aktuellen Umfragen"
 
 msgctxt "the_verb"
 msgid "Vote"
@@ -682,7 +682,7 @@ msgid "created a poll"
 msgstr "hat eine Umfrage erstellt"
 
 msgid "There are no polls yet"
-msgstr "Es gibt noch keine Umfragen."
+msgstr "Es gibt noch keine Umfragen"
 
 #, python-format
 msgid "Poll \"%(title)s\" was edited successfully."
@@ -730,10 +730,10 @@ msgid "The complete request can only be sent via POST!"
 msgstr "Bei der Anfrage lief etwas schief. Bitte versuche es nochmal!"
 
 msgid "Invalid action for this poll. The request could not be completed!"
-msgstr "Die Aktion ist für diese Umfrage nicht (mehr) möglich."
+msgstr "Die Aktion ist für diese Umfrage nicht (mehr) möglich! Die Anfrage kann nicht abgeschloßen werden!"
 
 msgid "This action is not permitted for this poll at this stage!"
-msgstr "Die Aktion ist für diese Umfrage nicht (mehr) möglich."
+msgstr "Die Aktion ist für diese Umfrage momentan nicht möglich!"
 
 msgid "The poll was closed successfully."
 msgstr "Die Umfrage wurde erfolgreich beendet."
