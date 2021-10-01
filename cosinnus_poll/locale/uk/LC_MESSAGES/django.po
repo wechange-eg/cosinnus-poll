@@ -7,530 +7,353 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-04 10:15+0200\n"
+"POT-Creation-Date: 2021-10-01 15:06+0200\n"
 "PO-Revision-Date: 2020-10-13 20:33+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 2.4.1\n"
 
-#: cosinnus_poll/cosinnus_app.py:18 cosinnus_poll/models.py:93
-#: cosinnus_poll/templates/cosinnus_poll/base.html:6
-#: cosinnus_poll/templates/cosinnus_poll/leftnav.html:41
-#: cosinnus_poll/templates/cosinnus_poll/poll_list.html:5
-#: cosinnus_poll/templates/cosinnus_poll/poll_list.html:10
 msgid "Polls"
 msgstr "Опитування"
 
-#: cosinnus_poll/cosinnus_app.py:25
-#: cosinnus_poll/templates/cosinnus_poll/poll_list_standalone.html:11
 msgctxt "the_app"
 msgid "poll"
 msgstr "опитування"
 
-#: cosinnus_poll/cosinnus_notifications.py:47
 msgid "A user created a new poll"
 msgstr "Користувач/-ка створив/-ла нове опитування"
 
-#: cosinnus_poll/cosinnus_notifications.py:54
-#: cosinnus_poll/cosinnus_notifications.py:181
 #, python-format
 msgid "%(sender_name)s created the poll %(object_name)s"
 msgstr "%(sender_name)s створив(-ла) опитування %(object_name)s"
 
-#: cosinnus_poll/cosinnus_notifications.py:55
-#: cosinnus_poll/cosinnus_notifications.py:182
 #, python-format
 msgid "%(sender_name)s created %(count)d polls"
 msgstr "%(sender_name)s створив(-ла) %(count)d опитувань"
 
-#: cosinnus_poll/cosinnus_notifications.py:59
 #, python-format
 msgid "%(sender_name)s created a new poll"
 msgstr "%(sender_name)s створив(-ла) нове опитування"
 
-#: cosinnus_poll/cosinnus_notifications.py:60
-#: cosinnus_poll/templates/cosinnus_poll/notifications/poll_created_subject.txt:1
 #, python-format
 msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s."
 msgstr "Нове опитування: «%(object_name)s» було створено у %(team_name)s."
 
-#: cosinnus_poll/cosinnus_notifications.py:69
 msgid "A poll you voted on was completed"
 msgstr "Опитування, в якому Ви взяли участь, завершене"
 
-#: cosinnus_poll/cosinnus_notifications.py:76
 #, python-format
 msgid "%(sender_name)s completed the poll %(object_name)s you voted on"
 msgstr "%(sender_name)s завершив опитування %(object_name)s, за яким Ви стежите"
 
-#: cosinnus_poll/cosinnus_notifications.py:77
 #, python-format
 msgid "%(sender_name)s completed %(count)d polls you voted on"
 msgstr "%(sender_name)s завершив %(count)d опитування, в яких Ви взяли участь"
 
-#: cosinnus_poll/cosinnus_notifications.py:81
 #, python-format
 msgid "%(sender_name)s completed the poll"
 msgstr "%(sender_name)s завершив опитування"
 
-#: cosinnus_poll/cosinnus_notifications.py:82
 #, python-format
 msgid "Poll \"%(object_name)s\" was completed in %(team_name)s."
 msgstr "Опитування \"%(object_name)s\" було завершено у %(team_name)s."
 
-#: cosinnus_poll/cosinnus_notifications.py:90
 msgid "A user commented on one of your polls"
 msgstr "Користувач/-ка прокоментував(-ла) одне з ваших опитувань"
 
-#: cosinnus_poll/cosinnus_notifications.py:97
 #, python-format
 msgid "%(sender_name)s commented on your poll %(object_name)s"
 msgstr "%(sender_name)s прокоментував(-ла) ваше опитування %(object_name)s"
 
-#: cosinnus_poll/cosinnus_notifications.py:98
 #, python-format
-msgid ""
-"%(sender_name)s and %(count_minus_one)d other commented on your poll "
-"%(object_name)s"
-msgid_plural ""
-"%(sender_name)s and %(count_minus_one)d others commented on your poll "
-"%(object_name)s"
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your poll %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your poll %(object_name)s"
 msgstr[0] "%(sender_name)s і %(count_minus_one)d інші прокоментували Ваше опитування %(object_name)s"
-msgstr[1] ""
-"%(sender_name)s і %(count_minus_one)d інших прокоментували Ваше опитування "
-"%(object_name)s"
-msgstr[2] ""
-"%(sender_name)s і %(count_minus_one)d інших прокоментували Ваше опитування "
-"%(object_name)s"
+msgstr[1] "%(sender_name)s і %(count_minus_one)d інших прокоментували Ваше опитування %(object_name)s"
+msgstr[2] "%(sender_name)s і %(count_minus_one)d інших прокоментували Ваше опитування %(object_name)s"
 msgstr[3] ""
 
-#: cosinnus_poll/cosinnus_notifications.py:103
 #, python-format
 msgid "%(sender_name)s commented on your poll"
 msgstr "%(sender_name)s прокоментував(-ла) Ваше опитування"
 
-#: cosinnus_poll/cosinnus_notifications.py:104
 #, python-format
 msgid "%(sender_name)s commented on one of your polls"
 msgstr "%(sender_name)s прокоментував(-ла) одне з ваших опитувань"
 
-#: cosinnus_poll/cosinnus_notifications.py:118
 msgid "A user commented on a poll you were tagged in"
 msgstr "Користувач/-ка прокоментував(-ла) опитування, у якому Ви позначені"
 
-#: cosinnus_poll/cosinnus_notifications.py:124
-#: cosinnus_poll/cosinnus_notifications.py:152
-#: cosinnus_poll/cosinnus_notifications.py:244
 #, python-format
 msgid "%(sender_name)s commented on the poll %(object_name)s"
 msgstr "%(sender_name)s прокоментував(-ла) опитування %(object_name)s"
 
-#: cosinnus_poll/cosinnus_notifications.py:125
-#: cosinnus_poll/cosinnus_notifications.py:153
-#: cosinnus_poll/cosinnus_notifications.py:245
 #, python-format
-msgid ""
-"%(sender_name)s and %(count_minus_one)d other commented on the poll "
-"%(object_name)s"
-msgid_plural ""
-"%(sender_name)s and %(count_minus_one)d others commented on the poll "
-"%(object_name)s"
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the poll %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the poll %(object_name)s"
 msgstr[0] "%(sender_name)s і %(count_minus_one)d інші прокоментували опитування %(object_name)s"
-msgstr[1] ""
-"%(sender_name)s і %(count_minus_one)d інших прокоментували опитування "
-"%(object_name)s"
-msgstr[2] ""
-"%(sender_name)s і %(count_minus_one)d інших прокоментували опитування "
-"%(object_name)s"
+msgstr[1] "%(sender_name)s і %(count_minus_one)d інших прокоментували опитування %(object_name)s"
+msgstr[2] "%(sender_name)s і %(count_minus_one)d інших прокоментували опитування %(object_name)s"
 msgstr[3] ""
 
-#: cosinnus_poll/cosinnus_notifications.py:128
 msgid "You were tagged in this poll"
 msgstr "Вас відмітили в цьому опитуванні"
 
-#: cosinnus_poll/cosinnus_notifications.py:131
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in"
 msgstr "%(sender_name)s прокоментував/-ла опитування, у якому Ви були позначені"
 
-#: cosinnus_poll/cosinnus_notifications.py:132
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in in %(team_name)s"
 msgstr "%(sender_name)s прокоментував(-ла) опитування, у якому Ви були позначені, у %(team_name)s"
 
-#: cosinnus_poll/cosinnus_notifications.py:146
 msgid "A user commented on an poll you voted in"
 msgstr "Користувач/-ка прокоментував(-ла) опитування, в якому Ви взяли участь"
 
-#: cosinnus_poll/cosinnus_notifications.py:156
 msgid "You voted on this poll"
 msgstr "Ви взяли участь у цьому опитуванні"
 
-#: cosinnus_poll/cosinnus_notifications.py:159
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in"
 msgstr "%(sender_name)s прокоментував(-ла) опитування, в якому Ви взяли участь"
 
-#: cosinnus_poll/cosinnus_notifications.py:160
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s"
 msgstr "%(sender_name)s прокоментував(-ла) опитування, в якому Ви взяли участь в %(team_name)s"
 
-#: cosinnus_poll/cosinnus_notifications.py:174
 msgid "A user created a new poll in a team you are following"
 msgstr "Користувач/-ка створив(-ла) нове опитування в команді, за якою Ви слідкуєте"
 
-#: cosinnus_poll/cosinnus_notifications.py:186
 #, python-format
 msgid "%(sender_name)s created a new poll in %(team_name)s (which you follow)"
 msgstr "%(sender_name)s створив(-ла) нове опитування у %(team_name)s (за якою Ви стежите)"
 
-#: cosinnus_poll/cosinnus_notifications.py:187
 #, python-format
-msgid ""
-"A new poll: \"%(object_name)s\" was created in %(team_name)s (which you "
-"follow)."
+msgid "A new poll: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
 msgstr "Нове опитування: «%(object_name)s» було створено у %(team_name)s (за якою Ви стежите)"
 
-#: cosinnus_poll/cosinnus_notifications.py:196
 msgid "A user updated a poll you are following"
 msgstr "Користувач/-ка оновив(-ла) опитування, яке Ви відстежуєте"
 
-#: cosinnus_poll/cosinnus_notifications.py:202
 #, python-format
 msgid "%(sender_name)s updated the poll %(object_name)s"
 msgstr "%(sender_name)s оновив опитування %(object_name)s"
 
-#: cosinnus_poll/cosinnus_notifications.py:204
-#: cosinnus_poll/cosinnus_notifications.py:225
-#: cosinnus_poll/cosinnus_notifications.py:248
 msgid "You are following this poll"
 msgstr "Ви стежите за цим опитуванням"
 
-#: cosinnus_poll/cosinnus_notifications.py:207
 #, python-format
 msgid "%(sender_name)s updated a poll you are following"
 msgstr "%(sender_name)s оновив(-ла) опитування, яке Ви відстежуєте"
 
-#: cosinnus_poll/cosinnus_notifications.py:208
 #, python-format
-msgid ""
-"A poll you are following: \"%(object_name)s\" was updated in %(team_name)s."
+msgid "A poll you are following: \"%(object_name)s\" was updated in %(team_name)s."
 msgstr "Опитування, за яким ви стежите: «%(object_name)s» було оновлено у %(team_name)s."
 
-#: cosinnus_poll/cosinnus_notifications.py:216
 msgid "A poll you are following was completed"
 msgstr "Опитування, за яким Ви стежите, завершене"
 
-#: cosinnus_poll/cosinnus_notifications.py:222
 #, python-format
 msgid "%(sender_name)s completed the poll %(object_name)s"
 msgstr "%(sender_name)s завершив опитування %(object_name)s"
 
-#: cosinnus_poll/cosinnus_notifications.py:223
 #, python-format
 msgid "%(sender_name)s completed %(count)d polls"
 msgstr "%(sender_name)s завершив %(count)d опитування"
 
-#: cosinnus_poll/cosinnus_notifications.py:228
 #, python-format
 msgid "%(sender_name)s completed the poll you are following"
 msgstr "%(sender_name)s завершив опитування, за яким Ви стежите"
 
-#: cosinnus_poll/cosinnus_notifications.py:229
 #, python-format
-msgid ""
-"Poll \"%(object_name)s\" you are following was completed in %(team_name)s."
+msgid "Poll \"%(object_name)s\" you are following was completed in %(team_name)s."
 msgstr "Опитування «%(object_name)s», за яким Ви стежите, було завершено у %(team_name)s."
 
-#: cosinnus_poll/cosinnus_notifications.py:237
 msgid "A user commented on one a poll you are following"
 msgstr "Користувач/ка прокоментував(-ла) одне з опитувань, за якими Ви стежите"
 
-#: cosinnus_poll/cosinnus_notifications.py:251
-#: cosinnus_poll/cosinnus_notifications.py:252
 #, python-format
 msgid "%(sender_name)s commented on a poll you are following"
 msgstr "%(sender_name)s прокоментував(-ла) опитування, за яким Ви стежите"
 
-#: cosinnus_poll/dashboard.py:28
 msgid "Current Polls"
 msgstr "Поточні опитування"
 
-#: cosinnus_poll/dashboard.py:50
 msgid "No current polls"
 msgstr "Немає поточних опитувань"
 
-#: cosinnus_poll/filters.py:17
 msgid "Created By"
 msgstr "Автор"
 
-#: cosinnus_poll/filters.py:25
 msgid "Newest Created"
 msgstr "Найновіші створені"
 
-#: cosinnus_poll/filters.py:26
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:54
 msgid "Title"
 msgstr "Назва"
 
-#: cosinnus_poll/forms.py:57
 msgid "You must write a description for this poll option!"
 msgstr "Ви маєте додати опис для цього варіанту в опитуванні!"
 
-#: cosinnus_poll/models.py:52
 msgid "Voting open"
 msgstr "Відкрите голосування"
 
-#: cosinnus_poll/models.py:53
 msgid "Voting closed"
 msgstr "Голосування закрито"
 
-#: cosinnus_poll/models.py:54
 msgid "Poll archived"
 msgstr "Опитування архівовано"
 
-#: cosinnus_poll/models.py:58
 msgid "State"
 msgstr "Регіон"
 
-#: cosinnus_poll/models.py:62 cosinnus_poll/models.py:192
-#: cosinnus_poll/templates/cosinnus_poll/inlineform_poll_choices_content.html:7
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:68
 msgid "Description"
 msgstr "Опис"
 
-#: cosinnus_poll/models.py:64
 msgid "Multiple options votable"
 msgstr "Можна проголосувати за багато опцій"
 
-#: cosinnus_poll/models.py:65
-msgid ""
-"Does this poll allow users to vote on multiple options or just decide for "
-"one?"
+msgid "Does this poll allow users to vote on multiple options or just decide for one?"
 msgstr "Це опитування дозволяє користувачам проголосувати за багато опцій чи обрати лише одну?"
 
-#: cosinnus_poll/models.py:66
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:103
 msgid "\"Maybe\" option enabled"
 msgstr "Дозволити опцію \"Можливо\""
 
-#: cosinnus_poll/models.py:67
-msgid ""
-"Is the maybe option enabled? Ignored and defaulting to False if "
-"``multiple_votes==False``"
+msgid "Is the maybe option enabled? Ignored and defaulting to False if ``multiple_votes==False``"
 msgstr "Опція \"Можливо\" дозволена? Буде проігноровано і позначено як Неправильно, якщо обрати ``multiple_votes==False``"
 
-#: cosinnus_poll/models.py:68
 msgid "Anyone can vote"
 msgstr "Кожен може голосувати"
 
-#: cosinnus_poll/models.py:69
-msgid ""
-"If true, anyone who can see this poll can vote on it. If false, only group "
-"members can."
+msgid "If true, anyone who can see this poll can vote on it. If false, only group members can."
 msgstr "Якщо так, кожен, хто може побачити це опитування, може проголосувати. Якщо ні, то голосувати можуть тільки члени групи."
 
-#: cosinnus_poll/models.py:70
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:110
 msgid "Show voters"
 msgstr "Показати тих, хто проголосував"
 
-#: cosinnus_poll/models.py:71
 msgid "If true, display a list of which user voted for each option."
 msgstr "Якщо так, відобразиться список, який показує хто проголосував за яку опцію."
 
-#: cosinnus_poll/models.py:74
 msgid "Start"
 msgstr "Початок"
 
-#: cosinnus_poll/models.py:77
 msgid "Winning Option"
 msgstr "Виграшний варіант"
 
-#: cosinnus_poll/models.py:92 cosinnus_poll/models.py:187
 msgid "Poll"
 msgstr "Опитування"
 
-#: cosinnus_poll/models.py:104
 #, python-format
 msgid "Poll: %(poll)s (%(state)s)"
 msgstr "Опитування: %(poll)s (%(state)s)"
 
-#: cosinnus_poll/models.py:194
 msgid "Image"
 msgstr "Зображення"
 
-#: cosinnus_poll/models.py:200 cosinnus_poll/models.py:258
 msgctxt "the subject"
 msgid "Votes"
 msgstr "Голоси"
 
-#: cosinnus_poll/models.py:204
 msgid "Poll Option"
 msgstr "Варіант опитування"
 
-#: cosinnus_poll/models.py:205
 msgid "Poll Options"
 msgstr "Варіанти опитування"
 
-#: cosinnus_poll/models.py:233
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:48
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:68
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:70
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:75
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:82
 msgid "Yes"
 msgstr "Так"
 
-#: cosinnus_poll/models.py:234
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:51
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:68
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:75
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:77
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:82
 msgid "Maybe"
 msgstr "Можливо"
 
-#: cosinnus_poll/models.py:235
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:54
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:68
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:75
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:82
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:84
 msgid "No"
 msgstr "Ні"
 
-#: cosinnus_poll/models.py:240
 msgid "Option"
 msgstr "Опціонально"
 
-#: cosinnus_poll/models.py:247
 msgid "Voter"
 msgstr "Учасник(-ця) опитування"
 
-#: cosinnus_poll/models.py:252
 msgid "Vote"
 msgstr "Голос"
 
-#: cosinnus_poll/models.py:257
 msgctxt "the subject"
 msgid "Vote"
 msgstr "Голос"
 
-#: cosinnus_poll/models.py:275
 msgid "Creator"
 msgstr "Творець"
 
-#: cosinnus_poll/models.py:276
-#: cosinnus_poll/templates/cosinnus_poll/list_object.html:29
 msgid "Created"
 msgstr "Створено"
 
-#: cosinnus_poll/models.py:277
 msgid "Last modified"
 msgstr "Востаннє змінено"
 
-#: cosinnus_poll/models.py:279
 msgid "Text"
 msgstr "Текст"
 
-#: cosinnus_poll/models.py:283
 msgid "Comment"
 msgstr "Коментар"
 
-#: cosinnus_poll/models.py:284
-#: cosinnus_poll/templates/cosinnus_poll/poll_comments.html:34
 msgid "Comments"
 msgstr "Коментарі"
 
-#: cosinnus_poll/templates/cosinnus_poll/inlineform_poll_choices_content.html:3
 msgid "Poll choice"
 msgstr "Вибір опитування"
 
-#: cosinnus_poll/templates/cosinnus_poll/leftnav.html:17
 msgid "Back to Polls"
 msgstr "Назад до опитування"
 
-#: cosinnus_poll/templates/cosinnus_poll/leftnav.html:67
 msgid "Past Polls"
 msgstr "Попередні опитування"
 
-#: cosinnus_poll/templates/cosinnus_poll/list_object.html:25
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_detailed.html:15
 msgid "by"
 msgstr "здійснено <username>"
 
-#: cosinnus_poll/templates/cosinnus_poll/list_object.html:73
-#: cosinnus_poll/templates/cosinnus_poll/poll_comments.html:71
-#: cosinnus_poll/templates/cosinnus_poll/poll_list.html:19
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:63
 msgid "Delete"
 msgstr "Видалити"
 
-#: cosinnus_poll/templates/cosinnus_poll/list_object.html:86
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:13
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:24
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:83
 msgid "Edit"
 msgstr "Редагувати"
 
-#: cosinnus_poll/templates/cosinnus_poll/list_object.html:101
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:117
 msgid "Re-open"
 msgstr "Знову активувати"
 
-#: cosinnus_poll/templates/cosinnus_poll/list_object.html:114
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:130
 msgid "Archive"
 msgstr "Архівувати"
 
-#: cosinnus_poll/templates/cosinnus_poll/list_object.html:127
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:69
 #, python-format
 msgid "Do you really want to delete poll „%(title)s“?"
 msgstr "Ви справді бажаєте видалити опитування «%(title)s»?"
 
-#: cosinnus_poll/templates/cosinnus_poll/list_object.html:128
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:70
 msgid "Delete poll"
 msgstr "Видалити опитування"
 
-#: cosinnus_poll/templates/cosinnus_poll/list_object.html:133
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:136
 #, python-format
 msgid "Do you really want to re-open poll „%(title)s“?"
 msgstr "Ви справді бажаєте знову активувати «%(title)s»?"
 
-#: cosinnus_poll/templates/cosinnus_poll/list_object.html:134
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:137
 msgid "Re-open poll"
 msgstr "Знову активувати опитування"
 
-#: cosinnus_poll/templates/cosinnus_poll/list_object.html:138
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:141
 #, python-format
 msgid "Do you really want to archive poll „%(title)s“?"
 msgstr "Ви дійсно бажаєте архівувати опитування «%(title)s»?"
 
-#: cosinnus_poll/templates/cosinnus_poll/list_object.html:139
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:142
 msgid "Archive poll"
 msgstr "Архівувати опитування"
 
-#: cosinnus_poll/templates/cosinnus_poll/notifications/poll_comment_posted.html:1
 #, python-format
 msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s has posted a comment on a poll you created in "
-"%(team_name)s:\n"
+"%(sender_name)s has posted a comment on a poll you created in %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -544,37 +367,52 @@ msgid ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: "
-"%(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s team.\n"
 "\n"
-msgstr "Вітаємо, %(receiver_name)s!\n\n%(sender_name)s прокоментував(-ла) опитування, створене Вами у спільноті %(team_name)s:\n\n«%(comment_text)s»\n\n\nщодо вашого заходу:\n\n\"%(poll_title)s\"\n\n\nПерейдіть за цим посиланням, щоб побачити коментар: \n%(object_url)s\n\n\n(Перейдіть за цим посиланням, щоб редагувати ваші налаштування сповіщення: %(notification_settings_url)s )\n\nЗ повагою, команда %(site_name)s.\n\n"
+msgstr ""
+"Вітаємо, %(receiver_name)s!\n"
+"\n"
+"%(sender_name)s прокоментував(-ла) опитування, створене Вами у спільноті %(team_name)s:\n"
+"\n"
+"«%(comment_text)s»\n"
+"\n"
+"\n"
+"щодо вашого заходу:\n"
+"\n"
+"\"%(poll_title)s\"\n"
+"\n"
+"\n"
+"Перейдіть за цим посиланням, щоб побачити коментар: \n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Перейдіть за цим посиланням, щоб редагувати ваші налаштування сповіщення: %(notification_settings_url)s )\n"
+"\n"
+"З повагою, команда %(site_name)s.\n"
+"\n"
 
-#: cosinnus_poll/templates/cosinnus_poll/notifications/poll_comment_posted_subject.txt:1
 #, python-format
 msgid "%(sender_name)s commented on one of your polls in %(team_name)s."
 msgstr "%(sender_name)s прокоментував(-ла) одне з Ваших опитувань у %(team_name)s."
 
-#: cosinnus_poll/templates/cosinnus_poll/notifications/poll_completed.txt:1
 #, python-format
 msgid ""
 "Hi %(receiver_name)s,\n"
 "\n"
-"the poll \"%(object_name)s\", was completed in %(team_name)s by "
-"%(sender_name)s!\n"
-msgstr "Вітання, %(receiver_name)s,\n\n%(sender_name)s завершив у: «%(object_name)s» у %(team_name)s!\n"
+"the poll \"%(object_name)s\", was completed in %(team_name)s by %(sender_name)s!\n"
+msgstr ""
+"Вітання, %(receiver_name)s,\n"
+"\n"
+"%(sender_name)s завершив у: «%(object_name)s» у %(team_name)s!\n"
 
-#: cosinnus_poll/templates/cosinnus_poll/notifications/poll_completed.txt:6
 msgid "The winning option was:"
 msgstr "Виграшною опцією стала:"
 
-#: cosinnus_poll/templates/cosinnus_poll/notifications/poll_completed.txt:10
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_detailed.html:57
 msgid "There was no winning option."
 msgstr "Не було опції, яка перемогла."
 
-#: cosinnus_poll/templates/cosinnus_poll/notifications/poll_completed.txt:12
 #, python-format
 msgid ""
 "\n"
@@ -582,42 +420,54 @@ msgid ""
 "\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: "
-"%(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s Team."
-msgstr "\nВи можете переглянути опитування за посиланням: %(object_url)s\n\n\n\n(Перейдіть за цим посиланням, щоб редагувати ваші налаштування сповіщення: %(notification_settings_url)s )\n\nЗ повагою, команда %(site_name)s."
+msgstr ""
+"\n"
+"Ви можете переглянути опитування за посиланням: %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(Перейдіть за цим посиланням, щоб редагувати ваші налаштування сповіщення: %(notification_settings_url)s )\n"
+"\n"
+"З повагою, команда %(site_name)s."
 
-#: cosinnus_poll/templates/cosinnus_poll/notifications/poll_completed_subject.txt:1
 #, python-format
 msgid "Poll: \"%(object_name)s\" was completed in %(team_name)s."
 msgstr "Нове опитування: «%(object_name)s» було завершено у %(team_name)s."
 
-#: cosinnus_poll/templates/cosinnus_poll/notifications/poll_created.txt:1
 #, python-format
 msgid ""
 "Hi %(receiver_name)s,\n"
 "\n"
-"a new poll \"%(object_name)s\", was created in %(team_name)s by "
-"%(sender_name)s. \n"
+"a new poll \"%(object_name)s\", was created in %(team_name)s by %(sender_name)s. \n"
 "\n"
 "You can find it by following this link: %(object_url)s\n"
 "\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: "
-"%(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s Team."
-msgstr "Вітаємо, %(receiver_name)s!\n\n%(sender_name)s створив(-ла) нове опитування «%(object_name)s» у %(team_name)s.\n\nВи можете переглянути його за наступним посиланням: %(object_url)s\n\n\n\n(Перейдіть за цим посиланням, щоб редагувати ваші налаштування сповіщення: %(notification_settings_url)s )\n\nЗ повагою, команда %(site_name)s."
+msgstr ""
+"Вітаємо, %(receiver_name)s!\n"
+"\n"
+"%(sender_name)s створив(-ла) нове опитування «%(object_name)s» у %(team_name)s.\n"
+"\n"
+"Ви можете переглянути його за наступним посиланням: %(object_url)s\n"
+"\n"
+"\n"
+"\n"
+"(Перейдіть за цим посиланням, щоб редагувати ваші налаштування сповіщення: %(notification_settings_url)s )\n"
+"\n"
+"З повагою, команда %(site_name)s."
 
-#: cosinnus_poll/templates/cosinnus_poll/notifications/tagged_poll_comment_posted.html:1
 #, python-format
 msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s has posted a comment on a poll you were tagged in, in "
-"%(team_name)s:\n"
+"%(sender_name)s has posted a comment on a poll you were tagged in, in %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -631,25 +481,40 @@ msgid ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: "
-"%(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s team.\n"
 "\n"
-msgstr "Вітаємо, %(receiver_name)s!\n\n%(sender_name)s прокоментував(-ла) опитування, в якому ви були позначені, у %(team_name)s:\n\n«%(comment_text)s»\n\n\nщодо опитування:\n\n\"%(poll_title)s\"\n\nПерейдіть за цим посиланням, щоб побачити коментар:\n%(object_url)s\n\n\n(Перейдіть за цим посиланням, щоб редагувати ваші налаштування сповіщення: %(notification_settings_url)s )\n\nЗ повагою, команда %(site_name)s.\n\n"
+msgstr ""
+"Вітаємо, %(receiver_name)s!\n"
+"\n"
+"%(sender_name)s прокоментував(-ла) опитування, в якому ви були позначені, у %(team_name)s:\n"
+"\n"
+"«%(comment_text)s»\n"
+"\n"
+"\n"
+"щодо опитування:\n"
+"\n"
+"\"%(poll_title)s\"\n"
+"\n"
+"Перейдіть за цим посиланням, щоб побачити коментар:\n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Перейдіть за цим посиланням, щоб редагувати ваші налаштування сповіщення: %(notification_settings_url)s )\n"
+"\n"
+"З повагою, команда %(site_name)s.\n"
+"\n"
 
-#: cosinnus_poll/templates/cosinnus_poll/notifications/tagged_poll_comment_posted_subject.txt:1
 #, python-format
 msgid "%(sender_name)s commented on a poll you were tagged in %(team_name)s."
 msgstr "%(sender_name)s прокоментував(-ла) опитування, у якому ви були позначені, у %(team_name)s."
 
-#: cosinnus_poll/templates/cosinnus_poll/notifications/voted_poll_comment_posted.html:1
 #, python-format
 msgid ""
 "Hi, %(receiver_name)s!\n"
 "\n"
-"%(sender_name)s has posted a comment on a poll you voted in in "
-"%(team_name)s:\n"
+"%(sender_name)s has posted a comment on a poll you voted in in %(team_name)s:\n"
 "\n"
 "\"%(comment_text)s\"\n"
 "\n"
@@ -663,292 +528,229 @@ msgid ""
 "%(object_url)s\n"
 "\n"
 "\n"
-"(Follow this link to edit your notification preferences: "
-"%(notification_settings_url)s )\n"
+"(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
 "\n"
 "Your %(site_name)s team.\n"
 "\n"
-msgstr "Вітаємо, %(receiver_name)s!\n\n%(sender_name)s прокоментував(-ла) опитування, в якому Ви взяли участь у %(team_name)s:\n\n«%(comment_text)s»\n\n\nщодо опитування:\n\n\"%(poll_title)s\"\n\nПерейдіть за цим посиланням, щоб побачити коментар:\n%(object_url)s\n\n\n(Перейдіть за цим посиланням, щоб редагувати ваші налаштування сповіщення: %(notification_settings_url)s )\n\nЗ повагою, команда %(site_name)s.\n\n"
+msgstr ""
+"Вітаємо, %(receiver_name)s!\n"
+"\n"
+"%(sender_name)s прокоментував(-ла) опитування, в якому Ви взяли участь у %(team_name)s:\n"
+"\n"
+"«%(comment_text)s»\n"
+"\n"
+"\n"
+"щодо опитування:\n"
+"\n"
+"\"%(poll_title)s\"\n"
+"\n"
+"Перейдіть за цим посиланням, щоб побачити коментар:\n"
+"%(object_url)s\n"
+"\n"
+"\n"
+"(Перейдіть за цим посиланням, щоб редагувати ваші налаштування сповіщення: %(notification_settings_url)s )\n"
+"\n"
+"З повагою, команда %(site_name)s.\n"
+"\n"
 
-#: cosinnus_poll/templates/cosinnus_poll/notifications/voted_poll_comment_posted_subject.txt:1
 #, python-format
 msgid "%(sender_name)s commented on a poll you voted in in %(team_name)s."
 msgstr "%(sender_name)s прокоментував/-ла опитування, в якому Ви взяли участь в %(team_name)s."
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_comments.html:95
 msgid "Write comment..."
 msgstr "Написати коментар..."
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_comments.html:108
 msgid "Post"
 msgstr "Опублікувати"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:11
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:22
 msgid "Add poll"
 msgstr "Додати опитування"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:40
-msgid ""
-"There was an error in one of the fields you entered. Please correct it "
-"before saving!"
+msgid "There was an error in one of the fields you entered. Please correct it before saving!"
 msgstr "В одному із заповнюваних Вами полів сталася помилка. Будь ласка, виправте це перед збереженням!"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:55
 msgid "Enter a title for the new poll."
 msgstr "Введіть назву для нового опитування."
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:67
 msgid "Description and Infos"
 msgstr "Опис та інформація"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:69
 msgid "Enter a description for the poll"
 msgstr "Введіть опис опитування"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:78
-msgid ""
-"Note: You cannot edit the options for this poll because someone has already "
-"cast their vote or the poll has been completed!"
+msgid "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!"
 msgstr "Примітка: ви не можете змінювати опції в цьому опитуванні тому що хтось вже проголосував, або опитування завершено!"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:87
 msgid "Poll Choices"
 msgstr "Вибір відповіді"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:88
 msgid "Remove choice"
 msgstr "Видалити відповідь"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:89
 msgid "Add choice"
 msgstr "Додати відповідь"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:96
 msgid "Multiple Votes"
 msgstr "Багатоваріантні відповіді"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:97
 msgid "If disabled, users can only vote for one option"
 msgstr "Якщо це прибрати, користувачі зможуть голосувати лише за один варіант"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:104
 msgid "In addition to \"Yes\" and \"No\""
 msgstr "Крім \"Так\" та \"Ні\""
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:111
 msgid "Lists how every voter voted for each option."
 msgstr "Список того хто і як проголосував."
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:117
 msgid "Public voting"
 msgstr "Публічне голосування"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:118
-msgid ""
-"Any logged in user who can see this poll can vote on it. If disabled, only "
-"group/project members can vote on it."
+msgid "Any logged in user who can see this poll can vote on it. If disabled, only group/project members can vote on it."
 msgstr "Кожен авторизований користувач може бачити це опитування та брати в ньому участь. Якщо це прибрати, тільки члени спільноти/проєкту зможуть брати участь."
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:135
-#: cosinnus_poll/templates/cosinnus_poll/poll_list.html:55
 msgid "Create"
 msgstr "Створити"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_form.html:137
 msgid "Save"
 msgstr "Зберегти"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_list.html:10
 msgid "Archived Polls"
 msgstr "Архівовані опитування"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_list.html:39
 msgid "Enter the title to create a new poll."
 msgstr "Ввести назву для створення нового опитування."
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_list.html:67
 msgid "There are no archived polls."
 msgstr "Немає архівованих опитувань."
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_list.html:69
 msgid "There are no running polls."
 msgstr "Немає поточних опитувань."
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_list_standalone.html:23
 msgid "There are no upcoming polls"
 msgstr "Немає майбутніх опитувань"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:5
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:171
 msgctxt "the_verb"
 msgid "Vote"
 msgstr "Голос"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:12
 #, python-format
 msgid "Vote for %(title)s"
 msgstr "Голосувати за %(title)s"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:39
 msgid "This poll has been completed. Voting is closed."
 msgstr "Опитування завершено. Голосування закрито."
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:42
 msgid "This is an archived poll."
 msgstr "Це - заархівоване опитування."
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:91
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:98
 msgid "Complete without winner"
 msgstr "Завершити без переможця"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:103
 #, python-format
-msgid ""
-"Do you really want to complete poll \"%(title)s\" with no winning option?"
+msgid "Do you really want to complete poll \"%(title)s\" with no winning option?"
 msgstr "Ви справді бажаєте закінчити опитування «%(title)s» без переможця?"
 
-#: cosinnus_poll/templates/cosinnus_poll/poll_vote.html:104
 msgid "Complete poll without winner"
 msgstr "Завершити опитування без переможця"
 
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_detailed.html:38
 msgid "(No description set)"
 msgstr "(Опис не створено)"
 
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_detailed.html:53
 msgid "The Winner is"
 msgstr "Переможцем стає"
 
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_detailed.html:55
 msgid "Available options were"
 msgstr "Можливими варіантами були"
 
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_detailed.html:73
 msgid "There are no options for this poll yet!"
 msgstr "У цьому опитуванні ще немає жодних варантів!"
 
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:36
 msgid "Make winner and complete poll"
 msgstr "Призначити переможця і завершити опитування"
 
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:68
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:75
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:82
 msgid "Votes"
 msgstr "Голоси"
 
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:98
 #, python-format
-msgid ""
-"Do you really want to complete the poll and select \"%(description)s\" as "
-"winner?"
+msgid "Do you really want to complete the poll and select \"%(description)s\" as winner?"
 msgstr "Ви справді бажаєте завершити це опитування та призначити \"%(description)s\" переможцем?"
 
-#: cosinnus_poll/templates/cosinnus_poll/single_poll_option.html:99
 msgid "Complete poll"
 msgstr "Завершити опитування"
 
-#: cosinnus_poll/templates/cosinnus_poll/v2/dashboard/timeline_item.html:8
 msgid "You created a poll"
 msgstr "Ти створи(ла)в опитування"
 
-#: cosinnus_poll/templates/cosinnus_poll/v2/dashboard/timeline_item.html:10
-msgctxt ""
-"This appears next to new items in the timeline, as in '<Jane> created a new "
-"item'"
+msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "created a poll"
 msgstr "створено опитування"
 
-#: cosinnus_poll/templates/cosinnus_poll/widgets/current.html:13
 msgid "There are no polls yet"
 msgstr "Поки ще немає опитувань"
 
-#: cosinnus_poll/views.py:113
 #, python-format
 msgid "Poll \"%(title)s\" was edited successfully."
 msgstr "Опитування «%(title)s» успішно відредаговано."
 
-#: cosinnus_poll/views.py:114
 #, python-format
 msgid "Poll \"%(title)s\" could not be edited."
 msgstr "Неможливо редагувати опитування «%(title)s»."
 
-#: cosinnus_poll/views.py:169
 #, python-format
 msgid "Poll \"%(title)s\" was added successfully."
 msgstr "Опитування «%(title)s» успішно додано."
 
-#: cosinnus_poll/views.py:170
 #, python-format
 msgid "Poll \"%(title)s\" could not be added."
 msgstr "Неможливо додати опитування «%(title)s»."
 
-#: cosinnus_poll/views.py:182
 msgid "You should define at least one poll option!"
 msgstr "Необхідно зазначити принаймні одну відповідь в опитуванні!"
 
-#: cosinnus_poll/views.py:198
 msgid "This poll is archived and cannot be edited anymore!"
 msgstr "Опитування зархівовано і більше не може бути змінено!"
 
-#: cosinnus_poll/views.py:234
 #, python-format
 msgid "Poll \"%(title)s\" was deleted successfully."
 msgstr "Опитування «%(title)s» успішно видалено."
 
-#: cosinnus_poll/views.py:235
 #, python-format
 msgid "Poll \"%(title)s\" could not be deleted."
 msgstr "Не можливо видалити опитування «%(title)s»."
 
-#: cosinnus_poll/views.py:246
 msgid "Your votes were saved successfully."
 msgstr "Ваші голоси успішно збережено."
 
-#: cosinnus_poll/views.py:247
 msgid "Your votes could not be saved."
 msgstr "Не вдалося зберегти ваших голосів."
 
-#: cosinnus_poll/views.py:271
-msgid ""
-"The voting phase for this poll is over. You cannot vote for it any more."
+msgid "The voting phase for this poll is over. You cannot vote for it any more."
 msgstr "Фаза голосування цього опитування закінчилася. Ви більше не можете проголосувати."
 
-#: cosinnus_poll/views.py:339
 msgid "In this poll you must vote for exactly one item!"
 msgstr "В цьому опитуванні можна обрати лише один елемент!"
 
-#: cosinnus_poll/views.py:386
 msgid "The complete request can only be sent via POST!"
 msgstr "Повний запит можна надіслати лише ПОШТОЮ!"
 
-#: cosinnus_poll/views.py:395
 msgid "Invalid action for this poll. The request could not be completed!"
 msgstr "Недійсна дія для цього опитування. Запит не можна завершити!"
 
-#: cosinnus_poll/views.py:399
 msgid "This action is not permitted for this poll at this stage!"
 msgstr "Дія на цьому етапі опитування не дозволена!"
 
-#: cosinnus_poll/views.py:411
 msgid "The poll was closed successfully."
 msgstr "Ваше опитування успішно завершено."
 
-#: cosinnus_poll/views.py:418
 msgid "The poll was re-opened successfully."
 msgstr "Ваше опитування успішно відновлено."
 
-#: cosinnus_poll/views.py:422
 msgid "The poll was archived successfully."
 msgstr "Ваш коментар успішно зархівовано."
 
-#: cosinnus_poll/views.py:438
 msgid "Your comment was added successfully."
 msgstr "Ваш коментар успішно додано."
 
-#: cosinnus_poll/views.py:480
 msgid "Your comment was deleted successfully."
 msgstr "Ваш коментар успішно видалено."
 
@@ -962,8 +764,7 @@ msgstr "Ваш коментар успішно видалено."
 #~ msgstr "%(sender_name)s"
 
 #~ msgid "New poll by %(sender_name)s in %(team_name)s (which you follow)"
-#~ msgstr ""
-#~ "Нове опитування від %(sender_name)s в %(team_name)s (за якою Ви слідкуєте)"
+#~ msgstr "Нове опитування від %(sender_name)s в %(team_name)s (за якою Ви слідкуєте)"
 
 #~ msgid "%(sender_name)s completed a poll you are following"
 #~ msgstr "%(sender_name)s завершив/-ла опитування, за яким Ви стежите"
@@ -1136,12 +937,8 @@ msgstr "Ваш коментар успішно видалено."
 #~ msgid "Kalender"
 #~ msgstr "Календар"
 
-#~ msgid ""
-#~ "Copy this iCal-link into your calendar application to import current "
-#~ "events:"
-#~ msgstr ""
-#~ "Скопіюйте це посилання iCal у ваш календар, щоб імпортувати поточні "
-#~ "заходи:"
+#~ msgid "Copy this iCal-link into your calendar application to import current events:"
+#~ msgstr "Скопіюйте це посилання iCal у ваш календар, щоб імпортувати поточні заходи:"
 
 #~ msgid "iCal Feed"
 #~ msgstr "Файл вихідних даних iCal"
@@ -1194,29 +991,25 @@ msgstr "Ваш коментар успішно видалено."
 #~ msgid ""
 #~ "Hi %(receiver_name)s,\n"
 #~ "\n"
-#~ "a new event \"%(object_name)s\", on %(event_date)s, was announced in "
-#~ "%(team_name)s by %(sender_name)s. \n"
+#~ "a new event \"%(object_name)s\", on %(event_date)s, was announced in %(team_name)s by %(sender_name)s. \n"
 #~ "\n"
 #~ "You can find it by following this link: %(object_url)s\n"
 #~ "\n"
 #~ "\n"
 #~ "\n"
-#~ "(Follow this link to edit your notification preferences: "
-#~ "%(notification_settings_url)s )\n"
+#~ "(Follow this link to edit your notification preferences: %(notification_settings_url)s )\n"
 #~ "\n"
 #~ "Your %(site_name)s Team."
 #~ msgstr ""
 #~ "Вітаємо, %(receiver_name)s!\n"
 #~ "\n"
-#~ "%(sender_name)s анонсував/-ла новий захід «%(object_name)s» "
-#~ "%(event_date)s у %(team_name)s.\n"
+#~ "%(sender_name)s анонсував/-ла новий захід «%(object_name)s» %(event_date)s у %(team_name)s.\n"
 #~ "\n"
 #~ "Ви можете переглянути його за наступним посиланням: %(object_url)s\n"
 #~ "\n"
 #~ "\n"
 #~ "\n"
-#~ "(Перейдіть за цим посиланням, щоб редагувати ваші налаштування "
-#~ "сповіщення: %(notification_settings_url)s )\n"
+#~ "(Перейдіть за цим посиланням, щоб редагувати ваші налаштування сповіщення: %(notification_settings_url)s )\n"
 #~ "\n"
 #~ "З повагою, команда %(site_name)s."
 
@@ -1261,4 +1054,3 @@ msgstr "Ваш коментар успішно видалено."
 
 #~ msgid "Upcoming events in"
 #~ msgstr "Прийдешні заходи через"
-
