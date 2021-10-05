@@ -56,9 +56,9 @@
               <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{delete_modal_id}}">
                 <ul class="media-list">
                   <li class="media">
-                    <a class="pull-left" href="#">
+                    <span class="pull-left">
                       <i class="fa fa-eraser"></i>
-                    </a>
+                    </span>
                     <div class="media-body">
                       {% trans "Delete" %}
                     </div>
@@ -76,9 +76,9 @@
                   <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:poll:edit" group=group slug=poll.slug %}">
                     <ul class="media-list">
                       <li class="media">
-                        <a class="pull-left" href="#">
+                        <span class="pull-left">
                           <i class="fa fa-pencil"></i>
-                        </a>
+                        </span>
                         <div class="media-body">
                           {% trans "Edit" %}
                         </div>
@@ -91,9 +91,9 @@
                   <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#close_poll_no_winner_modal" title="{% trans "Complete without winner" %}">
                     <ul class="media-list">
                       <li class="media">
-                        <a class="pull-left" href="#">
+                        <span class="pull-left">
                           <i class="fa fa-check"></i>
-                        </a>
+                        </span>
                         <div class="media-body">
                           {% trans "Complete without winner" %}
                         </div>
@@ -110,9 +110,9 @@
                 <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{reopen_modal_id}}">
                     <ul class="media-list">
                         <li class="media">
-                            <a class="pull-left" href="#">
+                            <span class="pull-left">
                                 <i class="fa fa-eraser"></i>
-                            </a>
+                            </span>
                             <div class="media-body">
                                 {% trans "Re-open" %}
                             </div>
@@ -123,9 +123,9 @@
                 <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{archive_modal_id}}">
                     <ul class="media-list">
                         <li class="media">
-                            <a class="pull-left" href="#">
+                            <span class="pull-left">
                                 <i class="fa fa-eraser"></i>
-                            </a>
+                            </span>
                             <div class="media-body">
                                 {% trans "Archive" %}
                             </div>
@@ -164,9 +164,9 @@
                     <button type="submit" class="btn btn-emphasized">
                         <ul class="media-list">
                           <li class="media">
-                            <a class="pull-left" href="#">
+                            <span class="pull-left">
                               <i class="fa fa-floppy-o"></i>
-                            </a>
+                            </span>
                             <div class="media-body">
                               {% trans "Vote" context "the_verb" %}!
                             </div>
