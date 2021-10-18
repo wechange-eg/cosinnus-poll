@@ -8,7 +8,7 @@
                     {% include 'cosinnus/common/checkbox/checkbox_overlay_box.html' with input_name=input_name %}
                 {% endif %}
                 
-                <a class="pull-left square-date-icon">
+                <span class="pull-left square-date-icon">
                       {% if poll.state == 1 %} {# voting open #}
                         <i class="fa fa-question-circle"></i>
                       {% elif poll.state == 2 %} {# voting closed #}
@@ -16,14 +16,14 @@
                       {% else %} {# archived #}
                           <i class="fa fa-bar-chart"></i>
                       {% endif %}
-                </a>
+                </span>
                 <a class="pull-right fadedown-clickarea">
                     <i class="fa fa-chevron-down"></i>
                 </a>
                 <div class="media-body">
                     {% with creator=poll.creator %}
                         <span class="annotation mobile-hidden">{% trans "by" %} 
-                            <span href="{{ creator|profile_url }}" >{{ creator|full_name }}</span>
+                            <a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a>
                             {% if poll.created %}
                                 &nbsp;&nbsp;
                                 <span title="{% trans "Created" %}">
@@ -33,10 +33,10 @@
                             {% endif %}
                         </span>
                     {% endwith %}
-                    <span href="{{ poll.get_absolute_url }}">
+                    <a href="{{ poll.get_absolute_url }}">
                         {% include 'cosinnus/common/likefollowstar/following_title_indicator.html' with object=poll %}
                         {{ poll.title }}
-                    </span>
+                    </a>
                 </div>
             </li>
         </ul>
