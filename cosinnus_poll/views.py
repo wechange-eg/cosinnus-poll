@@ -12,7 +12,7 @@ from django.views.generic.edit import DeleteView, UpdateView, CreateView
 from django.views.generic.list import ListView
 from django.utils.timezone import now
 
-from extra_views import (CreateWithInlinesView, FormSetView, InlineFormSet,
+from extra_views import (CreateWithInlinesView, FormSetView, InlineFormSetView,
     UpdateWithInlinesView)
 
 from django_ical.views import ICalFeed
@@ -98,7 +98,7 @@ class PollListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, List
 poll_list_view = PollListView.as_view()
 
 
-class OptionInlineFormset(InlineFormSet):
+class OptionInlineFormset(InlineFormSetView):
     extra = 25
     max_num = 25
     form_class = OptionForm
