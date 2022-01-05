@@ -12,7 +12,7 @@ from django.views.generic.edit import DeleteView, UpdateView, CreateView
 from django.views.generic.list import ListView
 from django.utils.timezone import now
 
-from extra_views import (CreateWithInlinesView, FormSetView, InlineFormSetView,
+from extra_views import (CreateWithInlinesView, FormSetView, InlineFormSetFactory,
     UpdateWithInlinesView)
 
 from django_ical.views import ICalFeed
@@ -98,7 +98,7 @@ class PollListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, List
 poll_list_view = PollListView.as_view()
 
 
-class OptionInlineFormset(InlineFormSetView):
+class OptionInlineFormset(InlineFormSetFactory):
     extra = 25
     max_num = 25
     form_class = OptionForm
@@ -246,7 +246,7 @@ class PollVoteView(RequireReadMixin, RecordLastVisitedMixin, FilterGroupMixin, S
     message_success = _('Your votes were saved successfully.')
     message_error = _('Your votes could not be saved.')
 
-    extra = 0
+    factory_kwargs = {'extra': 0}
     form_class = VoteForm
     model = Poll
     template_name = 'cosinnus_poll/poll_vote.html'
