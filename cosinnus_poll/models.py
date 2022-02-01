@@ -5,6 +5,7 @@ from builtins import str
 from builtins import object
 from os.path import join
 import datetime
+import six
 
 from django.urls import reverse
 from django.db import models
@@ -12,7 +13,7 @@ from django.db.models import Q
 from django.db.models.signals import post_delete, post_save
 from django.dispatch import receiver
 from django.utils import dateformat
-from django.utils.encoding import python_2_unicode_compatible, force_text
+from django.utils.encoding import force_text
 from django.utils.formats import date_format
 from django.utils.functional import cached_property
 from django.utils.timezone import localtime, now
@@ -37,7 +38,7 @@ def get_poll_image_filename(instance, filename):
     return _get_avatar_filename(instance, filename, 'images', 'polls')
 
 
-@python_2_unicode_compatible
+@six.python_2_unicode_compatible
 class Poll(LikeableObjectMixin, BaseTaggableObjectModel):
 
     SORT_FIELDS_ALIASES = [
@@ -177,7 +178,7 @@ class Poll(LikeableObjectMixin, BaseTaggableObjectModel):
         return group_aware_reverse('cosinnus:poll:comment', kwargs={'group': self.group, 'poll_slug': self.slug})
     
 
-@python_2_unicode_compatible
+@six.python_2_unicode_compatible
 class Option(ThumbnailableImageMixin, models.Model):
     
     image_attr_name = 'image'
@@ -222,7 +223,7 @@ class Option(ThumbnailableImageMixin, models.Model):
     def sorted_votes_by_choice(self):
         return self.votes.order_by('-choice')
 
-@python_2_unicode_compatible
+@six.python_2_unicode_compatible
 class Vote(models.Model):
     
     VOTE_YES = 2
@@ -270,7 +271,7 @@ class Vote(models.Model):
         return force_text(dict(self.VOTE_CHOICES)[self.choice])
 
 
-@python_2_unicode_compatible
+@six.python_2_unicode_compatible
 class Comment(models.Model):
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('Creator'), on_delete=models.PROTECT, related_name='poll_comments')
     created_on = models.DateTimeField(_('Created'), default=now, editable=False)
